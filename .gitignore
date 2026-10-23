@@ -1,0 +1,15 @@
+# Windows / OS junk
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# IDE / Editor folders
+.vscode/
+.idea/
+*.swp
+*~
+
+# Temporary scratch logs
+*.log
