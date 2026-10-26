@@ -1,701 +1,1350 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- PRIMARY SEO META TAGS -->
-    <title>The Sales Bench | Build Sales Structure, Increase Team Productivity &amp; Expand Markets</title>
-    <meta name="title" content="The Sales Bench | Build Sales Structure, Increase Team Productivity &amp; Expand Markets">
-    <meta name="description" content="The Sales Bench helps B2B companies build repeatable sales systems for founders, unlock higher productivity and win rates from existing sales teams, and de-risk expansion into North America and new markets.">
-    <meta name="keywords" content="B2B Sales Consulting, Founder Sales Process Structure, Sales Team Productivity, MEDDPICC Implementation, Revenue Operations, North America Market Entry, Fractional Sales Leadership, The Sales Bench">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://thesalesbench.com/">
-    <link rel="icon" type="image/png" href="favicon.png">
-
-    <!-- OPEN GRAPH / SOCIAL META TAGS -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://thesalesbench.com/">
-    <meta property="og:site_name" content="The Sales Bench">
-    <meta property="og:title" content="The Sales Bench | Practical Sales Systems, Team Productivity &amp; Market Expansion">
-    <meta property="og:description" content="We don't hand you theoretical slide decks. We build and run the sales systems that grow your revenue. Take our 60-second Sales Diagnostic.">
-    <meta property="og:image" content="logo-og.png">
-
-    <!-- JSON-LD STRUCTURED DATA -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "The Sales Bench",
-      "url": "https://thesalesbench.com/",
-      "logo": "https://thesalesbench.com/logo.png",
-      "description": "B2B sales advisory and execution firm helping founders build structured sales processes, existing sales teams increase productivity and win rates, and growing companies enter North America and new markets.",
-      "telephone": "+1-416-570-2919",
-      "email": "scott@thesalesbench.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Toronto",
-        "addressRegion": "ON",
-        "addressCountry": "CA"
-      }
-    }
-    </script>
-
-    <!-- FONTS & TAILWIND CSS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
-                        mono: ['"JetBrains Mono"', 'monospace'],
-                    }
-                }
-            }
-        }
-    </script>
-
+    <title>The Sales Bench | Enterprise Commercial Architecture &amp; Market Expansion</title>
     <style>
+        /* ==========================================================================
+           EXECUTIVE HIGH-CONTRAST TYPOGRAPHY & DESIGN SYSTEM
+           ========================================================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            background-color: #0b1120;
+            color: #0f172a;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Container constraints */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .container-narrow {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .font-mono {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        }
+
+        /* ==========================================================================
+           HEADER NAVIGATION
+           ========================================================================== */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: #0b1120;
+            border-bottom: 2px solid #1e293b;
+            padding: 18px 0;
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-lockup {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .brand-monogram {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 16px;
+            color: #0b1120;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-text {
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 18px;
+            letter-spacing: -0.2px;
+            line-height: 1.2;
+            display: block;
+        }
+
+        .brand-sub {
+            color: #34d399;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #34d399;
+        }
+
+        .btn-header {
+            background-color: #10b981;
+            color: #0b1120;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-header:hover {
+            background-color: #34d399;
+        }
+
+        /* ==========================================================================
+           HERO SECTION
+           ========================================================================== */
+        .hero {
+            background: radial-gradient(circle at top, #1e293b 0%, #0b1120 75%);
+            color: #ffffff;
+            padding: 85px 0 65px;
+            text-align: center;
+            border-bottom: 2px solid #1e293b;
+        }
+
+        .pill-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 16px;
+            background-color: rgba(16, 185, 129, 0.15);
+            border: 1px solid #10b981;
+            border-radius: 9999px;
+            color: #6ee7b7;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 24px;
+        }
+
+        .pulsing-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #10b981;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 800;
+            line-height: 1.18;
+            letter-spacing: -1px;
+            margin-bottom: 24px;
+            color: #ffffff;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #34d399 0%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            max-width: 780px;
+            margin: 0 auto 38px;
+            font-size: 18px;
+            color: #e2e8f0;
+            line-height: 1.65;
+            font-weight: 400;
+        }
+
+        /* 3-Pillar Fast-Path */
+        .hero-fastpath {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            max-width: 980px;
+            margin: 0 auto 42px;
+            text-align: left;
+        }
+
+        .fastpath-card {
+            background-color: #162032;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 20px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .fastpath-card:hover {
+            border-color: #10b981;
+            transform: translateY(-2px);
+        }
+
+        .fastpath-tag {
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #34d399;
+            margin-bottom: 6px;
+        }
+
+        .fastpath-text {
+            color: #f1f5f9;
+            font-size: 14px;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: #10b981;
+            color: #0b1120;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 800;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 16px rgba(16, 185, 129, 0.35);
+        }
+
+        .btn-primary:hover {
+            background-color: #34d399;
+        }
+
+        .btn-secondary {
+            background-color: #1e293b;
+            color: #ffffff;
+            border: 1px solid #475569;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #334155;
+        }
+
+        /* ==========================================================================
+           VERIFIED THIRD-PARTY BENCHMARKS
+           ========================================================================== */
+        .research-bar {
+            background-color: #0f172a;
+            border-bottom: 2px solid #1e293b;
+            padding: 40px 0;
+            color: #ffffff;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 34px;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+        }
+
+        .stat-number.cyan { color: #38bdf8; }
+        .stat-number.emerald { color: #34d399; }
+
+        .stat-label {
+            font-size: 14px;
+            color: #cbd5e1;
+            margin-top: 8px;
+            line-height: 1.45;
+            font-weight: 500;
+        }
+
+        .stat-source {
+            font-size: 11px;
+            color: #94a3b8;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-top: 6px;
+        }
+
+        /* ==========================================================================
+           LIGHT EXECUTIVE BODY SECTIONS (CRISP CONTRAST)
+           ========================================================================== */
+        .section-light {
             background-color: #f8fafc;
+            padding: 85px 0;
+            border-bottom: 1px solid #cbd5e1;
+        }
+
+        .section-white {
+            background-color: #ffffff;
+            padding: 85px 0;
+            border-bottom: 1px solid #cbd5e1;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 50px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background-color: #d1fae5;
+            color: #065f46;
+            border: 1px solid #6ee7b7;
+            padding: 5px 14px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: clamp(26px, 3.5vw, 36px);
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -0.5px;
+            line-height: 1.25;
+            margin-bottom: 14px;
+        }
+
+        .section-desc {
+            font-size: 16px;
+            color: #334155;
+            line-height: 1.65;
+            font-weight: 450;
+        }
+
+        /* Practice Area Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+        }
+
+        .practice-card {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 18px;
+            padding: 34px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+            transition: all 0.2s ease;
+        }
+
+        .practice-card:hover {
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .practice-card.featured {
+            border: 2px solid #10b981;
+        }
+
+        .card-badge {
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            background-color: #e2e8f0;
+            color: #1e293b;
+            display: inline-block;
+            margin-bottom: 18px;
+        }
+
+        .card-badge.highlight {
+            background-color: #d1fae5;
+            color: #065f46;
+        }
+
+        .practice-card h3 {
+            font-size: 22px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 14px;
+            line-height: 1.3;
+        }
+
+        .practice-card p {
+            font-size: 15px;
+            color: #334155;
+            line-height: 1.65;
+            margin-bottom: 22px;
+        }
+
+        .outcomes-box {
+            background-color: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 26px;
+        }
+
+        .outcomes-box.green {
+            background-color: #ecfdf5;
+            border-color: #a7f3d0;
+        }
+
+        .outcomes-title {
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .outcomes-list {
+            list-style: none;
+            font-size: 14px;
+            color: #1e293b;
+        }
+
+        .outcomes-list li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .btn-card {
+            display: block;
+            text-align: center;
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 13px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 800;
+            transition: all 0.2s ease;
+        }
+
+        .btn-card:hover {
+            background-color: #1e293b;
+        }
+
+        .btn-card.featured {
+            background-color: #10b981;
+            color: #0b1120;
+        }
+
+        .btn-card.featured:hover {
+            background-color: #34d399;
+        }
+
+        /* ==========================================================================
+           ABOUT THE SALES BENCH & FOUNDER BIO (HIGH VALUE PEDIGREE)
+           ========================================================================== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+
+        .bio-card {
+            background-color: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 36px;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+        }
+
+        .bio-title-group {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .bio-avatar {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #10b981 0%, #0284c7 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 20px;
+            color: #0b1120;
+            flex-shrink: 0;
+        }
+
+        .bio-name {
+            font-size: 20px;
+            font-weight: 800;
             color: #0f172a;
         }
-        .hs-form-frame {
-            width: 100% !important;
-            min-height: 410px;
+
+        .bio-role {
+            font-size: 13px;
+            color: #059669;
+            font-weight: 700;
         }
-        .diag-option.selected {
-            border-color: #059669 !important;
-            background-color: #ecfdf5 !important;
-            box-shadow: 0 4px 14px rgba(5, 150, 105, 0.12);
+
+        .bio-text {
+            font-size: 15px;
+            color: #334155;
+            line-height: 1.7;
+            margin-bottom: 20px;
         }
-        @media print {
-            header, footer, #book, #solutions { display: none !important; }
+
+        .credentials-pill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 14px;
         }
+
+        .cred-pill {
+            background-color: #f1f5f9;
+            color: #1e293b;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+        }
+
+        /* ==========================================================================
+           THE 4-WEEK SPRINT ➔ 90-120 DAY MODEL
+           ========================================================================== */
+        .roadmap-container {
+            background-color: #f1f5f9;
+            border: 2px solid #cbd5e1;
+            border-radius: 24px;
+            padding: 40px;
+        }
+
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 28px;
+        }
+
+        .roadmap-card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 30px;
+            border: 1px solid #cbd5e1;
+        }
+
+        .roadmap-card.active {
+            border: 2px solid #10b981;
+            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.12);
+        }
+
+        .timeline-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 14px;
+            color: #1e293b;
+            line-height: 1.5;
+        }
+
+        .timeline-num {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #d1fae5;
+            color: #065f46;
+            font-weight: 800;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* ==========================================================================
+           TECH STACK & REVOPS STRIP (DARK CONTRAST)
+           ========================================================================== */
+        .tech-strip {
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 55px 0;
+            border-bottom: 2px solid #1e293b;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 12px;
+            text-align: center;
+        }
+
+        .tech-item {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 10px;
+            padding: 14px 8px;
+        }
+
+        .tech-name {
+            font-weight: 800;
+            font-size: 14px;
+            color: #ffffff;
+        }
+
+        .tech-role {
+            font-size: 12px;
+            color: #34d399;
+            margin-top: 3px;
+            font-weight: 600;
+        }
+
+        /* ==========================================================================
+           INTERACTIVE DIAGNOSTIC CARD
+           ========================================================================== */
+        .diagnostic-card {
+            background-color: #ffffff;
+            border: 2px solid #cbd5e1;
+            border-radius: 20px;
+            padding: 38px;
+            box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            font-weight: 800;
+            color: #475569;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar-bg {
+            width: 100%;
+            height: 8px;
+            background-color: #e2e8f0;
+            border-radius: 9999px;
+            overflow: hidden;
+            margin-bottom: 28px;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background-color: #10b981;
+            transition: width 0.3s ease;
+        }
+
+        .question-title {
+            font-size: 21px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 20px;
+        }
+
+        .option-button {
+            width: 100%;
+            text-align: left;
+            background-color: #ffffff;
+            border: 2px solid #cbd5e1;
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin-bottom: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .option-button:hover {
+            border-color: #10b981;
+            background-color: #f0fdf4;
+        }
+
+        .option-letter {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background-color: #e2e8f0;
+            color: #0f172a;
+            font-weight: 800;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .option-title {
+            font-weight: 800;
+            font-size: 16px;
+            color: #0f172a;
+        }
+
+        .option-desc {
+            font-size: 14px;
+            color: #334155;
+            margin-top: 3px;
+            line-height: 1.5;
+        }
+
+        .btn-back {
+            background: none;
+            border: none;
+            color: #475569;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* Modal Backdrop */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(11, 17, 32, 0.88);
+            backdrop-filter: blur(6px);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            visibility: hidden;
+            transition: all 0.25s ease;
+        }
+
+        .modal-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+            visibility: visible;
+        }
+
+        .modal-box {
+            background-color: #f8fafc;
+            border-radius: 20px;
+            max-width: 1050px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border: 2px solid #cbd5e1;
+        }
+
+        .modal-header {
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .modal-body {
+            padding: 28px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        /* ==========================================================================
+           SPLIT-PANE LEAD GENERATION (100% CONTACT FORM FOCUS)
+           ========================================================================== */
+        .split-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .takeaway-card {
+            background-color: #ffffff;
+            border: 2px solid rgba(16, 185, 129, 0.4);
+            border-radius: 16px;
+            padding: 26px;
+            margin: 24px 0;
+        }
+
+        .takeaway-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-size: 15px;
+            color: #1e293b;
+            line-height: 1.5;
+        }
+
+        .takeaway-check {
+            color: #10b981;
+            font-weight: 800;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .booking-white-card {
+            background-color: #ffffff;
+            border: 2px solid #cbd5e1;
+            border-radius: 20px;
+            padding: 36px;
+            box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);
+        }
+
+        footer {
+            background-color: #0b1120;
+            color: #94a3b8;
+            padding: 40px 0;
+            font-size: 13px;
+            border-top: 1px solid #1e293b;
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-links a:hover {
+            color: #34d399;
+        }
+
+        .hidden { display: none !important; }
+        .hs-form-frame { width: 100% !important; min-height: 380px; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 antialiased selection:bg-emerald-500 selection:text-white">
+<body>
 
-    <!-- STICKY NAVIGATION -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-900/95 border-b border-slate-800 shadow-sm">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center space-x-3" aria-label="The Sales Bench Home">
-                <img src="logo.png" alt="The Sales Bench Logo" class="h-10 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('fallback-logo').style.display='flex';">
-                <div id="fallback-logo" style="display:none;" class="items-center space-x-2">
-                    <div class="w-9 h-9 bg-gradient-to-tr from-blue-600 via-teal-400 to-emerald-400 rounded-lg flex items-center justify-center font-bold text-slate-950">SB</div>
-                    <span class="text-lg font-bold tracking-tight text-white">THE SALES BENCH</span>
+    <!-- 1. NAVIGATION -->
+    <header>
+        <div class="container nav-inner">
+            <a href="#" class="brand-lockup">
+                <div class="brand-monogram">SB</div>
+                <div>
+                    <span class="brand-text">THE SALES BENCH</span>
+                    <span class="brand-sub font-mono">Commercial Architecture</span>
                 </div>
             </a>
-
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-200" aria-label="Primary Navigation">
-                <a href="#diagnostic" class="hover:text-emerald-400 transition">Interactive Diagnostic</a>
-                <a href="#solutions" class="hover:text-emerald-400 transition">How We Help</a>
-                <a href="#research" class="hover:text-emerald-400 transition">Industry Research</a>
-                <a href="#engagements" class="hover:text-emerald-400 transition">Engagement Models</a>
-                <a href="#book" class="hover:text-emerald-400 transition">Contact</a>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#services">Practice Areas</a>
+                <a href="#framework">4-Week Model</a>
+                <a href="#diagnostic">Diagnostic</a>
+                <a href="#book" class="btn-header">Schedule Intro</a>
             </nav>
-
-            <div class="flex items-center gap-3">
-                <a href="#diagnostic" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-mono font-bold text-emerald-300 border border-emerald-500/40 bg-emerald-500/10 hover:bg-emerald-500/20 rounded-lg transition">
-                    60-Sec Assessment
-                </a>
-                <a href="#book" class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-bold text-slate-950 bg-emerald-400 hover:bg-emerald-300 rounded-lg transition shadow-md">
-                    Book 15-Min Intro
-                </a>
-            </div>
         </div>
     </header>
 
     <main>
-        <!-- ================================================================
-             FOLD 1: CRYSTAL-CLEAR VALUE PROPOSITION HERO + RESEARCH BACKING
-             ================================================================ -->
-        <section class="relative pt-16 pb-16 overflow-hidden bg-gradient-to-b from-slate-900 via-[#111c33] to-slate-900 text-white border-b border-slate-800">
-            <div class="pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2 w-[850px] h-[380px] bg-gradient-to-r from-emerald-500/20 via-teal-400/15 to-cyan-500/20 blur-3xl rounded-full"></div>
-
-            <div class="relative max-w-5xl mx-auto px-6 text-center">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-emerald-400/40 bg-emerald-500/10 text-emerald-300 text-xs font-mono font-bold uppercase tracking-wider mb-6">
-                    <span>Hands-On B2B Sales Architecture · Team Productivity · Market Expansion</span>
+        <!-- 2. HERO -->
+        <section class="hero">
+            <div class="container-narrow">
+                <div class="pill-badge">
+                    <span class="pulsing-dot"></span>
+                    Senior Operator-Led Commercial Architecture
                 </div>
-
-                <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-[1.12] mb-6">
-                    We Don't Hand You Strategy Decks.<br class="hidden sm:inline">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-teal-200 to-cyan-300">
-                        We Build the Sales Systems That Grow Your Revenue.
-                    </span>
+                <h1>
+                    Analyze Your GTM Engine.<br>
+                    Build Channel Alliances.<br>
+                    <span class="gradient-text">De-Risk New Market Expansion.</span>
                 </h1>
-
-                <p class="text-lg sm:text-xl text-slate-200 max-w-3xl mx-auto font-normal leading-relaxed mb-9">
-                    <strong class="text-white">The Sales Bench</strong> rolls up its sleeves to solve three specific growth bottlenecks: helping <strong class="text-white">founders build a structured, repeatable sales process</strong>, enabling <strong class="text-white">existing sales teams to unlock higher rep productivity</strong>, and guiding <strong class="text-white">growing companies into North America and new markets</strong> without costly missteps.
+                <p>
+                    We partner with software founders, CEOs, and revenue executives to analyze pipeline friction, activate high-leverage distribution channels, and execute North American expansion—collaborating directly with your internal RevOps team to configure and integrate your stack.
                 </p>
 
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-                    <a href="#diagnostic" class="w-full sm:w-auto px-8 py-4 text-base font-bold text-slate-950 bg-emerald-400 hover:bg-emerald-300 rounded-xl transition shadow-xl shadow-emerald-500/20">
-                        Take the 60-Second Sales Diagnostic ↓
+                <!-- 3 Fast Paths -->
+                <div class="hero-fastpath">
+                    <a href="#services" class="fastpath-card">
+                        <div class="fastpath-tag font-mono">01 // GTM Analysis &amp; Process</div>
+                        <div class="fastpath-text">Diagnose pipeline leaks and guide internal RevOps to configure CRM workflows.</div>
                     </a>
-                    <a href="#book" class="w-full sm:w-auto px-8 py-4 text-base font-semibold text-white bg-slate-800/90 hover:bg-slate-700 border border-slate-600 rounded-xl transition">
-                        Schedule a 15-Min Intro Call
+                    <a href="#services" class="fastpath-card">
+                        <div class="fastpath-tag font-mono">02 // Channels &amp; Alliances</div>
+                        <div class="fastpath-text">Stand up co-selling relationships across enterprise ecosystems, SIs, and tech partners.</div>
+                    </a>
+                    <a href="#services" class="fastpath-card">
+                        <div class="fastpath-tag font-mono">03 // North American Expansion</div>
+                        <div class="fastpath-text">Validate buyer demand, test regional pricing, and de-risk US/Canada market entry.</div>
                     </a>
                 </div>
 
-                <!-- 3 Research-Backed Value Pillars -->
-                <div class="grid sm:grid-cols-3 gap-4 pt-8 border-t border-slate-700/80 text-left max-w-5xl mx-auto">
-                    <div class="p-5 rounded-2xl bg-slate-800/70 border border-slate-700/90">
-                        <div class="flex items-center justify-between mb-1.5">
-                            <span class="text-2xl font-extrabold text-emerald-300">+18% to 28%</span>
-                            <span class="text-[11px] font-mono text-emerald-400 bg-emerald-950/80 border border-emerald-500/30 px-2 py-0.5 rounded">Harvard Business Review</span>
-                        </div>
-                        <div class="text-xs font-bold text-white mb-1">Higher Revenue From Formal Process</div>
-                        <p class="text-xs text-slate-300 leading-relaxed">HBR &amp; CSO Insights research shows companies with a formal, structured sales process grow revenue up to 28% faster than ad-hoc teams.</p>
+                <div class="hero-cta-group">
+                    <a href="#framework" class="btn-primary">See How We Work (4-Week ➔ 90-Day Plan) →</a>
+                    <a href="#diagnostic" class="btn-secondary">Take 60-Sec GTM Diagnostic</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. VERIFIED THIRD-PARTY RESEARCH BENCHMARK BAR -->
+        <section class="research-bar">
+            <div class="container">
+                <div class="stats-grid">
+                    <div>
+                        <div class="stat-number">+18% Growth</div>
+                        <div class="stat-label">Higher revenue lift with a structured, formal sales process</div>
+                        <div class="stat-source font-mono">Source: Vantage Point / SMA</div>
                     </div>
-                    <div class="p-5 rounded-2xl bg-slate-800/70 border border-slate-700/90">
-                        <div class="flex items-center justify-between mb-1.5">
-                            <span class="text-2xl font-extrabold text-cyan-300">45% Quota Gap</span>
-                            <span class="text-[11px] font-mono text-cyan-300 bg-cyan-950/80 border border-cyan-500/30 px-2 py-0.5 rounded">Gartner &amp; Accenture</span>
-                        </div>
-                        <div class="text-xs font-bold text-white mb-1">Solved By Streamlined Workflows</div>
-                        <p class="text-xs text-slate-300 leading-relaxed">Gartner finds 72% of reps are overwhelmed by tools &amp; complexity—making them 45% less likely to hit quota until workflows are simplified.</p>
+                    <div>
+                        <div class="stat-number cyan">72% Overwhelmed</div>
+                        <div class="stat-label">Sellers overwhelmed by complex skills; 45% less likely to hit quota</div>
+                        <div class="stat-source font-mono">Source: Gartner Sales Survey</div>
                     </div>
-                    <div class="p-5 rounded-2xl bg-slate-800/70 border border-slate-700/90">
-                        <div class="flex items-center justify-between mb-1.5">
-                            <span class="text-2xl font-extrabold text-emerald-300">70% Entry Risk</span>
-                            <span class="text-[11px] font-mono text-emerald-400 bg-emerald-950/80 border border-emerald-500/30 px-2 py-0.5 rounded">SaaS Capital</span>
-                        </div>
-                        <div class="text-xs font-bold text-white mb-1">Eliminated Before You Hire</div>
-                        <p class="text-xs text-slate-300 leading-relaxed">70% of North American market entries fail due to premature hiring before validating local buyer demand and compliance gates.</p>
+                    <div>
+                        <div class="stat-number emerald">&lt; 30% Selling</div>
+                        <div class="stat-label">Workweek time reps spend actually selling due to CRM friction</div>
+                        <div class="stat-source font-mono">Source: Salesforce State of Sales</div>
+                    </div>
+                    <div>
+                        <div class="stat-number">86% Stall</div>
+                        <div class="stat-label">B2B purchases that stall without consensus &amp; partner trust</div>
+                        <div class="stat-source font-mono">Source: Forrester B2B Buying Study</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ================================================================
-             FOLD 2: INTERACTIVE INTERVIEW-STYLE SALES DIAGNOSTIC
-             ================================================================ -->
-        <section id="diagnostic" class="py-20 bg-white border-b border-slate-200">
-            <div class="max-w-4xl mx-auto px-6">
-                <div class="text-center mb-10">
-                    <span class="inline-block text-xs font-mono font-bold uppercase tracking-widest text-emerald-700 bg-emerald-100 border border-emerald-200 px-3 py-1 rounded-full mb-3">
-                        Interactive GTM &amp; Sales Diagnostic
-                    </span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
-                        Where Are You Today—And What Outcome Do You Need Next?
-                    </h2>
-                    <p class="text-slate-600 text-base">
-                        Answer 4 quick questions about your business. We'll benchmark your situation against industry research from <strong>Gartner, Harvard Business Review, Forrester, and Accenture</strong> and generate a tailored action plan.
-                    </p>
-                </div>
-
-                <!-- INTERACTIVE INTERVIEW CARD -->
-                <div class="bg-slate-50 border-2 border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl">
-                    <!-- Progress Bar Header -->
-                    <div class="mb-8">
-                        <div class="flex items-center justify-between text-xs font-mono font-bold text-slate-600 mb-2">
-                            <span id="diag-step-indicator">QUESTION 1 OF 4 // CURRENT STAGE</span>
-                            <span id="diag-pct-indicator" class="text-emerald-700">25% Complete</span>
-                        </div>
-                        <div class="w-full h-2.5 bg-slate-200 rounded-full overflow-hidden">
-                            <div id="diag-progress-bar" class="h-full bg-emerald-600 transition-all duration-300" style="width: 25%;"></div>
-                        </div>
+        <!-- 4. ABOUT THE SALES BENCH & FOUNDER BIO -->
+        <section id="about" class="section-white">
+            <div class="container">
+                <div class="about-grid">
+                    <div>
+                        <span class="section-badge font-mono">About The Sales Bench</span>
+                        <h2 class="section-title">Hands-On Revenue Leadership Built on Senior Operating Pedigree</h2>
+                        <p class="section-desc" style="margin-bottom: 20px;">
+                            The Sales Bench was founded to give B2B software companies direct access to senior commercial architecture without the bloat of full-time executive overhead or theoretical consultant slide decks.
+                        </p>
+                        <p class="bio-text">
+                            We don't sell generic advice. We embed with founders, CEOs, and revenue leaders to solve real operational bottlenecks: diagnosing pipeline leakage, designing co-sell alliances across software and services ecosystems, and navigating cross-border expansion into the US and Canada.
+                        </p>
                     </div>
 
-                    <!-- STEP 1: Where are you today? -->
-                    <div id="diag-step-1" class="diag-step space-y-4">
-                        <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 mb-4">
-                            1. Which best describes your sales organization today?
-                        </h3>
-                        <div class="grid gap-3.5">
-                            <button type="button" data-step="1" data-val="founder" class="diag-option text-left p-5 rounded-2xl bg-white border-2 border-slate-200 hover:border-emerald-500 transition flex items-start gap-4">
-                                <span class="w-7 h-7 rounded-full bg-emerald-100 text-emerald-800 font-mono text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">A</span>
-                                <div>
-                                    <div class="font-extrabold text-slate-900 text-base">Founder-Led or Early Sales Team (Need Structure)</div>
-                                    <div class="text-sm text-slate-600 mt-0.5">We have initial traction, but our sales process isn't documented and we need CRM &amp; playbook structure before scaling reps.</div>
-                                </div>
-                            </button>
-                            <button type="button" data-step="1" data-val="team" class="diag-option text-left p-5 rounded-2xl bg-white border-2 border-slate-200 hover:border-emerald-500 transition flex items-start gap-4">
-                                <span class="w-7 h-7 rounded-full bg-cyan-100 text-cyan-800 font-mono text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">B</span>
-                                <div>
-                                    <div class="font-extrabold text-slate-900 text-base">Established Sales Team (Need Higher Productivity)</div>
-                                    <div class="text-sm text-slate-600 mt-0.5">We have reps and tools in place, but quota attainment is uneven, deals slip past close dates, and forecasts miss the mark.</div>
-                                </div>
-                            </button>
-                            <button type="button" data-step="1" data-val="market" class="diag-option text-left p-5 rounded-2xl bg-white border-2 border-slate-200 hover:border-emerald-500 transition flex items-start gap-4">
-                                <span class="w-7 h-7 rounded-full bg-teal-100 text-teal-800 font-mono text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">C</span>
-                                <div>
-                                    <div class="font-extrabold text-slate-900 text-base">Entering North America or a New Market (Need Validated Launch)</div>
-                                    <div class="text-sm text-slate-600 mt-0.5">We are an overseas company entering the US/Canada—or a US company expanding into Canada—and want to validate &amp; scale without costly mistakes.</div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- STEP 2: Primary Friction Point -->
-                    <div id="diag-step-2" class="diag-step hidden space-y-4">
-                        <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 mb-4">
-                            2. What is the biggest obstacle holding back your revenue growth right now?
-                        </h3>
-                        <div class="grid gap-3.5">
-                            <button type="button" data-step="2" data-val="playbook" class="diag-option text-left p-5 rounded-2xl bg-white border-2 border-slate-200 hover:border-emerald-500 transition flex items-start gap-4">
-                                <span class="w-7 h-7 rounded-full bg-slate-100 text-slate-800 font-mono text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">A</span>
-                                <div>
-                                    <div class="font-extrabold text-slate-900 text-base">Lack of a Repeatable Playbook &amp; Clean CRM Stages</div>
-                                    <div class="text-sm text-slate-600 mt-0.5">Every rep sells differently, CRM data is unreliable, and onboarding new hires takes too long.</div>
-                                </div>
-                            </button>
-                            <button type="button" data-step="2" data-val="slippage" class="diag-option text-left p-5 rounded-2xl bg-white border-2 border-slate-200 hover:border-emerald-500 transition flex items-start gap-4">
-                                <span class="w-7 h-7 rounded-full bg-slate-100 text-slate-800 font-mono text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">B</span>
-                                <div>
-                                    <div class="font-extrabold text-slate-900 text-base">Deals Slipping Quarter-to-Quarter &amp; Rep Tech Overload</div>
-                                    <div class="text-sm text-slate-600 mt-0.5">Opportunities stall in "no decision" or procurement (Forrester notes 86% of B2B deals stall due to buying committee complexity).</div>
-                                </div>
-                            </button>
-                            <button type="button" data-step="2" data-val="entry" class="diag-option text-left p-5 rounded-2xl bg-white border-2 border-slate-200 hover:border-emerald-500 transition flex items-start gap-4">
-                                <span class="w-7 h-7 rounded-full bg-slate-100 text-slate-800 font-mono text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">C</span>
-                                <div>
-                                    <div class="font-extrabold text-slate-900 text-base">High Risk &amp; Cost of Hiring in a New Market</div>
-                                    <div class="text-sm text-slate-600 mt-0.5">We don't want to burn €250k+ on full-time local hires or wait months for a legal entity before proving local buyer demand.</div>
-                                </div>
-                            </button>
-                        </div>
-                        <div class="pt-2">
-                            <button type="button" data-back="1" class="diag-back text-xs font-mono font-bold text-slate-500 hover:text-slate-800">← Back to Question 1</button>
-                        </div>
-                    </div>
-
-                    <!-- STEP 3: Current Team & Revenue Size -->
-                    <div id="diag-step-3" class="diag-step hidden space-y-4">
-                        <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 mb-4">
-                            3. What is your current annual revenue scale?
-                        </h3>
-                        <div class="grid sm:grid-cols-3 gap-3.5">
-                            <button type="button" data-step="3" data-val="early" class="diag-option text-left p-5 rounded-2xl bg-white border-2 border-slate-200 hover:border-emerald-500 transition">
-                                <div class="text-xs font-mono text-emerald-700 font-bold uppercase mb-1">Stage 1</div>
-                                <div class="font-extrabold text-slate-900 text-lg">$500K – $3M ARR</div>
-                                <div class="text-xs text-slate-600 mt-1">Building foundational repeatability &amp; first sales hires.</div>
-                            </button>
-                            <button type="button" data-step="3" data-val="scaling" class="diag-option text-left p-5 rounded-2xl bg-white border-2 border-slate-200 hover:border-emerald-500 transition">
-                                <div class="text-xs font-mono text-cyan-700 font-bold uppercase mb-1">Stage 2</div>
-                                <div class="font-extrabold text-slate-900 text-lg">$3M – $10M ARR</div>
-                                <div class="text-xs text-slate-600 mt-1">Scaling rep productivity, PODs &amp; new territories.</div>
-                            </button>
-                            <button type="button" data-step="3" data-val="growth" class="diag-option text-left p-5 rounded-2xl bg-white border-2 border-slate-200 hover:border-emerald-500 transition">
-                                <div class="text-xs font-mono text-teal-700 font-bold uppercase mb-1">Stage 3</div>
-                                <div class="font-extrabold text-slate-900 text-lg">$10M – $30M+ ARR</div>
-                                <div class="text-xs text-slate-600 mt-1">Enterprise deal governance, forecast precision &amp; global scale.</div>
-                            </button>
-                        </div>
-                        <div class="pt-2">
-                            <button type="button" data-back="2" class="diag-back text-xs font-mono font-bold text-slate-500 hover:text-slate-800">← Back to Question 2</button>
-                        </div>
-                    </div>
-
-                    <!-- STEP 4: Primary 90-Day Outcome Goal -->
-                    <div id="diag-step-4" class="diag-step hidden space-y-4">
-                        <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 mb-4">
-                            4. What is the #1 outcome you want to achieve in the next 90 days?
-                        </h3>
-                        <div class="grid gap-3.5">
-                            <button type="button" data-step="4" data-val="system" class="diag-option text-left p-5 rounded-2xl bg-white border-2 border-slate-200 hover:border-emerald-500 transition flex items-start gap-4">
-                                <span class="w-7 h-7 rounded-full bg-emerald-100 text-emerald-800 font-mono text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">1</span>
-                                <div>
-                                    <div class="font-extrabold text-slate-900 text-base">A Turnkey Sales Process &amp; CRM Ready to Scale</div>
-                                    <div class="text-sm text-slate-600 mt-0.5">Document our playbook, structure HubSpot/Salesforce stages, and enable reps to close without the founder on every call.</div>
-                                </div>
-                            </button>
-                            <button type="button" data-step="4" data-val="velocity" class="diag-option text-left p-5 rounded-2xl bg-white border-2 border-slate-200 hover:border-emerald-500 transition flex items-start gap-4">
-                                <span class="w-7 h-7 rounded-full bg-cyan-100 text-cyan-800 font-mono text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">2</span>
-                                <div>
-                                    <div class="font-extrabold text-slate-900 text-base">Higher Win Rates (+28%), Faster Cycles &amp; Predictable Forecasts</div>
-                                    <div class="text-sm text-slate-600 mt-0.5">Install MEDDPICC deal gates, Mutual Action Plans, and weekly deal inspections so our current team hits quota consistently.</div>
-                                </div>
-                            </button>
-                            <button type="button" data-step="4" data-val="launch" class="diag-option text-left p-5 rounded-2xl bg-white border-2 border-slate-200 hover:border-emerald-500 transition flex items-start gap-4">
-                                <span class="w-7 h-7 rounded-full bg-teal-100 text-teal-800 font-mono text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">3</span>
-                                <div>
-                                    <div class="font-extrabold text-slate-900 text-base">Validated North American / New Market Launch Plan</div>
-                                    <div class="text-sm text-slate-600 mt-0.5">Test demand with live target buyers in 4 weeks, align compliance/pricing, and onboard local reps compliantly.</div>
-                                </div>
-                            </button>
-                        </div>
-                        <div class="pt-2">
-                            <button type="button" data-back="3" class="diag-back text-xs font-mono font-bold text-slate-500 hover:text-slate-800">← Back to Question 3</button>
-                        </div>
-                    </div>
-
-                    <!-- DIAGNOSTIC RESULT & TAILORED PRESCRIPTION -->
-                    <div id="diag-result" class="hidden">
-                        <div class="bg-white border-2 border-emerald-600 rounded-2xl p-6 sm:p-8 shadow-md">
-                            <div class="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-slate-200">
-                                <div>
-                                    <span class="text-xs font-mono font-bold uppercase text-emerald-700">// Your Tailored Sales Bench Recommendation</span>
-                                    <h3 id="res-title" class="text-2xl font-extrabold text-slate-900 mt-1">Sales Systems &amp; Process Foundation</h3>
-                                </div>
-                                <div class="flex items-center gap-4">
-                                    <button type="button" id="diag-copy" class="text-xs font-mono font-bold text-emerald-700 hover:text-emerald-900 bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-lg">
-                                        Copy Plan for My Team 📋
-                                    </button>
-                                    <button type="button" id="diag-restart" class="text-xs font-mono font-bold text-slate-500 hover:text-slate-900 underline">
-                                        Retake ↻
-                                    </button>
-                                </div>
+                    <!-- Founder Card -->
+                    <div class="bio-card">
+                        <div class="bio-title-group">
+                            <div class="bio-avatar font-mono">SC</div>
+                            <div>
+                                <div class="bio-name">Scott Carpentier</div>
+                                <div class="bio-role font-mono">Founder &amp; Principal Commercial Lead</div>
                             </div>
-
-                            <!-- Research Benchmark Callout Inside Result -->
-                            <div id="res-research" class="p-4 rounded-xl bg-slate-100 border-l-4 border-emerald-600 text-xs sm:text-sm text-slate-700 mb-6"></div>
-
-                            <p id="res-summary" class="text-slate-700 text-sm sm:text-base leading-relaxed mb-6"></p>
-
-                            <div class="grid md:grid-cols-2 gap-6 mb-8">
-                                <!-- Left: What We Will Do -->
-                                <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
-                                    <div class="text-xs font-mono font-bold uppercase text-slate-800 mb-3">What We Will Do Together</div>
-                                    <ul id="res-actions" class="space-y-2.5 text-sm text-slate-700"></ul>
-                                </div>
-
-                                <!-- Right: Expected Business Outcomes -->
-                                <div class="p-5 rounded-2xl bg-emerald-50/70 border border-emerald-200">
-                                    <div class="text-xs font-mono font-bold uppercase text-emerald-800 mb-3">Your Projected Business Outcomes</div>
-                                    <ul id="res-outcomes" class="space-y-2.5 text-sm text-emerald-950 font-medium"></ul>
-                                </div>
-                            </div>
-
-                            <div class="p-5 rounded-2xl bg-slate-900 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                                <div>
-                                    <div class="text-xs font-mono uppercase text-emerald-400">Next Step: 15-Minute Roadmap Review</div>
-                                    <div class="text-sm text-slate-200 mt-0.5">Your diagnostic report and booking calendar are ready side-by-side.</div>
-                                </div>
-                                <button type="button" id="diag-reopen-modal" class="shrink-0 inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-bold text-sm transition cursor-pointer">
-                                    Open Report &amp; Book Meeting Side-by-Side →
-                                </button>
-                            </div>
+                        </div>
+                        <p class="bio-text">
+                            A seasoned enterprise commercial executive with a career spanning foundational enterprise years at <strong>SAP</strong>, scaling private equity-backed software past $60M ARR, and driving the <strong>12X expansion of BlackLine Canada from $2.5M to $30M ARR</strong> (NASDAQ: BL).
+                        </p>
+                        <p class="bio-text" style="margin-bottom: 8px;">
+                            Specialized in architecting high-yield co-selling programs (including leading the SAP SOLEX alliance for 20+ quarters and achieving an 85% partner attach rate), and closing multi-year seven-figure software agreements with global enterprises.
+                        </p>
+                        <div class="credentials-pill-list font-mono">
+                            <span class="cred-pill">$2.5M ➔ $30M ARR Scale</span>
+                            <span class="cred-pill">85% Partner Attach</span>
+                            <span class="cred-pill">Enterprise Alliances</span>
+                            <span class="cred-pill">Cross-Border US/Canada</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ================================================================
-             INSTANT DIAGNOSTIC REPORT + SIDE-BY-SIDE BOOKING POPUP MODAL
-             (Uses opacity/visibility instead of display:none so the HubSpot
-              form iframe loads at full height in the background immediately)
-             ================================================================ -->
-        <div id="diag-modal" aria-hidden="true" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-950/80 backdrop-blur-sm opacity-0 pointer-events-none invisible transition-all duration-300 overflow-y-auto">
-            <div class="relative w-full max-w-6xl bg-slate-50 border-2 border-slate-300 rounded-3xl shadow-2xl overflow-hidden my-auto max-h-[92vh] flex flex-col">
-                <!-- Modal Top Bar -->
-                <div class="bg-slate-900 text-white px-6 sm:px-8 py-4 flex items-center justify-between border-b border-slate-800 shrink-0">
-                    <div class="flex items-center gap-3">
-                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs font-mono font-bold uppercase">
-                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                            Diagnostic Complete
-                        </span>
-                        <span class="text-xs sm:text-sm text-slate-300 font-medium hidden sm:inline">
-                            Your Custom 90-Day Sales Action Plan &amp; 15-Minute Strategy Call Booking
-                        </span>
+        <!-- 5. CORE PRACTICE AREAS -->
+        <section id="services" class="section-light">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge font-mono">Strategic Practice Areas</span>
+                    <h2 class="section-title">Where The Sales Bench Drives Measurable Impact</h2>
+                    <p class="section-desc">Hands-on commercial leadership designed to diagnose bottlenecks, build scalable partner channels, and expand your market footprint.</p>
+                </div>
+                <div class="cards-grid">
+                    <!-- Practice 1 -->
+                    <div class="practice-card">
+                        <div>
+                            <span class="card-badge font-mono">Pillar 01 // Analyze &amp; Improve</span>
+                            <h3>GTM Engine Analysis &amp; Process Optimization</h3>
+                            <p>Identify why opportunities stall, where pipeline conversion leaks between discovery and close, and how to institute stage governance without micromanagement.</p>
+                            <div class="outcomes-box">
+                                <div class="outcomes-title font-mono">What We Deliver:</div>
+                                <ul class="outcomes-list">
+                                    <li>✓ In-depth diagnostic of deal velocity, stage conversion, and ICP fit</li>
+                                    <li>✓ Stage gate criteria designed for your <strong>internal RevOps team</strong> to configure in CRM</li>
+                                    <li>✓ Evaluation of sales tech stack with integration recommendations</li>
+                                    <li>✓ Weekly executive deal inspection and forecast cadence</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="#book" class="btn-card">Analyze Your GTM Engine →</a>
                     </div>
-                    <button type="button" id="diag-modal-close" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono font-bold transition cursor-pointer">
-                        ✕ Close Window
-                    </button>
+
+                    <!-- Practice 2 -->
+                    <div class="practice-card featured">
+                        <div>
+                            <span class="card-badge highlight font-mono">Pillar 02 // Core Differentiator</span>
+                            <h3>Channel Alliances &amp; Distribution Partnerships</h3>
+                            <p>Channel distribution is not limited to mega-consultancies. We architect co-selling programs across regional Systems Integrators, boutique advisory firms, software ecosystems, and referral networks.</p>
+                            <div class="outcomes-box green">
+                                <div class="outcomes-title font-mono">What We Deliver:</div>
+                                <ul class="outcomes-list">
+                                    <li>✓ Co-sell architecture tailored to your market (SIs, boutique firms, tech ISVs)</li>
+                                    <li>✓ Strategic alliance playbooks and partner enablement collateral</li>
+                                    <li>✓ Partner referral margins, deal registration workflows, and governance</li>
+                                    <li>✓ Joint value proposition messaging for enterprise buyers</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="#book" class="btn-card featured">Build Your Partner Channel →</a>
+                    </div>
+
+                    <!-- Practice 3 -->
+                    <div class="practice-card">
+                        <div>
+                            <span class="card-badge font-mono">Pillar 03 // Market Expansion</span>
+                            <h3>North American &amp; Cross-Border Expansion</h3>
+                            <p>Entering the US or Canada? De-risk your entry before burning $250k+ on premature local hires. We validate buyer appetite, test regional pricing, and navigate procurement.</p>
+                            <div class="outcomes-box">
+                                <div class="outcomes-title font-mono">What We Deliver:</div>
+                                <ul class="outcomes-list">
+                                    <li>✓ 4-Week Validation Sprint with live discovery interviews with real buyers</li>
+                                    <li>✓ Canadian enterprise procurement navigation ("Canada is not the 51st state")</li>
+                                    <li>✓ Cross-border commercial terms, currency packaging (USD vs. CAD)</li>
+                                    <li>✓ Local rep onboarding via Employer of Record (EOR) infrastructure</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="#book" class="btn-card">De-Risk Market Expansion →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. 4-WEEK SPRINT ➔ 90-120 DAY MODEL -->
+        <section id="framework" class="section-white">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge font-mono">Engagement Architecture</span>
+                    <h2 class="section-title">How We Work: 4-Week Sprint to 90–120 Day Execution</h2>
+                    <p class="section-desc">No open-ended retainers. Every client engagement begins with a focused 4-Week Commercial Sprint that delivers clarity before rolling into hands-on implementation.</p>
+                </div>
+                <div class="roadmap-container">
+                    <div class="roadmap-grid">
+                        <div class="roadmap-card active">
+                            <span class="card-badge highlight font-mono">Phase 1 // 4-Week Sprint</span>
+                            <h3 style="font-size:22px; font-weight:800; color:#0f172a; margin: 10px 0;">The Commercial Validation Sprint</h3>
+                            <p style="font-size:15px; color:#475569; margin-bottom:22px;">A rapid audit of your commercial motion, target buyer resonance, channel feasibility, and tech stack—delivering actionable clarity in 30 days.</p>
+                            <div class="timeline-step"><span class="timeline-num font-mono">1</span><div><strong>Week 1: Commercial Motion Teardown:</strong> Pipeline conversion, deal slippage, qualification gates, and ICP criteria.</div></div>
+                            <div class="timeline-step"><span class="timeline-num font-mono">2</span><div><strong>Week 2: Live Market &amp; Partner Discovery:</strong> 2–4 discovery conversations with real enterprise buyers and prospective ecosystem partners.</div></div>
+                            <div class="timeline-step"><span class="timeline-num font-mono">3</span><div><strong>Week 3: Tech Stack &amp; RevOps Specification:</strong> Audit tool stack integrations and map CRM stage specifications for your internal team.</div></div>
+                            <div class="timeline-step"><span class="timeline-num font-mono">4</span><div><strong>Week 4: 90–120 Day Architecture Blueprint:</strong> Final presentation of your commercial roadmap, channel strategy, and board-ready deliverables.</div></div>
+                        </div>
+                        <div class="roadmap-card">
+                            <span class="card-badge font-mono">Phase 2 // 90–120 Days</span>
+                            <h3 style="font-size:22px; font-weight:800; color:#0f172a; margin: 10px 0;">Hands-On Implementation &amp; Channel Rollout</h3>
+                            <p style="font-size:15px; color:#475569; margin-bottom:22px;">Roll directly from the sprint into collaborative execution—directing your internal RevOps team on configuration while standing up partner alliances.</p>
+                            <div class="timeline-step"><span class="timeline-num font-mono">A</span><div><strong>Internal RevOps Collaboration:</strong> We define fields, validation rules, and stage gates; your internal team handles the CRM configuration.</div></div>
+                            <div class="timeline-step"><span class="timeline-num font-mono">B</span><div><strong>Tool Stack Integration:</strong> Assist in selecting and integrating high-leverage sales enablement tools to remove rep friction.</div></div>
+                            <div class="timeline-step"><span class="timeline-num font-mono">C</span><div><strong>Channel &amp; Co-Sell Launch:</strong> Structure partner agreements, joint value propositions, and referral incentives with chosen channel partners.</div></div>
+                            <div class="timeline-step"><span class="timeline-num font-mono">D</span><div><strong>Deal Rigor &amp; Forecast Governance:</strong> Weekly deal inspections, Mutual Action Plans, and manager coaching to ensure pipeline predictability.</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. TECH STACK & REVOPS COLLABORATION STRIP -->
+        <section class="tech-strip">
+            <div class="container">
+                <div style="text-align: center; max-width: 680px; margin: 0 auto 32px;">
+                    <div style="font-size: 12px; font-weight: 800; color: #34d399; text-transform: uppercase;" class="font-mono">// Collaborative Operations</div>
+                    <h2 style="font-size: 25px; font-weight: 800; color: #ffffff; margin-top: 8px;">We Architect the System. Your Internal RevOps Executes.</h2>
+                    <p style="font-size: 14px; color: #cbd5e1; margin-top: 8px;">We partner with your internal administrators to design stage architecture, audit tools, and implement integrations that remove rep friction.</p>
+                </div>
+                <div class="tech-grid">
+                    <div class="tech-item"><div class="tech-name">HubSpot</div><div class="tech-role">Pipeline &amp; Stages</div></div>
+                    <div class="tech-item"><div class="tech-name">Salesforce</div><div class="tech-role">Validation Rules</div></div>
+                    <div class="tech-item"><div class="tech-name">Gong.io</div><div class="tech-role">Deal Inspection</div></div>
+                    <div class="tech-item"><div class="tech-name">Crossbeam</div><div class="tech-role">Partner Co-Selling</div></div>
+                    <div class="tech-item"><div class="tech-name">ZoomInfo</div><div class="tech-role">Enrichment &amp; ICP</div></div>
+                    <div class="tech-item"><div class="tech-name">Apollo.io</div><div class="tech-role">Outbound Flows</div></div>
+                    <div class="tech-item"><div class="tech-name">G-P (EOR)</div><div class="tech-role">Compliant Hiring</div></div>
+                    <div class="tech-item"><div class="tech-name">MEDDPICC</div><div class="tech-role">Deal Rigor</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. INTERACTIVE GTM DIAGNOSTIC -->
+        <section id="diagnostic" class="section-light">
+            <div class="container-narrow">
+                <div class="section-header">
+                    <span class="section-badge font-mono">Interactive Diagnostic</span>
+                    <h2 class="section-title">Where Is Your GTM Engine Today—And What Needs Fixing?</h2>
+                    <p class="section-desc">Answer 4 quick questions. We'll identify your primary growth bottleneck and generate an actionable sprint recommendation.</p>
                 </div>
 
-                <!-- Modal Body: Side-by-Side Diagnostic Report (Left) + Live Booking Form (Right) -->
-                <div class="p-6 sm:p-8 overflow-y-auto">
-                    <div class="grid lg:grid-cols-12 gap-8 items-start">
-                        
-                        <!-- LEFT COLUMN (7 Cols): TAILORED DIAGNOSTIC REPORT -->
-                        <div class="lg:col-span-7 bg-white border-2 border-emerald-600 rounded-2xl p-6 sm:p-7 shadow-md space-y-5">
-                            <div class="flex flex-wrap items-start justify-between gap-3 pb-4 border-b border-slate-200">
-                                <div>
-                                    <span id="modal-res-badge" class="inline-block text-xs font-mono font-bold uppercase text-emerald-800 bg-emerald-100 border border-emerald-300 px-2.5 py-0.5 rounded-full mb-1.5">
-                                        // Your Tailored Sales Bench Prescription
-                                    </span>
-                                    <h3 id="modal-res-title" class="text-xl sm:text-2xl font-extrabold text-slate-900 leading-snug">
-                                        Sales Systems &amp; Process Foundation
-                                    </h3>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <button type="button" id="modal-diag-copy" class="text-xs font-mono font-bold text-emerald-700 hover:text-emerald-900 bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-lg cursor-pointer">
-                                        Copy Plan 📋
-                                    </button>
-                                    <button type="button" id="modal-diag-restart" class="text-xs font-mono font-bold text-slate-500 hover:text-slate-900 px-2 py-1.5 underline cursor-pointer">
-                                        Retake ↻
-                                    </button>
-                                </div>
+                <div class="diagnostic-card">
+                    <div class="progress-header font-mono">
+                        <span id="diag-step-indicator">QUESTION 1 OF 4 // CURRENT FOCUS</span>
+                        <span id="diag-pct-indicator" style="color:#059669;">25% Complete</span>
+                    </div>
+                    <div class="progress-bar-bg"><div id="diag-progress-bar" class="progress-bar-fill" style="width: 25%;"></div></div>
+
+                    <div id="diag-step-1" class="diag-step">
+                        <h3 class="question-title">1. What is the #1 commercial challenge your software business faces today?</h3>
+                        <button type="button" data-step="1" data-val="process" class="option-button">
+                            <span class="option-letter font-mono">A</span>
+                            <div>
+                                <div class="option-title">Pipeline Friction &amp; Sales Process Inconsistency</div>
+                                <div class="option-desc">Deals stall, reps lack stage rigor, or the founder is doing all the heavy lifting on calls.</div>
                             </div>
-
-                            <!-- Research Benchmark Callout -->
-                            <div id="modal-res-research" class="p-4 rounded-xl bg-slate-100 border-l-4 border-emerald-600 text-xs sm:text-sm text-slate-700 leading-relaxed"></div>
-
-                            <!-- Summary -->
-                            <p id="modal-res-summary" class="text-slate-700 text-sm sm:text-base leading-relaxed"></p>
-
-                            <!-- Actions & Outcomes Grid -->
-                            <div class="grid sm:grid-cols-2 gap-4">
-                                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                                    <div class="text-xs font-mono font-bold uppercase text-slate-800 mb-2.5">What We Will Do Together</div>
-                                    <ul id="modal-res-actions" class="space-y-2 text-xs sm:text-sm text-slate-700"></ul>
-                                </div>
-                                <div class="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200">
-                                    <div class="text-xs font-mono font-bold uppercase text-emerald-800 mb-2.5">Projected Business Outcomes</div>
-                                    <ul id="modal-res-outcomes" class="space-y-2 text-xs sm:text-sm text-emerald-950 font-medium"></ul>
-                                </div>
+                        </button>
+                        <button type="button" data-step="1" data-val="channel" class="option-button">
+                            <span class="option-letter font-mono">B</span>
+                            <div>
+                                <div class="option-title">Lack of Channel Alliances &amp; Distribution Partnerships</div>
+                                <div class="option-desc">We rely 100% on direct sales; we want to set up co-selling with Systems Integrators, advisory firms, or software ecosystems.</div>
                             </div>
-
-                            <!-- Direct Contact Strip inside Left Column -->
-                            <div class="p-4 rounded-xl bg-slate-900 text-white flex flex-wrap items-center justify-between gap-3 text-xs">
-                                <div>
-                                    <span class="font-mono uppercase text-emerald-400 font-bold block">Prefer Direct Email or Phone?</span>
-                                    <span class="text-slate-300">Reach Scott Carpentier directly regarding your diagnostic report:</span>
-                                </div>
-                                <div class="flex flex-wrap items-center gap-4 font-semibold">
-                                    <a href="mailto:scott@thesalesbench.com" class="text-emerald-300 hover:underline">✉️ scott@thesalesbench.com</a>
-                                    <a href="tel:+14165702919" class="text-slate-200 hover:text-white">📱 +1 (416) 570-2919</a>
-                                </div>
+                        </button>
+                        <button type="button" data-step="1" data-val="expansion" class="option-button">
+                            <span class="option-letter font-mono">C</span>
+                            <div>
+                                <div class="option-title">Entering North America or a New Territory</div>
+                                <div class="option-desc">We need to validate local buyer demand, navigate procurement, and launch US/Canada without costly missteps.</div>
                             </div>
+                        </button>
+                    </div>
+
+                    <div id="diag-step-2" class="diag-step hidden">
+                        <h3 class="question-title">2. How does your company currently manage RevOps &amp; CRM administration?</h3>
+                        <button type="button" data-step="2" data-val="internal" class="option-button">
+                            <span class="option-letter font-mono">A</span>
+                            <div>
+                                <div class="option-title">We have an internal RevOps / CRM administrator</div>
+                                <div class="option-desc">They need senior commercial guidance on what stages, fields, and workflows to configure.</div>
+                            </div>
+                        </button>
+                        <button type="button" data-step="2" data-val="ad-hoc" class="option-button">
+                            <span class="option-letter font-mono">B</span>
+                            <div>
+                                <div class="option-title">No dedicated RevOps; sales leadership manages CRM ad-hoc</div>
+                                <div class="option-desc">Pipeline data is disorganized and we need a clean framework and tool integration plan.</div>
+                            </div>
+                        </button>
+                        <button type="button" data-back="1" class="btn-back font-mono">← Back to Question 1</button>
+                    </div>
+
+                    <div id="diag-step-3" class="diag-step hidden">
+                        <h3 class="question-title">3. What is your current annual recurring revenue (ARR) scale?</h3>
+                        <button type="button" data-step="3" data-val="early" class="option-button">
+                            <span class="option-letter font-mono">1</span>
+                            <div>
+                                <div class="option-title">$1M – $5M ARR</div>
+                                <div class="option-desc">Foundational sales structure &amp; first channel traction.</div>
+                            </div>
+                        </button>
+                        <button type="button" data-step="3" data-val="scaling" class="option-button">
+                            <span class="option-letter font-mono">2</span>
+                            <div>
+                                <div class="option-title">$5M – $15M ARR</div>
+                                <div class="option-desc">Expanding partner co-sell &amp; multi-territory scale.</div>
+                            </div>
+                        </button>
+                        <button type="button" data-step="3" data-val="growth" class="option-button">
+                            <span class="option-letter font-mono">3</span>
+                            <div>
+                                <div class="option-title">$15M – $30M+ ARR</div>
+                                <div class="option-desc">Enterprise alliances, deal governance &amp; global expansion.</div>
+                            </div>
+                        </button>
+                        <button type="button" data-back="2" class="btn-back font-mono">← Back to Question 2</button>
+                    </div>
+
+                    <div id="diag-step-4" class="diag-step hidden">
+                        <h3 class="question-title">4. What is the #1 outcome you want from a 4-Week Commercial Sprint?</h3>
+                        <button type="button" data-step="4" data-val="sprint-process" class="option-button">
+                            <span class="option-letter font-mono">1</span>
+                            <div>
+                                <div class="option-title">Complete GTM Teardown &amp; Internal RevOps Blueprint</div>
+                                <div class="option-desc">Diagnose leaks and give internal team exact stage gates and tech integrations to build.</div>
+                            </div>
+                        </button>
+                        <button type="button" data-step="4" data-val="sprint-channel" class="option-button">
+                            <span class="option-letter font-mono">2</span>
+                            <div>
+                                <div class="option-title">Co-Selling &amp; Channel Distribution Strategy</div>
+                                <div class="option-desc">Map target partner ecosystems (SIs, boutique firms, tech ISVs), structure referral models, and build co-sell playbook.</div>
+                            </div>
+                        </button>
+                        <button type="button" data-step="4" data-val="sprint-expansion" class="option-button">
+                            <span class="option-letter font-mono">3</span>
+                            <div>
+                                <div class="option-title">Validated North American Market Launch Plan</div>
+                                <div class="option-desc">Conduct live buyer discovery interviews, stress-test local pricing, and establish beachhead strategy.</div>
+                            </div>
+                        </button>
+                        <button type="button" data-back="3" class="btn-back font-mono">← Back to Question 3</button>
+                    </div>
+
+                    <!-- Inline Result Fallback -->
+                    <div id="diag-result" class="hidden" style="margin-top: 20px;">
+                        <div style="background-color: #ecfdf5; border: 2px solid #10b981; border-radius: 14px; padding: 24px;">
+                            <span class="section-badge font-mono">// Recommended Focus</span>
+                            <h3 id="res-title" style="font-size: 21px; font-weight: 800; color: #0f172a; margin: 8px 0;"></h3>
+                            <p id="res-summary" style="font-size: 15px; color: #334155; margin-bottom: 18px;"></p>
+                            <button type="button" id="diag-reopen-modal" class="btn-primary" style="cursor: pointer;">
+                                View Report &amp; Schedule Review Side-by-Side →
+                            </button>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                        <!-- RIGHT COLUMN (5 Cols): BOOK A MEETING RIGHT BESIDE IT -->
-                        <div class="lg:col-span-5 bg-white border-2 border-slate-200 rounded-2xl p-6 sm:p-7 shadow-xl">
-                            <div class="pb-4 mb-4 border-b border-slate-200 flex items-center justify-between gap-2">
-                                <div>
-                                    <div class="text-xs font-mono uppercase text-emerald-700 font-bold">// Book Right Here</div>
-                                    <h4 class="text-lg sm:text-xl font-extrabold text-slate-900">Book Your 15-Min Review</h4>
-                                </div>
-                                <span class="text-xs font-mono font-bold text-emerald-800 bg-emerald-100 border border-emerald-300 px-2.5 py-1 rounded-full shrink-0">
-                                    No Scroll Needed
-                                </span>
-                            </div>
-                            <p class="text-xs text-slate-600 mb-4">
-                                Complete the quick form below right alongside your report to schedule a 15-minute walkthrough of this roadmap for your business.
-                            </p>
-
-                            <!-- LIVE HUBSPOT FORM EMBED INSIDE POPUP -->
-                            <div class="hs-form-frame" data-region="na3" data-form-id="de5aa2ee-c4fc-4f04-8b6b-563c3bfb9fa3" data-portal-id="342958738"></div>
-
-                            <div class="mt-4 pt-4 border-t border-slate-200 flex flex-wrap justify-between items-center text-[11px] font-mono text-slate-500 gap-2">
-                                <span>🔒 100% Confidential</span>
-                                <span>Response: &lt; 24 Business Hours</span>
-                            </div>
+        <!-- 9. SIDE-BY-SIDE MODAL (POPS UP ON QUESTION 4) -->
+        <div id="diag-modal" class="modal-overlay">
+            <div class="modal-box">
+                <div class="modal-header">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span class="pulsing-dot"></span>
+                        <span style="font-size: 13px; font-weight: 700; text-transform: uppercase;" class="font-mono">Diagnostic Complete</span>
+                    </div>
+                    <button type="button" id="diag-modal-close" style="background: none; border: none; color: #94a3b8; font-size: 18px; cursor: pointer;">✕ Close</button>
+                </div>
+                <div class="modal-body">
+                    <div style="background: #ffffff; border: 2px solid #10b981; border-radius: 14px; padding: 24px;">
+                        <span class="section-badge font-mono" id="modal-res-badge">// Recommendation</span>
+                        <h3 id="modal-res-title" style="font-size: 21px; font-weight: 800; color: #0f172a; margin: 8px 0;"></h3>
+                        <p id="modal-res-summary" style="font-size: 14px; color: #334155; margin-bottom: 18px; line-height: 1.6;"></p>
+                        <div class="outcomes-box" style="margin-bottom: 16px;">
+                            <div class="outcomes-title font-mono">Sprint Deliverables (Weeks 1–4):</div>
+                            <ul id="modal-res-actions" class="outcomes-list"></ul>
                         </div>
+                        <div class="outcomes-box green">
+                            <div class="outcomes-title font-mono">Execution Outcomes (90–120 Days):</div>
+                            <ul id="modal-res-outcomes" class="outcomes-list"></ul>
+                        </div>
+                    </div>
 
+                    <div style="background: #ffffff; border: 2px solid #cbd5e1; border-radius: 14px; padding: 24px;">
+                        <div style="font-size: 12px; font-weight: 800; color: #059669; text-transform: uppercase;" class="font-mono">// Schedule 15-Min Walkthrough</div>
+                        <h4 style="font-size: 19px; font-weight: 800; color: #0f172a; margin: 6px 0 12px;">Book Right Beside Your Plan</h4>
+                        <p style="font-size: 13px; color: #475569; margin-bottom: 16px; line-height: 1.5;">
+                            Schedule a 15-minute introductory call to review your commercial diagnostic and explore how a 4-week sprint applies to your pipeline.
+                        </p>
+                        <script src="https://js-na3.hsforms.net/forms/embed/342958738.js" defer></script>
+                        <div class="hs-form-frame" data-region="na3" data-form-id="de5aa2ee-c4fc-4f04-8b6b-563c3bfb9fa3" data-portal-id="342958738"></div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- ================================================================
-             FOLD 3: THE 3 CORE SOLUTIONS + RESEARCH PROOF + ENGAGEMENT MODELS
-             ================================================================ -->
-        <section id="solutions" class="py-20 bg-slate-50 border-b border-slate-200">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto mb-14">
-                    <span class="inline-block text-xs font-mono font-bold uppercase tracking-widest text-emerald-700 bg-emerald-100 border border-emerald-200 px-3 py-1 rounded-full mb-3">
-                        How We Help You Scale
-                    </span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
-                        Three Core Ways We Drive Revenue Outcomes
-                    </h2>
-                    <p class="text-slate-600 text-base">
-                        Every solution is backed by independent industry research and built around hands-on operational execution.
-                    </p>
-                </div>
-
-                <div class="grid lg:grid-cols-3 gap-8 mb-16">
-                    <!-- Pillar 1 -->
-                    <article class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between mb-5">
-                                <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 font-mono font-bold text-xs uppercase">01 // For Founders</span>
-                                <span class="text-xs font-mono text-slate-500">Process &amp; Playbooks</span>
-                            </div>
-                            <h3 class="text-xl font-extrabold text-slate-900 mb-3">Sales Systems &amp; Structure for Founders</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                                Transition out of founder-led selling by turning your intuition into a documented playbook, clean CRM stages, and a repeatable qualification process.
-                            </p>
-                            <div class="p-3.5 rounded-xl bg-amber-50/80 border border-amber-200 text-xs text-slate-700 mb-4">
-                                <strong>Research Insight (Harvard Business Review):</strong> Companies that implement a formal, structured sales process generate <strong>18% to 28% higher revenue growth</strong> than teams relying on informal selling.
-                            </div>
-                            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs space-y-2 mb-6">
-                                <div class="font-bold text-slate-900 uppercase font-mono">Target Outcomes:</div>
-                                <div class="text-slate-700">✓ Documented ICP, discovery &amp; closing playbook</div>
-                                <div class="text-slate-700">✓ Clean HubSpot / Salesforce pipeline architecture</div>
-                                <div class="text-slate-700">✓ Faster onboarding &amp; ramp for your first sales hires</div>
-                            </div>
-                        </div>
-                        <a href="#book" class="block text-center py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm transition">
-                            Build Your Sales Structure →
-                        </a>
-                    </article>
-
-                    <!-- Pillar 2 -->
-                    <article class="p-8 rounded-3xl bg-white border-2 border-emerald-600 shadow-lg flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between mb-5">
-                                <span class="px-3 py-1 rounded-full bg-cyan-100 text-cyan-900 font-mono font-bold text-xs uppercase">02 // For Sales Teams</span>
-                                <span class="text-xs font-mono text-emerald-700 font-bold">+28% Win Lift</span>
-                            </div>
-                            <h3 class="text-xl font-extrabold text-slate-900 mb-3">Sales Team Productivity &amp; Deal Rigor</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                                Get more revenue out of your existing sales team by eliminating deal slippage, enforcing CRM qualification gates, and aligning SDR/AE/SE PODs.
-                            </p>
-                            <div class="p-3.5 rounded-xl bg-cyan-50/80 border border-cyan-200 text-xs text-slate-700 mb-4">
-                                <strong>Research Insight (Gartner &amp; Accenture):</strong> <strong>72% of sellers feel overwhelmed</strong> by complex workflows &amp; tools, spending <strong>&lt;35% of their week selling</strong>, while <strong>61% of deals slip</strong> past close dates (Gong Labs).
-                            </div>
-                            <div class="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200 text-xs space-y-2 mb-6">
-                                <div class="font-bold text-emerald-950 uppercase font-mono">Target Outcomes:</div>
-                                <div class="text-emerald-900">✓ +28% win rate lift via MEDDPICC &amp; Mutual Action Plans</div>
-                                <div class="text-emerald-900">✓ 15–20% faster sales cycles with fewer stalled deals</div>
-                                <div class="text-emerald-900">✓ &lt;5% quarterly forecast variance (vs. 67% missing by &gt;10%)</div>
-                            </div>
-                        </div>
-                        <a href="#book" class="block text-center py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm transition">
-                            Boost Team Productivity →
-                        </a>
-                    </article>
-
-                    <!-- Pillar 3 -->
-                    <article class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between mb-5">
-                                <span class="px-3 py-1 rounded-full bg-teal-100 text-teal-900 font-mono font-bold text-xs uppercase">03 // Market Entry</span>
-                                <span class="text-xs font-mono text-slate-500">US · Canada · Global</span>
-                            </div>
-                            <h3 class="text-xl font-extrabold text-slate-900 mb-3">North America &amp; New Market Expansion</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                                Enter the US, Canada, or new territories without burning €250k+ on premature executive hires before validating buyer demand and compliance fit.
-                            </p>
-                            <div class="p-3.5 rounded-xl bg-teal-50/80 border border-teal-200 text-xs text-slate-700 mb-4">
-                                <strong>Research Insight (SaaS Capital &amp; Forrester):</strong> <strong>70% of international market entries fail</strong> due to premature hiring, and <strong>86% of enterprise purchases stall</strong> without localized consensus &amp; partner trust.
-                            </div>
-                            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs space-y-2 mb-6">
-                                <div class="font-bold text-slate-900 uppercase font-mono">Target Outcomes:</div>
-                                <div class="text-slate-700">✓ 4-Week Market Validation Sprint with live target buyers</div>
-                                <div class="text-slate-700">✓ Localized compliance (SOC 2, HIPAA, PIPEDA) &amp; pricing</div>
-                                <div class="text-slate-700">✓ Day-1 compliant rep hiring via Employer of Record (G-P)</div>
-                            </div>
-                        </div>
-                        <a href="#book" class="block text-center py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm transition">
-                            De-Risk Your Market Entry →
-                        </a>
-                    </article>
-                </div>
-
-                <!-- INDUSTRY RESEARCH & REAL-WORLD TRANSFORMATIONS -->
-                <div id="research" class="mb-16">
-                    <div class="text-center mb-8">
-                        <span class="text-xs font-mono font-bold uppercase text-emerald-700">// What Research &amp; Real-World Execution Show</span>
-                        <h3 class="text-2xl font-extrabold text-slate-900 mt-1">What Happens When Structure Replaces Guesswork</h3>
-                    </div>
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
-                            <div class="text-xs font-mono font-bold text-emerald-700 uppercase">Scenario 01 // Founder-Led to Repeatable</div>
-                            <div class="text-xs text-slate-500"><strong>The Problem:</strong> Founder closing 90% of deals personally; CRM used only as a contact list; first two sales hires struggling to ramp.</div>
-                            <div class="text-xs text-slate-800 border-t border-slate-100 pt-2.5"><strong>The Outcome:</strong> Installed structured discovery playbook, 5-stage HubSpot pipeline with clear exit criteria, and weekly deal reviews—cutting new rep ramp time in half.</div>
-                        </div>
-                        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
-                            <div class="text-xs font-mono font-bold text-cyan-700 uppercase">Scenario 02 // Sales Team Productivity</div>
-                            <div class="text-xs text-slate-500"><strong>The Problem:</strong> 10+ person sales team plagued by quarter-end deal slippage (Gong Labs: 61% avg) and 20%+ quarterly forecast misses.</div>
-                            <div class="text-xs text-slate-800 border-t border-slate-100 pt-2.5"><strong>The Outcome:</strong> Hard-coded MEDDPICC gates in Salesforce, launched Mutual Action Plans, and aligned AE/SDR/Partner PODs—delivering +28% win rate lift and &lt;5% forecast variance.</div>
-                        </div>
-                        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
-                            <div class="text-xs font-mono font-bold text-teal-700 uppercase">Scenario 03 // North American Market Entry</div>
-                            <div class="text-xs text-slate-500"><strong>The Problem:</strong> Software leader preparing to spend €250k+ hiring a North American VP before testing local compliance or buyer appetite.</div>
-                            <div class="text-xs text-slate-800 border-t border-slate-100 pt-2.5"><strong>The Outcome:</strong> Completed 4-Week Market Validation Sprint with live enterprise buyers, localized pricing &amp; compliance, and onboarded first reps in days via G-P EOR.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- HOW WE ENGAGE (FROM COMPETITOR BENCHMARKING: ALTUS / SBI / ALEXANDER GROUP) -->
-                <div id="engagements" class="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm">
-                    <div class="grid lg:grid-cols-12 gap-8 items-center">
-                        <div class="lg:col-span-4 space-y-2">
-                            <div class="text-xs font-mono font-bold uppercase text-emerald-700">// Flexible Engagement Models</div>
-                            <h3 class="text-xl font-extrabold text-slate-900">How We Work With Your Team</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed">
-                                Led by <strong class="text-slate-900">Scott Carpentier</strong> (who has scaled B2B sales teams 12X from $2.5M to $30M+ ARR), we operationalize your existing tools (<strong>Salesforce, HubSpot, Gong.io, ZoomInfo, Apollo, Crossbeam, G-P</strong>) through three clear engagement options:
-                            </p>
-                        </div>
-                        <div class="lg:col-span-8 grid sm:grid-cols-3 gap-4">
-                            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                                <div class="text-xs font-mono font-bold text-emerald-700 uppercase mb-1">Option 01 // 4 Weeks</div>
-                                <div class="font-extrabold text-slate-900 text-sm mb-1">Diagnostic or Market Validation Sprint</div>
-                                <p class="text-xs text-slate-600">Fixed-scope 4-week sprint to audit your sales engine or validate a new market with live buyers.</p>
-                            </div>
-                            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                                <div class="text-xs font-mono font-bold text-cyan-700 uppercase mb-1">Option 02 // 60–90 Days</div>
-                                <div class="font-extrabold text-slate-900 text-sm mb-1">System Build &amp; CRM Implementation</div>
-                                <p class="text-xs text-slate-600">Hands-on setup of your sales playbook, CRM stage gates, Mutual Action Plans, and rep training.</p>
-                            </div>
-                            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                                <div class="text-xs font-mono font-bold text-teal-700 uppercase mb-1">Option 03 // Fractional</div>
-                                <div class="font-extrabold text-slate-900 text-sm mb-1">Ongoing Coaching &amp; Deal Inspection</div>
-                                <p class="text-xs text-slate-600">Embedded weekly pipeline inspections, manager coaching (HBR: +11% revenue lift), and GTM leadership.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================================================================
-             FOLD 4: DIRECT 15-MINUTE INTRO BOOKING (CRISP WHITE HUBSPOT CARD)
-             ================================================================ -->
-        <section id="book" class="py-20 bg-slate-100">
-            <div class="max-w-6xl mx-auto px-6">
-                <div class="grid lg:grid-cols-12 gap-12 items-start">
-                    <!-- Left Column: Diagnostic Summary + Direct Channels -->
-                    <div class="lg:col-span-5 space-y-6">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-800 text-xs font-mono font-bold uppercase">
-                            Let's Achieve Your Target Outcomes
-                        </div>
-                        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                            Schedule a 15-Minute Intro Discussion
-                        </h2>
-                        <p class="text-slate-600 text-base leading-relaxed">
-                            Whether you want to <strong class="text-slate-900">build structure around founder-led sales</strong>, <strong class="text-slate-900">get more productivity out of your sales team</strong>, or <strong class="text-slate-900">enter North America or a new market</strong>, let's map out the fastest path to your goals.
+        <!-- 10. SPLIT-PANE LEAD GENERATION (100% CONTACT FORM FOCUS) -->
+        <section id="book" class="section-light">
+            <div class="container">
+                <div class="split-grid">
+                    <div>
+                        <span class="section-badge font-mono">Introductory Discussion</span>
+                        <h2 class="section-title">Schedule a 15-Minute GTM Review</h2>
+                        <p class="section-desc">
+                            No generic pitch decks. We review your current commercial motion and determine whether a <strong style="color:#0f172a;">4-Week Commercial Sprint</strong> or <strong style="color:#0f172a;">Channel Alliances Build</strong> is the fastest path to your revenue goals.
                         </p>
-
-                        <!-- Dynamic Diagnostic Summary Box -->
-                        <div id="booking-diag-summary" class="p-6 rounded-2xl bg-white border-2 border-emerald-500/40 shadow-sm space-y-3">
-                            <div class="text-xs font-mono font-bold uppercase text-emerald-700">// What We'll Cover on Our 15-Min Call</div>
-                            <div id="booking-diag-text" class="text-sm text-slate-700 space-y-2">
-                                <div><strong>1. Where You Are Today:</strong> Review your current sales process, team structure, or market entry goals.</div>
-                                <div><strong>2. Immediate Bottlenecks:</strong> Pinpoint where deals or rep productivity are stalling.</div>
-                                <div><strong>3. Expected Outcomes:</strong> Outline a practical 90-day plan tailored to your stage.</div>
+                        <div class="takeaway-card">
+                            <div style="font-size: 12px; font-weight: 800; color: #065f46; text-transform: uppercase; margin-bottom: 16px;" class="font-mono">
+                                // What You Leave Our 15-Minute Call With:
+                            </div>
+                            <div class="takeaway-item">
+                                <span class="takeaway-check">✓</span>
+                                <div><strong>Pipeline Friction Analysis:</strong> An objective assessment of where your deals are slipping or where rep productivity is stalling.</div>
+                            </div>
+                            <div class="takeaway-item">
+                                <span class="takeaway-check">✓</span>
+                                <div><strong>Channel Feasibility:</strong> Clarity on what partner models (SIs, boutique consultancies, software ISVs) can accelerate your indirect distribution.</div>
+                            </div>
+                            <div class="takeaway-item">
+                                <span class="takeaway-check">✓</span>
+                                <div><strong>Internal RevOps Roadmap:</strong> Practical guidance on what your internal team should configure in your CRM next.</div>
                             </div>
                         </div>
 
-                        <!-- Direct Contact Card -->
-                        <div class="p-6 rounded-2xl bg-slate-900 text-white space-y-2.5 text-sm shadow-md">
-                            <div class="font-mono uppercase text-emerald-400 text-xs font-bold">Direct Contact</div>
-                            <div><a href="tel:+14165702919" class="hover:text-emerald-300 transition">📱 Mobile: +1 (416) 570-2919</a></div>
-                            <div><a href="mailto:scott@thesalesbench.com" class="hover:text-emerald-300 transition">✉️ Email: scott@thesalesbench.com</a></div>
-                            <div><a href="https://linkedin.com/in/scottcarpentier" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-300 transition">🔗 LinkedIn: linkedin.com/in/scottcarpentier</a></div>
-                        </div>
+                        <p style="font-size: 13px; color: #64748b; line-height: 1.5;">
+                            Prefer to get in touch directly? Submit the inquiry form to connect with our team.
+                        </p>
                     </div>
 
-                    <!-- Right Column: CRISP WHITE CARD HOUSING THE LIVE HUBSPOT FORM -->
-                    <div class="lg:col-span-7 bg-white border-2 border-slate-200 rounded-3xl p-8 sm:p-10 shadow-2xl">
-                        <div class="flex flex-wrap items-center justify-between gap-2 pb-6 mb-6 border-b border-slate-200">
+                    <!-- Right: Clean White HubSpot Container -->
+                    <div class="booking-white-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 16px; margin-bottom: 20px;">
                             <div>
-                                <div class="text-xs font-mono uppercase text-emerald-700 font-bold">// Book Your Intro Call</div>
-                                <h3 class="text-xl font-extrabold text-slate-900 mt-0.5">Start the Conversation</h3>
+                                <div style="font-size: 12px; font-weight: 800; color: #059669; text-transform: uppercase;" class="font-mono">// Direct Calendar Request</div>
+                                <h3 style="font-size: 20px; font-weight: 800; color: #0f172a; margin-top: 2px;">Start the Conversation</h3>
                             </div>
-                            <span id="booking-badge" class="text-xs font-mono font-bold text-emerald-800 bg-emerald-100 border border-emerald-300 px-3 py-1 rounded-full">
-                                15-Minute Discovery
-                            </span>
+                            <span class="section-badge font-mono" style="margin: 0;">15-Minute Intro</span>
                         </div>
-
-                        <!-- LIVE HUBSPOT FORM EMBED -->
-                        <script src="https://js-na3.hsforms.net/forms/embed/342958738.js" defer></script>
                         <div class="hs-form-frame" data-region="na3" data-form-id="de5aa2ee-c4fc-4f04-8b6b-563c3bfb9fa3" data-portal-id="342958738"></div>
-
-                        <div class="mt-6 pt-6 border-t border-slate-200 flex flex-wrap justify-between items-center text-xs font-mono text-slate-500 gap-2">
-                            <span>🔒 100% Confidential</span>
-                            <span>Response Time: &lt; 24 Business Hours</span>
+                        <div style="margin-top: 16px; font-size: 12px; color: #64748b; display: flex; justify-content: space-between;" class="font-mono">
+                            <span>🔒 Strictly Confidential</span>
+                            <span>Direct Response: &lt; 24h</span>
                         </div>
                     </div>
                 </div>
@@ -703,44 +1352,43 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="py-10 border-t border-slate-800 bg-slate-900 text-xs text-slate-400">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-3">
-                <img src="logo.png" alt="The Sales Bench Logo" class="h-7 w-auto object-contain">
-                <span>© 2026 The Sales Bench. All Rights Reserved. Toronto, Ontario, Canada.</span>
-            </div>
-            <div class="flex flex-wrap gap-6 text-slate-300">
-                <a href="#diagnostic" class="hover:text-emerald-400 transition">60-Sec Diagnostic</a>
-                <a href="#solutions" class="hover:text-emerald-400 transition">How We Help</a>
-                <a href="#engagements" class="hover:text-emerald-400 transition">Engagement Models</a>
-                <a href="mailto:scott@thesalesbench.com" class="hover:text-emerald-400 transition">scott@thesalesbench.com</a>
-                <a href="#book" class="text-emerald-400 font-bold hover:text-emerald-300 transition">Book 15-Min Call →</a>
+    <!-- 11. FOOTER -->
+    <footer>
+        <div class="container footer-inner font-mono">
+            <div>© 2026 The Sales Bench. All Rights Reserved. Toronto, Ontario, Canada.</div>
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#services">Practice Areas</a>
+                <a href="#framework">4-Week Model</a>
+                <a href="#diagnostic">Diagnostic</a>
+                <a href="#book">Contact</a>
             </div>
         </div>
     </footer>
 
-    <!-- INTERACTIVE INTERVIEW DIAGNOSTIC ENGINE -->
+    <!-- INTERACTIVE DIAGNOSTIC SCRIPT -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const answers = { step1: null, step2: null, step3: null, step4: null };
-            let currentRec = null;
+        document.addEventListener('DOMContentLoaded', function() {
+            var answers = { step1: null, step2: null, step3: null, step4: null };
+            var currentRec = null;
 
-            const stepLabels = {
-                1: { title: 'QUESTION 1 OF 4 // CURRENT STAGE', pct: '25%' },
-                2: { title: 'QUESTION 2 OF 4 // PRIMARY BOTTLENECK', pct: '50%' },
-                3: { title: 'QUESTION 3 OF 4 // REVENUE SCALE', pct: '75%' },
-                4: { title: 'QUESTION 4 OF 4 // TARGET 90-DAY OUTCOME', pct: '95%' }
+            var stepLabels = {
+                1: { title: 'QUESTION 1 OF 4 // CURRENT FOCUS', pct: '25%' },
+                2: { title: 'QUESTION 2 OF 4 // REVOPS & CRM SETUP', pct: '50%' },
+                3: { title: 'QUESTION 3 OF 4 // ARR SCALE', pct: '75%' },
+                4: { title: 'QUESTION 4 OF 4 // DESIRED SPRINT OUTCOME', pct: '95%' }
             };
 
-            const indicatorEl = document.getElementById('diag-step-indicator');
-            const pctEl = document.getElementById('diag-pct-indicator');
-            const barEl = document.getElementById('diag-progress-bar');
+            var indicatorEl = document.getElementById('diag-step-indicator');
+            var pctEl = document.getElementById('diag-pct-indicator');
+            var barEl = document.getElementById('diag-progress-bar');
+            var modalEl = document.getElementById('diag-modal');
 
             function showStep(stepNum) {
-                document.querySelectorAll('.diag-step').forEach(el => el.classList.add('hidden'));
+                var steps = document.querySelectorAll('.diag-step');
+                for (var i = 0; i < steps.length; i++) steps[i].classList.add('hidden');
                 document.getElementById('diag-result').classList.add('hidden');
-                const target = document.getElementById('diag-step-' + stepNum);
+                var target = document.getElementById('diag-step-' + stepNum);
                 if (target) target.classList.remove('hidden');
                 if (stepLabels[stepNum]) {
                     indicatorEl.textContent = stepLabels[stepNum].title;
@@ -749,131 +1397,108 @@
                 }
             }
 
-            const prescriptions = {
-                founder: {
-                    title: 'Track 01: Founder Sales Operating System & Process Structure',
-                    badge: 'Founder Structure Track',
-                    research: '📊 Why This Matters: Research published by Harvard Business Review & CSO Insights shows that B2B companies implementing a formal, structured sales process achieve 18% to 28% higher revenue growth than teams relying on informal, ad-hoc selling.',
-                    summary: 'Based on your answers, your highest-leverage move is transitioning out of founder-dependent selling by installing a documented sales playbook and structured CRM pipeline before adding more sales headcount.',
+            function openModal() {
+                if (modalEl) modalEl.classList.add('open');
+            }
+
+            function closeModal() {
+                if (modalEl) modalEl.classList.remove('open');
+            }
+
+            var prescriptions = {
+                process: {
+                    title: 'Sprint Focus: GTM Pipeline Teardown & RevOps Architecture',
+                    badge: 'Process & Tech Architecture Track',
+                    summary: 'Your highest-leverage move is identifying where opportunities stall between discovery and procurement, specifying stage gate criteria for your internal RevOps team to configure, and streamlining your tool integrations.',
                     actions: [
-                        '✓ Define your Ideal Customer Profile (ICP), discovery script, and qualification criteria',
-                        '✓ Build clean HubSpot or Salesforce deal stages tied to verifiable buyer actions',
-                        '✓ Set up rep onboarding scorecards and a weekly pipeline management cadence'
+                        '✓ Audit pipeline conversion rates across discovery, evaluation, and legal stages',
+                        '✓ Write exact CRM stage exit criteria & validation rules for your internal RevOps admin',
+                        '✓ Audit existing sales tech stack to eliminate friction and recommend integration fixes',
+                        '✓ Establish weekly executive deal review & probabilistic forecast cadence'
                     ],
                     outcomes: [
-                        '→ Turnkey sales process that new reps can follow and replicate immediately',
-                        '→ 18%–28% higher revenue trajectory from formal stage discipline (HBR benchmark)',
-                        '→ Freedom for the founder to step back from running every single sales call'
+                        '→ Friction-free pipeline with internal RevOps executing clean CRM governance',
+                        '→ Compression in deal cycle length through verified buyer stage milestones',
+                        '→ Complete 90–120 day commercial execution roadmap for your revenue team'
                     ]
                 },
-                team: {
-                    title: 'Track 02: Sales Team Productivity & MEDDPICC Deal Rigor',
-                    badge: 'Team Productivity Track',
-                    research: '📊 Why This Matters: Gartner reports that 72% of B2B sellers feel overwhelmed by complex workflows and tools—making them 45% less likely to hit quota. Meanwhile, Accenture & Gong Labs find reps spend <35% of their week selling while 61% of deals slip past close dates.',
-                    summary: 'Based on your answers, your fastest path to revenue growth is unlocking more productivity from your existing sales team—eliminating late-stage deal slippage, enforcing qualification rigor, and simplifying your CRM & RevOps workflows.',
+                channel: {
+                    title: 'Sprint Focus: Channel Alliances & Distribution Co-Selling Architecture',
+                    badge: 'Channel & Ecosystem Track',
+                    summary: 'Direct outbound alone is too slow. Your fastest path to scalable distribution is building co-selling channels across regional Systems Integrators, boutique advisory firms, and complementary tech ecosystems.',
                     actions: [
-                        '✓ Install code-enforced MEDDPICC stage gates inside Salesforce or HubSpot',
-                        '✓ Deploy buyer-aligned Mutual Action Plans (MAPs) and Digital Sales Rooms',
-                        '✓ Operationalize Gong.io deal inspections and optimize POD role alignment'
+                        '✓ Map target ecosystem partners with overlapping customer accounts',
+                        '✓ Design co-selling playbooks and joint value propositions for enterprise buyers',
+                        '✓ Structure partner referral margins, deal registration, and governance rules',
+                        '✓ Test partner messaging with 2–4 live ecosystem alliance leaders'
                     ],
                     outcomes: [
-                        '→ +28% average win rate lift across existing pipeline opportunities',
-                        '→ 15–20% compression in average enterprise sales cycle length',
-                        '→ Board-defensible quarterly forecasts with <5% variance (vs. 67% missing by >10% per Gartner)'
+                        '→ Active partner attach motion multiplying direct sales capacity',
+                        '→ Higher enterprise win rates and larger contract sizes through trusted partner relationships',
+                        '→ Turnkey 90–120 day partner launch and co-sell execution program'
                     ]
                 },
-                market: {
-                    title: 'Track 03: 4-Week Market Validation Sprint & Cross-Border Launch',
+                expansion: {
+                    title: 'Sprint Focus: 4-Week North American Market Validation Sprint',
                     badge: 'Market Expansion Track',
-                    research: '📊 Why This Matters: SaaS Capital benchmarks show 70% of international market entries fail in North America due to premature hiring, while Forrester research reveals up to 86% of enterprise purchases stall when vendors lack local buying-committee consensus and compliance readiness.',
-                    summary: 'Based on your answers, your priority is entering North America (US & Canada) or a new market without burning €250k+ on premature executive hires before validating local buyer demand, compliance, and pricing.',
+                    summary: 'De-risk your expansion into the US or Canada without burning $250k+ on full-time executive payroll before proving local buyer resonance, procurement fit, and pricing.',
                     actions: [
-                        '✓ Run a 4-Week Market Validation Sprint with 2–4 live target buyer interviews',
-                        '✓ Align regional compliance (SOC 2, HIPAA, PIPEDA), USD/CAD pricing, and procurement',
-                        '✓ Onboard local reps in days via Employer of Record (G-P) & activate Big 4 / SAP co-selling'
+                        '✓ Conduct 2–4 live discovery interviews with real North American enterprise buyers',
+                        '✓ Localize pricing models (USD/CAD) and enterprise procurement terms',
+                        '✓ Identify local channel distribution partners to accelerate regional access',
+                        '✓ Prepare Day-1 compliant rep onboarding via Employer of Record (EOR) infrastructure'
                     ],
                     outcomes: [
-                        '→ €250k+ in executive payroll de-risked before committing full-time headcount',
-                        '→ Validated 90-Day GTM Blueprint and investor/board readiness data room',
-                        '→ 46% faster enterprise market access through partner co-selling ecosystems'
+                        '→ $250k+ in payroll and legal overhead de-risked before headcount commitment',
+                        '→ Validated 90–120 Day North American Go-To-Market Blueprint',
+                        '→ Accelerated enterprise access via local partner co-selling channels'
                     ]
                 }
             };
 
-            const modalEl = document.getElementById('diag-modal');
-
-            function openDiagModal() {
-                if (!modalEl) return;
-                modalEl.classList.remove('opacity-0', 'pointer-events-none', 'invisible');
-                modalEl.classList.add('opacity-100', 'pointer-events-auto', 'visible');
-                modalEl.setAttribute('aria-hidden', 'false');
-                document.body.style.overflow = 'hidden';
-            }
-
-            function closeDiagModal() {
-                if (!modalEl) return;
-                modalEl.classList.add('opacity-0', 'pointer-events-none', 'invisible');
-                modalEl.classList.remove('opacity-100', 'pointer-events-auto', 'visible');
-                modalEl.setAttribute('aria-hidden', 'true');
-                document.body.style.overflow = '';
-            }
-
             function renderResults() {
-                document.querySelectorAll('.diag-step').forEach(el => el.classList.add('hidden'));
-                indicatorEl.textContent = 'DIAGNOSTIC COMPLETE // CUSTOM PRESCRIPTION READY';
+                var steps = document.querySelectorAll('.diag-step');
+                for (var i = 0; i < steps.length; i++) steps[i].classList.add('hidden');
+                indicatorEl.textContent = 'DIAGNOSTIC COMPLETE // CUSTOM SPRINT READY';
                 pctEl.textContent = '100% Complete';
                 barEl.style.width = '100%';
 
-                let trackKey = answers.step1 || 'team';
-                if (answers.step4 === 'system') trackKey = 'founder';
-                if (answers.step4 === 'velocity') trackKey = 'team';
-                if (answers.step4 === 'launch') trackKey = 'market';
+                var trackKey = answers.step1 || 'process';
+                if (answers.step4 === 'sprint-process') trackKey = 'process';
+                if (answers.step4 === 'sprint-channel') trackKey = 'channel';
+                if (answers.step4 === 'sprint-expansion') trackKey = 'expansion';
 
-                const rec = prescriptions[trackKey];
+                var rec = prescriptions[trackKey];
                 currentRec = rec;
 
-                // Populate Inline Result Card
                 document.getElementById('res-title').textContent = rec.title;
-                document.getElementById('res-research').textContent = rec.research;
                 document.getElementById('res-summary').textContent = rec.summary;
-
-                const actionsEl = document.getElementById('res-actions');
-                actionsEl.innerHTML = rec.actions.map(item => `<li>${item}</li>`).join('');
-
-                const outcomesEl = document.getElementById('res-outcomes');
-                outcomesEl.innerHTML = rec.outcomes.map(item => `<li>${item}</li>`).join('');
-
                 document.getElementById('diag-result').classList.remove('hidden');
 
-                // Populate Side-by-Side Popup Modal
                 document.getElementById('modal-res-badge').textContent = '// ' + rec.badge;
                 document.getElementById('modal-res-title').textContent = rec.title;
-                document.getElementById('modal-res-research').textContent = rec.research;
                 document.getElementById('modal-res-summary').textContent = rec.summary;
-                document.getElementById('modal-res-actions').innerHTML = rec.actions.map(item => `<li>${item}</li>`).join('');
-                document.getElementById('modal-res-outcomes').innerHTML = rec.outcomes.map(item => `<li>${item}</li>`).join('');
 
-                // Populate Bottom Booking Section Summary
-                const bookingBadge = document.getElementById('booking-badge');
-                const bookingText = document.getElementById('booking-diag-text');
-                if (bookingBadge) bookingBadge.textContent = rec.badge;
-                if (bookingText) {
-                    bookingText.innerHTML = `
-                        <div class="text-emerald-800 font-bold">${rec.title}</div>
-                        <div class="text-xs text-slate-600 mt-1">${rec.summary}</div>
-                        <div class="text-xs font-semibold text-slate-900 pt-2">Target Outcomes to Review on Our Call:</div>
-                        <ul class="text-xs text-emerald-900 space-y-1">${rec.outcomes.map(o => `<li>${o}</li>`).join('')}</ul>
-                    `;
+                var actionsHtml = '';
+                for (var a = 0; a < rec.actions.length; a++) {
+                    actionsHtml += '<li>' + rec.actions[a] + '</li>';
                 }
+                document.getElementById('modal-res-actions').innerHTML = actionsHtml;
 
-                // Immediately launch the side-by-side Diagnostic Report + Booking Popup Modal
-                openDiagModal();
+                var outcomesHtml = '';
+                for (var o = 0; o < rec.outcomes.length; o++) {
+                    outcomesHtml += '<li>' + rec.outcomes[o] + '</li>';
+                }
+                document.getElementById('modal-res-outcomes').innerHTML = outcomesHtml;
+
+                openModal();
             }
 
-            document.querySelectorAll('.diag-option').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const step = parseInt(btn.getAttribute('data-step'), 10);
-                    const val = btn.getAttribute('data-val');
+            var optionBtns = document.querySelectorAll('.option-button');
+            for (var b = 0; b < optionBtns.length; b++) {
+                optionBtns[b].addEventListener('click', function() {
+                    var step = parseInt(this.getAttribute('data-step'), 10);
+                    var val = this.getAttribute('data-val');
                     answers['step' + step] = val;
 
                     if (step < 4) {
@@ -882,63 +1507,26 @@
                         renderResults();
                     }
                 });
-            });
+            }
 
-            document.querySelectorAll('.diag-back').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const backStep = parseInt(btn.getAttribute('data-back'), 10);
+            var backBtns = document.querySelectorAll('.btn-back');
+            for (var k = 0; k < backBtns.length; k++) {
+                backBtns[k].addEventListener('click', function() {
+                    var backStep = parseInt(this.getAttribute('data-back'), 10);
                     showStep(backStep);
                 });
-            });
+            }
 
-            const closeBtn = document.getElementById('diag-modal-close');
-            if (closeBtn) closeBtn.addEventListener('click', closeDiagModal);
+            var closeBtn = document.getElementById('diag-modal-close');
+            if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
-            const reopenBtn = document.getElementById('diag-reopen-modal');
-            if (reopenBtn) reopenBtn.addEventListener('click', openDiagModal);
+            var reopenBtn = document.getElementById('diag-reopen-modal');
+            if (reopenBtn) reopenBtn.addEventListener('click', openModal);
 
             if (modalEl) {
-                modalEl.addEventListener('click', (e) => {
-                    if (e.target === modalEl) closeDiagModal();
+                modalEl.addEventListener('click', function(e) {
+                    if (e.target === modalEl) closeModal();
                 });
-            }
-
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') closeDiagModal();
-            });
-
-            const restartBtn = document.getElementById('diag-restart');
-            if (restartBtn) {
-                restartBtn.addEventListener('click', () => {
-                    showStep(1);
-                });
-            }
-
-            const modalRestartBtn = document.getElementById('modal-diag-restart');
-            if (modalRestartBtn) {
-                modalRestartBtn.addEventListener('click', () => {
-                    closeDiagModal();
-                    showStep(1);
-                });
-            }
-
-            function copyPlanToClipboard(btnEl, defaultLabel) {
-                if (!currentRec) return;
-                const text = `THE SALES BENCH — 90-DAY DIAGNOSTIC PLAN\n${currentRec.title}\n\n${currentRec.research}\n\nSummary:\n${currentRec.summary}\n\nWhat We Will Do:\n${currentRec.actions.join('\n')}\n\nProjected Outcomes:\n${currentRec.outcomes.join('\n')}\n\nContact: scott@thesalesbench.com | https://thesalesbench.com/#book`;
-                navigator.clipboard.writeText(text).then(() => {
-                    btnEl.textContent = 'Copied ✓';
-                    setTimeout(() => { btnEl.textContent = defaultLabel; }, 2500);
-                });
-            }
-
-            const copyBtn = document.getElementById('diag-copy');
-            if (copyBtn) {
-                copyBtn.addEventListener('click', () => copyPlanToClipboard(copyBtn, 'Copy Plan for My Team 📋'));
-            }
-
-            const modalCopyBtn = document.getElementById('modal-diag-copy');
-            if (modalCopyBtn) {
-                modalCopyBtn.addEventListener('click', () => copyPlanToClipboard(modalCopyBtn, 'Copy Plan 📋'));
             }
         });
     </script>
