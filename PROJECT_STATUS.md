@@ -1,6 +1,6 @@
 # The Sales Bench — Project Status & System Documentation
 
-**Document Version:** 5.2.0  
+**Document Version:** 5.3.0  
 **Last Updated:** October 27, 2026  
 **Founder & Managing Principal:** Scott Carpentier  
 **Public Repository:** [https://github.com/ScottRepository/thesalesbench-website](https://github.com/ScottRepository/thesalesbench-website)  
@@ -35,10 +35,10 @@ The firm serves high-growth B2B SaaS companies by installing autonomous MEDDPICC
 | :--- | :--- | :--- |
 | **Hosting & Deployment** | GitHub Pages (`origin/main`) | 99.99% uptime, zero hosting cost, automated SSL, global edge delivery. |
 | **Front-End Architecture** | Single-File Self-Contained (`index.html`) | Zero external CSS dependencies, immune to CDN outage, instant page loads, strict CSP compliance. |
-| **Brand Identity & Assets** | Bespoke Gold-Embossed Logos | Official textured gold-embossed "SB" park bench lockup (`logo-horizontal.jpg` and `logo-stacked.jpg`) integrated into header, footer, About card, favicon, and social meta cards. |
+| **Brand Identity & Scale** | Tequity & RevenueBase Scale Architecture (v5.3) | Header and footer feature a 2-tier high-contrast lockup: gold-embossed "SB" park bench emblem badge (`48px × 48px`) paired with prominent, razor-sharp vector typography (`THE SALES BENCH` at 21px bold navy + `REVENUE ARCHITECTED` at 10px gold small caps). |
 | **Design System** | Corporate Advisory Luxury Palette | Technical Navy (`#0A192F`), Slate (`#475569`), Off-White (`#F8FAFC`), Crisp White (`#FFFFFF`), with Muted Gold (`#B08D57`) and Cobalt (`#1E40AF`) accents. Headings in Playfair Display serif, body in Inter sans-serif. |
 | **Container Viewport Framing** | Global Bounded Container (`.site-container`) | `max-width: 1240px; margin: 0 auto; padding: 0 2rem;` (Lunas Consulting benchmark). Prevents edge-to-edge stretching and awkward dead space across ultra-wide monitors. |
-| **Header Navigation** | Bounded Header Layout with Official Logo | Horizontal gold lockup anchored to left container margin, nav links and solid CTA button anchored to right container margin. |
+| **Header Navigation** | Bounded Header Layout (84px Height) | Spacious executive navigation bar with clear typography, responsive scaling across desktop, tablet, and mobile. |
 | **Hero Section** | Streamlined & Elevated Centered Layout | Stock photography removed; clean centered typography, distinct visual H1 break, ICP badge, primary diagnostic CTA and secondary call scheduling CTA. |
 | **Outcomes Bar & Attribution** | 4-Column Elevation + Benchmark Source | `25%-35% Slippage Prevented`, `40 hrs/wk Recovered (1+ FTE)`, `1 Deal Saved = 3x ROI`, `0 Months InfoSec Delay`, with attribution line beneath. |
 | **Service Pillars** | Compact 4-Column Horizontal Grid | 4 concise practices (Deal Forensics, Market Expansion, Agent Infrastructure, Channel Architecture) positioned immediately below the metrics bar. |

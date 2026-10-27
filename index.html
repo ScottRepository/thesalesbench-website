@@ -157,15 +157,100 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 76px;
-            gap: 24px;
+            height: 84px;
+            gap: 28px;
         }
 
-        .brand { display: flex; align-items: center; gap: 12px; }
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+            flex-shrink: 0;
+        }
+        .brand:hover {
+            transform: translateY(-1px);
+        }
+
+        /* Institutional Brand Mark & Scale Architecture (Tequity / RevenueBase Benchmark) */
+        .brand-mark-wrap {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            background: var(--navy);
+            border: 1.5px solid var(--gold-border);
+            box-shadow: 0 3px 10px rgba(10, 25, 47, 0.14);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .brand:hover .brand-mark-wrap {
+            border-color: var(--gold);
+            box-shadow: 0 4px 14px rgba(10, 25, 47, 0.22);
+        }
+        .brand-mark-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            line-height: 1.15;
+            text-align: left;
+        }
+        .brand-title {
+            font-family: var(--font-sans);
+            font-size: 21px;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            color: var(--navy);
+            text-transform: uppercase;
+            white-space: nowrap;
+            transition: color 0.15s ease;
+        }
+        .brand:hover .brand-title {
+            color: var(--navy-3);
+        }
+        .brand-subtitle {
+            font-family: var(--font-sans);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.24em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-top: 3px;
+            white-space: nowrap;
+        }
+
+        /* Footer Brand Lockup Variant */
+        .brand-footer .brand-mark-wrap {
+            background: #0A192F;
+            border-color: rgba(176, 141, 87, 0.45);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        }
+        .brand-footer .brand-title {
+            color: var(--white);
+        }
+        .brand-footer:hover .brand-title {
+            color: var(--gold-light);
+        }
+        .brand-footer .brand-subtitle {
+            color: var(--gold-light);
+        }
+
+        /* Optional image fallback sizing */
         .header-logo {
-            height: 46px;
+            height: 54px;
             width: auto;
-            max-width: 240px;
+            max-width: 280px;
             border-radius: var(--radius);
             object-fit: contain;
             display: block;
@@ -177,14 +262,11 @@
             transform: translateY(-1px);
             box-shadow: 0 4px 14px rgba(10, 25, 47, 0.22);
         }
-        @media (max-width: 640px) {
-            .header-logo { height: 38px; max-width: 190px; }
-        }
 
         .footer-logo {
-            height: 52px;
+            height: 54px;
             width: auto;
-            max-width: 260px;
+            max-width: 280px;
             border-radius: var(--radius);
             object-fit: contain;
             display: block;
@@ -239,10 +321,20 @@
             transform: translateY(-1px);
         }
 
+        @media (max-width: 1100px) {
+            .brand-title { font-size: 19px; }
+            .brand-subtitle { font-size: 9.5px; letter-spacing: 0.2em; }
+            .brand-mark-wrap { width: 44px; height: 44px; }
+        }
         @media (max-width: 1040px) { .nav-links { display: none; } }
         @media (max-width: 640px) {
+            .nav-inner { height: 72px; gap: 12px; }
+            .brand { gap: 10px; }
+            .brand-mark-wrap { width: 38px; height: 38px; border-radius: 6px; }
+            .brand-title { font-size: 16px; letter-spacing: 0.03em; }
+            .brand-subtitle { font-size: 8px; letter-spacing: 0.16em; margin-top: 2px; }
             .nav-text-btn, .brand-sub { display: none; }
-            .btn-header-solid { padding: 8px 12px; font-size: 12px; }
+            .btn-header-solid { padding: 8px 12px; font-size: 11.5px; }
         }
 
         /* ==========================================================================
@@ -913,7 +1005,13 @@
         <div class="site-container">
             <div class="nav-inner">
                 <a href="#" class="brand" aria-label="The Sales Bench Home">
-                    <img src="assets/logo-horizontal.jpg" onerror="this.onerror=null; this.src='logo-horizontal.jpg';" alt="The Sales Bench — Revenue Architected" class="header-logo">
+                    <div class="brand-mark-wrap">
+                        <img src="assets/logo-stacked.jpg" onerror="this.onerror=null; this.src='logo-stacked.jpg';" alt="The Sales Bench Emblem" class="brand-mark-img">
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-title">THE SALES BENCH</span>
+                        <span class="brand-subtitle">REVENUE ARCHITECTED</span>
+                    </div>
                 </a>
                 <nav class="nav-links">
                     <a href="#services">Services</a>
@@ -1539,8 +1637,14 @@
     <footer>
         <div class="site-container">
             <div class="footer-top">
-                <a href="#" class="brand" aria-label="The Sales Bench Home">
-                    <img src="assets/logo-horizontal.jpg" onerror="this.onerror=null; this.src='logo-horizontal.jpg';" alt="The Sales Bench — Revenue Architected" class="footer-logo">
+                <a href="#" class="brand brand-footer" aria-label="The Sales Bench Home">
+                    <div class="brand-mark-wrap">
+                        <img src="assets/logo-stacked.jpg" onerror="this.onerror=null; this.src='logo-stacked.jpg';" alt="The Sales Bench Emblem" class="brand-mark-img">
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-title">THE SALES BENCH</span>
+                        <span class="brand-subtitle">REVENUE ARCHITECTED</span>
+                    </div>
                 </a>
                 <div class="footer-links">
                     <a href="#services">Services</a>
