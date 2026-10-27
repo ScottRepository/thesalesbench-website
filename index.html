@@ -173,29 +173,38 @@
             transform: translateY(-1px);
         }
 
-        /* Institutional Brand Mark & Scale Architecture (Tequity / RevenueBase Benchmark) */
-        .brand-mark-wrap {
-            width: 48px;
-            height: 48px;
-            border-radius: 8px;
-            background: var(--navy);
-            border: 1.5px solid var(--gold-border);
-            box-shadow: 0 3px 10px rgba(10, 25, 47, 0.14);
-            overflow: hidden;
+        /* ==========================================================================
+           INSTITUTIONAL BRAND LOCKUP (Tequity Advisors & RevenueBase Benchmark)
+           Transparent vector mark, zero clunky app-icon box, executive typography
+           ========================================================================== */
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            flex-shrink: 0;
+        }
+        .brand:hover {
+            transform: translateY(-1px);
+        }
+
+        .brand-emblem {
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            color: var(--navy);
+            transition: color 0.2s ease;
         }
-        .brand:hover .brand-mark-wrap {
-            border-color: var(--gold);
-            box-shadow: 0 4px 14px rgba(10, 25, 47, 0.22);
+        .brand:hover .brand-emblem {
+            color: var(--navy-3);
         }
-        .brand-mark-img {
+        .brand-emblem-svg {
             width: 100%;
             height: 100%;
-            object-fit: cover;
             display: block;
         }
 
@@ -208,9 +217,9 @@
         }
         .brand-title {
             font-family: var(--font-sans);
-            font-size: 21px;
-            font-weight: 800;
-            letter-spacing: 0.04em;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
             color: var(--navy);
             text-transform: uppercase;
             white-space: nowrap;
@@ -221,8 +230,8 @@
         }
         .brand-subtitle {
             font-family: var(--font-sans);
-            font-size: 10px;
-            font-weight: 700;
+            font-size: 9.5px;
+            font-weight: 600;
             letter-spacing: 0.24em;
             color: var(--gold);
             text-transform: uppercase;
@@ -230,11 +239,9 @@
             white-space: nowrap;
         }
 
-        /* Footer Brand Lockup Variant */
-        .brand-footer .brand-mark-wrap {
-            background: #0A192F;
-            border-color: rgba(176, 141, 87, 0.45);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        /* Footer Brand Lockup (Dark Background Integration) */
+        .brand-footer .brand-emblem {
+            color: var(--gold);
         }
         .brand-footer .brand-title {
             color: var(--white);
@@ -322,15 +329,15 @@
         }
 
         @media (max-width: 1100px) {
-            .brand-title { font-size: 19px; }
-            .brand-subtitle { font-size: 9.5px; letter-spacing: 0.2em; }
-            .brand-mark-wrap { width: 44px; height: 44px; }
+            .brand-title { font-size: 18.5px; }
+            .brand-subtitle { font-size: 9px; letter-spacing: 0.2em; }
+            .brand-emblem { width: 40px; height: 40px; }
         }
         @media (max-width: 1040px) { .nav-links { display: none; } }
         @media (max-width: 640px) {
             .nav-inner { height: 72px; gap: 12px; }
             .brand { gap: 10px; }
-            .brand-mark-wrap { width: 38px; height: 38px; border-radius: 6px; }
+            .brand-emblem { width: 36px; height: 36px; }
             .brand-title { font-size: 16px; letter-spacing: 0.03em; }
             .brand-subtitle { font-size: 8px; letter-spacing: 0.16em; margin-top: 2px; }
             .nav-text-btn, .brand-sub { display: none; }
@@ -1005,8 +1012,12 @@
         <div class="site-container">
             <div class="nav-inner">
                 <a href="#" class="brand" aria-label="The Sales Bench Home">
-                    <div class="brand-mark-wrap">
-                        <img src="assets/logo-stacked.jpg" onerror="this.onerror=null; this.src='logo-stacked.jpg';" alt="The Sales Bench Emblem" class="brand-mark-img">
+                    <div class="brand-emblem">
+                        <svg class="brand-emblem-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect x="2" y="2" width="40" height="40" rx="4" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M10 27h24M13 27v7M31 27v7M11 34h4M29 34h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                            <text x="22" y="22" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="15" font-weight="700" fill="#B08D57" letter-spacing="1">SB</text>
+                        </svg>
                     </div>
                     <div class="brand-text">
                         <span class="brand-title">THE SALES BENCH</span>
@@ -1638,8 +1649,12 @@
         <div class="site-container">
             <div class="footer-top">
                 <a href="#" class="brand brand-footer" aria-label="The Sales Bench Home">
-                    <div class="brand-mark-wrap">
-                        <img src="assets/logo-stacked.jpg" onerror="this.onerror=null; this.src='logo-stacked.jpg';" alt="The Sales Bench Emblem" class="brand-mark-img">
+                    <div class="brand-emblem">
+                        <svg class="brand-emblem-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect x="2" y="2" width="40" height="40" rx="4" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M10 27h24M13 27v7M31 27v7M11 34h4M29 34h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                            <text x="22" y="22" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="15" font-weight="700" fill="#D4B483" letter-spacing="1">SB</text>
+                        </svg>
                     </div>
                     <div class="brand-text">
                         <span class="brand-title">THE SALES BENCH</span>
