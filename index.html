@@ -1699,21 +1699,39 @@
 
             var formData = new FormData(form);
             var fields = [];
+            var hasMessage = false;
+
             formData.forEach(function(value, key) {
                 if (value && value.trim()) {
-                    fields.push({ name: key, value: value.trim() });
+                    if (key === 'message') {
+                        hasMessage = true;
+                        fields.push({ name: 'message', value: value.trim() + ' [Source: ' + formType + ']' });
+                    } else {
+                        fields.push({ name: key, value: value.trim() });
+                    }
                 }
             });
 
-            // Include form type for tracking
-            fields.push({ name: 'form_submission_source', value: formType });
+            // If no message was entered (or form has no message input), append form source to message property
+            if (!hasMessage && formType) {
+                fields.push({ name: 'message', value: 'Inquiry Source: ' + formType });
+            }
+
+            // Retrieve HubSpot tracking cookie if present
+            var hutkMatch = document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]*)/);
+            var hutk = hutkMatch ? hutkMatch[1] : null;
+
+            var contextPayload = {
+                pageUri: window.location.href,
+                pageName: document.title
+            };
+            if (hutk) {
+                contextPayload.hutk = hutk;
+            }
 
             var payload = {
                 fields: fields,
-                context: {
-                    pageUri: window.location.href,
-                    pageName: document.title
-                },
+                context: contextPayload,
                 legalConsentOptions: {
                     consent: {
                         consentToProcess: true,
