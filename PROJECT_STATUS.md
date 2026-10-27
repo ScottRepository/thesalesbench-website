@@ -1,6 +1,6 @@
 # The Sales Bench — Project Status & System Documentation
 
-**Document Version:** 3.0.0  
+**Document Version:** 4.0.0  
 **Last Updated:** October 27, 2026  
 **Founder & Managing Principal:** Scott Carpentier  
 **Public Repository:** [https://github.com/ScottRepository/thesalesbench-website](https://github.com/ScottRepository/thesalesbench-website)  
@@ -44,6 +44,19 @@ The firm serves high-growth B2B SaaS companies by installing autonomous MEDDPICC
 | **Deployment Scripting** | Custom Bash CLI (`push.sh`) | Atomic sync from Linux repository to Downloads mirror and GitHub remote. |
 
 ---
+
+## 2A. Version 4.0.0 — Enterprise Advisory Redesign (Supersedes v3 visual design)
+
+* **Aesthetic:** Dark "AI" look replaced with a corporate advisory palette — Navy `#0A192F`, Slate `#475569`, White, Off-White `#F8FAFC`, muted gold `#B08D57` and cobalt `#1E40AF` accents. Playfair Display headings + Inter body (Google Fonts).
+* **Imagery:** Unsplash photography — glass-architecture hero with navy overlay, photo-backed service cards, server-room security image, boardroom/office imagery.
+* **Hero:** Line 2 now reads "Turn 6-Figure Opportunities In Your Pipeline Into Predictable Closed-Won Revenue." ICP label changed to "Who We Serve:". Right-hand "What We Install & Govern" box removed.
+* **Outcome Metrics Bar:** 4-column bar overlapping the hero — 25–35% Slippage Prevented · 40 hrs/wk Recovered (1+ FTE) · 1 Saved Deal = 3x ROI · 0 Months InfoSec Delay.
+* **4 Core Service Pillars (`#services`):** Deal Forensics & Triage · De-Risked Market Expansion · Turnkey AI Agent Infrastructure · Channel & Alliance Architecture (replaces old 3-card Practice Areas).
+* **Tickers:** Slowed to 70s / 80s. Logos load via a fallback chain (Simple Icons CDN → Clearbit → Google favicon → hidden, name text always shown).
+* **Core Stack Integrations:** Now 10 logos — Salesforce, HubSpot, OpenAI, Anthropic, Google Cloud, AWS, ZoomInfo, Gong, Apollo, Crossbeam.
+* **HubSpot Forms:** Switched to the v2 embed (renders in-page) with CSS + JS removal of HubSpot branding on all three forms (footer, diagnostic, schedule modal). Falls back to the frame embed if v2 doesn't render in 6s.
+* **Security Section:** Two-column layout — server-room image left; accordion right: 1. Your Cloud / Your Tenant · 2. Bring Your Own Key (BYOK) · 3. Zero External Data Training.
+* **Header:** Prominent gold "Schedule a 20-Min Debrief" button opens the centered scheduling modal.
 
 ## 2. Completed Milestones & Configurations (Version 3.0.0)
 
@@ -109,8 +122,8 @@ The firm serves high-growth B2B SaaS companies by installing autonomous MEDDPICC
 ```
 /home/scottcarpentier/
 ├── thesalesbench-website/                 # Main Git repository (cloned from GitHub)
-│   ├── index.html                         # Production single-file marketing application (v3.0.0)
-│   ├── PROJECT_STATUS.md                  # Comprehensive project documentation (v3.0.0)
+│   ├── index.html                         # Production single-file marketing application (v4.0.0 Enterprise Advisory)
+│   ├── PROJECT_STATUS.md                  # Comprehensive project documentation (v4.0.0)
 │   ├── README.md                          # Repository summary & asset guide
 │   └── .git/                              # Git metadata pointing to origin/main
 ├── Downloads/
@@ -130,8 +143,10 @@ The firm serves high-growth B2B SaaS companies by installing autonomous MEDDPICC
    ```
 2. **Verify Live Deployment:**
    Open [https://scottrepository.github.io/thesalesbench-website/](https://scottrepository.github.io/thesalesbench-website/) to review:
-   - Visual split in H1 and inclusive ICP bar
-   - Centered diagnostic modal & header debrief scheduling modal
-   - Dual scrolling partner and customer tickers
-   - Reordered 4-week sprint engine and 4-box delivery click navigation
-   - Updated Oxford AI bio and commercial structure
+   - Enterprise Advisory corporate aesthetic (Navy `#0A192F`, Slate `#475569`, Playfair Display serif headings, Inter sans-serif body, executive photography)
+   - Updated H1 line 2 ("Turn 6-Figure Opportunities In Your Pipeline Into Predictable Closed-Won Revenue") and "Who We Serve:" bar
+   - 4-column outcome metrics bar (25%-35% Slippage Prevented, 40 hrs/wk Recovered, 1 Saved Deal = 3x ROI, 0 Months InfoSec Delay)
+   - 4 photo-backed core service pillars (Deal Forensics & Triage, De-Risked Market Expansion, Turnkey AI Agent Infrastructure, Channel & Alliance Architecture)
+   - Slowed tickers (70s/80s) with 11 accounts and 10 tech stack logos (including ZoomInfo, Gong, Apollo, Crossbeam)
+   - Unbranded HubSpot form integration & popup scheduling modal
+   - Re-structured 2-column security section (server room photo + 3-part accordion)
