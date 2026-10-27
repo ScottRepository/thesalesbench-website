@@ -1,6 +1,6 @@
 # The Sales Bench — Project Status & System Documentation
 
-**Document Version:** 4.0.0  
+**Document Version:** 5.0.0  
 **Last Updated:** October 27, 2026  
 **Founder & Managing Principal:** Scott Carpentier  
 **Public Repository:** [https://github.com/ScottRepository/thesalesbench-website](https://github.com/ScottRepository/thesalesbench-website)  
@@ -35,84 +35,76 @@ The firm serves high-growth B2B SaaS companies by installing autonomous MEDDPICC
 | :--- | :--- | :--- |
 | **Hosting & Deployment** | GitHub Pages (`origin/main`) | 99.99% uptime, zero hosting cost, automated SSL, global edge delivery. |
 | **Front-End Architecture** | Single-File Self-Contained (`index.html`) | Zero external CSS dependencies, immune to CDN outage, instant page loads, strict CSP compliance. |
-| **Design System** | Executive Charcoal & Gold Luxury System | Technical obsidian (`#0b0f19`), carbon slate (`#111827`), champagne gold (`#e5c07b`), cobalt blue (`#3b82f6`), and emerald accents (`#10b981`). Full-width fluid responsive canvas (`max-width: 1680px`/`1800px`). |
-| **Centered Diagnostic Modal** | Viewport Modal (`#diagnostic-drawer`) | Centered modal (`max-width: 680px`, `width: 92%`, backdrop blur) with large executive typography (28px title, 20px question, 17px options) and dynamic real-time leakage calculation. |
-| **Header Scheduling Modal** | Pop-Up Hubspot Modal (`#schedule-modal-overlay`) | Dedicated 20-min debrief modal triggered directly from top navigation, embedding HubSpot Meetings/Forms API. |
-| **Dual Scrolling Tickers** | Pure CSS Infinite Marquees (`@keyframes scroll`) | Two separate tracks: (1) SI & Advisory Partners (SAP, Deloitte, PwC, EY, KPMG), and (2) 11 Enterprise Accounts Sold To (Sobeys, Circle K, Couche-Tard, Bell, Marathon Oil, Cooper Tire, Finning, Suncor, Questrade, easyfinancial, Pharmascience). |
-| **Delivery & Sprint Wiring** | Direct Module Navigation | Delivery cards link directly to corresponding `#sprint-engine` tabs via smooth scrolling and dynamic tab activation (`switchToSprintTab`). |
-| **Lead Capture & CRM** | HubSpot Forms API v2 (`portal: 342958738`, `form: de5aa2ee-c4fc-4f04-8b6b-563c3bfb9fa3`) | Enterprise lead routing, automated notification triggers, zero raw email exposure to scrapers. |
-| **Deployment Scripting** | Custom Bash CLI (`push.sh`) | Atomic sync from Linux repository to Downloads mirror and GitHub remote. |
+| **Design System** | Corporate Advisory Luxury Palette | Technical Navy (`#0A192F`), Slate (`#475569`), Off-White (`#F8FAFC`), Crisp White (`#FFFFFF`), with Muted Gold (`#B08D57`) and Cobalt (`#1E40AF`) accents. Headings in Playfair Display serif, body in Inter sans-serif. |
+| **Header Navigation** | Full-Width Edge-to-Edge Navigation | Unboxed header stretching across 100% viewport width with solid Navy "Schedule a 20-Min Debrief" primary CTA. |
+| **Hero Section** | Balanced 2-Column Responsive Layout | Left column with outcome copy and single primary diagnostic CTA; right column featuring high-quality executive stock photography with dark navy overlay and status badge. |
+| **Outcomes Bar & Attribution** | 4-Column Elevation + Benchmark Source | 25%–35% Slippage Prevented, 40 hrs/wk Recovered (1+ FTE), 1 Saved Deal = 3x ROI, 0 Months InfoSec Delay, with italicized benchmark attribution. |
+| **Service Pillars** | Compact 4-Column Horizontal Grid | 4 concise practices (Deal Forensics, Market Expansion, Agent Infrastructure, Channel Architecture) optimized to reduce vertical scroll. |
+| **4-Week Sprint** | Horizontal Tabbed Interface | Single compact card with 4 week-level tabs (Week 1 to Week 4) showing milestone focus, installed logic, and division of labor on click. |
+| **Security Section** | Clean 3-Column Architecture | Replaced accordion with 3 clean visual cards: 1. Your Cloud / Your Tenant, 2. Bring Your Own Key (BYOK), and 3. Zero External Data Training. |
+| **Logo Tickers** | Pure Graphical Logos (60s Glide) | Infinite CSS marquee running at 60s glide with clean graphical badges (text labels removed). Expanded tech stack to 10 logos including ZoomInfo, Gong, Apollo, Crossbeam. |
+| **HubSpot Integration** | Native Fetch API (Zero iframes) | Custom HTML forms posting directly to HubSpot Forms API v3 endpoint (`https://api.hsforms.com/submissions/v3/integration/submit/...`). Zero HubSpot scripts, iframes, cookies, or virality links. |
+| **Backend Integration Script** | Standalone Node.js CLI / Microservice (`hubspot-submit.js`) | Standalone server-side integration script using native fetch. |
+| **Deployment Scripting** | Custom Bash CLI (`push.sh`) | Atomic sync from Linux repository to Downloads mirror and GitHub Pages remote. |
 
 ---
 
-## 2A. Version 4.0.0 — Enterprise Advisory Redesign (Supersedes v3 visual design)
+## 2. Completed Milestones & Configurations (Version 5.0.0)
 
-* **Aesthetic:** Dark "AI" look replaced with a corporate advisory palette — Navy `#0A192F`, Slate `#475569`, White, Off-White `#F8FAFC`, muted gold `#B08D57` and cobalt `#1E40AF` accents. Playfair Display headings + Inter body (Google Fonts).
-* **Imagery:** Unsplash photography — glass-architecture hero with navy overlay, photo-backed service cards, server-room security image, boardroom/office imagery.
-* **Hero:** Line 2 now reads "Turn 6-Figure Opportunities In Your Pipeline Into Predictable Closed-Won Revenue." ICP label changed to "Who We Serve:". Right-hand "What We Install & Govern" box removed.
-* **Outcome Metrics Bar:** 4-column bar overlapping the hero — 25–35% Slippage Prevented · 40 hrs/wk Recovered (1+ FTE) · 1 Saved Deal = 3x ROI · 0 Months InfoSec Delay.
-* **4 Core Service Pillars (`#services`):** Deal Forensics & Triage · De-Risked Market Expansion · Turnkey AI Agent Infrastructure · Channel & Alliance Architecture (replaces old 3-card Practice Areas).
-* **Tickers:** Slowed to 70s / 80s. Logos load via a fallback chain (Simple Icons CDN → Clearbit → Google favicon → hidden, name text always shown).
-* **Core Stack Integrations:** Now 10 logos — Salesforce, HubSpot, OpenAI, Anthropic, Google Cloud, AWS, ZoomInfo, Gong, Apollo, Crossbeam.
-* **HubSpot Forms:** Switched to the v2 embed (renders in-page) with CSS + JS removal of HubSpot branding on all three forms (footer, diagnostic, schedule modal). Falls back to the frame embed if v2 doesn't render in 6s.
-* **Security Section:** Two-column layout — server-room image left; accordion right: 1. Your Cloud / Your Tenant · 2. Bring Your Own Key (BYOK) · 3. Zero External Data Training.
-* **Header:** Prominent gold "Schedule a 20-Min Debrief" button opens the centered scheduling modal.
+### 2.1 Full-Width Header & Balanced Hero
+* Updated `.nav-full-width` to stretch across 100% of the screen with fluid padding (`clamp(20px, 3.5vw, 56px)`).
+* Styled `Schedule a 20-Min Debrief` as a solid, high-contrast CTA button.
+* Rebalanced the Hero into a 2-column layout:
+  * Left: H1 visual split, lead copy, "Who We Serve:" tag bar, and primary diagnostic CTA button.
+  * Right: High-quality stock photography asset (`photo-1542744173-8e7e53415bb0`) with dark navy gradient overlay and live enterprise machinery badge.
+  * Removed the secondary "Explore Our Services" button to maintain focus on pipeline leakage diagnostic conversion.
 
-## 2. Completed Milestones & Configurations (Version 3.0.0)
+### 2.2 Metrics Bar & Attribution
+* Elevated horizontal 4-outcome metrics bar:
+  1. `25%–35% Slippage Prevented`
+  2. `40 hrs/wk Recovered (1+ FTE)`
+  3. `1 Saved Deal = 3x ROI`
+  4. `0 Months InfoSec Delay`
+* Added attribution text below bar:
+  *Metrics derived from The 2026 Deal Governance Benchmark Index and internal triage analysis.*
 
-### 2.1 Hero Section & Value Proposition Refinements
-* **Headline Visual Split:** H1 headline broken into two distinct display lines for executive impact:
-  * Line 1: `Stop Late-Stage Deal Slippage.`
-  * Line 2: `Turn 6-Figure Pipeline Into Predictable Closed-Won Revenue.`
-* **Inclusive ICP Messaging:** Broadened target audience framing to:
-  * Label: `CORE SWEET SPOT (WITH CUSTOM ENTERPRISE & GROWTH ADAPTATIONS):`
-  * Badges: `Primary Stage: $5M–$50M+ ARR` | `Deal Size: $30k–$250k+ ACV` | `Sales Floor: Growing to Enterprise AE Teams`
-* **Cleaned Hero Columns:** Removed legacy unverified stage bars.
-* **Executive Summary Card:** Right-column 4-layer terminal replaced with high-contrast 3-pillar card:
-  1. `01 // Turnkey CRM Agents (4-Week Fixed-Cost Sprint)`
-  2. `02 // Peer Cohort Benchmarking`
-  3. `03 // Retained Deal Inspection & Tuning`
-  * Bottom metrics strip: `+15–20% Win Rate Lift`, `1+ FTE AE Capacity Recovered`, `<5% Forecast Variance`.
+### 2.3 Compact 4-Column Service Grid
+* Redesigned the 4 service pillars into a horizontal 4-column grid:
+  1. **Deal Forensics & Triage Analysis**
+  2. **De-Risked Market Expansion**
+  3. **Turnkey AI Agent Infrastructure**
+  4. **Channel & Alliance Architecture**
+* Condensed copy and bullet points to dramatically minimize vertical page scroll.
 
-### 2.2 Centered Screen Diagnostic Modal (Larger Executive Fonts)
-* Replaced the slide-over side drawer with a centered viewport modal dialog (`max-width: 680px`, `width: 92%`, backdrop blur).
-* Substantially enlarged typography for readability:
-  * Modal title: `1.75rem` (`28px`)
-  * Question text: `1.25rem` (`20px`, font-weight 600)
-  * Option buttons: `1.05rem` (`17px`) with generous padding (`16px 20px`).
-* Dynamic real-time calculation banner updates estimated annual leakage live (e.g., `$180k – $360k`) as questions are answered.
-* Sticky floating launcher pill in bottom-right: `⚡ Run 2026 Deal Slippage Diagnostic (2 Min)`.
+### 2.4 Streamlined 4-Week Sprint (Horizontal Tabbed Interface)
+* Converted the lengthy multi-column sprint breakdown into a compact single-card layout with 4 horizontal week selector tabs:
+  * **Week 01:** Discovery & Rubrics
+  * **Week 02:** Webhooks & Schema
+  * **Week 03:** Deal Room & Pilot
+  * **Week 04:** Rollout & Runbook
+* Users view only the active week's milestones, architecture, and division of labor on click.
 
-### 2.3 Dual Scrolling Marquee Tickers
-* **Ticker Row 1 (SI & Advisory Alliances):** SAP, Deloitte, PwC, EY, KPMG via Simple-Icons SVGs with hover pause.
-* **Ticker Row 2 (Sample Accounts Sold To & Onboarded):** Sobeys, Circle K, Alimentation Couche-Tard, Bell Canada, Marathon Oil, Cooper Tire, Finning, Suncor, Questrade, easyfinancial (goeasy), Pharmascience via Clearbit logos with fallback uppercase badge styling.
+### 2.5 3-Column Security & Data Retention (No Accordion)
+* Replaced the accordion (`+` icon) format with a clean, 3-column layout featuring custom vector icons:
+  1. **1. Your Cloud / Your Tenant**
+  2. **2. Bring Your Own Key (BYOK)**
+  3. **3. Zero External Data Training**
+* Expanded Core Stack Integrations to 10 logos: Salesforce, HubSpot, OpenAI, Anthropic, Google Cloud, AWS, **ZoomInfo, Gong, Apollo, and Crossbeam**.
 
-### 2.4 Section Reordering & Interactive 4-Pillar Links
-* Moved `#sprint-engine` (*"The Standardized Revenue Infrastructure Kit"*) immediately below `#delivery-grid` (and above `#value-ladder`).
-* Made all 4 cards in `#delivery-grid` interactive: clicking smoothly scrolls to `#sprint-engine` and activates the corresponding tab (`switchToSprintTab(1..4)`) with an `→ Inspect Module` hover indicator.
+### 2.6 Graphical Logo Tickers (60s Glide)
+* Slowed CSS marquee speed to `60s` for an easily readable glide.
+* Removed text labels next to logos in the ticker pills (rendering pure graphical logo marks).
+* Supported dual tracks: SI/Advisory Alliances (SAP, Deloitte, PwC, EY, KPMG) and Accounts Sold To (Sobeys, Circle K, Couche-Tard, Bell, Marathon Oil, Cooper Tire, Finning, Suncor, Questrade, easyfinancial, Pharmascience).
 
-### 2.5 Pricing Architecture: Fixed-Cost Sprints vs. Tailored Retainers
-* Removed the hardcoded `$2,500 / month` pricing figure.
-* Introduced the **Engagement & Commercial Structure** card clarifying:
-  1. **4-Week Installation Sprint:** Transparent, fixed-scope investment—never an open-ended hourly billing arrangement.
-  2. **Retained Deal Governance & Advisory:** Flexible quarterly retainers aligned to deal volume, team tier, and executive involvement.
-
-### 2.6 BYOK Flexibility & Ongoing Agent Evolution
-* Added 2-column callout row covering:
-  1. **Turnkey Dev Team Flexibility:** Options to deploy via vetted developer partner bench or internal RevOps/engineering.
-  2. **30-Day Post-Launch Hypercare & Quarterly Tuning:** Ongoing prompt iteration adapting to competitive shifts.
-
-### 2.7 Practice Areas & Executive Biography
-* **Practice Area 03:** Updated to **North American, European & Global Market Entry** covering UK/EMEA expansion.
-* **Founder Bio:** Updated Scott Carpentier's leadership credentials:
-  * Winshuttle / Precisely (PE-backed): Scaled business from $9M to $60M ARR.
-  * BlackLine (Nasdaq: BL): Scaled company from $150M to $750M ARR; scaled regional ARR 12x from $2.5M to $30M.
-  * Saïd Business School, University of Oxford: Artificial Intelligence Programme Certification.
-  * Credentials Badges: Oxford Artificial Intelligence, $150M→$750M Scale, PE & Public SaaS, 12x Regional ARR, Enterprise GTM.
-
-### 2.8 Top Nav & Scheduling Modal
-* Added secondary header CTA: `Schedule a 20-Min Debrief`.
-* Clicking opens `#schedule-modal-overlay` with embedded HubSpot scheduling form (`portal: 342958738`, `form: de5aa2ee-c4fc-4f04-8b6b-563c3bfb9fa3`).
+### 2.7 Custom Forms via HubSpot API (Zero iframes)
+* Removed all third-party HubSpot scripts and iframe embeds from the codebase.
+* Implemented custom HTML forms styled identically to the site:
+  1. **Footer Contact Form:** Direct executive inquiry.
+  2. **Schedule Modal Form:** 20-minute debrief request.
+  3. **Diagnostic Scorecard Form:** 1-page benchmark delivery.
+* Client-side `fetch()` integration submits form payloads directly to HubSpot Forms API v3 (`portalId: 342958738`, `formId: de5aa2ee-c4fc-4f04-8b6b-563c3bfb9fa3`).
+* Built backend integration helper: `hubspot-submit.js`.
+* Form UI includes instant loading state, validation, and in-place success confirmation.
 
 ---
 
@@ -122,12 +114,14 @@ The firm serves high-growth B2B SaaS companies by installing autonomous MEDDPICC
 ```
 /home/scottcarpentier/
 ├── thesalesbench-website/                 # Main Git repository (cloned from GitHub)
-│   ├── index.html                         # Production single-file marketing application (v4.0.0 Enterprise Advisory)
-│   ├── PROJECT_STATUS.md                  # Comprehensive project documentation (v4.0.0)
+│   ├── index.html                         # Production single-file marketing application (v5.0.0)
+│   ├── hubspot-submit.js                  # Standalone HubSpot Forms API integration script
+│   ├── PROJECT_STATUS.md                  # Comprehensive project documentation (v5.0.0)
 │   ├── README.md                          # Repository summary & asset guide
 │   └── .git/                              # Git metadata pointing to origin/main
 ├── Downloads/
 │   ├── The_Sales_Bench_Website.html       # Mirrored copy for local offline browser inspection
+│   ├── hubspot-submit.js                  # Mirrored HubSpot submission helper
 │   └── PROJECT_STATUS.md                  # Mirrored status documentation
 └── push.sh                                # Automated sync & deployment bash script
 ```
@@ -143,10 +137,11 @@ The firm serves high-growth B2B SaaS companies by installing autonomous MEDDPICC
    ```
 2. **Verify Live Deployment:**
    Open [https://scottrepository.github.io/thesalesbench-website/](https://scottrepository.github.io/thesalesbench-website/) to review:
-   - Enterprise Advisory corporate aesthetic (Navy `#0A192F`, Slate `#475569`, Playfair Display serif headings, Inter sans-serif body, executive photography)
-   - Updated H1 line 2 ("Turn 6-Figure Opportunities In Your Pipeline Into Predictable Closed-Won Revenue") and "Who We Serve:" bar
-   - 4-column outcome metrics bar (25%-35% Slippage Prevented, 40 hrs/wk Recovered, 1 Saved Deal = 3x ROI, 0 Months InfoSec Delay)
-   - 4 photo-backed core service pillars (Deal Forensics & Triage, De-Risked Market Expansion, Turnkey AI Agent Infrastructure, Channel & Alliance Architecture)
-   - Slowed tickers (70s/80s) with 11 accounts and 10 tech stack logos (including ZoomInfo, Gong, Apollo, Crossbeam)
-   - Unbranded HubSpot form integration & popup scheduling modal
-   - Re-structured 2-column security section (server room photo + 3-part accordion)
+   - Full-width edge-to-edge header with solid CTA button
+   - Balanced 2-column hero with executive visual asset
+   - 4-column metrics bar with italicized benchmark attribution
+   - Compact 4-column service pillars
+   - Horizontal tabbed 4-week sprint switcher
+   - Clean 3-column security architecture (no accordions)
+   - 60s graphical logo tickers (pure logos, no text labels)
+   - Custom HTML forms posting directly to HubSpot Forms API (zero iframes)
