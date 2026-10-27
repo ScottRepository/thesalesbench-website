@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Sales Bench | AI-Native GTM Consulting, Playbooks &amp; Autonomous Deal Agents</title>
+    <title>The Sales Bench | Enterprise Revenue Architecture, MEDDPICC Engines &amp; Deal Governance</title>
     <style>
         /* ==========================================================================
-           SCALEMATTERS x LEANSCALE AI-NATIVE ARCHITECTURAL DESIGN SYSTEM
-           Precision technical grid + High-contrast readability + AI Agent Telemetry UI
+           SCALEMATTERS x LEANSCALE ENTERPRISE REVENUE ARCHITECTURE DESIGN SYSTEM
+           Precision technical grid + High-contrast readability + Telemetry & Governance UI
            ========================================================================== */
         *, *::before, *::after {
             box-sizing: border-box;
@@ -33,10 +33,11 @@
             --cyan-400: #22d3ee;
             --cyan-500: #06b6d4;
             --cyan-tint: #ecfeff;
+            --amber-400: #fbbf24;
             --border-subtle: #e2e8f0;
             --border-strong: #cbd5e1;
             --shadow-card: 0 10px 30px -6px rgba(15, 23, 42, 0.07);
-            --shadow-elevated: 0 24px 48px -12px rgba(7, 11, 20, 0.22);
+            --shadow-elevated: 0 24px 48px -12px rgba(7, 11, 20, 0.24);
         }
 
         html {
@@ -59,7 +60,7 @@
         }
 
         .container-narrow {
-            max-width: 940px;
+            max-width: 960px;
             margin: 0 auto;
             padding: 0 24px;
         }
@@ -69,13 +70,13 @@
         }
 
         /* ==========================================================================
-           1. STICKY HEADER (LEANSCALE / SCALEMATTERS ARCHITECTURAL NAV)
+           1. STICKY HEADER (ARCHITECTURAL NAVIGATION)
            ========================================================================== */
         header {
             position: sticky;
             top: 0;
             z-index: 100;
-            background-color: rgba(7, 11, 20, 0.94);
+            background-color: rgba(7, 11, 20, 0.95);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid #1e293b;
             padding: 15px 0;
@@ -130,7 +131,7 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 26px;
+            gap: 24px;
         }
 
         .nav-links a {
@@ -160,14 +161,14 @@
             opacity: 0.95;
         }
 
-        @media (max-width: 960px) {
+        @media (max-width: 1020px) {
             .nav-links a:not(.btn-nav) {
                 display: none;
             }
         }
 
         /* ==========================================================================
-           2. HERO SECTION (SCALEMATTERS x LEANSCALE PRECISION DARK BLUEPRINT)
+           2. HERO SECTION (ENTERPRISE REVENUE ARCHITECTURE & DEAL GOVERNANCE)
            ========================================================================== */
         .hero-section {
             background-color: var(--bg-obsidian);
@@ -176,14 +177,14 @@
                 linear-gradient(to bottom, rgba(30, 41, 59, 0.38) 1px, transparent 1px);
             background-size: 44px 44px;
             color: #ffffff;
-            padding: 82px 0 90px;
+            padding: 80px 0 88px;
             border-bottom: 2px solid #1e293b;
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 52px;
+            grid-template-columns: 1.12fr 0.88fr;
+            gap: 48px;
             align-items: center;
         }
 
@@ -206,7 +207,7 @@
             font-size: 11.5px;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.8px;
+            letter-spacing: 0.7px;
             margin-bottom: 22px;
         }
 
@@ -217,10 +218,11 @@
             border-radius: 50%;
             box-shadow: 0 0 10px var(--emerald-400);
             display: inline-block;
+            flex-shrink: 0;
         }
 
         .hero-title {
-            font-size: clamp(2.35rem, 4.2vw, 3.5rem);
+            font-size: clamp(2.3rem, 4.1vw, 3.4rem);
             font-weight: 900;
             color: #ffffff;
             line-height: 1.08;
@@ -235,11 +237,11 @@
         }
 
         .hero-lead {
-            font-size: 18px;
+            font-size: 17.5px;
             color: #e2e8f0;
             line-height: 1.65;
             margin-bottom: 28px;
-            max-width: 620px;
+            max-width: 630px;
         }
 
         .hero-lead strong {
@@ -251,7 +253,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 14px;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
         }
 
         .btn-primary {
@@ -274,7 +276,7 @@
         }
 
         .btn-secondary-dark {
-            background-color: rgba(30, 41, 59, 0.75);
+            background-color: rgba(30, 41, 59, 0.78);
             color: #ffffff;
             font-weight: 700;
             font-size: 15px;
@@ -293,6 +295,38 @@
             background-color: #1e293b;
         }
 
+        .hero-icp-bar {
+            background-color: rgba(15, 23, 42, 0.85);
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin-bottom: 22px;
+            max-width: 630px;
+        }
+
+        .hero-icp-title {
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--cyan-400);
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+            margin-bottom: 6px;
+        }
+
+        .hero-icp-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            font-size: 13px;
+            color: #e2e8f0;
+            font-weight: 600;
+        }
+
+        .hero-icp-tags span {
+            color: var(--emerald-400);
+            font-weight: 800;
+        }
+
         .hero-trust-row {
             display: flex;
             flex-wrap: wrap;
@@ -300,7 +334,7 @@
             font-size: 12.5px;
             font-weight: 700;
             color: #94a3b8;
-            padding-top: 18px;
+            padding-top: 16px;
             border-top: 1px solid #1e293b;
         }
 
@@ -308,7 +342,7 @@
             color: var(--emerald-400);
         }
 
-        /* LEANSCALE x SCALEMATTERS ARCHITECTURE CONSOLE */
+        /* RIGHT CONSOLE: THE REVENUE ARCHITECTURE STACK */
         .arch-console {
             background-color: #0b1120;
             border: 1px solid #334155;
@@ -440,12 +474,12 @@
         }
 
         /* ==========================================================================
-           3. RESEARCH BENCHMARK BAR
+           3. ECONOMIC LEVERAGE & COHORT BENCHMARK BAR
            ========================================================================== */
         .benchmark-bar {
             background-color: #0f172a;
             color: #ffffff;
-            padding: 32px 0;
+            padding: 34px 0;
             border-bottom: 1px solid #1e293b;
         }
 
@@ -473,7 +507,7 @@
         }
 
         .bench-num {
-            font-size: 26px;
+            font-size: 25px;
             font-weight: 900;
             color: #ffffff;
             line-height: 1.1;
@@ -516,15 +550,8 @@
             background-color: var(--bg-canvas);
         }
 
-        .section-dark {
-            background-color: var(--bg-obsidian);
-            color: #ffffff;
-            border-top: 1px solid #1e293b;
-            border-bottom: 1px solid #1e293b;
-        }
-
         .section-header {
-            max-width: 780px;
+            max-width: 800px;
             margin: 0 auto 52px;
             text-align: center;
         }
@@ -573,7 +600,7 @@
         }
 
         /* ==========================================================================
-           4. THE 3-MODE AI-NATIVE OPERATING MODEL (LEVERAGE / RECOMMEND / DEPLOY AGENTS)
+           4. THE 3-PHASE VALUE LADDER (BENCHMARK -> 4-WEEK SPRINT -> GOVERNANCE)
            ========================================================================== */
         .ai-modes-grid {
             display: grid;
@@ -597,6 +624,12 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .ai-mode-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--emerald-500);
         }
 
         .ai-mode-card.agent-highlight {
@@ -636,6 +669,7 @@
             list-style: none;
             border-top: 1px solid var(--border-subtle);
             padding-top: 16px;
+            margin-bottom: 22px;
             display: flex;
             flex-direction: column;
             gap: 10px;
@@ -648,15 +682,17 @@
             display: flex;
             align-items: flex-start;
             gap: 8px;
+            line-height: 1.45;
         }
 
         .mode-checklist li span {
             color: var(--emerald-600);
             font-weight: 900;
+            flex-shrink: 0;
         }
 
         /* ==========================================================================
-           5. INTERACTIVE PLAYBOOK & AI AGENT DEAL ENGINE (SCALEMATTERS / LEANSCALE UI)
+           5. INTERACTIVE 4-TAB REVENUE INFRASTRUCTURE KIT & 4-WEEK SPRINT ENGINE
            ========================================================================== */
         .engine-shell {
             background-color: #0b1120;
@@ -795,6 +831,7 @@
         .stage-col li span {
             color: var(--emerald-400);
             font-weight: 800;
+            flex-shrink: 0;
         }
 
         .stage-col.agent-col li span {
@@ -802,7 +839,115 @@
         }
 
         /* ==========================================================================
-           6. CHARTER DESIGN PARTNER PROGRAM (CO-BUILDING THE PRODUCT ADVANTAGE)
+           6. EXECUTIVE DEAL GOVERNANCE & THE ANTI-FLUFF PROTOCOL
+           ========================================================================== */
+        .governance-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 32px;
+            align-items: stretch;
+        }
+
+        @media (max-width: 960px) {
+            .governance-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .gov-cadence-card {
+            background-color: var(--bg-white);
+            border: 2px solid var(--border-subtle);
+            border-radius: 18px;
+            padding: 32px;
+            box-shadow: var(--shadow-card);
+        }
+
+        .cadence-item {
+            padding: 18px 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .cadence-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .cadence-item:first-of-type {
+            padding-top: 8px;
+        }
+
+        .cadence-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 3px 9px;
+            border-radius: 5px;
+            background-color: var(--emerald-tint);
+            color: var(--emerald-700);
+            border: 1px solid var(--emerald-border);
+            margin-bottom: 8px;
+        }
+
+        .cadence-item h4 {
+            font-size: 18px;
+            font-weight: 900;
+            color: var(--text-ink);
+            margin-bottom: 6px;
+        }
+
+        .cadence-item p {
+            font-size: 14.5px;
+            color: var(--text-body);
+            line-height: 1.55;
+        }
+
+        .antifluff-card {
+            background-color: var(--bg-obsidian);
+            border: 2px solid var(--emerald-500);
+            border-radius: 18px;
+            padding: 32px;
+            color: #ffffff;
+            box-shadow: var(--shadow-elevated);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .protocol-quote-box {
+            background-color: #111827;
+            border-left: 3px solid var(--emerald-400);
+            border-radius: 8px;
+            padding: 15px 18px;
+            margin-bottom: 14px;
+        }
+
+        .protocol-quote-box.cyan {
+            border-left-color: var(--cyan-400);
+        }
+
+        .protocol-quote-lbl {
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--emerald-400);
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .protocol-quote-box.cyan .protocol-quote-lbl {
+            color: var(--cyan-400);
+        }
+
+        .protocol-quote-text {
+            font-size: 13.5px;
+            color: #e2e8f0;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        /* ==========================================================================
+           7. BYOK SECURITY ARCHITECTURE & COHORT DATA MOAT BANNER
            ========================================================================== */
         .charter-banner {
             background: linear-gradient(135deg, #070b14 0%, #0f172a 100%);
@@ -820,7 +965,7 @@
         }
 
         .charter-top {
-            max-width: 820px;
+            max-width: 840px;
             margin-bottom: 36px;
         }
 
@@ -828,6 +973,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
+            margin-bottom: 32px;
         }
 
         @media (max-width: 920px) {
@@ -865,8 +1011,50 @@
             line-height: 1.6;
         }
 
+        .boundary-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            background-color: #070b14;
+            border: 1px solid #334155;
+            border-radius: 14px;
+            padding: 24px;
+        }
+
+        @media (max-width: 820px) {
+            .boundary-split {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .boundary-box {
+            background-color: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 10px;
+            padding: 18px;
+        }
+
+        .boundary-box h4 {
+            font-size: 14px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .boundary-box ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            font-size: 13px;
+            color: #cbd5e1;
+        }
+
         /* ==========================================================================
-           7. 3 CORE PRACTICE AREAS (BENTO CARDS)
+           8. 3 CORE PRACTICE AREAS (DEAL GOVERNANCE, PARTNER CHANNELS, EXPANSION)
            ========================================================================== */
         .pillars-grid {
             display: grid;
@@ -979,67 +1167,6 @@
         }
 
         /* ==========================================================================
-           8. 4-WEEK SPRINT TO 90-120 DAY PLAN
-           ========================================================================== */
-        .sprint-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 28px;
-        }
-
-        @media (max-width: 880px) {
-            .sprint-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .sprint-card {
-            background-color: var(--bg-white);
-            border: 2px solid var(--border-subtle);
-            border-radius: 16px;
-            padding: 32px;
-            box-shadow: var(--shadow-card);
-        }
-
-        .sprint-card.phase-one {
-            border-color: var(--emerald-500);
-            background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 22%);
-        }
-
-        .step-row {
-            display: flex;
-            gap: 14px;
-            align-items: flex-start;
-            padding: 13px 0;
-            border-bottom: 1px solid var(--border-subtle);
-            font-size: 14.5px;
-            color: var(--text-body);
-        }
-
-        .step-row:last-child {
-            border-bottom: none;
-        }
-
-        .step-badge {
-            width: 28px;
-            height: 28px;
-            border-radius: 7px;
-            background-color: var(--bg-obsidian);
-            color: var(--emerald-400);
-            font-weight: 800;
-            font-size: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        .step-row strong {
-            color: var(--text-ink);
-        }
-
-        /* ==========================================================================
            9. ABOUT THE SALES BENCH & FOUNDER BIO
            ========================================================================== */
         .about-card {
@@ -1116,11 +1243,11 @@
         }
 
         /* ==========================================================================
-           10. INTERACTIVE DIAGNOSTIC & SPLIT-PANE LEAD GENERATION
+           10. INTERACTIVE 5-QUESTION BENCHMARK INDEX & SCORECARD GENERATOR
            ========================================================================== */
         .diagnostic-card {
             background-color: var(--bg-white);
-            border: 2px solid var(--border-strong);
+            border: 2px solid var(--emerald-500);
             border-radius: 18px;
             padding: 36px;
             box-shadow: var(--shadow-card);
@@ -1146,16 +1273,24 @@
 
         .progress-fill {
             height: 100%;
-            width: 25%;
+            width: 20%;
             background-color: var(--emerald-500);
             transition: width 0.25s ease;
         }
 
         .diag-question {
-            font-size: 21px;
-            font-weight: 800;
+            font-size: 20px;
+            font-weight: 900;
             color: var(--text-ink);
+            margin-bottom: 8px;
+        }
+
+        .diag-benchmark-note {
+            font-size: 13px;
+            color: var(--emerald-700);
+            font-weight: 700;
             margin-bottom: 20px;
+            display: block;
         }
 
         .diag-options {
@@ -1253,8 +1388,8 @@
         .modal-overlay {
             position: fixed;
             inset: 0;
-            background-color: rgba(7, 11, 20, 0.82);
-            backdrop-filter: blur(4px);
+            background-color: rgba(7, 11, 20, 0.85);
+            backdrop-filter: blur(5px);
             z-index: 200;
             display: none;
             align-items: center;
@@ -1271,7 +1406,7 @@
             background-color: var(--bg-canvas);
             border: 2px solid var(--border-strong);
             border-radius: 18px;
-            max-width: 1020px;
+            max-width: 1060px;
             width: 100%;
             overflow: hidden;
             box-shadow: var(--shadow-elevated);
@@ -1289,14 +1424,44 @@
         .modal-body {
             padding: 24px;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.05fr 0.95fr;
             gap: 24px;
         }
 
-        @media (max-width: 840px) {
+        @media (max-width: 860px) {
             .modal-body {
                 grid-template-columns: 1fr;
             }
+        }
+
+        .scorecard-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .scorecard-metric {
+            background-color: #0f172a;
+            color: #ffffff;
+            border-radius: 10px;
+            padding: 12px 14px;
+            border-left: 3px solid var(--emerald-400);
+        }
+
+        .scorecard-metric-lbl {
+            font-size: 10.5px;
+            color: #94a3b8;
+            text-transform: uppercase;
+            font-weight: 800;
+            display: block;
+        }
+
+        .scorecard-metric-val {
+            font-size: 15px;
+            font-weight: 900;
+            color: var(--emerald-400);
+            margin-top: 2px;
         }
 
         footer {
@@ -1317,6 +1482,7 @@
 
         .footer-links {
             display: flex;
+            flex-wrap: wrap;
             gap: 20px;
         }
 
@@ -1332,54 +1498,65 @@
 </head>
 <body>
 
-    <!-- 1. STICKY HEADER (SCALEMATTERS x LEANSCALE ARCHITECTURAL BAR) -->
+    <!-- 1. STICKY HEADER -->
     <header>
         <div class="container nav-inner">
             <a href="#" class="brand-lockup">
                 <div class="brand-monogram font-mono">SB</div>
                 <div>
                     <span class="brand-text">THE SALES BENCH</span>
-                    <span class="brand-sub font-mono">AI-Native GTM // Playbooks, Team Execution &amp; Incoming AI Agents</span>
+                    <span class="brand-sub font-mono">Enterprise Revenue Architecture &amp; Deal Governance</span>
                 </div>
             </a>
             <nav class="nav-links">
-                <a href="#ai-model">How We Work</a>
-                <a href="#playbook-engine">Deal Engine</a>
-                <a href="#design-partner">Co-Build Partner Program</a>
+                <a href="#value-ladder">The Value Ladder</a>
+                <a href="#sprint-engine">4-Week Engine Sprint</a>
+                <a href="#governance-retainer">Deal Governance</a>
+                <a href="#byok-security">BYOK Security</a>
                 <a href="#services">Practice Areas</a>
                 <a href="#about">About</a>
-                <a href="#book" class="btn-nav">Schedule GTM Review →</a>
+                <a href="#diagnostic" class="btn-nav">2026 Benchmark Audit →</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <!-- 2. HERO SECTION (SCALEMATTERS x LEANSCALE AI-NATIVE ARCHITECTURE) -->
+        <!-- 2. HERO SECTION (ENTERPRISE REVENUE ARCHITECTURE & DEAL GOVERNANCE) -->
         <section class="hero-section">
             <div class="container hero-grid">
                 <div>
                     <div class="hero-badge font-mono">
                         <span class="pulsing-dot"></span>
-                        AI-Native GTM Consulting // Hands-On Execution + Incoming AI Platform ($1M – $30M+ ARR)
+                        Enterprise Revenue Architecture &amp; Deal Governance // B2B SaaS ($5M–$30M ARR)
                     </div>
                     <h1 class="hero-title">
-                        Engineer Your Playbook. <span class="gradient-text">Execute With Your Team Today. Automate With AI Tomorrow.</span>
+                        Eliminate Deal Slippage. <span class="gradient-text">Install Autonomous MEDDPICC &amp; Deal Governance Inside Your Stack.</span>
                     </h1>
                     <p class="hero-lead">
-                        We help B2B software companies build <strong>proven sales playbooks and objective deal criteria</strong>. Today, we execute this work hands-on alongside your team and internal RevOps, curate high-ROI AI tools, and co-develop <strong>our incoming autonomous AI agents</strong> with you as a Charter Partner.
+                        We don't sell 60-page PDF training decks that reps ignore—or black-box software that traps your data on third-party servers. We install a standardized <strong>MEDDPICC Audit Engine, Post-Call CRM Drafter, and Digital Deal Room</strong> directly into your own CRM and cloud, paired with <strong>Peer Cohort Benchmarking</strong> and <strong>Executive Deal Reviews</strong>.
                     </p>
+
+                    <div class="hero-icp-bar font-mono">
+                        <div class="hero-icp-title">// Built Strictly For High-ACV B2B Software Teams:</div>
+                        <div class="hero-icp-tags">
+                            <div><span>Stage:</span> $5M–$30M ARR</div>
+                            <div><span>Deal Size:</span> $30k–$150k+ ACV</div>
+                            <div><span>Sales Floor:</span> 5–20 Quota-Carrying AEs</div>
+                        </div>
+                    </div>
+
                     <div class="hero-cta-group">
-                        <a href="#book" class="btn-primary">Schedule a 15-Minute GTM Review →</a>
-                        <a href="#design-partner" class="btn-secondary-dark">Explore Charter Partner Advantage</a>
+                        <a href="#diagnostic" class="btn-primary">Take the 5-Question Pipeline Leakage Benchmark →</a>
+                        <a href="#value-ladder" class="btn-secondary-dark">Explore the 3-Phase Value Ladder</a>
                     </div>
                     <div class="hero-trust-row font-mono">
-                        <div><span>[01]</span> Proven Playbooks &amp; Deal Rigor</div>
-                        <div><span>[02]</span> Hands-On Execution With Your Team</div>
-                        <div><span>[03]</span> AI Agents In Active Development</div>
+                        <div><span>[01]</span> Deployed In Your Tenant (BYOK)</div>
+                        <div><span>[02]</span> Zero SOC 2 Delay or Seat Markup</div>
+                        <div><span>[03]</span> Benchmark Index + CRO Deal Reviews</div>
                     </div>
                 </div>
 
-                <!-- Right: LeanScale / scaleMatters Style AI-Native System Console -->
+                <!-- Right: Enterprise Revenue Infrastructure & Governance Stack Console -->
                 <div class="arch-console">
                     <div class="arch-header">
                         <div class="arch-dots">
@@ -1387,53 +1564,53 @@
                             <span class="arch-dot c"></span>
                             <span class="arch-dot"></span>
                         </div>
-                        <span class="font-mono" style="font-size: 11px; color: #94a3b8; font-weight: 700;">THE SALES BENCH // GTM ARCHITECTURE</span>
+                        <span class="font-mono" style="font-size: 11px; color: #94a3b8; font-weight: 700;">THE SALES BENCH // REVENUE INFRASTRUCTURE STACK</span>
                     </div>
 
                     <div class="arch-node">
                         <div class="arch-node-top">
-                            <span class="arch-layer-lbl font-mono">Layer 01 // Commercial Playbook &amp; Deal Criteria</span>
-                            <span class="arch-pill font-mono">Proven Process</span>
+                            <span class="arch-layer-lbl font-mono">Layer 01 // Turnkey Revenue Appliance</span>
+                            <span class="arch-pill font-mono">4-Week Sprint</span>
                         </div>
-                        <div class="arch-node-title">Stage-Gated Playbooks &amp; Buyer Exit Criteria</div>
-                        <div class="arch-node-desc">Defines ICP qualification, MEDDPICC scoring, and partner co-sell triggers across regional SIs, boutique firms, and ISVs.</div>
+                        <div class="arch-node-title">MEDDPICC Auditor + Post-Call Drafter + Deal Room</div>
+                        <div class="arch-node-desc">Scans call transcripts to enforce CRM stage gates, auto-drafts CRM properties &amp; follow-ups (saving 45–60 min/rep/day), and governs buyer procurement.</div>
                     </div>
 
                     <div class="arch-node">
                         <div class="arch-node-top">
-                            <span class="arch-layer-lbl font-mono">Layer 02 // Internal CRM &amp; AI Stack</span>
-                            <span class="arch-pill font-mono">Collaborative</span>
+                            <span class="arch-layer-lbl font-mono">Layer 02 // Client-Owned Perimeter (BYOK)</span>
+                            <span class="arch-pill font-mono">Zero Latency</span>
                         </div>
-                        <div class="arch-node-title">Work Hands-On With Your Team &amp; Tools</div>
-                        <div class="arch-node-desc">We collaborate directly with your internal RevOps inside HubSpot/Salesforce and recommend curated AI tools to remove rep friction.</div>
+                        <div class="arch-node-title">Your CRM + Your Cloud + Your Enterprise LLM Keys</div>
+                        <div class="arch-node-desc">Runs inside your HubSpot/Salesforce and AWS/Azure/OpenAI tenant. Zero third-party data retention, zero SOC 2 red tape, zero per-seat markup.</div>
                     </div>
 
                     <div class="arch-node active-agent">
                         <div class="arch-node-top">
-                            <span class="arch-layer-lbl font-mono" style="color: #67e8f9;">Layer 03 // Hands-On Today ➔ AI Agents Tomorrow</span>
-                            <span class="arch-pill cyan font-mono">Coming Soon</span>
+                            <span class="arch-layer-lbl font-mono" style="color: #67e8f9;">Layer 03 // Benchmarked Revenue Intelligence</span>
+                            <span class="arch-pill cyan font-mono">2026 Cohort Index</span>
                         </div>
-                        <div class="arch-node-title">Manual Execution Today, Automated Agents In Flight</div>
-                        <div class="arch-node-desc">We run deal inspection and scoring manually with your team today—while building proprietary AI agents to automate these exact workflows.</div>
+                        <div class="arch-node-title">Comparative Truth Across Peer B2B SaaS Leaders</div>
+                        <div class="arch-node-desc">Benchmarks your True Days in Procurement, Economic Buyer Latency, and Stage-Gate Integrity against peer B2B SaaS companies ($5M–$30M ARR).</div>
                     </div>
 
                     <div class="arch-node charter">
                         <div class="arch-node-top">
-                            <span class="arch-layer-lbl cyan font-mono">Layer 04 // Co-Build Charter Advantage</span>
-                            <span class="arch-pill cyan font-mono">Direct Voice</span>
+                            <span class="arch-layer-lbl cyan font-mono">Layer 04 // Executive Deal Governance</span>
+                            <span class="arch-pill cyan font-mono">Anti-Fluff Protocol</span>
                         </div>
-                        <div class="arch-node-title">Shape the Product Roadmap Around Your Business</div>
-                        <div class="arch-node-desc">Consulting clients directly influence the features, scorecards, and AI agents we build into The Sales Bench platform.</div>
+                        <div class="arch-node-title">Weekly Slippage Radar + Live CRO Deal Inspection</div>
+                        <div class="arch-node-desc">Autonomous weekly Slack/email risk alerts, monthly 10-page forensic leakage audits, and live 60-minute Strategic Deal Reviews ahead of board forecasts.</div>
                     </div>
 
                     <div class="arch-kpi-strip font-mono">
                         <div class="arch-kpi">
-                            <div class="arch-kpi-val">+18%</div>
-                            <div class="arch-kpi-lbl">Revenue Lift</div>
+                            <div class="arch-kpi-val">+15–20%</div>
+                            <div class="arch-kpi-lbl">Enterprise Win Rate</div>
                         </div>
                         <div class="arch-kpi">
-                            <div class="arch-kpi-val">2.4x</div>
-                            <div class="arch-kpi-lbl">Co-Sell Velocity</div>
+                            <div class="arch-kpi-val">1+ FTE</div>
+                            <div class="arch-kpi-lbl">AE Capacity Recovered</div>
                         </div>
                         <div class="arch-kpi">
                             <div class="arch-kpi-val">&lt;5%</div>
@@ -1444,238 +1621,242 @@
             </div>
         </section>
 
-        <!-- 3. THIRD-PARTY RESEARCH BENCHMARK STRIP -->
+        <!-- 3. ECONOMIC LEVERAGE & COHORT BENCHMARK BAR -->
         <section class="benchmark-bar">
             <div class="container">
                 <div class="benchmark-grid">
                     <div class="bench-box">
-                        <div class="bench-num font-mono"><span>+18%</span> Revenue</div>
-                        <div class="bench-copy">B2B companies with a defined, stage-gated sales process generate 18% more revenue than ad-hoc teams.</div>
-                        <div class="bench-source font-mono">Vantage Point &amp; SMA Research</div>
+                        <div class="bench-num font-mono"><span>25%–35%</span> Slippage</div>
+                        <div class="bench-copy">Of Month-3 forecasted enterprise deals slip into the next quarter due to unmapped Paper Processes and "happy ears" stage movement.</div>
+                        <div class="bench-source font-mono">2026 Deal Governance Benchmark</div>
                     </div>
                     <div class="bench-box">
-                        <div class="bench-num font-mono"><span>67%</span> Miss Plan</div>
-                        <div class="bench-copy">Of sales organizations miss quarterly forecasts by &gt;10% due to subjective deal inspection criteria.</div>
-                        <div class="bench-source font-mono">Gartner B2B Sales Benchmark</div>
+                        <div class="bench-num font-mono"><span>40 hrs/wk</span> Recovered</div>
+                        <div class="bench-copy">A 10-person AE team wastes 40 hrs/week logging CRM notes and writing follow-ups—equal to 1 full-time AE ($120k–$160k) in lost selling capacity.</div>
+                        <div class="bench-source font-mono">Post-Call Engine ROI</div>
                     </div>
                     <div class="bench-box">
-                        <div class="bench-num font-mono"><span>28%</span> Selling Time</div>
-                        <div class="bench-copy">Reps spend only 28% of their week selling due to manual CRM admin and fragmented tool stacks.</div>
-                        <div class="bench-source font-mono">Salesforce State of Sales</div>
+                        <div class="bench-num font-mono"><span>1 Saved Deal</span> = 3x ROI</div>
+                        <div class="bench-copy">At a $50k–$150k+ ACV, catching a single missing Economic Buyer or security review bottleneck 30 days before quarter-close pays for the system 3x over.</div>
+                        <div class="bench-source font-mono">Forensic Deal Protection</div>
                     </div>
                     <div class="bench-box">
-                        <div class="bench-num font-mono"><span>2.4x</span> Faster Close</div>
-                        <div class="bench-copy">Enterprise deals co-sold with channel and ecosystem partners close 46% faster with 2.4x higher win rates.</div>
-                        <div class="bench-source font-mono">Forrester &amp; Crossbeam Research</div>
+                        <div class="bench-num font-mono"><span>0 Months</span> InfoSec Delay</div>
+                        <div class="bench-copy">Deploying inside your existing CRM perimeter using your own LLM API keys (BYOK) bypasses 3–6 month enterprise vendor security audits.</div>
+                        <div class="bench-source font-mono">Client-Tenant Architecture</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. THE 3-MODE AI-NATIVE OPERATING MODEL -->
-        <section id="ai-model" class="section-pad section-canvas">
+        <!-- 4. THE 3-PHASE VALUE LADDER -->
+        <section id="value-ladder" class="section-pad section-canvas">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag font-mono">How We Work</span>
-                    <h2 class="section-title">Manual Execution Today. AI Automation Tomorrow.</h2>
-                    <p class="section-desc">We don't sell theoretical AI hype. We roll up our sleeves and execute hands-on with your team today, optimize your internal stack, and build our incoming AI agents around your real-world workflow.</p>
+                    <span class="section-tag font-mono">The Value Ladder</span>
+                    <h2 class="section-title">Productized Revenue Architecture + Retained Deal Governance</h2>
+                    <p class="section-desc">We don't sell open-ended hourly coding or theoretical slide decks. We operate a structured 3-phase progression that benchmarks your pipeline, installs permanent revenue machinery inside your CRM, and governs your quarterly forecast.</p>
                 </div>
 
                 <div class="ai-modes-grid">
-                    <!-- Mode 1 -->
+                    <!-- Phase 1 -->
                     <div class="ai-mode-card">
                         <div>
-                            <span class="mode-step-pill font-mono">Mode 01 // Hands-On Internal RevOps</span>
-                            <h3>Collaborate Directly With Your Team &amp; CRM</h3>
-                            <p>We start with the team and tools you already have. We design your custom sales playbook and objective deal criteria, then work hands-on with your internal RevOps team to configure and enforce stage gates inside your CRM.</p>
+                            <span class="mode-step-pill font-mono">Phase 01 // Peer Cohort Diagnostic</span>
+                            <h3>The 2026 Enterprise Deal Governance &amp; Pipeline Leakage Index</h3>
+                            <p>Start by benchmarking your sales floor against our closed-door cohort of B2B SaaS leaders ($5M–$30M ARR). In a 20-minute diagnostic, we measure your pipeline across 5 friction points and deliver your private <strong>1-Page Pipeline Leakage Scorecard</strong>.</p>
+                            <ul class="mode-checklist">
+                                <li><span>✓</span> Compare your Month-3 forecast slippage against peer CROs</li>
+                                <li><span>✓</span> Measure "Economic Buyer Lag" and "True Days in Procurement"</li>
+                                <li><span>✓</span> Receive the embargoed 2026 Benchmark Index + 1-on-1 debrief</li>
+                            </ul>
                         </div>
-                        <ul class="mode-checklist">
-                            <li><span>✓</span> Zero outsourced agency bloat—your internal team owns the keys</li>
-                            <li><span>✓</span> Verifiable stage-exit criteria locked into HubSpot or Salesforce</li>
-                            <li><span>✓</span> Clean pipeline governance and board-ready reporting</li>
-                        </ul>
+                        <a href="#diagnostic" class="btn-pillar">Take the 5-Question Benchmark →</a>
                     </div>
 
-                    <!-- Mode 2 -->
-                    <div class="ai-mode-card">
-                        <div>
-                            <span class="mode-step-pill font-mono">Mode 02 // Curate Best-in-Class AI</span>
-                            <h3>Recommend &amp; Integrate High-ROI AI Tools</h3>
-                            <p>Where your current revenue stack has blind spots, we evaluate the market and recommend proven, practical AI tools that remove rep friction—overseeing the workflow and CRM integration directly with your team.</p>
-                        </div>
-                        <ul class="mode-checklist">
-                            <li><span>✓</span> Objective vendor evaluation (no bloated shelfware)</li>
-                            <li><span>✓</span> Conversation intelligence, enrichment &amp; outbound flows</li>
-                            <li><span>✓</span> Seamless data sync back to your core CRM stages</li>
-                        </ul>
-                    </div>
-
-                    <!-- Mode 3 -->
+                    <!-- Phase 2 -->
                     <div class="ai-mode-card agent-highlight">
                         <div>
-                            <span class="mode-step-pill font-mono" style="background: var(--emerald-600); color: #ffffff;">Mode 03 // In Development (Coming Soon)</span>
-                            <h3>Hands-On Today ➔ Autonomous Agents Tomorrow</h3>
-                            <p>Today, we do the deal inspection, criteria scoring, and partner matching manually alongside your team. In parallel, we are building <strong>The Sales Bench AI Agents</strong> to automate these exact tasks for you.</p>
+                            <span class="mode-step-pill font-mono" style="background: var(--emerald-600); color: #ffffff;">Phase 02 // Fixed-Scope Turnkey Build</span>
+                            <h3>The 4-Week "Enterprise Revenue Engine" Installation Sprint</h3>
+                            <p>Instead of leaving behind a static PDF, we install our unified, battle-tested <strong>Revenue Infrastructure Kit</strong> directly into your CRM and cloud tenant—shifting your investment from discretionary training to a permanent technology asset your team keeps forever.</p>
+                            <ul class="mode-checklist">
+                                <li><span>✓</span> <strong>1 MEDDPICC Deal Health &amp; Stage-Gate Auditor</strong> inside your CRM</li>
+                                <li><span>✓</span> <strong>1 Post-Call CRM &amp; Follow-Up Drafter</strong> (saves 45–60 min/rep/day)</li>
+                                <li><span>✓</span> <strong>1 Standardized Digital Deal Room / MAP</strong> + 3-Page Ops Runbook</li>
+                            </ul>
                         </div>
-                        <ul class="mode-checklist">
-                            <li><span>✓</span> Senior operator deal execution with your reps today</li>
-                            <li><span>✓</span> Your real-world criteria trains the incoming AI agents</li>
-                            <li><span>✓</span> Charter Partner priority deployment as agents go live</li>
-                        </ul>
+                        <a href="#sprint-engine" class="btn-pillar">Inspect the 4-Week Sprint Kit →</a>
+                    </div>
+
+                    <!-- Phase 3 -->
+                    <div class="ai-mode-card">
+                        <div>
+                            <span class="mode-step-pill font-mono">Phase 03 // Retained Deal Survival</span>
+                            <h3>Executive Deal Governance &amp; Benchmarking Retainer</h3>
+                            <p>Anyone can wire a webhook; nobody can buy comparative truth and seasoned deal survival off the shelf. Our agents perform 90% of the weekly and monthly forensic extraction while Scott Carpentier chairs your high-stakes <strong>Strategic Deal Reviews</strong>.</p>
+                            <ul class="mode-checklist">
+                                <li><span>✓</span> <strong>Weekly (Autonomous):</strong> Deal Health &amp; Slippage Radar to CRO/Managers</li>
+                                <li><span>✓</span> <strong>Monthly (Benchmarked):</strong> 10-Page Revenue Leakage &amp; Cohort Forensic PDF</li>
+                                <li><span>✓</span> <strong>Monthly/Quarterly (Live):</strong> 60-Min Strategic Deal Review (Top 5 Deals)</li>
+                            </ul>
+                        </div>
+                        <a href="#governance-retainer" class="btn-pillar">Explore Executive Governance →</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 5. INTERACTIVE PLAYBOOK, DEAL CRITERIA & AI AGENT ENGINE -->
-        <section id="playbook-engine" class="section-pad section-white">
+        <!-- 5. INTERACTIVE 4-TAB REVENUE INFRASTRUCTURE KIT & 4-WEEK SPRINT -->
+        <section id="sprint-engine" class="section-pad section-white">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag font-mono">Proven Process // Playbook + AI Agents</span>
-                    <h2 class="section-title">How Playbook Criteria &amp; AI Agents Create Predictable Outcomes</h2>
-                    <p class="section-desc">Click through the 4 stages of a deal to see how our Playbook Criteria, your Internal RevOps CRM gates, and our incoming AI Agents work together.</p>
+                    <span class="section-tag font-mono">Inside Phase 02 // The 4-Week Installation Sprint</span>
+                    <h2 class="section-title">The Standardized "Revenue Infrastructure Kit" Installed In Your Stack</h2>
+                    <p class="section-desc">Click through the 4 components of our fixed-scope 4-Week Sprint to see what gets installed in your CRM, how the division of labor works, and how it saves and makes your team serious money.</p>
                 </div>
 
                 <div class="engine-shell">
                     <div class="stage-tabs">
                         <button type="button" class="stage-tab-btn active" data-stage="1">
-                            <span class="stage-tab-num font-mono">Stage 01 // Qualification</span>
-                            <span class="stage-tab-name">ICP &amp; Problem Discovery</span>
+                            <span class="stage-tab-num font-mono">Component 01 // Deal Rigor</span>
+                            <span class="stage-tab-name">MEDDPICC Audit Engine</span>
                         </button>
                         <button type="button" class="stage-tab-btn" data-stage="2">
-                            <span class="stage-tab-num font-mono">Stage 02 // Deal Criteria</span>
-                            <span class="stage-tab-name">Champion &amp; Decision Criteria</span>
+                            <span class="stage-tab-num font-mono">Component 02 // Capacity</span>
+                            <span class="stage-tab-name">Post-Call CRM Drafter</span>
                         </button>
                         <button type="button" class="stage-tab-btn" data-stage="3">
-                            <span class="stage-tab-num font-mono">Stage 03 // Co-Sell &amp; Proof</span>
-                            <span class="stage-tab-name">Business Case &amp; Partner Attach</span>
+                            <span class="stage-tab-num font-mono">Component 03 // Velocity</span>
+                            <span class="stage-tab-name">Digital Deal Room &amp; MAP</span>
                         </button>
                         <button type="button" class="stage-tab-btn" data-stage="4">
-                            <span class="stage-tab-num font-mono">Stage 04 // Predictable Close</span>
-                            <span class="stage-tab-name">Mutual Action Plan &amp; Close</span>
+                            <span class="stage-tab-num font-mono">Component 04 // Handover</span>
+                            <span class="stage-tab-name">4-Week Rollout &amp; Runbook</span>
                         </button>
                     </div>
 
-                    <!-- Stage 1 -->
+                    <!-- Tab 1: MEDDPICC Audit Engine -->
                     <div class="stage-panel active" id="stage-panel-1">
                         <div class="stage-col">
-                            <span class="stage-col-label font-mono">1. Playbook &amp; Deal Criteria</span>
-                            <h4>Buyer-Verifiable Discovery</h4>
+                            <span class="stage-col-label font-mono">1. Revenue Architecture Logic</span>
+                            <h4>Objective Stage-Exit Criteria</h4>
                             <ul>
-                                <li><span>→</span> Quantify cost of inaction (business pain) in first 2 calls</li>
-                                <li><span>→</span> Strict ICP tiering to disqualify low-probability deals early</li>
-                                <li><span>→</span> Documented compelling event &amp; stakeholder map</li>
+                                <li><span>→</span> Replaces subjective rep "happy ears" with buyer-verifiable MEDDPICC rubrics</li>
+                                <li><span>→</span> Requires quantified business pain (Metrics) and validated Decision Criteria</li>
+                                <li><span>→</span> Tracks direct Economic Buyer engagement vs. single-threaded Champions</li>
                             </ul>
                         </div>
                         <div class="stage-col">
-                            <span class="stage-col-label font-mono">2. Internal RevOps &amp; CRM Gate</span>
-                            <h4>System Stage Enforcement</h4>
+                            <span class="stage-col-label font-mono">2. Automated CRM Enforcement</span>
+                            <h4>Transcript-to-Gate Verification</h4>
                             <ul>
-                                <li><span>⚙</span> Mandatory CRM fields: Identified Pain, ICP Score, Trigger</li>
-                                <li><span>⚙</span> Stage advancement locked until discovery exit criteria met</li>
-                                <li><span>⚙</span> Source tagging (Direct vs. SI / Consultancy / ISV Partner)</li>
+                                <li><span>⚙</span> Scans call transcripts automatically against stage-specific prompt rubrics</li>
+                                <li><span>⚙</span> Updates dynamic MEDDPICC scorecards directly on the CRM opportunity</li>
+                                <li><span>⚙</span> Flags deals advancing to Stage 3+ without Economic Buyer or Paper Process evidence</li>
                             </ul>
                         </div>
                         <div class="stage-col agent-col">
-                            <span class="stage-col-label cyan font-mono">3. Hands-On Today ➔ AI Agent (Coming Soon)</span>
-                            <h4>Discovery &amp; ICP Deal Scoring</h4>
+                            <span class="stage-col-label cyan font-mono">3. Economic Leverage (Revenue Expansion)</span>
+                            <h4>Eliminate Late-Stage Slippage</h4>
                             <ul>
-                                <li><span>✦ Today:</span> We manually review discovery calls and score ICP fit with your reps</li>
-                                <li><span>✦ Tomorrow:</span> Our incoming Agent auto-audits call transcripts &amp; enriches account data</li>
-                                <li><span>✦ Value:</span> Immediate rep coaching today, automated workflow tomorrow</li>
+                                <li><span>✦ Revenue Protected:</span> Catches unmapped Paper Processes 30+ days before quarter-close</li>
+                                <li><span>✦ Win-Rate Lift:</span> Lifts enterprise win rates 15%–20% on $50k–$150k+ ACV pursuits</li>
+                                <li><span>✦ Immediate ROI:</span> Saving a single slipped enterprise deal pays for the sprint 3x over</li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- Stage 2 -->
+                    <!-- Tab 2: Post-Call CRM Drafter -->
                     <div class="stage-panel" id="stage-panel-2">
                         <div class="stage-col">
-                            <span class="stage-col-label font-mono">1. Playbook &amp; Deal Criteria</span>
-                            <h4>Locking the Decision Criteria</h4>
+                            <span class="stage-col-label font-mono">1. Revenue Architecture Logic</span>
+                            <h4>Zero-Friction Rep Hygiene</h4>
                             <ul>
-                                <li><span>→</span> Align formal technical &amp; commercial evaluation criteria</li>
-                                <li><span>→</span> Validate internal Champion with power and influence</li>
-                                <li><span>→</span> Confirm path to Economic Buyer sign-off</li>
+                                <li><span>→</span> Eliminates the #1 reason playbooks fail: reps hating manual 8-point CRM checklists</li>
+                                <li><span>→</span> Standardizes how discovery notes, next steps, and risks are captured across every AE</li>
+                                <li><span>→</span> Drafts executive-ready buyer recap emails aligned to stage goals</li>
                             </ul>
                         </div>
                         <div class="stage-col">
-                            <span class="stage-col-label font-mono">2. Internal RevOps &amp; CRM Gate</span>
-                            <h4>System Stage Enforcement</h4>
+                            <span class="stage-col-label font-mono">2. Automated CRM Enforcement</span>
+                            <h4>Audio ➔ Structured CRM Properties</h4>
                             <ul>
-                                <li><span>⚙</span> Required CRM gate: Decision Criteria &amp; Champion verified</li>
-                                <li><span>⚙</span> Automated alert if deal sits in Stage 2 beyond target velocity</li>
-                                <li><span>⚙</span> Dynamic MEDDPICC scorecard updated on opportunity</li>
+                                <li><span>⚙</span> Ingests call recordings/transcripts via standardized webhook inside your tenant</li>
+                                <li><span>⚙</span> Parses structured JSON directly into HubSpot or Salesforce custom fields</li>
+                                <li><span>⚙</span> Delivers one-click buyer follow-up draft and CRM update to the AE in Slack/CRM</li>
                             </ul>
                         </div>
                         <div class="stage-col agent-col">
-                            <span class="stage-col-label cyan font-mono">3. Hands-On Today ➔ AI Agent (Coming Soon)</span>
-                            <h4>Deal Criteria &amp; Risk Scoring</h4>
+                            <span class="stage-col-label cyan font-mono">3. Economic Leverage (Cost Reduction)</span>
+                            <h4>Recover 1 Full FTE of Selling Capacity</h4>
                             <ul>
-                                <li><span>✦ Today:</span> We manually inspect Champion strength and verify Decision Criteria lock</li>
-                                <li><span>✦ Tomorrow:</span> Our incoming Agent auto-detects single-threaded risk &amp; drafts ROI briefs</li>
-                                <li><span>✦ Value:</span> Stop deal slippage immediately while testing agent logic</li>
+                                <li><span>✦ Time Saved:</span> Cuts AE administrative work by 45–60 minutes per day (4+ hrs/week)</li>
+                                <li><span>✦ Team Impact:</span> Across 10 AEs, recovers 40 hrs/week = 1 full-time AE ($120k–$160k value)</li>
+                                <li><span>✦ Faster Ramp:</span> Speeds up new enterprise AE onboarding and ramp by 60 days</li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- Stage 3 -->
+                    <!-- Tab 3: Digital Deal Room & MAP -->
                     <div class="stage-panel" id="stage-panel-3">
                         <div class="stage-col">
-                            <span class="stage-col-label font-mono">1. Playbook &amp; Deal Criteria</span>
-                            <h4>Value Proof &amp; Partner Co-Sell</h4>
+                            <span class="stage-col-label font-mono">1. Revenue Architecture Logic</span>
+                            <h4>Controlling the Paper Process</h4>
                             <ul>
-                                <li><span>→</span> Execute scoped evaluation tied strictly to buyer criteria</li>
-                                <li><span>→</span> Attach regional SI, boutique consultancy, or ISV co-sell partner</li>
-                                <li><span>→</span> Economic Buyer validates CFO business case and budget</li>
+                                <li><span>→</span> Standardizes the bridge from "Verbal Yes" to signed Master Services Agreement (MSA)</li>
+                                <li><span>→</span> Co-authors a Mutual Action Plan (MAP) working backward from buyer go-live</li>
+                                <li><span>→</span> Aligns regional SIs, boutique consultancies, or ISV co-sell partners on complex deals</li>
                             </ul>
                         </div>
                         <div class="stage-col">
-                            <span class="stage-col-label font-mono">2. Internal RevOps &amp; CRM Gate</span>
-                            <h4>System Stage Enforcement</h4>
+                            <span class="stage-col-label font-mono">2. Automated CRM Enforcement</span>
+                            <h4>Buyer Committee Alignment Portal</h4>
                             <ul>
-                                <li><span>⚙</span> Economic Buyer contact role &amp; ROI sign-off logged in CRM</li>
-                                <li><span>⚙</span> Partner co-sell attach &amp; deal registration tracked</li>
-                                <li><span>⚙</span> Forecast category promoted from "Best Case" to "Commit"</li>
+                                <li><span>⚙</span> Standardized Deal Room template housing CFO ROI case, InfoSec pack, and Legal redlines</li>
+                                <li><span>⚙</span> Tracks stakeholder engagement across Finance, Legal, InfoSec, and Economic Buyer</li>
+                                <li><span>⚙</span> Governs "Commit" forecast eligibility based on verified Paper Process milestones</li>
                             </ul>
                         </div>
                         <div class="stage-col agent-col">
-                            <span class="stage-col-label cyan font-mono">3. Hands-On Today ➔ AI Agent (Coming Soon)</span>
-                            <h4>Partner Match &amp; Business Case</h4>
+                            <span class="stage-col-label cyan font-mono">3. Economic Leverage (Velocity)</span>
+                            <h4>Compress "True Days in Procurement"</h4>
                             <ul>
-                                <li><span>✦ Today:</span> We co-build the CFO business case &amp; map SI/consultancy co-sell accounts</li>
-                                <li><span>✦ Tomorrow:</span> Our incoming Agent auto-matches partner ecosystems &amp; builds models</li>
-                                <li><span>✦ Value:</span> Accelerate enterprise deals now with direct operator co-selling</li>
+                                <li><span>✦ Procurement Speed:</span> Eliminates the 20+ day late-stage security and legal stall</li>
+                                <li><span>✦ Multi-Threading:</span> Ensures the economic check-signer is engaged before Stage 3</li>
+                                <li><span>✦ Board Confidence:</span> Delivers &lt;5% quarterly forecast variance</li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- Stage 4 -->
+                    <!-- Tab 4: 4-Week Rollout & Division of Labor -->
                     <div class="stage-panel" id="stage-panel-4">
                         <div class="stage-col">
-                            <span class="stage-col-label font-mono">1. Playbook &amp; Deal Criteria</span>
-                            <h4>Mutual Action Plan &amp; Paper Process</h4>
+                            <span class="stage-col-label font-mono">1. The 4-Week Installation Schedule</span>
+                            <h4>Fixed-Scope Turnkey Sprint</h4>
                             <ul>
-                                <li><span>→</span> Co-author a Mutual Action Plan (MAP) working backward from launch</li>
-                                <li><span>→</span> Clear InfoSec, legal redlines, and procurement gates early</li>
-                                <li><span>→</span> Lock final signature sequence (&lt;5% forecast variance)</li>
+                                <li><span>W1:</span> Audit pipeline leakage &amp; configure standardized MEDDPICC CRM stage gates</li>
+                                <li><span>W2:</span> Deploy pre-packaged MEDDPICC &amp; Post-Call workflows in your tenant (using your API keys)</li>
+                                <li><span>W3:</span> Run AE floor enablement workshop &amp; sales manager 1-on-1 coaching cadence</li>
+                                <li><span>W4:</span> Hand over the <strong>3-Page Ops Runbook</strong> + <strong>14-Day Hypercare Window</strong></li>
                             </ul>
                         </div>
                         <div class="stage-col">
-                            <span class="stage-col-label font-mono">2. Internal RevOps &amp; CRM Gate</span>
-                            <h4>System Stage Enforcement</h4>
+                            <span class="stage-col-label font-mono">2. Clean Division of Labor</span>
+                            <h4>We Own the Brain. You Own the Plumbing.</h4>
                             <ul>
-                                <li><span>⚙</span> Paper Process tracker (InfoSec, Legal, Procurement) active</li>
-                                <li><span>⚙</span> Automated CS &amp; implementation partner handoff triggered</li>
-                                <li><span>⚙</span> Closed-Won / Loss telemetry fed back to refine playbook</li>
+                                <li><span>⚙ Revenue Architect (Scott):</span> Designs deal governance, MEDDPICC rubrics, prompts &amp; coaching</li>
+                                <li><span>⚙ Option A (Your RevOps/Dev):</span> We hand your internal lead the blueprints to wire inside your CRM</li>
+                                <li><span>⚙ Option B (Our AI Architect):</span> Don't have a technical admin? Our turnkey engineer wires it for you</li>
                             </ul>
                         </div>
                         <div class="stage-col agent-col">
-                            <span class="stage-col-label cyan font-mono">3. Hands-On Today ➔ AI Agent (Coming Soon)</span>
-                            <h4>Forecast Governor &amp; MAP Tracker</h4>
+                            <span class="stage-col-label cyan font-mono">3. Complete Deliverable Package</span>
+                            <h4>What You Own &amp; Keep Forever</h4>
                             <ul>
-                                <li><span>✦ Today:</span> We run weekly deal inspections and govern Mutual Action Plans with leadership</li>
-                                <li><span>✦ Tomorrow:</span> Our incoming Agent auto-tracks buyer procurement &amp; flags forecast risks</li>
-                                <li><span>✦ Value:</span> Hit quarterly plan with &lt;5% forecast variance</li>
+                                <li><span>✦ 1. The Strategy:</span> Custom MEDDPICC Deal Stage Playbook (PDF/Notion)</li>
+                                <li><span>✦ 2. The Core Assets:</span> Tested Prompt Rubrics &amp; Digital Deal Room Templates</li>
+                                <li><span>✦ 3. The Architecture:</span> Installed Workflows running in your Cloud/CRM + 3-Page Ops Runbook</li>
                             </ul>
                         </div>
                     </div>
@@ -1683,89 +1864,193 @@
             </div>
         </section>
 
-        <!-- 6. CHARTER DESIGN PARTNER PROGRAM (CO-BUILD THE PRODUCT WITH US) -->
-        <section id="design-partner" class="section-pad section-canvas">
+        <!-- 6. EXECUTIVE DEAL GOVERNANCE RETAINER & THE ANTI-FLUFF PROTOCOL -->
+        <section id="governance-retainer" class="section-pad section-canvas">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag font-mono">Phase 03 // Ongoing Deal Governance &amp; Benchmarking</span>
+                    <h2 class="section-title">Nobody Pays Enterprise Multiples for Plumbing. You Pay for Comparative Truth &amp; Deal Survival.</h2>
+                    <p class="section-desc">A contractor can wire a webhook, but they cannot tell you how your deal slippage compares to 15 peer SaaS companies—or sit across from your CRO to stop a $100k deal from slipping. Our Executive Deal Governance program combines 95% automated telemetry with high-stakes operator inspection.</p>
+                </div>
+
+                <div class="governance-grid">
+                    <!-- Left: The 3 Tiers of Recurring Deliverables -->
+                    <div class="gov-cadence-card">
+                        <div class="font-mono" style="font-size: 11.5px; font-weight: 800; color: var(--emerald-700); text-transform: uppercase; margin-bottom: 12px;">
+                            // The Three Tiers of Recurring Governance Deliverables
+                        </div>
+                        <h3 style="font-size: 23px; font-weight: 900; color: var(--text-ink); margin-bottom: 16px;">
+                            Automated Forensics + Seasoned Operator Inspection
+                        </h3>
+
+                        <div class="cadence-item">
+                            <span class="cadence-badge font-mono">1. Weekly // 100% Autonomous</span>
+                            <h4>"Deal Health &amp; Slippage Radar" (Slack / Email Digest)</h4>
+                            <p>Every Monday morning, your installed agent scans all call transcripts and CRM stage changes from the past 7 days—flagging the top 3 at-risk enterprise deals with MEDDPICC gaps and alerting your CRO and Sales Managers automatically.</p>
+                        </div>
+
+                        <div class="cadence-item">
+                            <span class="cadence-badge font-mono">2. Monthly // Cohort Benchmarked</span>
+                            <h4>"Revenue Leakage &amp; Pipeline Forensic Report" (10-Page Executive PDF)</h4>
+                            <p>Compiles your stage progression velocity, rep hygiene, Economic Buyer latency, and True Days in Procurement—comparing your sales floor directly against our <strong>Anonymized Peer Cohort Benchmark</strong>, complete with executive commentary from Scott.</p>
+                        </div>
+
+                        <div class="cadence-item">
+                            <span class="cadence-badge font-mono">3. Monthly or Quarterly // Live Executive Session</span>
+                            <h4>60-Minute "Executive Strategic Deal Review" + System Heartbeat</h4>
+                            <p>Scott chairs a disciplined 60-minute forensic inspection with your CEO/CRO targeting your Top 5 highest-value enterprise pursuits ahead of board forecasts—backed by automated weekly API/webhook heartbeat checks and quarterly prompt tuning.</p>
+                        </div>
+                    </div>
+
+                    <!-- Right: The Anti-Fluff Protocol -->
+                    <div class="antifluff-card">
+                        <div>
+                            <span class="section-tag dark-tag font-mono">// Live Strategic Deal Review: The Anti-Fluff Protocol</span>
+                            <h3 style="font-size: 23px; font-weight: 900; color: #ffffff; margin: 6px 0 12px;">
+                                Operational Risk Management for Your Revenue
+                            </h3>
+                            <p style="font-size: 14.5px; color: #cbd5e1; margin-bottom: 22px; line-height: 1.6;">
+                                Standard sales coaching fails because it's unstructured. We never ask: <em>"Hey, how do you feel about the Acme deal?"</em> Instead, we open your agent-generated <strong>Deal Health Scorecard</strong> and run a 15-minute forensic inspection per pursuit:
+                            </p>
+
+                            <div class="protocol-quote-box">
+                                <span class="protocol-quote-lbl font-mono">01 // Hard Dollar Metrics Inspection</span>
+                                <div class="protocol-quote-text">
+                                    "The call transcript says the prospect wants to 'improve efficiency,' but there is no hard dollar metric. Who owns the CFO ROI model before this enters Stage 3?"
+                                </div>
+                            </div>
+
+                            <div class="protocol-quote-box cyan">
+                                <span class="protocol-quote-lbl font-mono">02 // Economic Buyer Latency Check</span>
+                                <div class="protocol-quote-text">
+                                    "Your AE spoke with the Director twice, but the VP is the signatory. You are single-threaded. When is the executive alignment call scheduled?"
+                                </div>
+                            </div>
+
+                            <div class="protocol-quote-box">
+                                <span class="protocol-quote-lbl font-mono">03 // Paper Process &amp; Procurement Reality</span>
+                                <div class="protocol-quote-text">
+                                    "We have 18 days left in the quarter. Their standard security review takes 14 days and legal takes 10 days. This deal cannot close this quarter—pull it out of the board forecast now."
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="border-top: 1px solid #1e293b; padding-top: 18px; margin-top: 10px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+                            <div class="font-mono" style="font-size: 12px; color: var(--emerald-400); font-weight: 800;">
+                                // Saving ONE $50k slipped deal pays for a full year of governance.
+                            </div>
+                            <a href="#book" class="btn-primary" style="padding: 11px 18px; font-size: 13.5px;">Book Governance Review →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. ENTERPRISE DATA, BYOK SECURITY & BENCHMARK NETWORK -->
+        <section id="byok-security" class="section-pad section-white">
             <div class="container">
                 <div class="charter-banner">
                     <div class="charter-top">
-                        <span class="section-tag dark-tag font-mono">// The Charter Design Partner Advantage</span>
+                        <span class="section-tag dark-tag font-mono">// Enterprise Data &amp; Security Architecture (BYOK)</span>
                         <h2 class="section-title light" style="margin-top: 8px;">
-                            We Do the Work With Your Team Today. You Help Shape the Platform for Tomorrow.
+                            Your CISO's Favorite Architecture: Installed In Your Perimeter. Powered by Your API Keys.
                         </h2>
                         <p class="section-desc light">
-                            We are actively building <strong>The Sales Bench</strong> software platform and autonomous AI agents. In the meantime, we do this work manually alongside your leadership and internal team. As a consulting client, you get senior executive horsepower immediately—and an exclusive seat at the table to shape how the platform and agents are engineered.
+                            When software runs on third-party vendor servers, enterprise procurement hits a 3–6 month wall of SOC 2 audits, penetration tests, and DPA redlines. We eliminate infosec friction completely by deploying inside <strong>your existing tenant using your own enterprise LLM keys (BYOK)</strong>.
                         </p>
                     </div>
 
                     <div class="charter-grid">
                         <div class="charter-card">
-                            <span class="charter-num font-mono">Advantage 01 // Custom-Built For You</span>
-                            <h3>Direct Say in the Product Roadmap</h3>
-                            <p>Instead of adapting to rigid off-the-shelf software, your specific sales motion, CRM stages, and deal criteria directly inform the features, scorecards, and AI agents we build.</p>
+                            <span class="charter-num font-mono">Security Rule 01 // Zero Data Retention</span>
+                            <h3>Raw Data Never Leaves Your Perimeter</h3>
+                            <p>Deal notes, call transcripts, customer names, and pricing terms never touch an external consulting database. Everything executes inside your approved CRM (HubSpot/Salesforce) and cloud environment.</p>
                         </div>
 
                         <div class="charter-card">
-                            <span class="charter-num font-mono">Advantage 02 // Immediate Operator Value</span>
-                            <h3>Hands-On Strategy Today, Automation Tomorrow</h3>
-                            <p>You don't wait for software to get results. Scott Carpentier works directly with your reps and internal RevOps in a 4-Week Sprint to fix deal slippage, install stage gates, and build partner channels now.</p>
+                            <span class="charter-num font-mono">Security Rule 02 // Bring Your Own Key (BYOK)</span>
+                            <h3>Zero SOC 2 Delay &amp; Zero Seat Markup</h3>
+                            <p>Connect your own enterprise LLM accounts (Azure OpenAI, AWS Bedrock, Google Cloud Vertex, or OpenAI/Anthropic enterprise keys). Your security team has already approved the infrastructure, and your data never trains public models.</p>
                         </div>
 
                         <div class="charter-card">
-                            <span class="charter-num font-mono">Advantage 03 // Founding Economics</span>
-                            <h3>Preferred Charter Partner Access</h3>
-                            <p>Consulting clients lock in preferred founding pricing, early beta access to incoming AI agents, and custom agent fine-tuning tailored to their proprietary sales playbook.</p>
+                            <span class="charter-num font-mono">Security Rule 03 // The Benchmark Moat</span>
+                            <h3>De-Identified Cohort Intelligence</h3>
+                            <p>By keeping raw PII inside your boundary and only aggregating de-identified workflow heuristics (stage conversion patterns, procurement velocity by ACV, Economic Buyer lag), you gain access to <strong>The Sales Bench Quarterly Index</strong>.</p>
+                        </div>
+                    </div>
+
+                    <!-- Architectural Boundary Diagram -->
+                    <div class="boundary-split">
+                        <div class="boundary-box">
+                            <h4 class="font-mono"><span style="color: var(--emerald-400);">🔒 STAYS 100% INSIDE YOUR TENANT</span> (CRM / Cloud / BYOK)</h4>
+                            <ul>
+                                <li>• Raw Customer &amp; Prospect Names (PII)</li>
+                                <li>• Unedited Call Audio &amp; Meeting Transcripts</li>
+                                <li>• Exact Contract Values, Pricing Terms &amp; Proposals</li>
+                                <li>• Internal CRM Webhooks &amp; Enterprise API Keys</li>
+                            </ul>
+                        </div>
+                        <div class="boundary-box" style="border-color: rgba(34, 211, 238, 0.4);">
+                            <h4 class="font-mono"><span style="color: var(--cyan-400);">📊 DE-IDENTIFIED COHORT TELEMETRY</span> (The Sales Bench Index)</h4>
+                            <ul>
+                                <li>• Anonymized Deal Stage Drop-Off &amp; Slippage Patterns</li>
+                                <li>• "True Days in Procurement" Averages by ACV Tier</li>
+                                <li>• "Economic Buyer Lag" Correlation to Win Rates</li>
+                                <li>• Prompt Rubric Effectiveness &amp; Charter Product Roadmap Input</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 7. 3 CORE CONSULTING PRACTICE AREAS -->
-        <section id="services" class="section-pad section-white">
+        <!-- 8. 3 CORE COMMERCIAL PRACTICE AREAS -->
+        <section id="services" class="section-pad section-canvas">
             <div class="container">
                 <div class="section-header">
                     <span class="section-tag font-mono">Core Practice Areas</span>
-                    <h2 class="section-title">Where We Drive Measurable Revenue Outcomes</h2>
-                    <p class="section-desc">Every engagement combines our Playbook &amp; Deal Criteria methodology, internal RevOps collaboration, and AI-native execution.</p>
+                    <h2 class="section-title">Enterprise Revenue Architecture Across Direct, Channel &amp; Cross-Border GTM</h2>
+                    <p class="section-desc">Whether we are installing your autonomous MEDDPICC engine, building a high-attach partner ecosystem, or validating North American market entry, every engagement is engineered for measurable revenue leverage.</p>
                 </div>
 
                 <div class="pillars-grid">
                     <!-- Pillar 1 -->
                     <div class="pillar-card featured">
                         <div>
-                            <span class="pillar-num font-mono">Pillar 01 // Playbooks &amp; Deal Process</span>
-                            <h3>GTM Playbook Architecture, Deal Criteria &amp; AI Stack</h3>
-                            <p>We diagnose pipeline leaks, build your custom sales playbook, define strict stage-by-stage deal criteria, and deploy AI tools and agents alongside your internal RevOps team.</p>
+                            <span class="pillar-num font-mono">Pillar 01 // MEDDPICC &amp; Deal Governance</span>
+                            <h3>Revenue Engine Sprint &amp; Executive Deal Governance</h3>
+                            <p>Eliminate Q3/Q4 deal slippage, lift win rates on six-figure ACV deals, and recover 1+ FTE of rep capacity by installing autonomous MEDDPICC and Deal Room workflows inside your CRM.</p>
                             <div class="deliverables-box">
-                                <div class="deliverables-title font-mono">What We Deliver:</div>
+                                <div class="deliverables-title font-mono">Core Deliverables:</div>
                                 <ul class="deliverables-list">
-                                    <li><span>✓</span> <div><strong>Custom Sales Playbook:</strong> ICP tiers, discovery frameworks, and stage exit criteria</div></li>
-                                    <li><span>✓</span> <div><strong>Internal RevOps Alignment:</strong> We specify the CRM gates; your internal team configures them</div></li>
-                                    <li><span>✓</span> <div><strong>AI Tool &amp; Agent Deployment:</strong> Curate third-party AI tools or deploy our own agents</div></li>
-                                    <li><span>✓</span> <div><strong>Predictable Forecasting:</strong> Weekly deal inspection delivering &lt;5% forecast variance</div></li>
+                                    <li><span>✓</span> <div><strong>MEDDPICC Rigor &amp; Audit Agent:</strong> Transcript-verified stage gates and risk flags</div></li>
+                                    <li><span>✓</span> <div><strong>Post-Call CRM Drafter:</strong> Automated CRM property updates &amp; follow-up emails</div></li>
+                                    <li><span>✓</span> <div><strong>Digital Deal Room / MAP:</strong> Aligns buyer Legal, InfoSec &amp; Finance early</div></li>
+                                    <li><span>✓</span> <div><strong>Executive Governance:</strong> Weekly Slippage Radar, Monthly Forensics &amp; Live Deal Reviews</div></li>
                                 </ul>
                             </div>
                         </div>
-                        <a href="#book" class="btn-pillar">Engineer Your Playbook &amp; Process →</a>
+                        <a href="#diagnostic" class="btn-pillar">Benchmark Your Deal Governance →</a>
                     </div>
 
                     <!-- Pillar 2 -->
                     <div class="pillar-card">
                         <div>
                             <span class="pillar-num font-mono">Pillar 02 // Partner Ecosystems</span>
-                            <h3>Channel Alliances &amp; Distribution Partnerships</h3>
+                            <h3>Channel Alliances &amp; Co-Sell Architecture</h3>
                             <p>Channel distribution is never limited to the Big Four. We architect high-attach co-selling ecosystems across regional SIs, boutique advisory consultancies, and tech ISVs.</p>
                             <div class="deliverables-box">
-                                <div class="deliverables-title font-mono">What We Deliver:</div>
+                                <div class="deliverables-title font-mono">Core Deliverables:</div>
                                 <ul class="deliverables-list">
-                                    <li><span>✓</span> <div><strong>Multi-Tier Partner Architecture:</strong> Regional SIs, boutique vertical firms, and tech ISVs</div></li>
-                                    <li><span>✓</span> <div><strong>Partner Co-Sell Playbooks:</strong> Joint value propositions, account mapping, and enablement</div></li>
-                                    <li><span>✓</span> <div><strong>Channel Governance:</strong> Deal registration workflows, referral margins, and CRM tracking</div></li>
+                                    <li><span>✓</span> <div><strong>Multi-Tier Partner Ecosystem:</strong> Regional SIs, boutique vertical firms, and tech ISVs</div></li>
+                                    <li><span>✓</span> <div><strong>Partner Co-Sell Playbooks:</strong> Joint value propositions, account mapping &amp; enablement</div></li>
+                                    <li><span>✓</span> <div><strong>CRM Channel Governance:</strong> Deal registration workflows, referral margins &amp; attribution</div></li>
                                     <li><span>✓</span> <div><strong>2.4x Deal Velocity:</strong> Turn dormant partner agreements into active co-sold revenue</div></li>
                                 </ul>
                             </div>
                         </div>
-                        <a href="#book" class="btn-pillar">Build Your Partner Channel →</a>
+                        <a href="#book" class="btn-pillar">Architect Your Partner Channel →</a>
                     </div>
 
                     <!-- Pillar 3 -->
@@ -1773,75 +2058,18 @@
                         <div>
                             <span class="pillar-num font-mono">Pillar 03 // Market Expansion</span>
                             <h3>North American &amp; Cross-Border Market Entry</h3>
-                            <p>Entering the US or Canada? Validate buyer appetite, localize your playbook, and establish regional channel alliances before spending $250k+ on premature local hires.</p>
+                            <p>Entering the US or Canada? Validate enterprise buyer appetite, localize your MEDDPICC playbook, and establish regional channel alliances before spending $250k+ on premature local hires.</p>
                             <div class="deliverables-box">
-                                <div class="deliverables-title font-mono">What We Deliver:</div>
+                                <div class="deliverables-title font-mono">Core Deliverables:</div>
                                 <ul class="deliverables-list">
                                     <li><span>✓</span> <div><strong>Live Buyer Validation:</strong> Direct discovery interviews with North American enterprise buyers</div></li>
-                                    <li><span>✓</span> <div><strong>US &amp; Canada Localization:</strong> Navigate regional procurement, USD/CAD pricing, and positioning</div></li>
-                                    <li><span>✓</span> <div><strong>Turnkey Rep Playbook:</strong> Hand over a validated playbook when onboarding local reps</div></li>
+                                    <li><span>✓</span> <div><strong>US &amp; Canada Localization:</strong> Regional procurement, USD/CAD pricing &amp; positioning</div></li>
+                                    <li><span>✓</span> <div><strong>Turnkey Rep Playbook:</strong> Validated revenue architecture ready for local AE onboarding</div></li>
                                     <li><span>✓</span> <div><strong>Compliant EOR Scaling:</strong> Rapidly hire local sellers via Employer of Record partners</div></li>
                                 </ul>
                             </div>
                         </div>
                         <a href="#book" class="btn-pillar">De-Risk Your Market Expansion →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 8. ENGAGEMENT MODEL: 4-WEEK SPRINT TO 90-120 DAY PLAN -->
-        <section id="framework" class="section-pad section-canvas">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag font-mono">Engagement Roadmap</span>
-                    <h2 class="section-title">Start With a 4-Week Sprint. Roll Into a 90–120 Day Plan.</h2>
-                    <p class="section-desc">Every engagement begins with a focused 4-Week Commercial Sprint to build your playbook, define deal criteria, and audit your AI stack before rolling into execution.</p>
-                </div>
-
-                <div class="sprint-grid">
-                    <div class="sprint-card phase-one">
-                        <span class="pillar-num font-mono">Phase 01 // Weeks 1–4</span>
-                        <h3 style="font-size: 22px; font-weight: 900; color: var(--text-ink); margin-bottom: 10px;">The 4-Week Playbook &amp; AI Architecture Sprint</h3>
-                        <p style="font-size: 15px; color: var(--text-body); margin-bottom: 20px;">A rapid diagnostic and design sprint that delivers your custom Playbook, Deal Criteria Matrix, and AI/RevOps Blueprint in 30 days.</p>
-                        <div class="step-row">
-                            <span class="step-badge font-mono">W1</span>
-                            <div><strong>Commercial Motion &amp; Pipeline Audit:</strong> Analyze deal slippage, stage conversion leaks, ICP fit, and current qualification habits.</div>
-                        </div>
-                        <div class="step-row">
-                            <span class="step-badge font-mono">W2</span>
-                            <div><strong>Playbook &amp; Deal Criteria Design:</strong> Define objective buyer-verifiable exit criteria, discovery frameworks, and MEDDPICC scorecards.</div>
-                        </div>
-                        <div class="step-row">
-                            <span class="step-badge font-mono">W3</span>
-                            <div><strong>Internal RevOps &amp; AI Stack Blueprint:</strong> Specify CRM stage gates for your internal team, recommend AI tools, and configure initial Sales Bench Agents.</div>
-                        </div>
-                        <div class="step-row">
-                            <span class="step-badge font-mono">W4</span>
-                            <div><strong>Channel Strategy &amp; 90–120 Day Plan:</strong> Deliver your complete Playbook, Partner Ecosystem map, and 90–120 day rollout plan.</div>
-                        </div>
-                    </div>
-
-                    <div class="sprint-card">
-                        <span class="pillar-num font-mono" style="background:#f1f5f9; color:#334155; border-color:#cbd5e1;">Phase 02 // Days 31–120</span>
-                        <h3 style="font-size: 22px; font-weight: 900; color: var(--text-ink); margin-bottom: 10px;">90–120 Day Execution, Agent Rollout &amp; Channel Launch</h3>
-                        <p style="font-size: 15px; color: var(--text-body); margin-bottom: 20px;">Hands-on execution—operationalizing the playbook with your internal RevOps team, deploying AI agents, and launching partner co-selling.</p>
-                        <div class="step-row">
-                            <span class="step-badge font-mono">01</span>
-                            <div><strong>CRM &amp; AI Agent Operationalization:</strong> Guide your internal RevOps team on CRM stage gates while activating our Deal Scoring &amp; Inspection Agents.</div>
-                        </div>
-                        <div class="step-row">
-                            <span class="step-badge font-mono">02</span>
-                            <div><strong>Deal Rigor &amp; Forecast Governance:</strong> Run weekly deal inspections and Mutual Action Plan reviews to lock in predictable quarterly forecasts.</div>
-                        </div>
-                        <div class="step-row">
-                            <span class="step-badge font-mono">03</span>
-                            <div><strong>Partner &amp; Channel Activation:</strong> Launch co-selling playbooks and account mapping with regional SIs, boutique consultancies, and tech ISVs.</div>
-                        </div>
-                        <div class="step-row">
-                            <span class="step-badge font-mono">04</span>
-                            <div><strong>Charter Partner Product Co-Design:</strong> Tailor ongoing Sales Bench agent workflows directly around your team's feedback and roadmap needs.</div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1855,13 +2083,13 @@
                         <div>
                             <span class="section-tag font-mono">About The Sales Bench</span>
                             <h2 style="font-size: 29px; font-weight: 900; color: var(--text-ink); line-height: 1.18; margin-bottom: 16px;">
-                                Senior Commercial Leadership Meets AI-Native Execution.
+                                Enterprise Revenue Architecture Meets Operational Risk Management.
                             </h2>
                             <p style="font-size: 15.5px; color: var(--text-body); margin-bottom: 16px;">
-                                <strong>The Sales Bench</strong> was created to bridge the gap between high-level sales strategy and daily deal execution. Too many B2B software companies are handed static consulting decks that never make it into their CRM—or buy AI tools without a disciplined sales playbook underneath.
+                                <strong>The Sales Bench</strong> was founded on a simple observation: B2B software leaders don't need another 60-page MEDDPICC slide deck that sits in a drawer, nor do they want a fragile custom dev project that creates a 24/7 maintenance bottleneck.
                             </p>
                             <p style="font-size: 15.5px; color: var(--text-body);">
-                                We combine battle-tested enterprise playbook design with modern AI agents. By working directly with your leadership and internal RevOps team—and giving our consulting clients a direct voice in our product roadmap—we turn your sales process into a predictable, scalable asset.
+                                As <strong>Enterprise Revenue Architects</strong>, we install standardized, autonomous deal-governance machinery directly inside your existing CRM and cloud perimeter—and pair that telemetry with peer cohort benchmarking and disciplined executive deal inspection.
                             </p>
                         </div>
 
@@ -1871,19 +2099,19 @@
                                 <div>
                                     <div class="font-mono" style="font-size: 11px; font-weight: 800; color: var(--emerald-700); text-transform: uppercase;">Founder &amp; Managing Principal</div>
                                     <h3 style="font-size: 22px; font-weight: 900; color: var(--text-ink);">Scott Carpentier</h3>
-                                    <div style="font-size: 13.5px; color: var(--text-muted); font-weight: 600;">Enterprise GTM Strategy, Playbook Architecture &amp; Channel Alliances</div>
+                                    <div style="font-size: 13.5px; color: var(--text-muted); font-weight: 600;">Enterprise Revenue Architect &amp; Deal Governance Principal</div>
                                 </div>
                             </div>
                             <p style="font-size: 14.5px; color: var(--text-body); margin-bottom: 12px; line-height: 1.6;">
                                 Scott Carpentier brings more than two decades of enterprise software leadership across North America—including formative years inside <strong>SAP</strong>, scaling a private-equity-backed software company past <strong>$60M in revenue</strong>, and serving as Country Manager &amp; Geo VP at <strong>BlackLine (NASDAQ: BL)</strong>, where he scaled regional ARR <strong>12X from $2.5M to $30M</strong>.
                             </p>
                             <p style="font-size: 14.5px; color: var(--text-body); line-height: 1.6;">
-                                Renowned for combining rigorous deal qualification playbooks with high-velocity partner ecosystems (achieving an <strong>85% partner attach rate</strong> across SIs, advisory consultancies, and tech alliances), Scott founded The Sales Bench to equip B2B software leaders with both the proven playbook and the AI-native tools to scale predictably.
+                                Renowned for combining rigorous MEDDPICC deal governance with high-velocity partner ecosystems (achieving an <strong>85% partner attach rate</strong> across SIs, advisory consultancies, and tech alliances), Scott founded The Sales Bench to give B2B software leaders ($5M–$30M ARR) the installed infrastructure and comparative benchmarks to scale predictably.
                             </p>
                             <div class="cred-pills font-mono">
                                 <span class="cred-pill">$2.5M ➔ $30M ARR Scale</span>
                                 <span class="cred-pill">85% Partner Attach</span>
-                                <span class="cred-pill">AI-Native GTM Architect</span>
+                                <span class="cred-pill">Enterprise Revenue Architect</span>
                                 <span class="cred-pill">US &amp; Canada Expansion</span>
                             </div>
                         </div>
@@ -1892,147 +2120,203 @@
             </div>
         </section>
 
-        <!-- 10. INTERACTIVE 4-QUESTION DIAGNOSTIC -->
+        <!-- 10. INTERACTIVE 5-QUESTION BENCHMARK STUDY & SCORECARD GENERATOR -->
         <section id="diagnostic" class="section-pad section-canvas">
             <div class="container-narrow">
                 <div class="section-header">
-                    <span class="section-tag font-mono">Interactive GTM &amp; AI Diagnostic</span>
-                    <h2 class="section-title">Assess Your Playbook &amp; AI Readiness in 60 Seconds</h2>
-                    <p class="section-desc">Answer 4 quick questions to generate a tailored 4-Week Sprint &amp; AI Agent recommendation.</p>
+                    <span class="section-tag font-mono">The 2026 Enterprise Deal Governance &amp; Pipeline Leakage Index</span>
+                    <h2 class="section-title">Benchmark Your Pipeline Against Peer B2B SaaS Leaders ($5M–$30M ARR)</h2>
+                    <p class="section-desc">Answer the 5 core friction questions from our closed-door executive cohort study to generate an instant <strong>Pipeline Leakage Scorecard Preview</strong> and claim your embargoed copy of the full 2026 Benchmark Index.</p>
                 </div>
 
                 <div class="diagnostic-card">
                     <div class="progress-header font-mono">
-                        <span id="diag-step-indicator">QUESTION 1 OF 4 // PRIMARY OBJECTIVE</span>
-                        <span id="diag-pct-indicator" style="color: var(--emerald-600);">25% Complete</span>
+                        <span id="diag-step-indicator">BENCHMARK METRIC 1 OF 5 // FORECAST INTEGRITY &amp; SLIPPAGE</span>
+                        <span id="diag-pct-indicator" style="color: var(--emerald-600);">20% Complete</span>
                     </div>
                     <div class="progress-track">
                         <div id="diag-progress-bar" class="progress-fill"></div>
                     </div>
 
-                    <!-- Step 1 -->
+                    <!-- Question 1: Forecast Integrity & Slippage -->
                     <div id="diag-step-1" class="diag-step">
-                        <div class="diag-question">1. What is the #1 outcome you want to achieve in the next 90 days?</div>
+                        <div class="diag-question">1. Forecast Integrity &amp; Slippage: What percentage of deals forecasted to close in Month 3 of a quarter actually slip into the following quarter?</div>
+                        <span class="diag-benchmark-note font-mono">// Industry Cohort Benchmark: Typically 25%–35% on $30k–$150k+ ACV deals</span>
                         <div class="diag-options">
-                            <button type="button" class="diag-btn" data-step="1" data-val="process">
-                                <div class="diag-btn-title">Build a Playbook &amp; Enforce Deal Criteria</div>
-                                <div class="diag-btn-sub">Eliminate deal slippage, standardize discovery, and make forecasts predictable.</div>
+                            <button type="button" class="diag-btn" data-step="1" data-val="low_slip">
+                                <div class="diag-btn-title">Under 15% Slippage (Top-Quartile Control)</div>
+                                <div class="diag-btn-sub">Strict procurement gating keeps late-stage slippage minimal.</div>
                             </button>
-                            <button type="button" class="diag-btn" data-step="1" data-val="ai">
-                                <div class="diag-btn-title">Deploy AI Tools &amp; Autonomous Deal Agents</div>
-                                <div class="diag-btn-sub">Leverage our existing CRM, add high-ROI AI tools, or use Sales Bench Agents to do the work.</div>
+                            <button type="button" class="diag-btn" data-step="1" data-val="avg_slip">
+                                <div class="diag-btn-title">15% – 25% Slippage (Moderate Friction)</div>
+                                <div class="diag-btn-sub">1 to 2 enterprise deals slip each quarter due to late security or legal reviews.</div>
                             </button>
-                            <button type="button" class="diag-btn" data-step="1" data-val="channel">
-                                <div class="diag-btn-title">Launch Channel &amp; Partner Co-Selling</div>
-                                <div class="diag-btn-sub">Build active distribution across regional SIs, boutique consultancies, and tech ISVs.</div>
+                            <button type="button" class="diag-btn" data-step="1" data-val="high_slip">
+                                <div class="diag-btn-title">25% – 35% Slippage (Cohort Average Pain)</div>
+                                <div class="diag-btn-sub">At a $60k+ ACV, 3–4 slipped deals delay $200k+ in quarterly cash flow.</div>
                             </button>
-                            <button type="button" class="diag-btn" data-step="1" data-val="expansion">
-                                <div class="diag-btn-title">Expand Into North America (US / Canada)</div>
-                                <div class="diag-btn-sub">Validate buyer appetite and localize our playbook before hiring expensive local reps.</div>
+                            <button type="button" class="diag-btn" data-step="1" data-val="severe_slip">
+                                <div class="diag-btn-title">Over 35% Slippage (Severe Forecast Risk)</div>
+                                <div class="diag-btn-sub">Month-3 board forecasts routinely miss due to unverified close dates.</div>
                             </button>
                         </div>
                     </div>
 
-                    <!-- Step 2 -->
+                    <!-- Question 2: Economic Buyer Accessibility -->
                     <div id="diag-step-2" class="diag-step hidden">
-                        <div class="diag-question">2. How are your CRM and AI tools currently supporting deal execution?</div>
+                        <div class="diag-question">2. Economic Buyer Accessibility: In what percentage of your late-stage pipeline (Stage 3+) has your team spoken directly with the economic check-signer vs. relying on an internal champion?</div>
+                        <span class="diag-benchmark-note font-mono">// Cohort Metric: "The Economic Buyer Lag" directly dictates enterprise win rate</span>
                         <div class="diag-options">
-                            <button type="button" class="diag-btn" data-step="2" data-val="gut">
-                                <div class="diag-btn-title">Mostly Manual &amp; Rep Gut-Feel</div>
-                                <div class="diag-btn-sub">Deal stages move based on rep optimism without automated criteria scoring.</div>
+                            <button type="button" class="diag-btn" data-step="2" data-val="eb_high">
+                                <div class="diag-btn-title">Over 75% Direct Check-Signer Access</div>
+                                <div class="diag-btn-sub">Economic Buyer is verified on a call before deals enter Stage 3.</div>
                             </button>
-                            <button type="button" class="diag-btn" data-step="2" data-val="static">
-                                <div class="diag-btn-title">We Have Tools, But No Unified Playbook</div>
-                                <div class="diag-btn-sub">Our internal RevOps has a CRM setup, but our playbook isn't enforced in stage gates.</div>
+                            <button type="button" class="diag-btn" data-step="2" data-val="eb_mid">
+                                <div class="diag-btn-title">50% – 75% Direct Access</div>
+                                <div class="diag-btn-sub">Some multi-threading, but reps often rely on a Director-level champion.</div>
                             </button>
-                            <button type="button" class="diag-btn" data-step="2" data-val="agent">
-                                <div class="diag-btn-title">Looking to Add AI Agents Without Headcount</div>
-                                <div class="diag-btn-sub">We want AI agents to inspect deals, score criteria, and reduce manual admin work.</div>
+                            <button type="button" class="diag-btn" data-step="2" data-val="eb_low">
+                                <div class="diag-btn-title">25% – 50% Direct Access (Single-Threaded Risk)</div>
+                                <div class="diag-btn-sub">Over half of late-stage deals have zero documented CFO/VP signatory contact.</div>
                             </button>
-                            <button type="button" class="diag-btn" data-step="2" data-val="new">
-                                <div class="diag-btn-title">Designing for a New Channel or Market</div>
-                                <div class="diag-btn-sub">We need a dedicated playbook and CRM workflow for partners or North America.</div>
+                            <button type="button" class="diag-btn" data-step="2" data-val="eb_blind">
+                                <div class="diag-btn-title">Under 25% (Champion-Only Forecasting)</div>
+                                <div class="diag-btn-sub">Deals routinely stall when the champion pitches the business case alone.</div>
                             </button>
                         </div>
                     </div>
 
-                    <!-- Step 3 -->
+                    <!-- Question 3: The Paper Process Gap -->
                     <div id="diag-step-3" class="diag-step hidden">
-                        <div class="diag-question">3. What is your current B2B software ARR scale?</div>
+                        <div class="diag-question">3. The Paper Process Gap: On average, how many days elapse between receiving a verbal "Yes" and getting a signed MSA through Legal, InfoSec, and Procurement?</div>
+                        <span class="diag-benchmark-note font-mono">// Cohort Metric: "True Days in Procurement" by ACV ($30k vs. $100k+)</span>
                         <div class="diag-options">
-                            <button type="button" class="diag-btn" data-step="3" data-val="1to5">
-                                <div class="diag-btn-title">$1M – $5M ARR</div>
-                                <div class="diag-btn-sub">Moving from founder-led sales to a repeatable playbook and AI-enabled workflow.</div>
+                            <button type="button" class="diag-btn" data-step="3" data-val="paper_fast">
+                                <div class="diag-btn-title">Under 14 Days (Gated Mutual Action Plan)</div>
+                                <div class="diag-btn-sub">InfoSec and legal redlines run in parallel with technical validation.</div>
                             </button>
-                            <button type="button" class="diag-btn" data-step="3" data-val="5to15">
-                                <div class="diag-btn-title">$5M – $15M ARR</div>
-                                <div class="diag-btn-sub">Scaling the sales team, enforcing deal criteria, and launching partner channels.</div>
+                            <button type="button" class="diag-btn" data-step="3" data-val="paper_mid">
+                                <div class="diag-btn-title">15 – 30 Days (Standard Enterprise Drag)</div>
+                                <div class="diag-btn-sub">Paper process starts only after verbal agreement, pushing close dates.</div>
                             </button>
-                            <button type="button" class="diag-btn" data-step="3" data-val="15to30">
-                                <div class="diag-btn-title">$15M – $30M+ ARR</div>
-                                <div class="diag-btn-sub">Optimizing enterprise forecast predictability, ecosystems, and cross-border scale.</div>
+                            <button type="button" class="diag-btn" data-step="3" data-val="paper_slow">
+                                <div class="diag-btn-title">31 – 45 Days (Late-Stage Security/Legal Bottleneck)</div>
+                                <div class="diag-btn-sub">Deals forecast to close in 2 weeks get trapped in 35-day procurement queues.</div>
                             </button>
-                            <button type="button" class="diag-btn" data-step="3" data-val="pe">
-                                <div class="diag-btn-title">VC / PE Operating Partner</div>
-                                <div class="diag-btn-sub">Evaluating AI-native GTM playbooks across portfolio companies.</div>
+                            <button type="button" class="diag-btn" data-step="3" data-val="paper_stalled">
+                                <div class="diag-btn-title">45+ Days or Unmeasured</div>
+                                <div class="diag-btn-sub">No standardized Deal Room or Paper Process tracking inside the CRM.</div>
                             </button>
                         </div>
                     </div>
 
-                    <!-- Step 4 -->
+                    <!-- Question 4: Rep Admin & Hygiene Tax -->
                     <div id="diag-step-4" class="diag-step hidden">
-                        <div class="diag-question">4. Would you like Charter Design Partner input into our AI product roadmap?</div>
+                        <div class="diag-question">4. Rep Admin &amp; Hygiene Tax: How many hours per week does an average AE spend on non-selling admin (CRM note logging, follow-up drafting, internal deal prep)?</div>
+                        <span class="diag-benchmark-note font-mono">// Cohort Metric: 4 hrs/wk across 10 AEs = 1 Full-Time AE ($120k–$160k) in lost capacity</span>
                         <div class="diag-options">
-                            <button type="button" class="diag-btn" data-step="4" data-val="charter">
-                                <div class="diag-btn-title">Yes—We Want Consulting + Direct Product Voice</div>
-                                <div class="diag-btn-sub">Solve our GTM bottlenecks now while shaping the AI agents built for our workflow.</div>
+                            <button type="button" class="diag-btn" data-step="4" data-val="admin_low">
+                                <div class="diag-btn-title">Under 2 Hours / Week (Automated Post-Call Engine)</div>
+                                <div class="diag-btn-sub">Transcripts automatically populate CRM properties and draft buyer recaps.</div>
                             </button>
-                            <button type="button" class="diag-btn" data-step="4" data-val="sprint">
-                                <div class="diag-btn-title">Start With the 4-Week Consulting Sprint First</div>
-                                <div class="diag-btn-sub">Focus on our playbook, deal criteria, and RevOps alignment first, then evaluate agents.</div>
+                            <button type="button" class="diag-btn" data-step="4" data-val="admin_mid">
+                                <div class="diag-btn-title">3 – 4 Hours / Week</div>
+                                <div class="diag-btn-sub">Reps manually copy-paste call notes and update MEDDPICC fields before pipeline calls.</div>
+                            </button>
+                            <button type="button" class="diag-btn" data-step="4" data-val="admin_high">
+                                <div class="diag-btn-title">4 – 6 Hours / Week (45–60 Min/Day Admin Drag)</div>
+                                <div class="diag-btn-sub">Significant selling capacity lost to manual CRM hygiene and follow-up writing.</div>
+                            </button>
+                            <button type="button" class="diag-btn" data-step="4" data-val="admin_skip">
+                                <div class="diag-btn-title">Reps Skip CRM Logging Entirely ("Happy Ears")</div>
+                                <div class="diag-btn-sub">CRM fields are sparse or outdated because reps avoid manual data entry.</div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 5: Stage-Gate Rigor -->
+                    <div id="diag-step-5" class="diag-step hidden">
+                        <div class="diag-question">5. Stage-Gate Rigor: Do you use an automated, objective gate (e.g., transcript-verified MEDDPICC criteria) to move deals between stages, or is stage movement left to rep discretion?</div>
+                        <span class="diag-benchmark-note font-mono">// Final Cohort Metric: Stage-Gate Integrity vs. Rep Optimism</span>
+                        <div class="diag-options">
+                            <button type="button" class="diag-btn" data-step="5" data-val="gate_rep">
+                                <div class="diag-btn-title">Left to Rep Discretion / Intuition</div>
+                                <div class="diag-btn-sub">Reps move deals to Stage 3+ based on "good calls" without verified criteria.</div>
+                            </button>
+                            <button type="button" class="diag-btn" data-step="5" data-val="gate_manual">
+                                <div class="diag-btn-title">Static CRM Checkboxes (Manually Filled by Reps)</div>
+                                <div class="diag-btn-sub">We have required fields in HubSpot/Salesforce, but nobody audits the actual transcripts.</div>
+                            </button>
+                            <button type="button" class="diag-btn" data-step="5" data-val="gate_mgr">
+                                <div class="diag-btn-title">Manual Manager Inspection Only</div>
+                                <div class="diag-btn-sub">VP of Sales tries to inspect deals on 1-on-1s, but can't listen to every 45-min call.</div>
+                            </button>
+                            <button type="button" class="diag-btn" data-step="5" data-val="gate_auto">
+                                <div class="diag-btn-title">Exploring Automated AI Stage-Gate Auditing</div>
+                                <div class="diag-btn-sub">We want an autonomous MEDDPICC auditor inside our CRM + peer benchmarking.</div>
                             </button>
                         </div>
                     </div>
 
                     <!-- Inline Result Fallback -->
                     <div id="diag-result" class="hidden" style="padding-top: 12px;">
-                        <span class="section-tag font-mono" id="res-badge">// Recommended Sprint</span>
+                        <span class="section-tag font-mono" id="res-badge">// Pipeline Leakage Scorecard Ready</span>
                         <h3 id="res-title" style="font-size: 22px; font-weight: 900; margin-bottom: 10px;"></h3>
                         <p id="res-summary" style="font-size: 15px; color: var(--text-body); margin-bottom: 18px;"></p>
-                        <button type="button" id="diag-reset" class="btn-pillar" style="display: inline-block; width: auto; padding: 10px 18px; font-size: 13px;">↺ Retake Diagnostic</button>
+                        <button type="button" id="diag-reset" class="btn-pillar" style="display: inline-block; width: auto; padding: 10px 18px; font-size: 13px;">↺ Retake 5-Point Benchmark</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- MODAL POPUP FOR DIAGNOSTIC RESULT -->
+        <!-- MODAL POPUP FOR BENCHMARK SCORECARD & DEBRIEF -->
         <div id="diag-modal" class="modal-overlay">
             <div class="modal-box">
                 <div class="modal-header">
                     <div style="display: flex; align-items: center; gap: 8px;">
                         <span class="pulsing-dot"></span>
-                        <span class="font-mono" style="font-size: 13px; font-weight: 800; text-transform: uppercase;">Tailored Sprint &amp; AI Agent Blueprint Ready</span>
+                        <span class="font-mono" style="font-size: 13px; font-weight: 800; text-transform: uppercase;">2026 Cohort Benchmark &amp; Pipeline Leakage Scorecard</span>
                     </div>
                     <button type="button" id="diag-modal-close" style="background: none; border: none; color: #cbd5e1; font-size: 15px; font-weight: 700; cursor: pointer;">✕ Close</button>
                 </div>
                 <div class="modal-body">
                     <div style="background: #ffffff; border: 2px solid var(--emerald-500); border-radius: 14px; padding: 24px;">
-                        <span class="section-tag font-mono" id="modal-res-badge">// Recommended Architecture</span>
-                        <h3 id="modal-res-title" style="font-size: 21px; font-weight: 900; color: var(--text-ink); margin: 8px 0;"></h3>
-                        <p id="modal-res-summary" style="font-size: 14.5px; color: var(--text-body); margin-bottom: 16px;"></p>
-                        <div class="deliverables-box" style="margin-bottom: 14px;">
-                            <div class="deliverables-title font-mono">4-Week Sprint Deliverables:</div>
+                        <span class="section-tag font-mono" id="modal-res-badge">// Cohort Comparison Diagnostic</span>
+                        <h3 id="modal-res-title" style="font-size: 20px; font-weight: 900; color: var(--text-ink); margin: 6px 0 10px;"></h3>
+                        <p id="modal-res-summary" style="font-size: 14px; color: var(--text-body); margin-bottom: 14px;"></p>
+
+                        <div class="scorecard-grid font-mono">
+                            <div class="scorecard-metric">
+                                <span class="scorecard-metric-lbl">Slippage vs. Cohort</span>
+                                <div class="scorecard-metric-val" id="sc-slip">High Exposure</div>
+                            </div>
+                            <div class="scorecard-metric">
+                                <span class="scorecard-metric-lbl">Economic Buyer Lag</span>
+                                <div class="scorecard-metric-val" id="sc-eb">Single-Threaded Risk</div>
+                            </div>
+                            <div class="scorecard-metric">
+                                <span class="scorecard-metric-lbl">Paper Process Gap</span>
+                                <div class="scorecard-metric-val" id="sc-paper">+18 Days vs. Top Quartile</div>
+                            </div>
+                            <div class="scorecard-metric">
+                                <span class="scorecard-metric-lbl">Recoverable Capacity</span>
+                                <div class="scorecard-metric-val" id="sc-admin">~1 FTE ($120k–$160k/yr)</div>
+                            </div>
+                        </div>
+
+                        <div class="deliverables-box" style="margin-bottom: 12px;">
+                            <div class="deliverables-title font-mono">Recommended 4-Week Revenue Engine Fix:</div>
                             <ul id="modal-res-actions" class="deliverables-list"></ul>
                         </div>
                         <div class="deliverables-box" style="background: var(--emerald-tint); border-color: var(--emerald-border); margin-bottom: 0;">
-                            <div class="deliverables-title font-mono" style="color: var(--emerald-700);">90–120 Day + Charter Partner Outcomes:</div>
+                            <div class="deliverables-title font-mono" style="color: var(--emerald-700);">What You Receive On Your 20-Min Debrief:</div>
                             <ul id="modal-res-outcomes" class="deliverables-list"></ul>
                         </div>
                     </div>
                     <div style="background: #ffffff; border: 2px solid var(--border-strong); border-radius: 14px; padding: 24px;">
-                        <div class="font-mono" style="font-size: 11.5px; font-weight: 800; color: var(--emerald-700); text-transform: uppercase;">// Schedule 15-Minute Walkthrough</div>
-                        <h4 style="font-size: 19px; font-weight: 900; color: var(--text-ink); margin: 6px 0 10px;">Review Your Blueprint With Scott</h4>
-                        <p style="font-size: 13.5px; color: var(--text-body); margin-bottom: 16px;">Submit the form below to review your diagnostic, discuss a 4-week sprint, and explore Charter Design Partner benefits.</p>
+                        <div class="font-mono" style="font-size: 11.5px; font-weight: 800; color: var(--emerald-700); text-transform: uppercase;">// Claim Your Full Scorecard &amp; Index Report</div>
+                        <h4 style="font-size: 19px; font-weight: 900; color: var(--text-ink); margin: 6px 0 10px;">Book Your 20-Minute Benchmark Debrief</h4>
+                        <p style="font-size: 13.5px; color: var(--text-body); margin-bottom: 16px;">Submit the form below to receive your custom 1-page <strong>Pipeline Leakage Scorecard</strong>, an embargoed copy of the <strong>2026 Deal Governance Index</strong>, and walk through how peer CROs automate stage gating inside their CRM.</p>
                         <script src="https://js-na3.hsforms.net/forms/embed/342958738.js" defer></script>
                         <div class="hs-form-frame" data-region="na3" data-form-id="de5aa2ee-c4fc-4f04-8b6b-563c3bfb9fa3" data-portal-id="342958738"></div>
                     </div>
@@ -2046,26 +2330,26 @@
                 <div class="split-grid">
                     <div>
                         <span class="section-tag font-mono">Start the Conversation</span>
-                        <h2 class="section-title">Schedule a 15-Minute GTM &amp; AI Architecture Review</h2>
+                        <h2 class="section-title">Schedule a 20-Minute Benchmark Debrief or Revenue Architecture Review</h2>
                         <p class="section-desc">
-                            Speak directly with Scott Carpentier. We will evaluate your current deal process, review how to align your internal RevOps and AI tool stack, and explore how our <strong>4-Week Sprint &amp; Charter Partner Program</strong> can accelerate your revenue goals.
+                            Speak directly with Scott Carpentier. Whether you want to contribute to the <strong>2026 Enterprise Deal Governance Index</strong> and receive your custom Pipeline Leakage Scorecard, or explore installing our <strong>4-Week Revenue Engine Sprint</strong> inside your CRM, we keep the conversation focused strictly on measurable economic leverage.
                         </p>
 
                         <div class="takeaway-card">
                             <div class="font-mono" style="font-size: 12px; font-weight: 800; color: var(--emerald-700); text-transform: uppercase; margin-bottom: 14px;">
-                                // What We Cover In 15 Minutes:
+                                // What We Cover In 20 Minutes:
                             </div>
                             <div class="takeaway-item">
                                 <span class="takeaway-check">✓</span>
-                                <div><strong>Playbook &amp; Deal Criteria Audit:</strong> Pinpoint where deals stall and how objective stage-exit criteria will stabilize your forecast.</div>
+                                <div><strong>Peer Cohort Benchmark Mirror:</strong> See where your Month-3 forecast slippage, Economic Buyer latency, and procurement cycle stand against peer B2B SaaS leaders ($5M–$30M ARR).</div>
                             </div>
                             <div class="takeaway-item">
                                 <span class="takeaway-check">✓</span>
-                                <div><strong>AI Stack &amp; Agent Assessment:</strong> Determine what your internal RevOps can configure, what AI tools to add, and where our AI Agents can do the work.</div>
+                                <div><strong>Turnkey BYOK Architecture Fit:</strong> Review how our MEDDPICC Auditor, Post-Call CRM Drafter, and Digital Deal Room deploy inside your tenant with zero SOC 2 delay.</div>
                             </div>
                             <div class="takeaway-item">
                                 <span class="takeaway-check">✓</span>
-                                <div><strong>Channel &amp; Charter Partner Fit:</strong> Assess multi-tier partner channels (SIs, boutique firms, ISVs) and how you can shape our product roadmap.</div>
+                                <div><strong>Executive Deal Governance &amp; Channels:</strong> Evaluate our monthly forensic leakage reports, live Strategic Deal Reviews, and multi-tier partner channel playbooks.</div>
                             </div>
                         </div>
 
@@ -2077,10 +2361,10 @@
                     <div class="booking-white-card">
                         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 14px; margin-bottom: 18px;">
                             <div>
-                                <div class="font-mono" style="font-size: 11.5px; font-weight: 800; color: var(--emerald-600); text-transform: uppercase;">// Direct Inquiry Form</div>
-                                <h3 style="font-size: 20px; font-weight: 900; color: var(--text-ink); margin-top: 2px;">Request Your 15-Minute Review</h3>
+                                <div class="font-mono" style="font-size: 11.5px; font-weight: 800; color: var(--emerald-600); text-transform: uppercase;">// Direct Executive Inquiry</div>
+                                <h3 style="font-size: 20px; font-weight: 900; color: var(--text-ink); margin-top: 2px;">Request Your Benchmark Debrief</h3>
                             </div>
-                            <span class="section-tag font-mono" style="margin: 0;">Charter Slots Open</span>
+                            <span class="section-tag font-mono" style="margin: 0;">Cohort Open</span>
                         </div>
                         <div class="hs-form-frame" data-region="na3" data-form-id="de5aa2ee-c4fc-4f04-8b6b-563c3bfb9fa3" data-portal-id="342958738"></div>
                         <div class="font-mono" style="margin-top: 16px; font-size: 12px; color: var(--text-muted); display: flex; justify-content: space-between;">
@@ -2098,20 +2382,21 @@
         <div class="container footer-inner font-mono">
             <div>© 2026 The Sales Bench. All Rights Reserved. Toronto, Ontario, Canada.</div>
             <div class="footer-links">
-                <a href="#ai-model">AI-Native Model</a>
-                <a href="#playbook-engine">Deal Agents</a>
-                <a href="#design-partner">Charter Program</a>
+                <a href="#value-ladder">Value Ladder</a>
+                <a href="#sprint-engine">4-Week Sprint</a>
+                <a href="#governance-retainer">Deal Governance</a>
+                <a href="#byok-security">BYOK Security</a>
                 <a href="#services">Practice Areas</a>
-                <a href="#about">About</a>
+                <a href="#diagnostic">2026 Benchmark</a>
                 <a href="#book">Contact</a>
             </div>
         </div>
     </footer>
 
-    <!-- INTERACTIVE SCRIPTS: STAGE ENGINE + DIAGNOSTIC MODAL -->
+    <!-- INTERACTIVE SCRIPTS: 4-TAB KIT ENGINE + 5-QUESTION BENCHMARK SCORECARD -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // 1. Interactive Playbook, Deal Criteria & AI Agent Stage Switcher
+            // 1. Interactive 4-Tab Revenue Infrastructure Kit Switcher
             var stageBtns = document.querySelectorAll('.stage-tab-btn');
             var stagePanels = document.querySelectorAll('.stage-panel');
 
@@ -2130,13 +2415,14 @@
                 });
             }
 
-            // 2. Interactive 4-Question GTM & AI Diagnostic
-            var answers = { step1: null, step2: null, step3: null, step4: null };
+            // 2. Interactive 5-Question "2026 Enterprise Deal Governance & Pipeline Leakage Index"
+            var answers = { step1: null, step2: null, step3: null, step4: null, step5: null };
             var stepLabels = {
-                1: { title: 'QUESTION 1 OF 4 // PRIMARY OBJECTIVE', pct: '25%' },
-                2: { title: 'QUESTION 2 OF 4 // CRM & AI STACK', pct: '50%' },
-                3: { title: 'QUESTION 3 OF 4 // ARR SCALE', pct: '75%' },
-                4: { title: 'QUESTION 4 OF 4 // CHARTER CO-BUILD FIT', pct: '95%' }
+                1: { title: 'BENCHMARK METRIC 1 OF 5 // FORECAST INTEGRITY & SLIPPAGE', pct: '20%' },
+                2: { title: 'BENCHMARK METRIC 2 OF 5 // ECONOMIC BUYER ACCESSIBILITY', pct: '40%' },
+                3: { title: 'BENCHMARK METRIC 3 OF 5 // THE PAPER PROCESS GAP', pct: '60%' },
+                4: { title: 'BENCHMARK METRIC 4 OF 5 // REP ADMIN & HYGIENE TAX', pct: '80%' },
+                5: { title: 'BENCHMARK METRIC 5 OF 5 // STAGE-GATE RIGOR', pct: '95%' }
             };
 
             var indicatorEl = document.getElementById('diag-step-indicator');
@@ -2157,67 +2443,32 @@
                 }
             }
 
-            var recommendations = {
-                process: {
-                    badge: '// Playbook, Deal Criteria & AI Agent Sprint',
-                    title: '4-Week Playbook & Deal Criteria Architecture Sprint',
-                    summary: 'We codify your custom sales playbook, establish objective stage-exit criteria for your internal RevOps team, and deploy our Deal Scoring Agents to eliminate forecast slippage.',
-                    actions: [
-                        '✓ Audit pipeline stage conversion and define buyer-verifiable deal criteria',
-                        '✓ Deliver CRM stage-gate specifications for your internal RevOps team',
-                        '✓ Configure Sales Bench Deal Scoring & Playbook Inspection Agents'
-                    ],
-                    outcomes: [
-                        '✓ Predictable quarterly forecasting (<5% variance)',
-                        '✓ Direct Charter Partner voice in custom AI agent workflows',
-                        '✓ Higher win rates and compressed enterprise sales cycles'
-                    ]
-                },
-                ai: {
-                    badge: '// AI-Native GTM Stack & Autonomous Agent Sprint',
-                    title: '4-Week AI Stack Optimization & Agent Deployment Sprint',
-                    summary: 'We leverage your existing CRM, recommend high-ROI third-party AI tools where needed, and deploy our own autonomous agents to execute deal inspection and account intelligence.',
-                    actions: [
-                        '✓ Audit current CRM workflows and sales tech stack utilization',
-                        '✓ Recommend best-in-class AI tools and oversee internal RevOps integration',
-                        '✓ Deploy Sales Bench Autonomous Agents for deal scoring & call inspection'
-                    ],
-                    outcomes: [
-                        '✓ Automated deal qualification and MEDDPICC compliance without extra headcount',
-                        '✓ Direct influence over the next AI agents built on our product roadmap',
-                        '✓ More rep selling time and objective board-level pipeline telemetry'
-                    ]
-                },
-                channel: {
-                    badge: '// Partner Ecosystem & Co-Sell Architecture Sprint',
-                    title: '4-Week Multi-Tier Channel & Partner Co-Sell Sprint',
-                    summary: 'Build scalable indirect distribution across regional SIs, boutique consultancies, and tech ISVs—backed by partner playbooks and AI account-mapping agents.',
-                    actions: [
-                        '✓ Identify high-attach regional SIs, boutique consultancies, and ISVs',
-                        '✓ Build partner co-selling playbooks, deal registration, and CRM workflows',
-                        '✓ Deploy Partner Match Agents to surface high-probability co-sell accounts'
-                    ],
-                    outcomes: [
-                        '✓ Active partner-sourced and co-sold enterprise pipeline',
-                        '✓ 2.4x faster deal velocity on partner-attached opportunities',
-                        '✓ Charter Partner input on our ecosystem co-selling product modules'
-                    ]
-                },
-                expansion: {
-                    badge: '// North American Market Entry Sprint',
-                    title: '4-Week US & Canada Market Validation Sprint',
-                    summary: 'De-risk your North American expansion before committing $250k+ to full-time local hires. We validate buyer appetite, localize your playbook, and activate regional partners.',
-                    actions: [
-                        '✓ Conduct live discovery interviews with North American enterprise buyers',
-                        '✓ Localize your sales playbook, USD/CAD pricing, and procurement terms',
-                        '✓ Use AI ICP Agents to map target accounts and regional channel partners'
-                    ],
-                    outcomes: [
-                        '✓ Validated North American ICP and turnkey local sales playbook',
-                        '✓ Avoided $250k+ in premature executive hiring mistakes',
-                        '✓ Charter Partner access to our cross-border GTM platform'
-                    ]
-                }
+            var slipLabels = {
+                low_slip: '<15% (Top Quartile)',
+                avg_slip: '15%–25% (Moderate Lag)',
+                high_slip: '25%–35% ($200k+ Delayed)',
+                severe_slip: '>35% (Critical Leakage)'
+            };
+
+            var ebLabels = {
+                eb_high: 'Verified Early (<Stage 3)',
+                eb_mid: '50%–75% Check-Signer',
+                eb_low: 'Single-Threaded Risk',
+                eb_blind: 'High Champion-Only Risk'
+            };
+
+            var paperLabels = {
+                paper_fast: '<14 Days (Gated MAP)',
+                paper_mid: '15–30 Days Procurement',
+                paper_slow: '31–45 Days (+18d vs Peers)',
+                paper_stalled: '45+ Days / Unmapped'
+            };
+
+            var adminLabels = {
+                admin_low: 'Optimized (<2 hrs/wk)',
+                admin_mid: '~0.75 FTE Recoverable',
+                admin_high: '1 Full FTE ($120k–$160k/yr)',
+                admin_skip: 'High "Happy Ears" Risk'
             };
 
             var btns = document.querySelectorAll('.diag-btn');
@@ -2227,41 +2478,59 @@
                     var val = this.getAttribute('data-val');
                     answers['step' + step] = val;
 
-                    if (step < 4) {
+                    if (step < 5) {
                         showStep(step + 1);
                     } else {
-                        var recKey = answers.step1 || 'process';
-                        var rec = recommendations[recKey] || recommendations.process;
-
-                        indicatorEl.textContent = 'DIAGNOSTIC COMPLETE // TAILORED SPRINT & AGENT BLUEPRINT';
+                        indicatorEl.textContent = 'BENCHMARK COMPLETE // PIPELINE LEAKAGE SCORECARD GENERATED';
                         pctEl.textContent = '100% Complete';
                         barEl.style.width = '100%';
 
                         var steps = document.querySelectorAll('.diag-step');
                         for (var s = 0; s < steps.length; s++) steps[s].classList.add('hidden');
 
-                        document.getElementById('res-badge').textContent = rec.badge;
-                        document.getElementById('res-title').textContent = rec.title;
-                        document.getElementById('res-summary').textContent = rec.summary;
+                        var badge = '// 2026 Cohort Benchmark & Revenue Engine Blueprint';
+                        var title = 'Custom Pipeline Leakage Scorecard & 4-Week Engine Recommendation';
+                        var summary = 'Based on your 5 benchmark inputs, your highest-leverage commercial gains come from automating transcript-verified MEDDPICC stage gates inside your CRM, gating the Paper Process early, and recovering rep admin hours.';
+
+                        document.getElementById('sc-slip').textContent = slipLabels[answers.step1] || '25%–35% Cohort Avg';
+                        document.getElementById('sc-eb').textContent = ebLabels[answers.step2] || 'Single-Threaded Risk';
+                        document.getElementById('sc-paper').textContent = paperLabels[answers.step3] || '+18 Days vs. Cohort';
+                        document.getElementById('sc-admin').textContent = adminLabels[answers.step4] || '1 FTE ($120k–$160k/yr)';
+
+                        document.getElementById('res-badge').textContent = badge;
+                        document.getElementById('res-title').textContent = title;
+                        document.getElementById('res-summary').textContent = summary;
                         document.getElementById('diag-result').classList.remove('hidden');
 
-                        document.getElementById('modal-res-badge').textContent = rec.badge;
-                        document.getElementById('modal-res-title').textContent = rec.title;
-                        document.getElementById('modal-res-summary').textContent = rec.summary;
+                        document.getElementById('modal-res-badge').textContent = badge;
+                        document.getElementById('modal-res-title').textContent = title;
+                        document.getElementById('modal-res-summary').textContent = summary;
+
+                        var actions = [
+                            '✓ Install Autonomous MEDDPICC Audit Agent in your CRM (BYOK, zero SOC 2 delay)',
+                            '✓ Deploy Post-Call CRM & Follow-Up Drafter to recover 45–60 min/rep/day (1 FTE)',
+                            '✓ Roll out Standardized Digital Deal Room / MAP to compress procurement lag'
+                        ];
+
+                        var outcomes = [
+                            '✓ Private 1-Page Pipeline Leakage Scorecard comparing your metrics to the 15-leader cohort',
+                            '✓ Embargoed copy of "The 2026 Enterprise Deal Governance & Pipeline Leakage Index"',
+                            '✓ 20-minute walkthrough of how peer CROs deploy our 4-Week Sprint & Governance Retainer'
+                        ];
 
                         var actionsEl = document.getElementById('modal-res-actions');
                         actionsEl.innerHTML = '';
-                        for (var a = 0; a < rec.actions.length; a++) {
+                        for (var a = 0; a < actions.length; a++) {
                             var li = document.createElement('li');
-                            li.textContent = rec.actions[a];
+                            li.textContent = actions[a];
                             actionsEl.appendChild(li);
                         }
 
                         var outcomesEl = document.getElementById('modal-res-outcomes');
                         outcomesEl.innerHTML = '';
-                        for (var o = 0; o < rec.outcomes.length; o++) {
+                        for (var o = 0; o < outcomes.length; o++) {
                             var oli = document.createElement('li');
-                            oli.textContent = rec.outcomes[o];
+                            oli.textContent = outcomes[o];
                             outcomesEl.appendChild(oli);
                         }
 
@@ -2275,7 +2544,7 @@
             });
 
             document.getElementById('diag-reset').addEventListener('click', function() {
-                answers = { step1: null, step2: null, step3: null, step4: null };
+                answers = { step1: null, step2: null, step3: null, step4: null, step5: null };
                 showStep(1);
             });
         });
