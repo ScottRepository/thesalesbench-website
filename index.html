@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Sales Bench | Enterprise Revenue Architecture &amp; Deal Governance Advisory</title>
-    <meta name="description" content="Stop late-stage deal slippage. The Sales Bench helps B2B software leaders turn 6-figure pipeline opportunities into predictable closed-won revenue through deal forensics, AI agent infrastructure, market expansion and channel architecture.">
+    <title>The Sales Bench | Enterprise Revenue Architecture &amp; Deal Governance</title>
+    <meta name="description" content="Stop late-stage deal slippage. The Sales Bench helps B2B SaaS leaders turn 6-figure pipeline into predictable closed-won revenue through deal forensics, AI agent infrastructure, market expansion and channel architecture.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
     <style>
         /* ==========================================================================
-           THE SALES BENCH — ENTERPRISE ADVISORY DESIGN SYSTEM (v5.0)
-           Corporate Advisory Aesthetic: Navy (#0A192F), Slate (#475569), 
-           Off-White (#F8FAFC), Crisp White (#FFFFFF), Muted Gold (#B08D57), Cobalt (#1E40AF)
+           THE SALES BENCH — ENTERPRISE ADVISORY DESIGN SYSTEM (v5.1)
+           Institutional Palette: Navy (#0A192F), Slate (#475569), Off-White (#F8FAFC),
+           Crisp White (#FFFFFF), Muted Gold (#B08D57), Deep Cobalt (#1E40AF)
            ========================================================================== */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -45,8 +45,8 @@
             --radius-lg: 12px;
             --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
             --shadow-card: 0 4px 16px -2px rgba(15, 23, 42, 0.08);
-            --shadow-lift: 0 16px 36px -8px rgba(10, 25, 47, 0.22);
-            --container: 1360px;
+            --shadow-lift: 0 16px 36px -8px rgba(10, 25, 47, 0.20);
+            --container-max: 1240px;
         }
 
         html { scroll-behavior: smooth; scroll-padding-top: 88px; }
@@ -63,11 +63,15 @@
         img { max-width: 100%; display: block; }
         a { color: inherit; text-decoration: none; }
 
-        .container {
+        /* Global Viewport Framing (1240px Lunas Consulting Benchmark) */
+        .site-container {
             width: 100%;
-            max-width: var(--container);
+            max-width: var(--container-max);
             margin: 0 auto;
-            padding: 0 clamp(20px, 3.5vw, 48px);
+            padding: 0 2rem;
+        }
+        @media (max-width: 640px) {
+            .site-container { padding: 0 1.25rem; }
         }
 
         h1, h2, h3, h4 { font-family: var(--font-serif); color: var(--navy); font-weight: 600; line-height: 1.22; }
@@ -82,38 +86,37 @@
             color: var(--gold);
             margin-bottom: 12px;
         }
-
         .eyebrow::before {
             content: '';
             display: inline-block;
-            width: 24px;
+            width: 22px;
             height: 1px;
             background: currentColor;
             vertical-align: middle;
             margin-right: 10px;
         }
 
-        .section { padding: clamp(64px, 7vw, 100px) 0; }
+        .section { padding: clamp(64px, 7vw, 96px) 0; }
         .section-off { background: var(--off-white); }
         .section-navy { background: var(--navy); color: var(--slate-300); }
         .section-navy h2, .section-navy h3, .section-navy h4 { color: var(--white); }
 
-        .section-head { max-width: 820px; margin-bottom: clamp(36px, 4.5vw, 56px); }
+        .section-head { max-width: 820px; margin-bottom: clamp(36px, 4.5vw, 52px); }
         .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
-        .section-head h2 { font-size: clamp(2rem, 3.2vw, 2.75rem); margin-bottom: 14px; }
+        .section-head h2 { font-size: clamp(2rem, 3.2vw, 2.65rem); margin-bottom: 14px; }
         .section-head p { font-size: 1.05rem; color: var(--slate); line-height: 1.65; }
         .section-navy .section-head p { color: var(--slate-300); }
 
-        /* Buttons */
+        /* Unified Button Architecture */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
             font-family: var(--font-sans);
-            font-size: 15px;
+            font-size: 14.5px;
             font-weight: 600;
-            padding: 14px 28px;
+            padding: 13px 26px;
             border-radius: var(--radius);
             border: 1px solid transparent;
             cursor: pointer;
@@ -124,11 +127,13 @@
         .btn-gold:hover { background: var(--gold-hover); border-color: var(--gold-hover); transform: translateY(-1px); }
         .btn-navy { background: var(--navy); color: var(--white); border-color: var(--navy); }
         .btn-navy:hover { background: var(--navy-3); border-color: var(--navy-3); transform: translateY(-1px); }
+        .btn-white-outline { background: transparent; color: var(--white); border-color: rgba(255, 255, 255, 0.4); }
+        .btn-white-outline:hover { background: rgba(255, 255, 255, 0.1); border-color: var(--white); color: var(--white); }
         .btn-outline { background: transparent; color: var(--navy); border-color: var(--slate-300); }
         .btn-outline:hover { border-color: var(--navy); color: var(--navy); background: var(--off-white); }
 
         /* ==========================================================================
-           1. FULL-WIDTH HEADER
+           1. HEADER NAVIGATION (Bounded 1240px Container)
            ========================================================================== */
         header {
             position: sticky;
@@ -140,37 +145,35 @@
             width: 100%;
         }
 
-        .nav-full-width {
-            width: 100%;
-            padding: 0 clamp(20px, 3.5vw, 56px);
+        .nav-inner {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 78px;
+            height: 76px;
             gap: 24px;
         }
 
         .brand { display: flex; align-items: center; gap: 12px; }
         .brand-mark {
-            width: 40px; height: 40px;
+            width: 38px; height: 38px;
             border-radius: var(--radius);
             background: var(--navy);
             color: var(--gold-light);
             display: flex; align-items: center; justify-content: center;
             font-family: var(--font-serif);
             font-weight: 700;
-            font-size: 18px;
+            font-size: 17px;
             flex-shrink: 0;
         }
-        .brand-name { font-family: var(--font-serif); font-size: 20px; font-weight: 700; color: var(--navy); line-height: 1.1; display: block; }
+        .brand-name { font-family: var(--font-serif); font-size: 19px; font-weight: 700; color: var(--navy); line-height: 1.1; display: block; }
         .brand-sub { font-size: 10px; font-weight: 600; color: var(--slate-light); letter-spacing: 0.12em; text-transform: uppercase; display: block; margin-top: 2px; }
 
-        .nav-links { display: flex; gap: 26px; }
-        .nav-links a { font-size: 14px; font-weight: 500; color: var(--slate); transition: color 0.15s; }
+        .nav-links { display: flex; gap: 24px; }
+        .nav-links a { font-size: 13.5px; font-weight: 500; color: var(--slate); transition: color 0.15s; }
         .nav-links a:hover { color: var(--navy); }
 
         .header-ctas { display: flex; gap: 12px; align-items: center; }
-        .nav-text-btn { font-size: 13.5px; font-weight: 600; color: var(--navy); background: none; border: none; cursor: pointer; padding: 8px 12px; font-family: var(--font-sans); }
+        .nav-text-btn { font-size: 13px; font-weight: 600; color: var(--navy); background: none; border: none; cursor: pointer; padding: 8px 12px; font-family: var(--font-sans); }
         .nav-text-btn:hover { color: var(--gold); }
 
         .btn-header-solid {
@@ -178,14 +181,14 @@
             color: var(--white);
             font-family: var(--font-sans);
             font-weight: 600;
-            font-size: 13.5px;
-            letter-spacing: 0.02em;
-            padding: 11px 22px;
+            font-size: 13px;
+            letter-spacing: 0.01em;
+            padding: 10px 18px;
             border-radius: var(--radius);
             border: 1px solid var(--navy);
             cursor: pointer;
             transition: all 0.2s ease;
-            box-shadow: 0 2px 8px rgba(10, 25, 47, 0.15);
+            box-shadow: 0 2px 6px rgba(10, 25, 47, 0.12);
         }
         .btn-header-solid:hover {
             background: var(--navy-3);
@@ -193,114 +196,97 @@
             transform: translateY(-1px);
         }
 
-        @media (max-width: 1100px) { .nav-links { display: none; } }
+        @media (max-width: 1040px) { .nav-links { display: none; } }
         @media (max-width: 640px) {
             .nav-text-btn, .brand-sub { display: none; }
-            .btn-header-solid { padding: 9px 14px; font-size: 12.5px; }
+            .btn-header-solid { padding: 8px 12px; font-size: 12px; }
         }
 
         /* ==========================================================================
-           2. BALANCED 2-COLUMN HERO (With Executive Visual Asset)
+           2. STREAMLINED CENTERED HERO SECTION
            ========================================================================== */
         .hero {
             position: relative;
             color: var(--white);
             background-color: var(--navy);
             background-image:
-                linear-gradient(105deg, rgba(10, 25, 47, 0.98) 0%, rgba(10, 25, 47, 0.92) 55%, rgba(10, 25, 47, 0.85) 100%),
+                linear-gradient(180deg, rgba(10, 25, 47, 0.94) 0%, rgba(10, 25, 47, 0.97) 100%),
                 url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80');
             background-size: cover;
             background-position: center;
-            padding: clamp(64px, 7vw, 96px) 0 clamp(110px, 10vw, 136px);
+            padding: clamp(64px, 7vw, 92px) 0 clamp(96px, 9vw, 116px);
+            text-align: center;
         }
 
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            gap: clamp(36px, 4vw, 64px);
-            align-items: center;
-        }
-
-        @media (max-width: 980px) {
-            .hero-grid { grid-template-columns: 1fr; }
+        .hero-content-wrap {
+            max-width: 980px;
+            margin: 0 auto;
         }
 
         .hero .eyebrow { color: var(--gold-light); }
-        .hero h1 { color: var(--white); font-size: clamp(2.3rem, 4vw, 3.6rem); font-weight: 600; letter-spacing: -0.01em; margin-bottom: 22px; }
-        .hero h1 .line-1 { display: block; }
-        .hero h1 .line-2 { display: block; margin-top: 0.3em; font-style: italic; font-weight: 500; color: var(--gold-light); font-size: 0.74em; line-height: 1.25; }
-        .hero-lead { font-size: clamp(1rem, 1.3vw, 1.15rem); color: #CBD5E1; max-width: 640px; margin-bottom: 28px; line-height: 1.65; }
+        .hero .eyebrow::before { display: none; }
 
-        .fit-bar {
-            display: flex;
+        .hero h1 {
+            color: var(--white);
+            font-size: clamp(2.4rem, 4.4vw, 3.8rem);
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+        .hero h1 .line-1 { display: block; }
+        .hero h1 .line-2 {
+            display: block;
+            margin-top: 0.25em;
+            font-style: italic;
+            font-weight: 500;
+            color: var(--gold-light);
+            font-size: 0.72em;
+            line-height: 1.25;
+        }
+
+        .hero-lead {
+            font-size: clamp(1.02rem, 1.35vw, 1.18rem);
+            color: #CBD5E1;
+            max-width: 780px;
+            margin: 0 auto 28px;
+            line-height: 1.65;
+        }
+
+        .fit-bar-center {
+            display: inline-flex;
             flex-wrap: wrap;
             align-items: center;
-            gap: 8px 12px;
-            margin-bottom: 32px;
-            padding: 14px 0;
-            border-top: 1px solid rgba(255,255,255,0.12);
-            border-bottom: 1px solid rgba(255,255,255,0.12);
-        }
-        .fit-label { font-size: 11.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-light); margin-right: 4px; }
-        .fit-tag { font-size: 13.5px; color: #E2E8F0; padding: 4px 12px; border: 1px solid rgba(255,255,255,0.18); border-radius: 999px; background: rgba(255,255,255,0.03); }
-        .fit-tag strong { color: var(--white); font-weight: 600; }
-
-        .hero-ctas { display: flex; align-items: center; }
-
-        /* Hero Right Column: High Quality Stock Visual Asset */
-        .hero-visual-frame {
-            position: relative;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-lift);
+            justify-content: center;
+            gap: 8px 14px;
+            margin-bottom: 34px;
+            padding: 10px 20px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.15);
-            background: var(--navy-2);
         }
+        .fit-label { font-size: 11.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-light); }
+        .fit-tag { font-size: 13px; color: #E2E8F0; }
+        .fit-tag strong { color: var(--white); font-weight: 600; }
+        .fit-sep { color: rgba(255,255,255,0.25); font-size: 12px; }
 
-        .hero-visual-img {
-            width: 100%;
-            height: clamp(340px, 32vw, 440px);
-            background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .hero-visual-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(10, 25, 47, 0.15) 0%, rgba(10, 25, 47, 0.82) 100%);
-        }
-
-        .hero-visual-badge {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            right: 20px;
-            background: rgba(10, 25, 47, 0.85);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            border-radius: var(--radius);
-            padding: 14px 18px;
+        .hero-actions {
             display: flex;
             align-items: center;
-            gap: 12px;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
         }
-
-        .badge-dot {
-            width: 10px; height: 10px; border-radius: 50%;
-            background: #10B981;
-            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
-            flex-shrink: 0;
-        }
-
-        .badge-title { font-size: 13px; font-weight: 700; color: var(--white); letter-spacing: 0.02em; }
-        .badge-sub { font-size: 11.5px; color: #CBD5E1; }
 
         /* ==========================================================================
-           3. OUTCOME METRICS BAR & ATTRIBUTION
+           3. HIGH-IMPACT METRICS BAR (Positioned Directly Below Hero)
            ========================================================================== */
-        .metrics-wrap { position: relative; z-index: 5; margin-top: clamp(-80px, -7vw, -60px); }
+        .metrics-wrap {
+            position: relative;
+            z-index: 5;
+            margin-top: clamp(-70px, -6vw, -55px);
+        }
+
         .metrics-bar {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -309,14 +295,27 @@
             box-shadow: var(--shadow-lift);
             border-top: 3px solid var(--gold);
             overflow: hidden;
+            border-left: 1px solid var(--slate-200);
+            border-right: 1px solid var(--slate-200);
+            border-bottom: 1px solid var(--slate-200);
         }
 
-        .metric { padding: clamp(22px, 2.4vw, 32px) clamp(18px, 2vw, 28px); border-right: 1px solid var(--slate-200); }
+        .metric {
+            padding: clamp(22px, 2.4vw, 30px) clamp(16px, 1.8vw, 24px);
+            border-right: 1px solid var(--slate-200);
+            text-align: left;
+        }
         .metric:last-child { border-right: none; }
-        .metric-num { font-family: var(--font-serif); font-size: clamp(1.8rem, 2.5vw, 2.4rem); font-weight: 700; color: var(--navy); line-height: 1.1; }
+        .metric-num {
+            font-family: var(--font-serif);
+            font-size: clamp(1.75rem, 2.4vw, 2.3rem);
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.1;
+        }
         .metric-num span { color: var(--gold); }
-        .metric-label { font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); margin-top: 6px; }
-        .metric-desc { font-size: 13px; color: var(--slate-light); margin-top: 4px; line-height: 1.45; }
+        .metric-label { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); margin-top: 6px; }
+        .metric-desc { font-size: 12.5px; color: var(--slate-light); margin-top: 4px; line-height: 1.45; }
 
         .metrics-attribution {
             text-align: center;
@@ -338,58 +337,15 @@
         }
 
         /* ==========================================================================
-           4. GRAPHICAL LOGO TICKERS (Pure Vector / Logos Only, 60s Glide)
-           ========================================================================== */
-        .logos-section { padding: 48px 0 42px; background: var(--white); border-bottom: 1px solid var(--slate-200); }
-        .ticker-block + .ticker-block { margin-top: 34px; }
-        .ticker-label { text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slate-light); margin-bottom: 18px; }
-        .ticker {
-            overflow: hidden;
-            mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
-            -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
-        }
-        .ticker-inner { display: flex; width: max-content; }
-        .ticker-track { display: flex; align-items: center; gap: 28px; padding-right: 28px; animation: scroll 60s linear infinite; }
-        .ticker-track.reverse { animation: scroll-rev 60s linear infinite; }
-        .ticker:hover .ticker-track { animation-play-state: paused; }
-        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-100%); } }
-        @keyframes scroll-rev { from { transform: translateX(-100%); } to { transform: translateX(0); } }
-
-        /* Pure Graphical Logo Badges (No Text Labels) */
-        .logo-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 130px;
-            height: 58px;
-            padding: 8px 22px;
-            background: var(--white);
-            border: 1px solid var(--slate-200);
-            border-radius: var(--radius);
-            transition: all 0.2s ease;
-        }
-        .logo-item:hover { border-color: var(--gold-border); box-shadow: var(--shadow-sm); }
-        .logo-item img {
-            max-height: 26px;
-            max-width: 100px;
-            width: auto;
-            object-fit: contain;
-            filter: grayscale(100%);
-            opacity: 0.78;
-            transition: all 0.2s;
-        }
-        .logo-item:hover img { filter: none; opacity: 1; transform: scale(1.04); }
-
-        /* ==========================================================================
-           5. COMPACT HORIZONTAL 4-COLUMN SERVICE PILLARS
+           4. FOUR CORE PRACTICES (The 4 Problems We Solve)
            ========================================================================== */
         .services-compact-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
-        @media (max-width: 1024px) { .services-compact-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 580px) { .services-compact-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 1040px) { .services-compact-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 560px) { .services-compact-grid { grid-template-columns: 1fr; } }
 
         .service-box {
             background: var(--white);
@@ -409,11 +365,11 @@
 
         .service-box-num {
             font-family: var(--font-serif);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--gold);
             line-height: 1;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .service-box h3 { font-size: 1.15rem; margin-bottom: 8px; color: var(--navy); }
@@ -438,7 +394,7 @@
         .service-box-cta:hover { text-decoration: underline; color: var(--navy); }
 
         /* ==========================================================================
-           6. CONDENSED 4-WEEK SPRINT (Horizontal Week Tabs)
+           5. THE 4-WEEK INSTALLATION SPRINT (Horizontal Tabs)
            ========================================================================== */
         .sprint-nav-tabs {
             display: grid;
@@ -495,7 +451,73 @@
         .sprint-detail-col li::before { content: '✓'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
 
         /* ==========================================================================
-           7. 3-COLUMN SECURITY & DATA RETENTION (No Accordion)
+           6. LOGO TICKERS (Social Proof Transition — 65s Smooth Glide)
+           ========================================================================== */
+        .logos-section {
+            padding: 52px 0 44px;
+            background: var(--off-white);
+            border-top: 1px solid var(--slate-200);
+            border-bottom: 1px solid var(--slate-200);
+        }
+        .ticker-block + .ticker-block { margin-top: 32px; }
+        .ticker-label { text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slate-light); margin-bottom: 16px; }
+        .ticker {
+            overflow: hidden;
+            mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+        }
+        .ticker-inner { display: flex; width: max-content; }
+        .ticker-track { display: flex; align-items: center; gap: 20px; padding-right: 20px; animation: scroll 65s linear infinite; }
+        .ticker-track.reverse { animation: scroll-rev 65s linear infinite; }
+        .ticker:hover .ticker-track { animation-play-state: paused; }
+        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+        @keyframes scroll-rev { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+
+        /* Crisp Logo Badges: [Official Logo Mark] [Company Name Label] */
+        .logo-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            height: 48px;
+            padding: 6px 18px;
+            background: var(--white);
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        .logo-item:hover { border-color: var(--gold-border); transform: translateY(-1px); }
+        .logo-item .logo-icon-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            flex-shrink: 0;
+        }
+        .logo-item .logo-icon-wrap img,
+        .logo-item .logo-icon-wrap svg {
+            max-height: 22px;
+            max-width: 26px;
+            width: auto;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.85;
+            transition: all 0.2s;
+        }
+        .logo-item:hover .logo-icon-wrap img,
+        .logo-item:hover .logo-icon-wrap svg { filter: none; opacity: 1; }
+        .logo-item .logo-label {
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--navy);
+        }
+
+        /* ==========================================================================
+           7. ZERO DATA RETENTION & CLOUD SECURITY (BYOK & SOC 2 De-risking)
            ========================================================================== */
         .security-3col-grid {
             display: grid;
@@ -533,7 +555,7 @@
         .security-box li::before { content: '•'; position: absolute; left: 0; color: var(--navy); font-size: 16px; }
 
         /* Core Stack Integrations Grid (10 Logos) */
-        .stack-section { margin-top: 60px; text-align: center; }
+        .stack-section { margin-top: 56px; text-align: center; }
         .stack-label { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slate-light); margin-bottom: 22px; }
         .stack-grid-10 {
             display: grid;
@@ -556,27 +578,14 @@
             transition: all 0.2s ease;
         }
         .stack-card:hover { border-color: var(--gold-border); box-shadow: var(--shadow-sm); transform: translateY(-2px); }
-        .stack-card img { height: 28px; max-width: 80px; object-fit: contain; filter: grayscale(100%); opacity: 0.75; transition: all 0.2s; }
+        .stack-card img { height: 26px; max-width: 76px; object-fit: contain; filter: grayscale(100%); opacity: 0.75; transition: all 0.2s; }
         .stack-card:hover img { filter: none; opacity: 1; }
-        .stack-card span { font-size: 12.5px; font-weight: 600; color: var(--navy); }
+        .stack-card span { font-size: 12px; font-weight: 600; color: var(--navy); }
 
         /* ==========================================================================
-           8. VALUE LADDER & GOVERNANCE SECTIONS
+           8. RETAINED DEAL GOVERNANCE & DEAL FORENSICS
            ========================================================================== */
-        .ladder-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        @media (max-width: 960px) { .ladder-grid { grid-template-columns: 1fr; } }
-        .ladder-card { background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-lg); padding: 32px 28px; display: flex; flex-direction: column; position: relative; }
-        .ladder-card.featured { border: 2px solid var(--gold); box-shadow: var(--shadow-card); }
-        .ladder-badge { position: absolute; top: -12px; left: 28px; background: var(--gold); color: var(--white); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 12px; border-radius: 4px; }
-        .ladder-phase { font-size: 11.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cobalt); margin-bottom: 8px; }
-        .ladder-card h3 { font-size: 1.35rem; margin-bottom: 12px; }
-        .ladder-card > p { font-size: 14.5px; margin-bottom: 16px; }
-        .check-list { list-style: none; margin-bottom: 24px; }
-        .check-list li { font-size: 14px; padding: 8px 0 8px 24px; position: relative; border-top: 1px solid var(--slate-200); }
-        .check-list li::before { content: '✓'; position: absolute; left: 2px; top: 8px; color: var(--gold); font-weight: 700; }
-        .ladder-card .btn { margin-top: auto; }
-
-        .gov-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(32px, 4vw, 56px); align-items: start; }
+        .gov-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(32px, 4vw, 56px); align-items: start; }
         @media (max-width: 960px) { .gov-grid { grid-template-columns: 1fr; } }
         .gov-tier { padding: 22px 0; border-top: 1px solid rgba(255,255,255,0.12); }
         .gov-tier:first-child { border-top: none; padding-top: 0; }
@@ -595,24 +604,82 @@
         .commercial-item p { font-size: 13.5px; }
 
         /* ==========================================================================
-           9. ABOUT / SCOTT CARPENTIER BIO
+           9. ABOUT THE SALES BENCH & FOUNDER PROFILE (Equal Height & Typography)
            ========================================================================== */
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 4vw, 64px); align-items: start; }
-        @media (max-width: 960px) { .about-grid { grid-template-columns: 1fr; } }
-        .about-grid h2 { font-size: clamp(1.8rem, 2.6vw, 2.4rem); margin-bottom: 16px; }
-        .about-grid p { margin-bottom: 14px; font-size: 15px; }
-        .founder-card { background: var(--white); border: 1px solid var(--slate-200); border-top: 3px solid var(--navy); border-radius: var(--radius-lg); padding: clamp(24px, 3vw, 36px); box-shadow: var(--shadow-card); }
-        .founder-head { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid var(--slate-200); }
-        .founder-avatar { width: 58px; height: 58px; border-radius: 50%; background: var(--navy); color: var(--gold-light); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-weight: 700; font-size: 20px; flex-shrink: 0; }
-        .founder-head h3 { font-size: 1.45rem; }
-        .founder-role { font-size: 12.5px; color: var(--slate-light); margin-top: 2px; }
-        .founder-card p { font-size: 14px; line-height: 1.6; }
-        .cred-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
-        .cred { font-size: 11.5px; font-weight: 600; padding: 5px 10px; border-radius: 4px; background: var(--gold-tint); color: #7A5F33; border: 1px solid var(--gold-border); }
+        .about-balanced-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            align-items: stretch;
+        }
+        @media (max-width: 960px) { .about-balanced-grid { grid-template-columns: 1fr; } }
+
+        .about-card {
+            background: var(--white);
+            border: 1px solid var(--slate-200);
+            border-top: 3px solid var(--navy);
+            border-radius: var(--radius-lg);
+            padding: clamp(26px, 3vw, 38px);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .about-card-head {
+            margin-bottom: 20px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--slate-200);
+        }
+        .about-card-head h3 { font-size: 1.45rem; color: var(--navy); line-height: 1.25; }
+        .about-card-sub { font-size: 12.5px; color: var(--slate-light); margin-top: 4px; font-weight: 500; }
+
+        .about-body p { font-size: 14.5px; color: var(--slate); line-height: 1.62; margin-bottom: 14px; }
+        .about-body p strong { color: var(--navy); }
+
+        .about-features { list-style: none; margin: 18px 0 24px; border-top: 1px solid var(--slate-200); padding-top: 16px; }
+        .about-features li { font-size: 13.5px; padding-left: 20px; position: relative; margin-bottom: 10px; color: var(--slate); line-height: 1.45; }
+        .about-features li::before { content: '✓'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+
+        .founder-head-flex { display: flex; align-items: center; gap: 16px; }
+        .founder-avatar {
+            width: 58px; height: 58px;
+            border-radius: 50%;
+            background: var(--navy);
+            color: var(--gold-light);
+            display: flex; align-items: center; justify-content: center;
+            font-family: var(--font-serif);
+            font-weight: 700;
+            font-size: 20px;
+            flex-shrink: 0;
+            border: 2px solid var(--gold-light);
+        }
+
+        .cred-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 18px; border-top: 1px solid var(--slate-200); }
+        .cred-tag { font-size: 11.5px; font-weight: 600; padding: 5px 10px; border-radius: 4px; background: var(--gold-tint); color: #7A5F33; border: 1px solid var(--gold-border); }
 
         /* ==========================================================================
-           10. CUSTOM FORMS (NO IFRAMES, DIRECT HUBSPOT API POST)
+           10. FINAL CTA & BOOKING SECTION ("Schedule a 15-Minute Introductory Call")
            ========================================================================== */
+        .book-section {
+            background-color: var(--navy);
+            background-image: linear-gradient(rgba(10,25,47,0.95), rgba(10,25,47,0.95)), url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--slate-300);
+        }
+        .book-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 4vw, 64px); align-items: start; }
+        @media (max-width: 960px) { .book-grid { grid-template-columns: 1fr; } }
+        .book-grid h2 { color: var(--white); font-size: clamp(1.8rem, 2.6vw, 2.4rem); margin-bottom: 16px; }
+        .cover-list { list-style: none; margin-top: 24px; }
+        .cover-list li { padding: 14px 0 14px 28px; border-top: 1px solid rgba(255,255,255,0.12); position: relative; font-size: 14px; }
+        .cover-list li::before { content: '✓'; position: absolute; left: 0; top: 14px; color: var(--gold-light); font-weight: 700; }
+        .cover-list strong { color: var(--white); font-weight: 600; }
+
+        .form-card { background: var(--white); border-radius: var(--radius-lg); padding: clamp(24px, 3vw, 36px); box-shadow: var(--shadow-lift); }
+        .form-card h3 { font-size: 1.4rem; margin-bottom: 4px; color: var(--navy); }
+        .form-card .form-sub { font-size: 13.5px; color: var(--slate-light); margin-bottom: 18px; }
+
         .custom-form { display: flex; flex-direction: column; gap: 14px; }
         .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
         @media (max-width: 520px) { .form-row-2 { grid-template-columns: 1fr; } }
@@ -635,7 +702,7 @@
             border-color: var(--cobalt);
             box-shadow: 0 0 0 3px var(--cobalt-tint);
         }
-        textarea.form-input { min-height: 84px; resize: vertical; }
+        textarea.form-input { min-height: 80px; resize: vertical; }
 
         .form-submit-btn {
             width: 100%;
@@ -658,29 +725,22 @@
         .form-status.success { background: #ECFDF5; color: #065F46; border: 1px solid #A7F3D0; display: block; }
         .form-status.error { background: #FEF2F2; color: #991B1B; border: 1px solid #FECACA; display: block; }
 
-        /* Booking Section */
-        .book-section {
-            background-color: var(--navy);
-            background-image: linear-gradient(rgba(10,25,47,0.95), rgba(10,25,47,0.95)), url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2000&q=80');
-            background-size: cover;
-            background-position: center;
-            color: var(--slate-300);
-        }
-        .book-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 4vw, 64px); align-items: start; }
-        @media (max-width: 960px) { .book-grid { grid-template-columns: 1fr; } }
-        .book-grid h2 { color: var(--white); font-size: clamp(1.8rem, 2.6vw, 2.4rem); margin-bottom: 16px; }
-        .cover-list { list-style: none; margin-top: 24px; }
-        .cover-list li { padding: 14px 0 14px 30px; border-top: 1px solid rgba(255,255,255,0.12); position: relative; font-size: 14.5px; }
-        .cover-list li::before { content: '✓'; position: absolute; left: 2px; top: 14px; color: var(--gold-light); font-weight: 700; }
-        .cover-list strong { color: var(--white); font-weight: 600; }
-
-        .form-card { background: var(--white); border-radius: var(--radius-lg); padding: clamp(24px, 3vw, 36px); box-shadow: var(--shadow-lift); }
-        .form-card h3 { font-size: 1.4rem; margin-bottom: 4px; }
-        .form-card .form-sub { font-size: 13.5px; color: var(--slate-light); margin-bottom: 18px; }
         .form-foot { display: flex; justify-content: space-between; font-size: 12px; color: var(--slate-light); margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--slate-200); }
 
         /* ==========================================================================
-           11. MODALS & FLOATING PILL
+           11. FOOTER (Bounded 1240px Container)
+           ========================================================================== */
+        footer { background: #071223; color: #94A3B8; padding: 48px 0 32px; width: 100%; }
+        .footer-top { display: flex; justify-content: space-between; gap: 32px; flex-wrap: wrap; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        footer .brand-name { color: var(--white); }
+        footer .brand-sub { color: #94A3B8; }
+        .footer-links { display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: center; }
+        .footer-links a { font-size: 13.5px; color: #CBD5E1; transition: color 0.15s; }
+        .footer-links a:hover { color: var(--gold-light); }
+        .footer-bottom { padding-top: 20px; font-size: 12.5px; }
+
+        /* ==========================================================================
+           12. MODALS & FLOATING DIAGNOSTIC PILL (With Retake Diagnostic Button)
            ========================================================================== */
         .floating-pill {
             position: fixed;
@@ -724,7 +784,7 @@
         .modal-window {
             background: var(--white);
             width: 92%;
-            max-width: 640px;
+            max-width: 660px;
             max-height: 90vh;
             overflow-y: auto;
             border-radius: var(--radius-lg);
@@ -733,11 +793,52 @@
             transition: transform 0.25s ease;
         }
         .modal-overlay.active .modal-window { transform: none; }
-        .modal-head { position: sticky; top: 0; z-index: 5; background: var(--navy); color: var(--white); padding: 22px 26px; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
-        .modal-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-light); display: block; margin-bottom: 4px; }
-        .modal-title { font-size: 1.6rem; color: var(--white); }
-        .modal-close { flex-shrink: 0; width: 34px; height: 34px; border-radius: var(--radius); background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: var(--white); font-size: 16px; cursor: pointer; transition: background 0.15s; }
+
+        .modal-head {
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            background: var(--navy);
+            color: var(--white);
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+        .modal-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-light); display: block; margin-bottom: 2px; }
+        .modal-title { font-size: 1.55rem; color: var(--white); }
+
+        .modal-controls { display: flex; align-items: center; gap: 10px; }
+        .modal-retake-btn {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.22);
+            color: var(--gold-light);
+            font-family: var(--font-sans);
+            font-size: 12.5px;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+        }
+        .modal-retake-btn:hover { background: rgba(255,255,255,0.18); color: var(--white); }
+
+        .modal-close {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: var(--radius);
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: var(--white);
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
         .modal-close:hover { background: rgba(255,255,255,0.18); }
+
         .modal-body { padding: 26px; }
 
         .calc-banner { background: var(--off-white); border: 1px solid var(--slate-200); border-left: 3px solid var(--gold); border-radius: var(--radius); padding: 16px 20px; margin-bottom: 22px; }
@@ -756,96 +857,81 @@
         .opt-sub { font-size: 13px; color: var(--slate-light); margin-top: 2px; }
         .completed-box h4 { font-size: 1.35rem; margin-bottom: 6px; color: var(--navy); }
         .completed-box p { font-size: 14px; margin-bottom: 16px; color: var(--slate); }
-        .retake { background: none; border: none; color: var(--slate-light); font-size: 12.5px; font-weight: 600; cursor: pointer; margin-top: 12px; text-decoration: underline; font-family: var(--font-sans); }
-
-        /* Footer */
-        footer { background: #071223; color: #94A3B8; padding: 50px 0 32px; width: 100%; }
-        .footer-full { padding: 0 clamp(20px, 3.5vw, 56px); }
-        .footer-top { display: flex; justify-content: space-between; gap: 32px; flex-wrap: wrap; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-        footer .brand-name { color: var(--white); }
-        footer .brand-sub { color: #94A3B8; }
-        .footer-links { display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: center; }
-        .footer-links a { font-size: 13.5px; color: #CBD5E1; transition: color 0.15s; }
-        .footer-links a:hover { color: var(--gold-light); }
-        .footer-bottom { padding-top: 20px; font-size: 12.5px; }
 
         .hidden { display: none !important; }
     </style>
 </head>
 <body>
 
-    <!-- 1. FULL-WIDTH HEADER -->
+    <!-- ==========================================================================
+         1. BOUNDED HEADER NAVIGATION (1240px Site Container)
+         ========================================================================== -->
     <header>
-        <div class="nav-full-width">
-            <a href="#" class="brand">
-                <div class="brand-mark">SB</div>
-                <div>
-                    <span class="brand-name">The Sales Bench</span>
-                    <span class="brand-sub">Enterprise Revenue Advisory</span>
+        <div class="site-container">
+            <div class="nav-inner">
+                <a href="#" class="brand">
+                    <div class="brand-mark">SB</div>
+                    <div>
+                        <span class="brand-name">The Sales Bench</span>
+                        <span class="brand-sub">Enterprise Revenue Advisory</span>
+                    </div>
+                </a>
+                <nav class="nav-links">
+                    <a href="#services">Services</a>
+                    <a href="#sprint-engine">4-Week Sprint</a>
+                    <a href="#alliances">Pedigree &amp; Tickers</a>
+                    <a href="#byok-security">Security</a>
+                    <a href="#governance-retainer">Deal Governance</a>
+                    <a href="#about">About</a>
+                </nav>
+                <div class="header-ctas">
+                    <button type="button" class="nav-text-btn" onclick="openDiagnosticModal()">Run Diagnostic</button>
+                    <button type="button" class="btn-header-solid" onclick="openScheduleModal()">Schedule a 15-Minute Introductory Call</button>
                 </div>
-            </a>
-            <nav class="nav-links">
-                <a href="#services">Services</a>
-                <a href="#sprint-engine">4-Week Sprint</a>
-                <a href="#byok-security">Security</a>
-                <a href="#governance-retainer">Deal Governance</a>
-                <a href="#about">About</a>
-            </nav>
-            <div class="header-ctas">
-                <button type="button" class="nav-text-btn" onclick="openDiagnosticModal()">Run Diagnostic</button>
-                <button type="button" class="btn-header-solid" onclick="openScheduleModal()">Schedule a 20-Min Debrief</button>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- 2. BALANCED 2-COLUMN HERO (With Executive Stock Visual Asset) -->
+        <!-- ==========================================================================
+             2. STREAMLINED & ELEVATED CENTERED HERO SECTION
+             ========================================================================== -->
         <section class="hero">
-            <div class="container">
-                <div class="hero-grid">
-                    <!-- Left Column: Copy & Single Primary Action -->
-                    <div>
-                        <span class="eyebrow">Enterprise Revenue Architecture &amp; Deal Governance</span>
-                        <h1>
-                            <span class="line-1">Stop Late-Stage Deal Slippage.</span>
-                            <span class="line-2">Turn 6-Figure Opportunities In Your Pipeline Into Predictable Closed-Won Revenue.</span>
-                        </h1>
-                        <p class="hero-lead">
-                            We install objective MEDDPICC deal gating, instant post-call follow-ups, and collaborative buyer rooms directly into your CRM&mdash;compressing sales cycles by 25% and de-risking new market expansion without adding headcount.
-                        </p>
+            <div class="site-container">
+                <div class="hero-content-wrap">
+                    <span class="eyebrow">Enterprise Revenue Architecture &amp; Deal Governance</span>
+                    <h1>
+                        <span class="line-1">Stop Late-Stage Deal Slippage.</span>
+                        <span class="line-2">Turn 6-Figure Opportunities In Your Pipeline Into Predictable Closed-Won Revenue.</span>
+                    </h1>
+                    <p class="hero-lead">
+                        We install objective MEDDPICC deal gating, instant post-call follow-ups, and collaborative buyer rooms directly into your CRM&mdash;compressing sales cycles by 25% and de-risking new market expansion without adding headcount.
+                    </p>
 
-                        <div class="fit-bar">
-                            <span class="fit-label">Who We Serve:</span>
-                            <span class="fit-tag"><strong>B2B Software</strong> &middot; $5M&ndash;$50M+ ARR</span>
-                            <span class="fit-tag"><strong>Deal Size</strong> &middot; $30k&ndash;$250k+ ACV</span>
-                            <span class="fit-tag"><strong>Sales Floor</strong> &middot; Growing to Enterprise AE Teams</span>
-                        </div>
-
-                        <div class="hero-ctas">
-                            <button type="button" class="btn btn-gold" onclick="openDiagnosticModal()">Run the 2026 Pipeline Leakage Diagnostic &rarr;</button>
-                        </div>
+                    <!-- ICP Badge -->
+                    <div class="fit-bar-center">
+                        <span class="fit-label">Who We Serve:</span>
+                        <span class="fit-tag">Enterprise &amp; B2B SaaS <strong>($5M&ndash;$50M+ ARR)</strong></span>
+                        <span class="fit-sep">&middot;</span>
+                        <span class="fit-tag">Deal Size: <strong>$30k&ndash;$250k+ ACV</strong></span>
+                        <span class="fit-sep">&middot;</span>
+                        <span class="fit-tag">Floor: <strong>Scaling AE Teams</strong></span>
                     </div>
 
-                    <!-- Right Column: Professional Stock Photography Visual Asset -->
-                    <div class="hero-visual-frame">
-                        <div class="hero-visual-img">
-                            <div class="hero-visual-overlay"></div>
-                        </div>
-                        <div class="hero-visual-badge">
-                            <div class="badge-dot"></div>
-                            <div>
-                                <div class="badge-title">Enterprise Revenue Machinery</div>
-                                <div class="badge-sub">Installed Directly Inside Your CRM Perimeter</div>
-                            </div>
-                        </div>
+                    <!-- Hero Action Buttons -->
+                    <div class="hero-actions">
+                        <button type="button" class="btn btn-gold" onclick="openDiagnosticModal()">Run 2026 Pipeline Leakage Diagnostic &rarr;</button>
+                        <button type="button" class="btn btn-white-outline" onclick="openScheduleModal()">Schedule a 15-Minute Introductory Call</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 3. OUTCOME METRICS BAR & ATTRIBUTION -->
+        <!-- ==========================================================================
+             3. HIGH-IMPACT METRICS BAR (Directly Below Hero)
+             ========================================================================== -->
         <div class="metrics-wrap">
-            <div class="container">
+            <div class="site-container">
                 <div class="metrics-bar">
                     <div class="metric">
                         <div class="metric-num">25&ndash;35<span>%</span></div>
@@ -869,40 +955,16 @@
                     </div>
                 </div>
                 <div class="metrics-attribution">
-                    <em>Metrics derived from The 2026 Deal Governance Benchmark Index and internal triage analysis.</em>
+                    <em>Metrics derived from The 2026 Deal Governance Benchmark Index and enterprise CRM deal forensics.</em>
                 </div>
             </div>
         </div>
 
-        <!-- 4. LOGO TICKERS (Pure Graphical Logos Only, 60s Glide) -->
-        <section class="logos-section">
-            <div class="container">
-                <!-- Row 1: Partners -->
-                <div class="ticker-block">
-                    <div class="ticker-label">Enterprise Ecosystem &amp; Partner Pedigree &middot; SI &amp; Advisory Alliances</div>
-                    <div class="ticker">
-                        <div class="ticker-inner">
-                            <div class="ticker-track" id="partner-track"></div>
-                            <div class="ticker-track" id="partner-track-dup" aria-hidden="true"></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Row 2: Accounts Sold To -->
-                <div class="ticker-block">
-                    <div class="ticker-label">Proven Enterprise Deal Pedigree &middot; Sample Accounts Sold To &amp; Onboarded By Our Leadership</div>
-                    <div class="ticker">
-                        <div class="ticker-inner">
-                            <div class="ticker-track reverse" id="client-track"></div>
-                            <div class="ticker-track reverse" id="client-track-dup" aria-hidden="true"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. COMPACT HORIZONTAL 4-COLUMN SERVICE PILLARS -->
+        <!-- ==========================================================================
+             4. FOUR CORE PRACTICES GRID (The 4 Problems We Solve)
+             ========================================================================== -->
         <section id="services" class="section section-off">
-            <div class="container">
+            <div class="site-container">
                 <div class="section-head center">
                     <span class="eyebrow">Our Services</span>
                     <h2>Four Core Practices. One Objective: Predictable Enterprise Revenue.</h2>
@@ -965,9 +1027,11 @@
             </div>
         </section>
 
-        <!-- 6. CONDENSED 4-WEEK SPRINT (Horizontal Tabbed Interface) -->
+        <!-- ==========================================================================
+             5. THE STANDARDIZED 4-WEEK INSTALLATION SPRINT (The Turnkey Deliverable)
+             ========================================================================== -->
         <section id="sprint-engine" class="section">
-            <div class="container">
+            <div class="site-container">
                 <div class="section-head">
                     <span class="eyebrow">The 4-Week Installation Sprint</span>
                     <h2>Standardized Revenue Infrastructure, Installed In Your Stack</h2>
@@ -994,7 +1058,7 @@
                     </button>
                 </div>
 
-                <!-- Dynamic Single-Card Content (Significantly Reduced Vertical Height) -->
+                <!-- Dynamic Single-Card Content -->
                 <div class="sprint-content-card">
                     <!-- Week 1 Panel -->
                     <div class="sprint-grid-3col sprint-week-panel active" id="sprint-week-1">
@@ -1135,9 +1199,39 @@
             </div>
         </section>
 
-        <!-- 7. 3-COLUMN SECURITY & DATA RETENTION (Clean Layout, No Accordions) -->
-        <section id="byok-security" class="section section-off">
-            <div class="container">
+        <!-- ==========================================================================
+             6. ENTERPRISE CUSTOMER & PARTNER LOGO TICKERS (Social Proof Transition)
+             ========================================================================== -->
+        <section id="alliances" class="logos-section">
+            <div class="site-container">
+                <!-- Row 1: SI & Advisory Alliances -->
+                <div class="ticker-block">
+                    <div class="ticker-label">Enterprise Ecosystem &amp; Partner Pedigree &middot; SI &amp; Advisory Alliances</div>
+                    <div class="ticker">
+                        <div class="ticker-inner">
+                            <div class="ticker-track" id="partner-track"></div>
+                            <div class="ticker-track" id="partner-track-dup" aria-hidden="true"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row 2: Past Enterprise Accounts Sold To -->
+                <div class="ticker-block">
+                    <div class="ticker-label">Proven Enterprise Deal Pedigree &middot; Sample Accounts Sold To &amp; Onboarded By Our Leadership</div>
+                    <div class="ticker">
+                        <div class="ticker-inner">
+                            <div class="ticker-track reverse" id="client-track"></div>
+                            <div class="ticker-track reverse" id="client-track-dup" aria-hidden="true"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             7. ZERO DATA RETENTION & CLOUD SECURITY (BYOK & SOC 2 De-risking)
+             ========================================================================== -->
+        <section id="byok-security" class="section">
+            <div class="site-container">
                 <div class="section-head center">
                     <span class="eyebrow">CISO-Ready Architecture</span>
                     <h2>Zero Data Retention. Zero SOC 2 Bottlenecks.</h2>
@@ -1196,9 +1290,11 @@
             </div>
         </section>
 
-        <!-- 8. COMMERCIAL VALUE LADDER & GOVERNANCE -->
+        <!-- ==========================================================================
+             8. RETAINED DEAL GOVERNANCE & DEAL FORENSICS (Ongoing Cadence)
+             ========================================================================== -->
         <section id="governance-retainer" class="section section-navy">
-            <div class="container">
+            <div class="site-container">
                 <div class="section-head">
                     <span class="eyebrow" style="color: var(--gold-light);">Retained Deal Governance</span>
                     <h2>Executive Deal Inspection &amp; The Anti-Fluff Protocol</h2>
@@ -1264,61 +1360,97 @@
             </div>
         </section>
 
-        <!-- 9. ABOUT / SCOTT CARPENTIER BIO -->
+        <!-- ==========================================================================
+             9. ABOUT THE SALES BENCH & FOUNDER PROFILE (Balanced Cards)
+             ========================================================================== -->
         <section id="about" class="section section-off">
-            <div class="container">
-                <div class="about-grid">
-                    <div>
-                        <span class="eyebrow">About The Sales Bench</span>
-                        <h2>Enterprise Revenue Architecture Meets Operational Risk Management.</h2>
-                        <p><strong style="color: var(--navy);">The Sales Bench</strong> was founded on a simple observation: B2B software leaders don't need another 60-page MEDDPICC deck that sits in a drawer, nor a fragile custom development project that becomes a maintenance burden.</p>
-                        <p>We install standardized deal-governance infrastructure directly inside your existing CRM and cloud perimeter&mdash;and pair it with peer cohort benchmarking and disciplined executive deal inspection.</p>
+            <div class="site-container">
+                <div class="section-head center">
+                    <span class="eyebrow">Institutional Leadership</span>
+                    <h2>Enterprise Revenue Architecture Meets Operational Risk Management.</h2>
+                    <p>Bridging the gap between automated CRM intelligence and battle-tested executive deal inspection.</p>
+                </div>
+
+                <div class="about-balanced-grid">
+                    <!-- Left Column: Company Mission & Philosophy -->
+                    <div class="about-card">
+                        <div>
+                            <div class="about-card-head">
+                                <span class="eyebrow" style="margin-bottom: 2px;">Company Mission</span>
+                                <h3>The Sales Bench Model</h3>
+                                <div class="about-card-sub">Deal Forensics &middot; Stack Modernization &middot; Predictable Growth</div>
+                            </div>
+                            <div class="about-body">
+                                <p><strong>The Sales Bench</strong> was founded on a straightforward thesis: B2B software leaders don't need another 60-page MEDDPICC theoretical handbook that gathers dust, nor a complex custom development build that turns into brittle technical debt.</p>
+                                <p>We install turnkey deal-governance machinery directly into your existing CRM perimeter and pair it with peer cohort benchmarking and disciplined executive deal reviews.</p>
+                            </div>
+                            <ul class="about-features">
+                                <li><strong>Installed CRM Telemetry:</strong> Verifiable MEDDPICC exit rubrics extracted automatically from call recordings.</li>
+                                <li><strong>Capacity Recovery:</strong> Automated CRM hygiene and executive drafting reclaiming 40 hrs/week per 10 AEs.</li>
+                                <li><strong>Buyer Alignment:</strong> Collaborative deal rooms giving internal champions the board decks to win.</li>
+                                <li><strong>Zero InfoSec Bottlenecks:</strong> 100% tenant-confined execution with your own keys (BYOK).</li>
+                            </ul>
+                        </div>
+                        <div class="cred-tags">
+                            <span class="cred-tag">Fixed-Cost 4-Week Sprint</span>
+                            <span class="cred-tag">Tenant Confined (BYOK)</span>
+                            <span class="cred-tag">Retained CRO Deal Review</span>
+                        </div>
                     </div>
 
-                    <div class="founder-card">
-                        <div class="founder-head">
-                            <div class="founder-avatar">SC</div>
-                            <div>
-                                <span class="eyebrow" style="margin-bottom: 2px;">Founder &amp; Managing Principal</span>
-                                <h3>Scott Carpentier</h3>
-                                <div class="founder-role">Enterprise Revenue Architect &middot; Oxford Saïd AI Certified</div>
+                    <!-- Right Column: Founder & Managing Principal Bio -->
+                    <div class="about-card">
+                        <div>
+                            <div class="about-card-head">
+                                <div class="founder-head-flex">
+                                    <div class="founder-avatar">SC</div>
+                                    <div>
+                                        <span class="eyebrow" style="margin-bottom: 2px;">Founder &amp; Managing Principal</span>
+                                        <h3>Scott Carpentier</h3>
+                                        <div class="about-card-sub">Enterprise Revenue Architect &middot; Oxford Saïd AI Certified</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="about-body">
+                                <p>Scott brings more than two decades of enterprise software revenue leadership across North America and global markets&mdash;including formative enterprise sales at <strong>SAP</strong>, scaling private-equity-backed <strong>Winshuttle / Precisely</strong> from <strong>$9M to $60M</strong> in revenue, and nearly nine years as Regional VP and Country Manager at <strong>BlackLine (Nasdaq: BL)</strong>, helping scale global revenue from <strong>$150M to $750M</strong> while expanding regional ARR <strong>12-fold from $2.5M to $30M</strong>.</p>
+                                <p>He unites rigorous MEDDPICC deal execution and multi-tier partner ecosystems (achieving an <strong>85% partner attach rate</strong> across Big 4 advisory firms and SIs) with modern AI engineering, holding executive certification in Artificial Intelligence from <strong>Saïd Business School, University of Oxford</strong>.</p>
                             </div>
                         </div>
-                        <p style="margin-bottom: 12px;">Scott brings more than two decades of enterprise software revenue leadership across North America and global markets&mdash;including formative years at <strong style="color: var(--navy);">SAP</strong>, scaling private-equity-backed <strong style="color: var(--navy);">Winshuttle / Precisely</strong> from <strong style="color: var(--navy);">$9M to $60M</strong> in revenue, and nearly nine years as Regional VP and Country Manager at <strong style="color: var(--navy);">BlackLine (Nasdaq: BL)</strong>, helping scale global revenue from <strong style="color: var(--navy);">$150M to $750M</strong> while growing regional ARR <strong style="color: var(--navy);">12-fold from $2.5M to $30M</strong>.</p>
-                        <p>He combines rigorous MEDDPICC deal governance, matrix leadership and high-velocity partner ecosystems (achieving an <strong style="color: var(--navy);">85% partner attach rate</strong> across Big 4 firms, SIs and advisory consultancies) with practical AI automation, holding executive certification in AI from <strong style="color: var(--navy);">Saïd Business School, University of Oxford</strong>.</p>
-                        <div class="cred-list">
-                            <span class="cred">$150M &rarr; $750M Public SaaS Scale</span>
-                            <span class="cred">$9M &rarr; $60M PE Growth</span>
-                            <span class="cred">12x Regional ARR</span>
-                            <span class="cred">85% Partner Attach</span>
-                            <span class="cred">Oxford Saïd AI Certified</span>
+                        <div class="cred-tags">
+                            <span class="cred-tag">Oxford Saïd AI Certified</span>
+                            <span class="cred-tag">$150M &rarr; $750M Nasdaq Scale</span>
+                            <span class="cred-tag">$9M &rarr; $60M PE Growth</span>
+                            <span class="cred-tag">12x Regional ARR</span>
+                            <span class="cred-tag">85% Partner Attach</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 10. DIRECT INQUIRY (CUSTOM FORM VIA HUBSPOT API — NO IFRAMES) -->
+        <!-- ==========================================================================
+             10. FINAL CTA & BOOKING SECTION ("Schedule a 15-Minute Introductory Call")
+             ========================================================================== -->
         <section id="book" class="section book-section">
-            <div class="container">
+            <div class="site-container">
                 <div class="book-grid">
                     <div>
                         <span class="eyebrow">Start the Conversation</span>
-                        <h2>Schedule a 20-Minute Benchmark Debrief</h2>
-                        <p>Speak directly with Scott Carpentier. Whether you want your custom Pipeline Leakage Scorecard or want to explore the 4-Week Revenue Engine Sprint, the conversation stays focused strictly on measurable economic leverage.</p>
+                        <h2>Schedule a 15-Minute Introductory Call</h2>
+                        <p>Speak directly with Scott Carpentier. Whether you want to review your custom Pipeline Leakage Scorecard or discuss deploying the 4-Week Installation Sprint in your stack, the discussion remains centered strictly on measurable economic leverage.</p>
                         <ul class="cover-list">
-                            <li><strong>Peer cohort benchmark:</strong> See where your Month-3 slippage, Economic Buyer latency and procurement cycle stand against peers.</li>
-                            <li><strong>Architecture fit:</strong> How the MEDDPICC auditor, post-call drafter and deal room deploy inside your tenant.</li>
-                            <li><strong>Governance &amp; channels:</strong> Forensic reporting, live deal reviews and partner channel playbooks.</li>
+                            <li><strong>Peer cohort benchmark:</strong> Discover how your Month-3 deal slippage, Economic Buyer latency, and procurement dwell-time compare to peer B2B SaaS cohorts.</li>
+                            <li><strong>Architecture fit:</strong> How the MEDDPICC auditor, post-call CRM drafter, and collaborative deal room deploy natively inside your CRM perimeter.</li>
+                            <li><strong>Governance &amp; channels:</strong> Weekly deal health radars, executive deal triage, and partner channel architecture.</li>
                         </ul>
                     </div>
 
                     <div class="form-card">
                         <span class="eyebrow" style="margin-bottom: 4px;">Direct Executive Inquiry</span>
-                        <h3>Request Your Debrief</h3>
+                        <h3>Schedule a 15-Minute Introductory Call</h3>
                         <p class="form-sub">A principal responds personally within one business day.</p>
                         
-                        <!-- Custom HTML Form (Posts to HubSpot API, Zero iFrames) -->
+                        <!-- Custom HTML Form (Posts Directly to HubSpot API, Zero iFrames) -->
                         <form id="footer-contact-form" class="custom-form" onsubmit="handleCustomFormSubmit(event, 'footer-contact-form', 'Executive Inquiry (Footer)')">
                             <div class="form-row-2">
                                 <div class="form-field">
@@ -1343,7 +1475,7 @@
                                 <textarea id="f-message" name="message" class="form-input" placeholder="e.g. Month-3 deal slippage, 4-Week CRM installation sprint, or EMEA market expansion"></textarea>
                             </div>
 
-                            <button type="submit" class="form-submit-btn">Submit Executive Inquiry &rarr;</button>
+                            <button type="submit" class="form-submit-btn">Schedule a 15-Minute Introductory Call &rarr;</button>
                             <div class="form-status" id="footer-contact-form-status"></div>
                         </form>
 
@@ -1357,9 +1489,11 @@
         </section>
     </main>
 
-    <!-- 11. FOOTER -->
+    <!-- ==========================================================================
+         11. FOOTER (Bounded 1240px Container)
+         ========================================================================== -->
     <footer>
-        <div class="footer-full">
+        <div class="site-container">
             <div class="footer-top">
                 <a href="#" class="brand">
                     <div class="brand-mark" style="background: var(--navy-3);">SB</div>
@@ -1371,23 +1505,28 @@
                 <div class="footer-links">
                     <a href="#services">Services</a>
                     <a href="#sprint-engine">4-Week Sprint</a>
+                    <a href="#alliances">Pedigree &amp; Tickers</a>
                     <a href="#byok-security">Security</a>
                     <a href="#governance-retainer">Deal Governance</a>
                     <a href="#about">About</a>
                     <a href="javascript:void(0)" onclick="openDiagnosticModal()">2026 Benchmark</a>
-                    <a href="javascript:void(0)" onclick="openScheduleModal()">Schedule Debrief</a>
+                    <a href="javascript:void(0)" onclick="openScheduleModal()">Schedule Call</a>
                 </div>
             </div>
             <div class="footer-bottom">&copy; 2026 The Sales Bench. All rights reserved. Toronto, Ontario, Canada.</div>
         </div>
     </footer>
 
-    <!-- 12. FLOATING DIAGNOSTIC PILL -->
+    <!-- ==========================================================================
+         12. FLOATING DIAGNOSTIC PILL
+         ========================================================================== -->
     <button type="button" class="floating-pill" onclick="openDiagnosticModal()">
         <span class="dot"></span> Run 2026 Deal Slippage Diagnostic (2 Min)
     </button>
 
-    <!-- 13. DIAGNOSTIC MODAL (With Custom Form — Zero iframes) -->
+    <!-- ==========================================================================
+         13. DIAGNOSTIC MODAL (With Retake Diagnostic Button & Clean API Submit)
+         ========================================================================== -->
     <div id="diagnostic-modal-overlay" class="modal-overlay" onclick="closeDiagnosticModal()">
         <div id="diagnostic-drawer" class="modal-window" onclick="event.stopPropagation()" role="dialog" aria-modal="true" aria-labelledby="diag-title">
             <div class="modal-head">
@@ -1395,7 +1534,10 @@
                     <span class="modal-eyebrow">2026 Pipeline Leakage Index</span>
                     <h3 class="modal-title" id="diag-title">Deal Slippage Diagnostic</h3>
                 </div>
-                <button type="button" class="modal-close" onclick="closeDiagnosticModal()" aria-label="Close">&#10005;</button>
+                <div class="modal-controls">
+                    <button type="button" class="modal-retake-btn" onclick="resetModalDiagnostic()" title="Reset answers">↻ Retake Diagnostic</button>
+                    <button type="button" class="modal-close" onclick="closeDiagnosticModal()" aria-label="Close">&#10005;</button>
+                </div>
             </div>
             <div class="modal-body">
                 <div class="calc-banner">
@@ -1458,11 +1600,11 @@
                     </div>
                 </div>
 
-                <!-- Completion Step: Custom Form (Zero iframes) -->
+                <!-- Completion Step: Custom Form -->
                 <div id="modal-completed" class="hidden completed-box">
                     <span class="eyebrow" style="margin-bottom: 4px;">Diagnostic Complete</span>
                     <h4>Receive Your 1-Page Benchmark Scorecard</h4>
-                    <p>Submit below to receive your personalized Pipeline Leakage Scorecard, an embargoed copy of the 2026 Deal Governance Index, and a 20-minute debrief.</p>
+                    <p>Submit below to receive your personalized Pipeline Leakage Scorecard, an embargoed copy of the 2026 Deal Governance Index, and a 15-minute debrief.</p>
 
                     <form id="modal-diagnostic-form" class="custom-form" onsubmit="handleCustomFormSubmit(event, 'modal-diagnostic-form', 'Diagnostic Scorecard')">
                         <div class="form-row-2">
@@ -1487,28 +1629,28 @@
                         <button type="submit" class="form-submit-btn">Claim Your 1-Page Benchmark Scorecard &rarr;</button>
                         <div class="form-status" id="modal-diagnostic-form-status"></div>
                     </form>
-
-                    <button type="button" class="retake" onclick="resetModalDiagnostic()">&#8634; Retake diagnostic</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 14. SCHEDULE MODAL (With Custom Form — Zero iframes) -->
+    <!-- ==========================================================================
+         14. SCHEDULE MODAL ("Schedule a 15-Minute Introductory Call")
+         ========================================================================== -->
     <div id="schedule-modal-overlay" class="modal-overlay" onclick="closeScheduleModal()">
         <div class="modal-window" onclick="event.stopPropagation()" role="dialog" aria-modal="true" aria-labelledby="sched-title">
             <div class="modal-head">
                 <div>
-                    <span class="modal-eyebrow">Schedule a 20-Minute Debrief</span>
-                    <h3 class="modal-title" id="sched-title">Request Your Executive Session</h3>
+                    <span class="modal-eyebrow">Direct Executive Consultation</span>
+                    <h3 class="modal-title" id="sched-title">Schedule a 15-Minute Introductory Call</h3>
                 </div>
                 <button type="button" class="modal-close" onclick="closeScheduleModal()" aria-label="Close">&#10005;</button>
             </div>
             <div class="modal-body">
                 <p style="font-size: 14.5px; margin-bottom: 18px; color: var(--slate);">Connect directly with Scott Carpentier. We'll benchmark your forecast slippage against peer B2B software leaders and walk through how the 4-Week Installation Sprint would deploy in your stack.</p>
 
-                <!-- Custom HTML Form (Posts to HubSpot API, Zero iFrames) -->
-                <form id="modal-schedule-form" class="custom-form" onsubmit="handleCustomFormSubmit(event, 'modal-schedule-form', 'Schedule Debrief Modal')">
+                <!-- Custom HTML Form (Posts Directly to HubSpot API, Zero iFrames) -->
+                <form id="modal-schedule-form" class="custom-form" onsubmit="handleCustomFormSubmit(event, 'modal-schedule-form', 'Schedule Introductory Call Modal')">
                     <div class="form-row-2">
                         <div class="form-field">
                             <label for="s-fname">First Name *</label>
@@ -1532,7 +1674,7 @@
                         <input type="text" id="s-message" name="message" class="form-input" placeholder="e.g. 10 Quota-Carrying AEs, exploring Q4 MEDDPICC gating">
                     </div>
 
-                    <button type="submit" class="form-submit-btn">Confirm 20-Minute Debrief Request &rarr;</button>
+                    <button type="submit" class="form-submit-btn">Schedule a 15-Minute Introductory Call &rarr;</button>
                     <div class="form-status" id="modal-schedule-form-status"></div>
                 </form>
 
@@ -1544,31 +1686,33 @@
         </div>
     </div>
 
-    <!-- SCRIPTS: CUSTOM FORMS + TICKERS + TABS + CALCULATOR -->
+    <!-- ==========================================================================
+         JAVASCRIPT ENGINE (Logo Tickers + Tabs + Calculator + HubSpot API)
+         ========================================================================== -->
     <script>
         /* ==========================================================================
-           1. LOGO DATA (Graphical Logos Only, No Text Labels in Tickers)
+           1. LOGO DATA & TICKER RENDERER (Clean Marks + Full Brand Name Labels)
            ========================================================================== */
         var PARTNERS = [
-            { name: 'SAP', slug: 'sap', domain: 'sap.com' },
-            { name: 'Deloitte', slug: 'deloitte', domain: 'deloitte.com' },
-            { name: 'PwC', slug: 'pwc', domain: 'pwc.com' },
-            { name: 'EY', slug: 'ey', domain: 'ey.com' },
-            { name: 'KPMG', slug: 'kpmg', domain: 'kpmg.com' }
+            { name: 'SAP', label: 'SAP', slug: 'sap', domain: 'sap.com' },
+            { name: 'Deloitte', label: 'DELOITTE', slug: 'deloitte', domain: 'deloitte.com' },
+            { name: 'PwC', label: 'PWC', slug: 'pwc', domain: 'pwc.com' },
+            { name: 'EY', label: 'EY', slug: 'ey', domain: 'ey.com' },
+            { name: 'KPMG', label: 'KPMG', slug: 'kpmg', domain: 'kpmg.com' }
         ];
 
         var CLIENTS = [
-            { name: 'Sobeys', domain: 'sobeys.com' },
-            { name: 'Circle K', domain: 'circlek.com' },
-            { name: 'Couche-Tard', domain: 'couchetard.com' },
-            { name: 'Bell Canada', domain: 'bell.ca' },
-            { name: 'Marathon Oil', domain: 'marathonoil.com' },
-            { name: 'Cooper Tire', domain: 'coopertire.com' },
-            { name: 'Finning', domain: 'finning.com' },
-            { name: 'Suncor', domain: 'suncor.com' },
-            { name: 'Questrade', domain: 'questrade.com' },
-            { name: 'easyfinancial', domain: 'easyfinancial.com' },
-            { name: 'Pharmascience', domain: 'pharmascience.com' }
+            { name: 'Sobeys', label: 'SOBEYS', domain: 'sobeys.com' },
+            { name: 'Circle K', label: 'CIRCLE K', domain: 'circlek.com' },
+            { name: 'Couche-Tard', label: 'COUCHE-TARD', domain: 'couchetard.com' },
+            { name: 'Bell Canada', label: 'BELL CANADA', domain: 'bell.ca' },
+            { name: 'Marathon Oil', label: 'MARATHON OIL', domain: 'marathonoil.com' },
+            { name: 'Cooper Tire', label: 'COOPER TIRE', domain: 'coopertire.com' },
+            { name: 'Finning', label: 'FINNING', domain: 'finning.com' },
+            { name: 'Suncor', label: 'SUNCOR', domain: 'suncor.com' },
+            { name: 'Questrade', label: 'QUESTRADE', domain: 'questrade.com' },
+            { name: 'goeasy', label: 'GOEASY / EASYFINANCIAL', domain: 'easyfinancial.com' },
+            { name: 'Pharmascience', label: 'PHARMASCIENCE', domain: 'pharmascience.com' }
         ];
 
         var STACK = [
@@ -1597,6 +1741,9 @@
             badge.className = 'logo-item';
             badge.title = item.name;
 
+            var iconWrap = document.createElement('div');
+            iconWrap.className = 'logo-icon-wrap';
+
             var img = document.createElement('img');
             img.alt = item.name + ' logo';
             img.loading = 'lazy';
@@ -1609,13 +1756,19 @@
                 if (srcIdx < sources.length) {
                     img.src = sources[srcIdx];
                 } else {
-                    // Fallback to stylized monogram if all images fail
-                    badge.innerHTML = '<span style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#0A192F;">' + item.name + '</span>';
+                    // Fallback to crisp typographic mark if image is unavailable
+                    iconWrap.innerHTML = '<span style="font-size:11px;font-weight:800;color:#0A192F;">' + item.name.substring(0, 2).toUpperCase() + '</span>';
                 }
             };
             img.src = sources[0];
+            iconWrap.appendChild(img);
 
-            badge.appendChild(img);
+            var label = document.createElement('span');
+            label.className = 'logo-label';
+            label.textContent = item.label || item.name;
+
+            badge.appendChild(iconWrap);
+            badge.appendChild(label);
             return badge;
         }
 
@@ -1712,12 +1865,12 @@
                 }
             });
 
-            // If no message was entered (or form has no message input), append form source to message property
+            // Append inquiry source to message property if none was provided
             if (!hasMessage && formType) {
                 fields.push({ name: 'message', value: 'Inquiry Source: ' + formType });
             }
 
-            // Retrieve HubSpot tracking cookie if present
+            // Retrieve HubSpot user token cookie (hutk) if present
             var hutkMatch = document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]*)/);
             var hutk = hutkMatch ? hutkMatch[1] : null;
 
@@ -1829,9 +1982,14 @@
         function resetModalDiagnostic() {
             modalData = { slippageRate: 0.30, acv: 75000, repCount: 10, ebAccess: 0.60, gateType: 1.0 };
             updateModalLeakageCalculations();
-            for (var s = 2; s <= 5; s++) document.getElementById('m-step-' + s).classList.add('hidden');
-            document.getElementById('modal-completed').classList.add('hidden');
-            document.getElementById('m-step-1').classList.remove('hidden');
+            for (var s = 2; s <= 5; s++) {
+                var el = document.getElementById('m-step-' + s);
+                if (el) el.classList.add('hidden');
+            }
+            var comp = document.getElementById('modal-completed');
+            if (comp) comp.classList.add('hidden');
+            var step1 = document.getElementById('m-step-1');
+            if (step1) step1.classList.remove('hidden');
             setProgress('Question 1 of 5', 20);
         }
 
