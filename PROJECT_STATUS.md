@@ -76,9 +76,10 @@ Positioned prominently under the Infinite Ticker, titled **HOW WE DELIVER PREDIC
 * **Infinite Logo Ticker:** Continuous marquee featuring SAP, Microsoft, Oracle, Deloitte, PwC, EY, KPMG, and ServiceNow. Features edge gradient mask fade and pause-on-hover.
 * **Core Stack Integrations Grid:** Dedicated visual grid in BYOK section featuring clean vector logos for Salesforce, HubSpot, OpenAI, Anthropic, Google Cloud, and AWS.
 
-### 2.5 Visual De-AI & Refined Executive Styling
-* Replaced programmer slashes (`//`, `[01]`) with clean uppercase tracked typography (`STAGE 01`, `COMPONENT 01`, `DELIVERY PILLAR 01`).
-* Shifted color scheme from harsh neon to deep charcoal (`#0b0f19`), carbon (`#111827`), hairline borders (`rgba(255,255,255,0.08)`), warm champagne gold (`#e5c07b`), and cobalt accents (`#3b82f6`).
+### 2.6 Full-Width Responsive Canvas & Margin Expansion
+* **Expanded Container Architecture:** Upgraded `.container` from a boxed 1240px cap to a modern luxury enterprise canvas with `max-width: 1680px` (`max-width: 1800px` for header & footer) and fluid padding (`clamp(24px, 4vw, 64px)`).
+* **Eliminated Desktop Dead Space:** Removed artificial column limits (e.g. `max-width: 640px` on hero text), allowing the 2-column hero grid, 4-box delivery cards, and architecture consoles to naturally fill wide screens, laptops, and ultra-wide desktop monitors without awkward empty side margins.
+* **Proportional Typography & Scaling:** Upgraded H1 headline scaling (`clamp(2.4rem, 4.3vw, 4.2rem)`) and section titles (`clamp(2rem, 3.4vw, 3.1rem)`) to balance seamlessly across wide displays.
 
 ---
 
