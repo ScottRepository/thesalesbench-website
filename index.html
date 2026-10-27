@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Sales Bench | Executable GTM Playbooks, Deal Criteria &amp; Revenue Architecture</title>
+    <title>The Sales Bench | AI-Native GTM Consulting, Playbooks &amp; Autonomous Deal Agents</title>
     <style>
         /* ==========================================================================
-           PROPELITO x GO NIMBLY HYBRID DESIGN SYSTEM
-           Crisp editorial whitespace + Tech-forward Bento UI + High-Contrast Readability
+           SCALEMATTERS x LEANSCALE AI-NATIVE ARCHITECTURAL DESIGN SYSTEM
+           Precision technical grid + High-contrast readability + AI Agent Telemetry UI
            ========================================================================== */
         *, *::before, *::after {
             box-sizing: border-box;
@@ -16,25 +16,27 @@
         }
 
         :root {
+            --bg-obsidian: #070b14;
+            --bg-carbon: #0f172a;
+            --bg-carbon-light: #1e293b;
             --bg-canvas: #f8fafc;
             --bg-white: #ffffff;
-            --bg-dark: #090d16;
-            --bg-dark-card: #111827;
-            --bg-dark-elevated: #1e293b;
             --text-ink: #0f172a;
             --text-body: #334155;
             --text-muted: #64748b;
+            --emerald-400: #34d399;
             --emerald-500: #10b981;
             --emerald-600: #059669;
             --emerald-700: #047857;
-            --emerald-light: #ecfdf5;
+            --emerald-tint: #ecfdf5;
             --emerald-border: #a7f3d0;
+            --cyan-400: #22d3ee;
             --cyan-500: #06b6d4;
-            --border-light: #e2e8f0;
+            --cyan-tint: #ecfeff;
+            --border-subtle: #e2e8f0;
             --border-strong: #cbd5e1;
-            --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
-            --shadow-md: 0 12px 32px -8px rgba(15, 23, 42, 0.08);
-            --shadow-lg: 0 24px 48px -12px rgba(15, 23, 42, 0.14);
+            --shadow-card: 0 10px 30px -6px rgba(15, 23, 42, 0.07);
+            --shadow-elevated: 0 24px 48px -12px rgba(7, 11, 20, 0.22);
         }
 
         html {
@@ -51,13 +53,13 @@
         }
 
         .container {
-            max-width: 1220px;
+            max-width: 1240px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
         .container-narrow {
-            max-width: 920px;
+            max-width: 940px;
             margin: 0 auto;
             padding: 0 24px;
         }
@@ -67,16 +69,16 @@
         }
 
         /* ==========================================================================
-           STICKY HEADER (GO NIMBLY / PROPELITO CLEAN BAR)
+           1. STICKY HEADER (LEANSCALE / SCALEMATTERS ARCHITECTURAL NAV)
            ========================================================================== */
         header {
             position: sticky;
             top: 0;
             z-index: 100;
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-light);
-            padding: 16px 0;
+            background-color: rgba(7, 11, 20, 0.94);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #1e293b;
+            padding: 15px 0;
         }
 
         .nav-inner {
@@ -95,33 +97,32 @@
         .brand-monogram {
             width: 40px;
             height: 40px;
-            border-radius: 10px;
-            background: var(--bg-dark);
-            border: 2px solid var(--emerald-500);
+            border-radius: 9px;
+            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 900;
             font-size: 15px;
-            color: #34d399;
+            color: #070b14;
             letter-spacing: -0.5px;
         }
 
         .brand-text {
-            color: var(--text-ink);
+            color: #ffffff;
             font-weight: 800;
             font-size: 18px;
-            letter-spacing: -0.4px;
+            letter-spacing: -0.3px;
             line-height: 1.1;
             display: block;
         }
 
         .brand-sub {
-            color: var(--emerald-600);
+            color: var(--emerald-400);
             font-size: 10.5px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.8px;
+            letter-spacing: 0.9px;
             display: block;
             margin-top: 2px;
         }
@@ -129,57 +130,59 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 28px;
+            gap: 26px;
         }
 
         .nav-links a {
-            color: var(--text-body);
+            color: #cbd5e1;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13.5px;
             font-weight: 600;
             transition: color 0.15s ease;
         }
 
         .nav-links a:hover {
-            color: var(--emerald-600);
+            color: var(--emerald-400);
         }
 
         .btn-nav {
-            background-color: var(--bg-dark);
-            color: #ffffff !important;
-            font-weight: 700 !important;
-            padding: 10px 20px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #070b14 !important;
+            font-weight: 800 !important;
+            padding: 10px 18px;
             border-radius: 8px;
-            font-size: 13.5px !important;
-            border: 1px solid var(--bg-dark);
-            transition: all 0.2s ease;
+            font-size: 13px !important;
+            transition: transform 0.15s ease, opacity 0.15s ease;
         }
 
         .btn-nav:hover {
-            background-color: var(--emerald-600);
-            border-color: var(--emerald-600);
+            transform: translateY(-1px);
+            opacity: 0.95;
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 960px) {
             .nav-links a:not(.btn-nav) {
                 display: none;
             }
         }
 
         /* ==========================================================================
-           HERO SECTION (PROPELITO CLARITY + GO NIMBLY SYSTEM BLUEPRINT)
+           2. HERO SECTION (SCALEMATTERS x LEANSCALE PRECISION DARK BLUEPRINT)
            ========================================================================== */
         .hero-section {
-            background-color: var(--bg-white);
-            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
-            background-size: 28px 28px;
-            padding: 76px 0 84px;
-            border-bottom: 1px solid var(--border-light);
+            background-color: var(--bg-obsidian);
+            background-image: 
+                linear-gradient(to right, rgba(30, 41, 59, 0.38) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(30, 41, 59, 0.38) 1px, transparent 1px);
+            background-size: 44px 44px;
+            color: #ffffff;
+            padding: 82px 0 90px;
+            border-bottom: 2px solid #1e293b;
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1.12fr 0.88fr;
+            grid-template-columns: 1.1fr 0.9fr;
             gap: 52px;
             align-items: center;
         }
@@ -191,70 +194,69 @@
             }
         }
 
-        .eyebrow-pill {
+        .hero-badge {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            background-color: var(--emerald-light);
-            border: 1px solid var(--emerald-border);
-            color: var(--emerald-700);
+            gap: 9px;
+            background-color: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(52, 211, 153, 0.4);
+            color: var(--emerald-400);
             padding: 6px 14px;
             border-radius: 999px;
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.6px;
+            letter-spacing: 0.8px;
             margin-bottom: 22px;
         }
 
         .pulsing-dot {
             width: 8px;
             height: 8px;
-            background-color: var(--emerald-500);
+            background-color: var(--emerald-400);
             border-radius: 50%;
+            box-shadow: 0 0 10px var(--emerald-400);
             display: inline-block;
         }
 
         .hero-title {
-            font-size: clamp(2.35rem, 4.3vw, 3.55rem);
+            font-size: clamp(2.35rem, 4.2vw, 3.5rem);
             font-weight: 900;
-            color: var(--text-ink);
+            color: #ffffff;
             line-height: 1.08;
-            letter-spacing: -1.3px;
+            letter-spacing: -1.2px;
             margin-bottom: 22px;
         }
 
-        .hero-title .accent-underline {
-            color: var(--emerald-600);
-            text-decoration: underline;
-            text-decoration-color: #a7f3d0;
-            text-underline-offset: 6px;
-            text-decoration-thickness: 5px;
+        .hero-title .gradient-text {
+            background: linear-gradient(90deg, #34d399 0%, #22d3ee 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero-lead {
             font-size: 18px;
-            color: var(--text-body);
+            color: #e2e8f0;
             line-height: 1.65;
             margin-bottom: 28px;
             max-width: 620px;
         }
 
         .hero-lead strong {
-            color: var(--text-ink);
-            font-weight: 700;
+            color: #ffffff;
+            font-weight: 800;
         }
 
         .hero-cta-group {
             display: flex;
             flex-wrap: wrap;
             gap: 14px;
-            margin-bottom: 28px;
+            margin-bottom: 30px;
         }
 
         .btn-primary {
-            background-color: var(--emerald-600);
-            color: #ffffff;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #070b14;
             font-weight: 800;
             font-size: 15px;
             padding: 15px 26px;
@@ -263,23 +265,22 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            box-shadow: 0 8px 20px -4px rgba(5, 150, 105, 0.4);
+            box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.45);
             transition: all 0.15s ease;
         }
 
         .btn-primary:hover {
-            background-color: var(--emerald-700);
-            transform: translateY(-1px);
+            transform: translateY(-2px);
         }
 
-        .btn-secondary {
-            background-color: var(--bg-white);
-            color: var(--text-ink);
+        .btn-secondary-dark {
+            background-color: rgba(30, 41, 59, 0.75);
+            color: #ffffff;
             font-weight: 700;
             font-size: 15px;
             padding: 15px 24px;
             border-radius: 10px;
-            border: 2px solid var(--border-strong);
+            border: 1px solid #475569;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
@@ -287,121 +288,127 @@
             transition: all 0.15s ease;
         }
 
-        .btn-secondary:hover {
-            border-color: var(--text-ink);
-            background-color: var(--bg-canvas);
+        .btn-secondary-dark:hover {
+            border-color: var(--emerald-400);
+            background-color: #1e293b;
         }
 
-        .hero-micro-proof {
+        .hero-trust-row {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-muted);
-            padding-top: 16px;
-            border-top: 1px solid var(--border-light);
+            font-size: 12.5px;
+            font-weight: 700;
+            color: #94a3b8;
+            padding-top: 18px;
+            border-top: 1px solid #1e293b;
         }
 
-        .hero-micro-proof span {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
+        .hero-trust-row span {
+            color: var(--emerald-400);
         }
 
-        /* GO NIMBLY STYLE SYSTEM BLUEPRINT CARD */
-        .system-ui-card {
-            background-color: var(--bg-dark);
-            color: #ffffff;
+        /* LEANSCALE x SCALEMATTERS ARCHITECTURE CONSOLE */
+        .arch-console {
+            background-color: #0b1120;
+            border: 1px solid #334155;
             border-radius: 18px;
-            padding: 26px;
-            border: 1px solid #1e293b;
-            box-shadow: var(--shadow-lg);
-            position: relative;
+            padding: 24px;
+            box-shadow: var(--shadow-elevated);
         }
 
-        .system-ui-header {
+        .arch-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-bottom: 16px;
-            margin-bottom: 18px;
+            padding-bottom: 14px;
+            margin-bottom: 16px;
             border-bottom: 1px solid #1e293b;
         }
 
-        .window-dots {
+        .arch-dots {
             display: flex;
             gap: 6px;
         }
 
-        .window-dot {
+        .arch-dot {
             width: 10px;
             height: 10px;
             border-radius: 50%;
             background-color: #334155;
         }
 
-        .window-dot.green { background-color: #10b981; }
-        .window-dot.cyan { background-color: #06b6d4; }
+        .arch-dot.g { background-color: #10b981; }
+        .arch-dot.c { background-color: #06b6d4; }
 
-        .ui-layer-stack {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .ui-layer {
-            background-color: var(--bg-dark-card);
+        .arch-node {
+            background-color: #111827;
             border: 1px solid #1e293b;
             border-radius: 12px;
-            padding: 15px 18px;
-            transition: border-color 0.2s;
+            padding: 15px 16px;
+            margin-bottom: 12px;
         }
 
-        .ui-layer.highlight {
-            border-color: #10b981;
-            background: linear-gradient(180deg, rgba(16, 185, 129, 0.1) 0%, rgba(17, 24, 39, 0.95) 100%);
+        .arch-node.active-agent {
+            border: 1.5px solid #10b981;
+            background: linear-gradient(180deg, rgba(16, 185, 129, 0.12) 0%, rgba(17, 24, 39, 0.96) 100%);
         }
 
-        .ui-layer-top {
+        .arch-node.charter {
+            border: 1.5px solid #06b6d4;
+            background: linear-gradient(180deg, rgba(6, 182, 212, 0.12) 0%, rgba(17, 24, 39, 0.96) 100%);
+            margin-bottom: 0;
+        }
+
+        .arch-node-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
         }
 
-        .ui-layer-tag {
+        .arch-layer-lbl {
             font-size: 11px;
             font-weight: 800;
             text-transform: uppercase;
-            color: #34d399;
+            color: var(--emerald-400);
             letter-spacing: 0.6px;
         }
 
-        .ui-status-pill {
-            background-color: rgba(16, 185, 129, 0.15);
-            color: #6ee7b7;
-            border: 1px solid rgba(16, 185, 129, 0.35);
-            font-size: 10.5px;
-            font-weight: 700;
-            padding: 2px 8px;
-            border-radius: 6px;
+        .arch-layer-lbl.cyan {
+            color: var(--cyan-400);
         }
 
-        .ui-layer-title {
+        .arch-pill {
+            font-size: 10px;
+            font-weight: 800;
+            padding: 2px 8px;
+            border-radius: 5px;
+            background-color: rgba(16, 185, 129, 0.18);
+            color: #6ee7b7;
+            border: 1px solid rgba(52, 211, 153, 0.35);
+        }
+
+        .arch-pill.cyan {
+            background-color: rgba(6, 182, 212, 0.18);
+            color: #67e8f9;
+            border-color: rgba(34, 211, 238, 0.35);
+        }
+
+        .arch-node-title {
             font-size: 15px;
             font-weight: 800;
             color: #ffffff;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
 
-        .ui-layer-desc {
+        .arch-node-desc {
             font-size: 12.5px;
             color: #cbd5e1;
             line-height: 1.45;
         }
 
-        .ui-metrics-row {
+        .arch-kpi-strip {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 10px;
@@ -410,35 +417,35 @@
             border-top: 1px solid #1e293b;
         }
 
-        .ui-metric-box {
-            background-color: #020617;
+        .arch-kpi {
+            background-color: #070b14;
             border: 1px solid #1e293b;
-            border-radius: 10px;
-            padding: 10px 12px;
+            border-radius: 9px;
+            padding: 10px;
             text-align: center;
         }
 
-        .ui-metric-val {
-            font-size: 18px;
+        .arch-kpi-val {
+            font-size: 17px;
             font-weight: 900;
-            color: #34d399;
-            line-height: 1.1;
+            color: var(--emerald-400);
         }
 
-        .ui-metric-lbl {
-            font-size: 10.5px;
+        .arch-kpi-lbl {
+            font-size: 10px;
             color: #94a3b8;
-            font-weight: 600;
-            margin-top: 4px;
+            font-weight: 700;
+            margin-top: 3px;
+            text-transform: uppercase;
         }
 
         /* ==========================================================================
-           RESEARCH BENCHMARK BAR
+           3. RESEARCH BENCHMARK BAR
            ========================================================================== */
-        .benchmark-strip {
-            background-color: var(--bg-dark);
+        .benchmark-bar {
+            background-color: #0f172a;
             color: #ffffff;
-            padding: 36px 0;
+            padding: 32px 0;
             border-bottom: 1px solid #1e293b;
         }
 
@@ -460,40 +467,40 @@
             }
         }
 
-        .bench-item {
-            border-left: 3px solid var(--emerald-500);
+        .bench-box {
+            border-left: 3px solid var(--emerald-400);
             padding-left: 16px;
         }
 
-        .bench-stat {
-            font-size: 28px;
+        .bench-num {
+            font-size: 26px;
             font-weight: 900;
             color: #ffffff;
             line-height: 1.1;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
         }
 
-        .bench-stat span {
-            color: #34d399;
+        .bench-num span {
+            color: var(--emerald-400);
         }
 
-        .bench-text {
-            font-size: 13px;
+        .bench-copy {
+            font-size: 12.5px;
             color: #cbd5e1;
             line-height: 1.45;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
         }
 
-        .bench-cite {
-            font-size: 11px;
-            color: #6ee7b7;
-            font-weight: 700;
+        .bench-source {
+            font-size: 10.5px;
+            font-weight: 800;
+            color: var(--cyan-400);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         /* ==========================================================================
-           SECTION HEADINGS & LAYOUT HELPERS
+           SECTION UTILITIES
            ========================================================================== */
         .section-pad {
             padding: 84px 0;
@@ -501,8 +508,8 @@
 
         .section-white {
             background-color: var(--bg-white);
-            border-top: 1px solid var(--border-light);
-            border-bottom: 1px solid var(--border-light);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
         }
 
         .section-canvas {
@@ -510,37 +517,49 @@
         }
 
         .section-dark {
-            background-color: var(--bg-dark);
+            background-color: var(--bg-obsidian);
             color: #ffffff;
+            border-top: 1px solid #1e293b;
+            border-bottom: 1px solid #1e293b;
         }
 
         .section-header {
-            max-width: 760px;
+            max-width: 780px;
             margin: 0 auto 52px;
             text-align: center;
         }
 
         .section-tag {
             display: inline-block;
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.8px;
             color: var(--emerald-700);
-            background-color: var(--emerald-light);
+            background-color: var(--emerald-tint);
             border: 1px solid var(--emerald-border);
             padding: 5px 12px;
             border-radius: 6px;
             margin-bottom: 14px;
         }
 
+        .section-tag.dark-tag {
+            background-color: rgba(16, 185, 129, 0.14);
+            color: var(--emerald-400);
+            border-color: rgba(52, 211, 153, 0.35);
+        }
+
         .section-title {
-            font-size: clamp(1.85rem, 3.2vw, 2.6rem);
+            font-size: clamp(1.9rem, 3.2vw, 2.65rem);
             font-weight: 900;
             color: var(--text-ink);
             letter-spacing: -0.8px;
-            line-height: 1.15;
+            line-height: 1.14;
             margin-bottom: 14px;
+        }
+
+        .section-title.light {
+            color: #ffffff;
         }
 
         .section-desc {
@@ -549,110 +568,110 @@
             line-height: 1.6;
         }
 
-        /* ==========================================================================
-           PROPELITO-STYLE "BEFORE VS. AFTER" COMPARISON MATRIX
-           ========================================================================== */
-        .comparison-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 28px;
-            align-items: stretch;
+        .section-desc.light {
+            color: #cbd5e1;
         }
 
-        @media (max-width: 860px) {
-            .comparison-grid {
+        /* ==========================================================================
+           4. THE 3-MODE AI-NATIVE OPERATING MODEL (LEVERAGE / RECOMMEND / DEPLOY AGENTS)
+           ========================================================================== */
+        .ai-modes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 26px;
+        }
+
+        @media (max-width: 960px) {
+            .ai-modes-grid {
                 grid-template-columns: 1fr;
             }
         }
 
-        .comp-card {
+        .ai-mode-card {
+            background-color: var(--bg-white);
+            border: 2px solid var(--border-subtle);
             border-radius: 16px;
-            padding: 32px;
-            background-color: var(--bg-white);
-            border: 2px solid var(--border-light);
-        }
-
-        .comp-card.before {
-            background-color: #fff1f2;
-            border-color: #fecdd3;
-        }
-
-        .comp-card.after {
-            background-color: var(--bg-white);
-            border-color: var(--emerald-500);
-            box-shadow: var(--shadow-md);
-        }
-
-        .comp-header {
+            padding: 30px 26px;
+            box-shadow: var(--shadow-card);
+            position: relative;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: space-between;
-            padding-bottom: 18px;
-            margin-bottom: 20px;
-            border-bottom: 1px solid rgba(15, 23, 42, 0.1);
         }
 
-        .comp-badge {
-            font-size: 11.5px;
+        .ai-mode-card.agent-highlight {
+            border-color: var(--emerald-500);
+            background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 28%);
+        }
+
+        .mode-step-pill {
+            display: inline-block;
+            font-size: 11px;
             font-weight: 800;
             text-transform: uppercase;
             padding: 4px 10px;
             border-radius: 6px;
+            background-color: var(--bg-obsidian);
+            color: var(--emerald-400);
+            margin-bottom: 16px;
+            letter-spacing: 0.6px;
         }
 
-        .comp-badge.red {
-            background-color: #ffe4e6;
-            color: #be123c;
+        .ai-mode-card h3 {
+            font-size: 21px;
+            font-weight: 900;
+            color: var(--text-ink);
+            margin-bottom: 10px;
+            line-height: 1.25;
         }
 
-        .comp-badge.green {
-            background-color: var(--emerald-light);
-            color: var(--emerald-700);
+        .ai-mode-card p {
+            font-size: 15px;
+            color: var(--text-body);
+            margin-bottom: 20px;
+            line-height: 1.6;
         }
 
-        .comp-list {
+        .mode-checklist {
             list-style: none;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 16px;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 10px;
         }
 
-        .comp-list li {
+        .mode-checklist li {
+            font-size: 13.5px;
+            color: var(--text-ink);
+            font-weight: 600;
             display: flex;
             align-items: flex-start;
-            gap: 12px;
-            font-size: 15px;
-            color: var(--text-ink);
-            line-height: 1.5;
+            gap: 8px;
         }
 
-        .comp-icon {
+        .mode-checklist li span {
+            color: var(--emerald-600);
             font-weight: 900;
-            font-size: 16px;
-            line-height: 1.3;
-            flex-shrink: 0;
         }
-
-        .comp-icon.red { color: #e11d48; }
-        .comp-icon.green { color: var(--emerald-600); }
 
         /* ==========================================================================
-           INTERACTIVE PLAYBOOK & DEAL CRITERIA ENGINE (GO NIMBLY PRODUCT COMPONENT)
+           5. INTERACTIVE PLAYBOOK & AI AGENT DEAL ENGINE (SCALEMATTERS / LEANSCALE UI)
            ========================================================================== */
         .engine-shell {
-            background-color: var(--bg-dark);
+            background-color: #0b1120;
             border-radius: 20px;
-            border: 1px solid #1e293b;
+            border: 1px solid #334155;
             padding: 32px;
             color: #ffffff;
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-elevated);
         }
 
         .stage-tabs {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 12px;
-            margin-bottom: 28px;
+            margin-bottom: 26px;
         }
 
         @media (max-width: 820px) {
@@ -668,7 +687,7 @@
         }
 
         .stage-tab-btn {
-            background-color: var(--bg-dark-card);
+            background-color: #111827;
             border: 1px solid #334155;
             color: #cbd5e1;
             border-radius: 12px;
@@ -684,15 +703,15 @@
         }
 
         .stage-tab-btn.active {
-            background-color: rgba(16, 185, 129, 0.14);
-            border: 2px solid var(--emerald-500);
+            background-color: rgba(16, 185, 129, 0.15);
+            border: 2px solid var(--emerald-400);
             color: #ffffff;
         }
 
         .stage-tab-num {
             font-size: 11px;
             font-weight: 800;
-            color: #34d399;
+            color: var(--emerald-400);
             text-transform: uppercase;
             display: block;
             margin-bottom: 4px;
@@ -706,39 +725,48 @@
 
         .stage-panel {
             display: none;
-            background-color: var(--bg-dark-card);
+            background-color: #111827;
             border: 1px solid #1e293b;
             border-radius: 14px;
-            padding: 28px;
+            padding: 26px;
         }
 
         .stage-panel.active {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            gap: 24px;
+            gap: 20px;
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 920px) {
             .stage-panel.active {
                 grid-template-columns: 1fr;
             }
         }
 
         .stage-col {
-            background-color: #090d16;
+            background-color: #070b14;
             border: 1px solid #1e293b;
             border-radius: 12px;
             padding: 20px;
+        }
+
+        .stage-col.agent-col {
+            border: 1.5px solid var(--cyan-500);
+            background: linear-gradient(180deg, rgba(6, 182, 212, 0.1) 0%, #070b14 100%);
         }
 
         .stage-col-label {
             font-size: 11px;
             font-weight: 800;
             text-transform: uppercase;
-            color: #34d399;
-            margin-bottom: 10px;
+            color: var(--emerald-400);
+            margin-bottom: 8px;
             display: block;
             letter-spacing: 0.6px;
+        }
+
+        .stage-col-label.cyan {
+            color: var(--cyan-400);
         }
 
         .stage-col h4 {
@@ -765,12 +793,80 @@
         }
 
         .stage-col li span {
-            color: #34d399;
+            color: var(--emerald-400);
             font-weight: 800;
         }
 
+        .stage-col.agent-col li span {
+            color: var(--cyan-400);
+        }
+
         /* ==========================================================================
-           3 CORE PILLARS (GO NIMBLY BENTO CARDS)
+           6. CHARTER DESIGN PARTNER PROGRAM (CO-BUILDING THE PRODUCT ADVANTAGE)
+           ========================================================================== */
+        .charter-banner {
+            background: linear-gradient(135deg, #070b14 0%, #0f172a 100%);
+            border: 2px solid var(--emerald-500);
+            border-radius: 22px;
+            padding: 48px 44px;
+            color: #ffffff;
+            box-shadow: var(--shadow-elevated);
+        }
+
+        @media (max-width: 768px) {
+            .charter-banner {
+                padding: 32px 22px;
+            }
+        }
+
+        .charter-top {
+            max-width: 820px;
+            margin-bottom: 36px;
+        }
+
+        .charter-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 920px) {
+            .charter-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .charter-card {
+            background-color: rgba(17, 24, 39, 0.9);
+            border: 1px solid #334155;
+            border-radius: 14px;
+            padding: 26px;
+        }
+
+        .charter-num {
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--cyan-400);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .charter-card h3 {
+            font-size: 19px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .charter-card p {
+            font-size: 14px;
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        /* ==========================================================================
+           7. 3 CORE PRACTICE AREAS (BENTO CARDS)
            ========================================================================== */
         .pillars-grid {
             display: grid;
@@ -786,33 +882,30 @@
 
         .pillar-card {
             background-color: var(--bg-white);
-            border: 2px solid var(--border-light);
+            border: 2px solid var(--border-subtle);
             border-radius: 16px;
-            padding: 32px 28px;
+            padding: 32px 26px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-card);
             transition: transform 0.2s, border-color 0.2s;
         }
 
         .pillar-card:hover {
             transform: translateY(-3px);
             border-color: var(--emerald-500);
-            box-shadow: var(--shadow-md);
         }
 
         .pillar-card.featured {
             border-color: var(--emerald-500);
-            box-shadow: var(--shadow-md);
-            position: relative;
         }
 
         .pillar-num {
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 800;
             color: var(--emerald-700);
-            background-color: var(--emerald-light);
+            background-color: var(--emerald-tint);
             border: 1px solid var(--emerald-border);
             padding: 4px 10px;
             border-radius: 6px;
@@ -821,7 +914,7 @@
         }
 
         .pillar-card h3 {
-            font-size: 22px;
+            font-size: 21px;
             font-weight: 900;
             color: var(--text-ink);
             line-height: 1.25;
@@ -831,20 +924,20 @@
         .pillar-card p {
             font-size: 15px;
             color: var(--text-body);
-            margin-bottom: 22px;
+            margin-bottom: 20px;
             line-height: 1.6;
         }
 
         .deliverables-box {
             background-color: var(--bg-canvas);
-            border: 1px solid var(--border-light);
+            border: 1px solid var(--border-subtle);
             border-radius: 12px;
             padding: 18px;
-            margin-bottom: 24px;
+            margin-bottom: 22px;
         }
 
         .deliverables-title {
-            font-size: 11.5px;
+            font-size: 11px;
             font-weight: 800;
             text-transform: uppercase;
             color: var(--text-ink);
@@ -862,15 +955,10 @@
         .deliverables-list li {
             font-size: 13.5px;
             color: var(--text-ink);
-            font-weight: 500;
             line-height: 1.45;
             display: flex;
             align-items: flex-start;
             gap: 8px;
-        }
-
-        .deliverables-list li strong {
-            font-weight: 700;
         }
 
         .btn-pillar {
@@ -881,7 +969,7 @@
             font-weight: 800;
             font-size: 14px;
             text-decoration: none;
-            background-color: var(--bg-dark);
+            background-color: var(--bg-obsidian);
             color: #ffffff;
             transition: background-color 0.15s;
         }
@@ -891,7 +979,7 @@
         }
 
         /* ==========================================================================
-           4-WEEK SPRINT TO 90-120 DAY EXECUTION MODEL
+           8. 4-WEEK SPRINT TO 90-120 DAY PLAN
            ========================================================================== */
         .sprint-grid {
             display: grid;
@@ -907,9 +995,10 @@
 
         .sprint-card {
             background-color: var(--bg-white);
-            border: 2px solid var(--border-light);
+            border: 2px solid var(--border-subtle);
             border-radius: 16px;
             padding: 32px;
+            box-shadow: var(--shadow-card);
         }
 
         .sprint-card.phase-one {
@@ -922,7 +1011,7 @@
             gap: 14px;
             align-items: flex-start;
             padding: 13px 0;
-            border-bottom: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-subtle);
             font-size: 14.5px;
             color: var(--text-body);
         }
@@ -935,8 +1024,8 @@
             width: 28px;
             height: 28px;
             border-radius: 7px;
-            background-color: var(--bg-dark);
-            color: #34d399;
+            background-color: var(--bg-obsidian);
+            color: var(--emerald-400);
             font-weight: 800;
             font-size: 12px;
             display: flex;
@@ -951,14 +1040,14 @@
         }
 
         /* ==========================================================================
-           ABOUT THE SALES BENCH & FOUNDER BIO
+           9. ABOUT THE SALES BENCH & FOUNDER BIO
            ========================================================================== */
         .about-card {
             background-color: var(--bg-white);
-            border: 2px solid var(--border-light);
+            border: 2px solid var(--border-subtle);
             border-radius: 20px;
             padding: 44px;
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-card);
         }
 
         .about-grid {
@@ -991,16 +1080,16 @@
             gap: 16px;
             margin-bottom: 18px;
             padding-bottom: 18px;
-            border-bottom: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-subtle);
         }
 
         .founder-avatar {
             width: 60px;
             height: 60px;
             border-radius: 14px;
-            background: var(--bg-dark);
+            background: var(--bg-obsidian);
             border: 2px solid var(--emerald-500);
-            color: #34d399;
+            color: var(--emerald-400);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1027,14 +1116,14 @@
         }
 
         /* ==========================================================================
-           INTERACTIVE 4-QUESTION DIAGNOSTIC
+           10. INTERACTIVE DIAGNOSTIC & SPLIT-PANE LEAD GENERATION
            ========================================================================== */
         .diagnostic-card {
             background-color: var(--bg-white);
             border: 2px solid var(--border-strong);
             border-radius: 18px;
             padding: 36px;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-card);
         }
 
         .progress-header {
@@ -1049,7 +1138,7 @@
         .progress-track {
             width: 100%;
             height: 8px;
-            background-color: var(--border-light);
+            background-color: var(--border-subtle);
             border-radius: 999px;
             overflow: hidden;
             margin-bottom: 28px;
@@ -1083,7 +1172,7 @@
 
         .diag-btn {
             background-color: var(--bg-canvas);
-            border: 2px solid var(--border-light);
+            border: 2px solid var(--border-subtle);
             border-radius: 12px;
             padding: 18px;
             text-align: left;
@@ -1093,7 +1182,7 @@
 
         .diag-btn:hover {
             border-color: var(--emerald-500);
-            background-color: var(--emerald-light);
+            background-color: var(--emerald-tint);
         }
 
         .diag-btn-title {
@@ -1112,9 +1201,6 @@
             display: none !important;
         }
 
-        /* ==========================================================================
-           SPLIT-PANE LEAD GENERATION (CONTACT FORM ONLY)
-           ========================================================================== */
         .split-grid {
             display: grid;
             grid-template-columns: 1fr 1.05fr;
@@ -1129,7 +1215,7 @@
         }
 
         .takeaway-card {
-            background-color: var(--emerald-light);
+            background-color: var(--emerald-tint);
             border: 1px solid var(--emerald-border);
             border-radius: 14px;
             padding: 24px;
@@ -1160,14 +1246,14 @@
             border: 2px solid var(--border-strong);
             border-radius: 18px;
             padding: 32px;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-card);
         }
 
         /* Modal Overlay */
         .modal-overlay {
             position: fixed;
             inset: 0;
-            background-color: rgba(9, 13, 22, 0.8);
+            background-color: rgba(7, 11, 20, 0.82);
             backdrop-filter: blur(4px);
             z-index: 200;
             display: none;
@@ -1188,11 +1274,11 @@
             max-width: 1020px;
             width: 100%;
             overflow: hidden;
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-elevated);
         }
 
         .modal-header {
-            background-color: var(--bg-dark);
+            background-color: var(--bg-obsidian);
             color: #ffffff;
             padding: 16px 24px;
             display: flex;
@@ -1214,7 +1300,7 @@
         }
 
         footer {
-            background-color: var(--bg-dark);
+            background-color: var(--bg-obsidian);
             color: #94a3b8;
             padding: 36px 0;
             font-size: 13px;
@@ -1240,111 +1326,118 @@
         }
 
         .footer-links a:hover {
-            color: #34d399;
+            color: var(--emerald-400);
         }
     </style>
 </head>
 <body>
 
-    <!-- 1. STICKY HEADER (GO NIMBLY + PROPELITO CLEAN NAV) -->
+    <!-- 1. STICKY HEADER (SCALEMATTERS x LEANSCALE ARCHITECTURAL BAR) -->
     <header>
         <div class="container nav-inner">
             <a href="#" class="brand-lockup">
                 <div class="brand-monogram font-mono">SB</div>
                 <div>
                     <span class="brand-text">THE SALES BENCH</span>
-                    <span class="brand-sub font-mono">Playbooks // Deal Criteria // Channel GTM</span>
+                    <span class="brand-sub font-mono">AI-Native GTM // Playbooks &amp; Deal Agents</span>
                 </div>
             </a>
             <nav class="nav-links">
-                <a href="#playbook-engine">Playbook &amp; Deal System</a>
+                <a href="#ai-model">AI-Native Model</a>
+                <a href="#playbook-engine">Deal Criteria &amp; Agents</a>
+                <a href="#design-partner">Co-Build Partner Program</a>
                 <a href="#services">Practice Areas</a>
-                <a href="#framework">4-Week Sprint</a>
                 <a href="#about">About</a>
-                <a href="#diagnostic">Diagnostic</a>
                 <a href="#book" class="btn-nav">Schedule GTM Review →</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <!-- 2. HERO SECTION (PROPELITO VALUE PROP + GO NIMBLY SYSTEM ARCHITECTURE UI) -->
+        <!-- 2. HERO SECTION (SCALEMATTERS x LEANSCALE AI-NATIVE ARCHITECTURE) -->
         <section class="hero-section">
             <div class="container hero-grid">
                 <div>
-                    <div class="eyebrow-pill font-mono">
+                    <div class="hero-badge font-mono">
                         <span class="pulsing-dot"></span>
-                        For B2B Software Companies ($1M – $30M+ ARR)
+                        AI-Native GTM Consulting &amp; Agent Platform ($1M – $30M+ ARR)
                     </div>
                     <h1 class="hero-title">
-                        Turn Gut-Feel Selling Into an <span class="accent-underline">Executable Playbook</span> &amp; Predictable Revenue.
+                        Engineer Your Playbook. <span class="gradient-text">Automate Deal Rigor With AI Agents.</span>
                     </h1>
                     <p class="hero-lead">
-                        Most sales playbooks sit in a forgotten PDF while deals slip from quarter to quarter. We build <strong>custom commercial playbooks</strong>, enforce <strong>objective deal qualification criteria</strong> alongside your internal RevOps team, and scale <strong>partner channels &amp; North American expansion</strong>.
+                        We help B2B software companies build <strong>proven sales playbooks and objective deal criteria</strong>—leveraging your internal CRM and RevOps team, recommending best-in-class AI tools, or deploying <strong>our own autonomous AI agents</strong> to do the heavy lifting.
                     </p>
                     <div class="hero-cta-group">
                         <a href="#book" class="btn-primary">Schedule a 15-Minute GTM Review →</a>
-                        <a href="#playbook-engine" class="btn-secondary">Explore the Deal Criteria Engine</a>
+                        <a href="#design-partner" class="btn-secondary-dark">Explore Charter Partner Advantage</a>
                     </div>
-                    <div class="hero-micro-proof font-mono">
-                        <span>✓ Proven Stage-Gate Criteria</span>
-                        <span>✓ Built With Your Internal RevOps</span>
-                        <span>✓ Multi-Tier Channel Alliances</span>
+                    <div class="hero-trust-row font-mono">
+                        <div><span>[01]</span> Proven Playbook &amp; Deal Criteria</div>
+                        <div><span>[02]</span> AI Stack &amp; Agent Execution</div>
+                        <div><span>[03]</span> Direct Product Roadmap Voice</div>
                     </div>
                 </div>
 
-                <!-- Right: Go Nimbly Style Live System Blueprint Card -->
-                <div class="system-ui-card">
-                    <div class="system-ui-header">
-                        <div class="window-dots">
-                            <span class="window-dot green"></span>
-                            <span class="window-dot cyan"></span>
-                            <span class="window-dot"></span>
+                <!-- Right: LeanScale / scaleMatters Style AI-Native System Console -->
+                <div class="arch-console">
+                    <div class="arch-header">
+                        <div class="arch-dots">
+                            <span class="arch-dot g"></span>
+                            <span class="arch-dot c"></span>
+                            <span class="arch-dot"></span>
                         </div>
-                        <span class="font-mono" style="font-size: 11px; color: #94a3b8; font-weight: 700;">THE SALES BENCH // DEAL OPERATING SYSTEM</span>
+                        <span class="font-mono" style="font-size: 11px; color: #94a3b8; font-weight: 700;">THE SALES BENCH // AI-NATIVE GTM STACK</span>
                     </div>
 
-                    <div class="ui-layer-stack">
-                        <div class="ui-layer highlight">
-                            <div class="ui-layer-top">
-                                <span class="ui-layer-tag font-mono">Layer 01 // Playbook &amp; Deal Criteria</span>
-                                <span class="ui-status-pill font-mono">Active Gate</span>
-                            </div>
-                            <div class="ui-layer-title">Objective Stage-Exit &amp; Qualification Criteria</div>
-                            <div class="ui-layer-desc">Replaces rep optimism with buyer-verifiable outcomes, MEDDPICC qualification rules, and Mutual Action Plans.</div>
+                    <div class="arch-node">
+                        <div class="arch-node-top">
+                            <span class="arch-layer-lbl font-mono">Layer 01 // Commercial Playbook &amp; Deal Criteria</span>
+                            <span class="arch-pill font-mono">Proven Process</span>
                         </div>
-
-                        <div class="ui-layer">
-                            <div class="ui-layer-top">
-                                <span class="ui-layer-tag font-mono">Layer 02 // Internal RevOps &amp; Tech Stack</span>
-                                <span class="ui-status-pill font-mono">CRM Synced</span>
-                            </div>
-                            <div class="ui-layer-title">Configured Inside Your Existing CRM</div>
-                            <div class="ui-layer-desc">We architect the stage gates and tool integrations; your internal RevOps team implements them in HubSpot or Salesforce.</div>
-                        </div>
-
-                        <div class="ui-layer">
-                            <div class="ui-layer-top">
-                                <span class="ui-layer-tag font-mono">Layer 03 // Ecosystem &amp; Market Expansion</span>
-                                <span class="ui-status-pill font-mono">Multiplier</span>
-                            </div>
-                            <div class="ui-layer-title">Channel Alliances &amp; Cross-Border Launch</div>
-                            <div class="ui-layer-desc">Co-selling playbooks for regional SIs, boutique consultancies, tech ISVs, and US/Canada market expansion.</div>
-                        </div>
+                        <div class="arch-node-title">Stage-Gated Playbooks &amp; Buyer Exit Criteria</div>
+                        <div class="arch-node-desc">Defines ICP qualification, MEDDPICC scoring, and partner co-sell triggers across regional SIs, boutique firms, and ISVs.</div>
                     </div>
 
-                    <div class="ui-metrics-row font-mono">
-                        <div class="ui-metric-box">
-                            <div class="ui-metric-val">+18%</div>
-                            <div class="ui-metric-lbl">Revenue Growth</div>
+                    <div class="arch-node">
+                        <div class="arch-node-top">
+                            <span class="arch-layer-lbl font-mono">Layer 02 // Internal CRM &amp; AI Tool Stack</span>
+                            <span class="arch-pill font-mono">RevOps Synced</span>
                         </div>
-                        <div class="ui-metric-box">
-                            <div class="ui-metric-val">2.4x</div>
-                            <div class="ui-metric-lbl">Co-Sell Velocity</div>
+                        <div class="arch-node-title">Leverage Your Tools + Curated AI Upgrades</div>
+                        <div class="arch-node-desc">We work with your internal RevOps team inside HubSpot/Salesforce and recommend high-ROI AI tools to fill stack gaps.</div>
+                    </div>
+
+                    <div class="arch-node active-agent">
+                        <div class="arch-node-top">
+                            <span class="arch-layer-lbl font-mono">Layer 03 // The Sales Bench Autonomous Agents</span>
+                            <span class="arch-pill font-mono">Agents Active</span>
                         </div>
-                        <div class="ui-metric-box">
-                            <div class="ui-metric-val">&lt;5%</div>
-                            <div class="ui-metric-lbl">Forecast Variance</div>
+                        <div class="arch-node-title">Our AI Agents Execute the Work</div>
+                        <div class="arch-node-desc">Deploy our proprietary agents to inspect deal criteria, score pipeline health, and identify partner co-sell matches automatically.</div>
+                    </div>
+
+                    <div class="arch-node charter">
+                        <div class="arch-node-top">
+                            <span class="arch-layer-lbl cyan font-mono">Layer 04 // Co-Build Charter Advantage</span>
+                            <span class="arch-pill cyan font-mono">Direct Voice</span>
+                        </div>
+                        <div class="arch-node-title">Shape the Product Roadmap Around Your Business</div>
+                        <div class="arch-node-desc">Consulting clients directly influence the features, scorecards, and AI agents we build into The Sales Bench platform.</div>
+                    </div>
+
+                    <div class="arch-kpi-strip font-mono">
+                        <div class="arch-kpi">
+                            <div class="arch-kpi-val">+18%</div>
+                            <div class="arch-kpi-lbl">Revenue Lift</div>
+                        </div>
+                        <div class="arch-kpi">
+                            <div class="arch-kpi-val">2.4x</div>
+                            <div class="arch-kpi-lbl">Co-Sell Velocity</div>
+                        </div>
+                        <div class="arch-kpi">
+                            <div class="arch-kpi-val">&lt;5%</div>
+                            <div class="arch-kpi-lbl">Forecast Variance</div>
                         </div>
                     </div>
                 </div>
@@ -1352,79 +1445,95 @@
         </section>
 
         <!-- 3. THIRD-PARTY RESEARCH BENCHMARK STRIP -->
-        <section class="benchmark-strip">
+        <section class="benchmark-bar">
             <div class="container">
                 <div class="benchmark-grid">
-                    <div class="bench-item">
-                        <div class="bench-stat font-mono"><span>+18%</span> Revenue</div>
-                        <div class="bench-text">B2B organizations with a defined, stage-gated sales process generate 18% more revenue than ad-hoc teams.</div>
-                        <div class="bench-cite font-mono">Vantage Point &amp; SMA Research</div>
+                    <div class="bench-box">
+                        <div class="bench-num font-mono"><span>+18%</span> Revenue</div>
+                        <div class="bench-copy">B2B companies with a defined, stage-gated sales process generate 18% more revenue than ad-hoc teams.</div>
+                        <div class="bench-source font-mono">Vantage Point &amp; SMA Research</div>
                     </div>
-                    <div class="bench-item">
-                        <div class="bench-stat font-mono"><span>67%</span> Miss Plan</div>
-                        <div class="bench-text">Of sales organizations miss quarterly revenue forecasts by &gt;10% due to subjective deal inspection criteria.</div>
-                        <div class="bench-cite font-mono">Gartner B2B Sales Benchmark</div>
+                    <div class="bench-box">
+                        <div class="bench-num font-mono"><span>67%</span> Miss Plan</div>
+                        <div class="bench-copy">Of sales organizations miss quarterly forecasts by &gt;10% due to subjective deal inspection criteria.</div>
+                        <div class="bench-source font-mono">Gartner B2B Sales Benchmark</div>
                     </div>
-                    <div class="bench-item">
-                        <div class="bench-stat font-mono"><span>28%</span> Selling Time</div>
-                        <div class="bench-text">Reps spend only 28% of their week actually selling due to fragmented tools and unaligned CRM workflows.</div>
-                        <div class="bench-cite font-mono">Salesforce State of Sales</div>
+                    <div class="bench-box">
+                        <div class="bench-num font-mono"><span>28%</span> Selling Time</div>
+                        <div class="bench-copy">Reps spend only 28% of their week selling due to manual CRM admin and fragmented tool stacks.</div>
+                        <div class="bench-source font-mono">Salesforce State of Sales</div>
                     </div>
-                    <div class="bench-item">
-                        <div class="bench-stat font-mono"><span>2.4x</span> Faster Close</div>
-                        <div class="bench-text">Enterprise deals co-sold with channel and ecosystem partners close 46% faster with 2.4x higher win rates.</div>
-                        <div class="bench-cite font-mono">Forrester &amp; Crossbeam Research</div>
+                    <div class="bench-box">
+                        <div class="bench-num font-mono"><span>2.4x</span> Faster Close</div>
+                        <div class="bench-copy">Enterprise deals co-sold with channel and ecosystem partners close 46% faster with 2.4x higher win rates.</div>
+                        <div class="bench-source font-mono">Forrester &amp; Crossbeam Research</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. PROPELITO-STYLE "BEFORE VS. AFTER" COMPARISON -->
-        <section class="section-pad section-canvas">
+        <!-- 4. THE 3-MODE AI-NATIVE OPERATING MODEL -->
+        <section id="ai-model" class="section-pad section-canvas">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag font-mono">The Predictability Gap</span>
-                    <h2 class="section-title">Why Most Sales Playbooks Fail—And How We Fix It</h2>
-                    <p class="section-desc">A playbook only works when deal criteria are embedded directly into daily deal execution and CRM stage gates.</p>
+                    <span class="section-tag font-mono">AI-Native Execution Model</span>
+                    <h2 class="section-title">Three Ways We Modernize &amp; Automate Your GTM Engine</h2>
+                    <p class="section-desc">We don't rip and replace what already works. We combine proven commercial playbooks with your internal tools, best-in-class AI recommendations, and our own AI agents.</p>
                 </div>
 
-                <div class="comparison-grid">
-                    <div class="comp-card before">
-                        <div class="comp-header">
-                            <h3 style="font-size: 20px; font-weight: 800; color: #881337;">Ad-Hoc Selling &amp; Static Playbooks</h3>
-                            <span class="comp-badge red font-mono">Unpredictable</span>
+                <div class="ai-modes-grid">
+                    <!-- Mode 1 -->
+                    <div class="ai-mode-card">
+                        <div>
+                            <span class="mode-step-pill font-mono">Mode 01 // Leverage Your Stack</span>
+                            <h3>Optimize Your Existing CRM &amp; Internal RevOps</h3>
+                            <p>We start with the tools and team you already have. We design your custom sales playbook and objective deal criteria, then guide your internal RevOps team to configure the stage gates directly inside your CRM.</p>
                         </div>
-                        <ul class="comp-list">
-                            <li><span class="comp-icon red">✕</span> <div><strong>"Happy Ears" Forecasting:</strong> Deals advance in the CRM because a rep "had a great call," leading to 60%+ end-of-quarter slippage.</div></li>
-                            <li><span class="comp-icon red">✕</span> <div><strong>Shelfware Playbooks:</strong> Expensive 80-page PDF playbooks that reps never open after onboarding week.</div></li>
-                            <li><span class="comp-icon red">✕</span> <div><strong>Undefined Deal Criteria:</strong> No clear definition of Economic Buyer sign-off, technical validation, or Mutual Action Plans.</div></li>
-                            <li><span class="comp-icon red">✕</span> <div><strong>Dormant Partner Channels:</strong> Signing channel partners without a joint co-selling playbook or deal registration cadence.</div></li>
+                        <ul class="mode-checklist">
+                            <li><span>✓</span> Zero outsourced CRM admin bloat—your team owns the keys</li>
+                            <li><span>✓</span> Stage-exit criteria locked into HubSpot or Salesforce</li>
+                            <li><span>✓</span> Clean pipeline governance and board-ready reporting</li>
                         </ul>
                     </div>
 
-                    <div class="comp-card after">
-                        <div class="comp-header">
-                            <h3 style="font-size: 20px; font-weight: 800; color: var(--text-ink);">The Sales Bench Playbook &amp; Deal System</h3>
-                            <span class="comp-badge green font-mono">Engineered Outcome</span>
+                    <!-- Mode 2 -->
+                    <div class="ai-mode-card">
+                        <div>
+                            <span class="mode-step-pill font-mono">Mode 02 // Curate Best-in-Class AI</span>
+                            <h3>Recommend &amp; Integrate High-ROI AI Tools</h3>
+                            <p>Where your current revenue stack has blind spots, we evaluate the market and recommend proven AI-native tools that eliminate rep friction—and oversee the workflow integration across your GTM motion.</p>
                         </div>
-                        <ul class="comp-list">
-                            <li><span class="comp-icon green">✓</span> <div><strong>Verifiable Deal Criteria:</strong> Every deal stage requires objective, buyer-verified exit criteria before advancing in your forecast.</div></li>
-                            <li><span class="comp-icon green">✓</span> <div><strong>Executable CRM Playbooks:</strong> We design the stage gates and scoring criteria; your internal RevOps team embeds them directly in your CRM.</div></li>
-                            <li><span class="comp-icon green">✓</span> <div><strong>Repeatable Deal Process:</strong> Standardized discovery, champion validation, and Mutual Action Plans that compress sales cycles.</div></li>
-                            <li><span class="comp-icon green">✓</span> <div><strong>Active Partner Co-Selling:</strong> Structured partner enablement across regional SIs, boutique consultancies, and tech ISV ecosystems.</div></li>
+                        <ul class="mode-checklist">
+                            <li><span>✓</span> Objective vendor evaluation (no bloated shelfware)</li>
+                            <li><span>✓</span> AI conversation intelligence, enrichment &amp; outbound flows</li>
+                            <li><span>✓</span> Seamless data sync back to your core CRM stages</li>
+                        </ul>
+                    </div>
+
+                    <!-- Mode 3 -->
+                    <div class="ai-mode-card agent-highlight">
+                        <div>
+                            <span class="mode-step-pill font-mono" style="background: var(--emerald-600); color: #ffffff;">Mode 03 // Deploy Our AI Agents</span>
+                            <h3>Our Autonomous Agents Do the Work for You</h3>
+                            <p>Instead of hiring more operations headcount, we deploy <strong>The Sales Bench AI Agents</strong> to execute deal inspection, audit playbook compliance, score deal criteria, and map channel co-sell opportunities.</p>
+                        </div>
+                        <ul class="mode-checklist">
+                            <li><span>✓</span> Autonomous Deal Criteria &amp; MEDDPICC Scoring Agent</li>
+                            <li><span>✓</span> Playbook Compliance &amp; Forecast Risk Inspection Agent</li>
+                            <li><span>✓</span> Partner Ecosystem &amp; North American ICP Research Agent</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 5. INTERACTIVE DEAL CRITERIA & PLAYBOOK ARCHITECTURE (GO NIMBLY PRODUCT PREVIEW) -->
+        <!-- 5. INTERACTIVE PLAYBOOK, DEAL CRITERIA & AI AGENT ENGINE -->
         <section id="playbook-engine" class="section-pad section-white">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag font-mono">Competitive Advantage // Playbook-to-Process</span>
-                    <h2 class="section-title">Inside Our Proven Deal Criteria &amp; Playbook System</h2>
-                    <p class="section-desc">Click through the 4 stages below to see how we define deal criteria, align buyer actions, and guide your internal RevOps team to create a predictable outcome.</p>
+                    <span class="section-tag font-mono">Proven Process // Playbook + AI Agents</span>
+                    <h2 class="section-title">How Playbook Criteria &amp; AI Agents Create Predictable Outcomes</h2>
+                    <p class="section-desc">Click through the 4 stages of a deal to see how our Playbook Criteria, your Internal RevOps CRM gates, and our AI Agents work together.</p>
                 </div>
 
                 <div class="engine-shell">
@@ -1443,37 +1552,37 @@
                         </button>
                         <button type="button" class="stage-tab-btn" data-stage="4">
                             <span class="stage-tab-num font-mono">Stage 04 // Predictable Close</span>
-                            <span class="stage-tab-name">Mutual Action Plan &amp; Paper Process</span>
+                            <span class="stage-tab-name">Mutual Action Plan &amp; Close</span>
                         </button>
                     </div>
 
                     <!-- Stage 1 -->
                     <div class="stage-panel active" id="stage-panel-1">
                         <div class="stage-col">
-                            <span class="stage-col-label font-mono">1. Playbook Execution</span>
-                            <h4>Structured Discovery Motion</h4>
+                            <span class="stage-col-label font-mono">1. Playbook &amp; Deal Criteria</span>
+                            <h4>Buyer-Verifiable Discovery</h4>
                             <ul>
-                                <li><span>→</span> Quantify cost of inaction (status quo pain) in the first 2 calls</li>
-                                <li><span>→</span> Disqualify low-fit opportunities early using strict ICP scoring</li>
-                                <li><span>→</span> Map technical, operational, and executive stakeholders</li>
+                                <li><span>→</span> Quantify cost of inaction (business pain) in first 2 calls</li>
+                                <li><span>→</span> Strict ICP tiering to disqualify low-probability deals early</li>
+                                <li><span>→</span> Documented compelling event &amp; stakeholder map</li>
                             </ul>
                         </div>
                         <div class="stage-col">
-                            <span class="stage-col-label font-mono">2. Required Deal Exit Criteria</span>
-                            <h4>Buyer-Verifiable Outcomes</h4>
+                            <span class="stage-col-label font-mono">2. Internal RevOps &amp; CRM Gate</span>
+                            <h4>System Stage Enforcement</h4>
                             <ul>
-                                <li><span>✓</span> Core business pain confirmed in writing by prospect</li>
-                                <li><span>✓</span> Target timeline &amp; compelling event identified</li>
-                                <li><span>✓</span> Next step scheduled with power/champion stakeholder</li>
+                                <li><span>⚙</span> Mandatory CRM fields: Identified Pain, ICP Score, Trigger</li>
+                                <li><span>⚙</span> Stage advancement locked until discovery exit criteria met</li>
+                                <li><span>⚙</span> Source tagging (Direct vs. SI / Consultancy / ISV Partner)</li>
                             </ul>
                         </div>
-                        <div class="stage-col">
-                            <span class="stage-col-label font-mono">3. Internal RevOps CRM Gate</span>
-                            <h4>System Enforcement</h4>
+                        <div class="stage-col agent-col">
+                            <span class="stage-col-label cyan font-mono">3. Sales Bench AI Agent Action</span>
+                            <h4>Autonomous Discovery &amp; ICP Agent</h4>
                             <ul>
-                                <li><span>⚙</span> Mandatory CRM fields: Identified Pain, ICP Tier, Primary Trigger</li>
-                                <li><span>⚙</span> Automated disqualification alert if no next step is logged</li>
-                                <li><span>⚙</span> Partner attribution tag (Direct vs. SI/Channel sourced)</li>
+                                <li><span>✦</span> Enriches account &amp; buyer committee data pre-call</li>
+                                <li><span>✦</span> Analyzes call transcripts against Playbook discovery criteria</li>
+                                <li><span>✦</span> Auto-scores ICP fit and flags missing pain quantification</li>
                             </ul>
                         </div>
                     </div>
@@ -1481,30 +1590,30 @@
                     <!-- Stage 2 -->
                     <div class="stage-panel" id="stage-panel-2">
                         <div class="stage-col">
-                            <span class="stage-col-label font-mono">1. Playbook Execution</span>
+                            <span class="stage-col-label font-mono">1. Playbook &amp; Deal Criteria</span>
                             <h4>Locking the Decision Criteria</h4>
                             <ul>
-                                <li><span>→</span> Influence formal technical &amp; commercial evaluation criteria</li>
-                                <li><span>→</span> Arm the internal Champion with an executive ROI brief</li>
-                                <li><span>→</span> Identify Economic Buyer and decision-making workflow</li>
+                                <li><span>→</span> Align formal technical &amp; commercial evaluation criteria</li>
+                                <li><span>→</span> Validate internal Champion with power and influence</li>
+                                <li><span>→</span> Confirm path to Economic Buyer sign-off</li>
                             </ul>
                         </div>
                         <div class="stage-col">
-                            <span class="stage-col-label font-mono">2. Required Deal Exit Criteria</span>
-                            <h4>Buyer-Verifiable Outcomes</h4>
+                            <span class="stage-col-label font-mono">2. Internal RevOps &amp; CRM Gate</span>
+                            <h4>System Stage Enforcement</h4>
                             <ul>
-                                <li><span>✓</span> Formal Decision Criteria agreed upon with buyer team</li>
-                                <li><span>✓</span> Champion actively sponsors introduction to Economic Buyer</li>
-                                <li><span>✓</span> Success metrics for solution validation documented</li>
+                                <li><span>⚙</span> Required CRM gate: Decision Criteria &amp; Champion verified</li>
+                                <li><span>⚙</span> Automated alert if deal sits in Stage 2 beyond target velocity</li>
+                                <li><span>⚙</span> Dynamic MEDDPICC scorecard updated on opportunity</li>
                             </ul>
                         </div>
-                        <div class="stage-col">
-                            <span class="stage-col-label font-mono">3. Internal RevOps CRM Gate</span>
-                            <h4>System Enforcement</h4>
+                        <div class="stage-col agent-col">
+                            <span class="stage-col-label cyan font-mono">3. Sales Bench AI Agent Action</span>
+                            <h4>Deal Criteria &amp; Risk Scoring Agent</h4>
                             <ul>
-                                <li><span>⚙</span> CRM Stage Gate locked until Champion &amp; Decision Criteria fields complete</li>
-                                <li><span>⚙</span> Conversation intelligence (Gong/Chorus) scorecard check</li>
-                                <li><span>⚙</span> Automated Deal Health Score calculation inside CRM</li>
+                                <li><span>✦</span> Audits buyer emails &amp; calls to verify Decision Criteria lock</li>
+                                <li><span>✦</span> Detects "single-threaded" deals lacking Economic Buyer access</li>
+                                <li><span>✦</span> Generates executive ROI brief for the Champion automatically</li>
                             </ul>
                         </div>
                     </div>
@@ -1512,30 +1621,30 @@
                     <!-- Stage 3 -->
                     <div class="stage-panel" id="stage-panel-3">
                         <div class="stage-col">
-                            <span class="stage-col-label font-mono">1. Playbook Execution</span>
+                            <span class="stage-col-label font-mono">1. Playbook &amp; Deal Criteria</span>
                             <h4>Value Proof &amp; Partner Co-Sell</h4>
                             <ul>
-                                <li><span>→</span> Execute scoped proof-of-value tied strictly to buyer criteria</li>
-                                <li><span>→</span> Engage SI, boutique consultancy, or ISV partner for co-sell leverage</li>
-                                <li><span>→</span> Present board-ready CFO business case with Economic Buyer</li>
+                                <li><span>→</span> Execute scoped evaluation tied strictly to buyer criteria</li>
+                                <li><span>→</span> Attach regional SI, boutique consultancy, or ISV co-sell partner</li>
+                                <li><span>→</span> Economic Buyer validates CFO business case and budget</li>
                             </ul>
                         </div>
                         <div class="stage-col">
-                            <span class="stage-col-label font-mono">2. Required Deal Exit Criteria</span>
-                            <h4>Buyer-Verifiable Outcomes</h4>
+                            <span class="stage-col-label font-mono">2. Internal RevOps &amp; CRM Gate</span>
+                            <h4>System Stage Enforcement</h4>
                             <ul>
-                                <li><span>✓</span> Technical &amp; functional sign-off completed by buyer</li>
-                                <li><span>✓</span> Economic Buyer validates budget and ROI justification</li>
-                                <li><span>✓</span> Channel partner implementation scope aligned (if applicable)</li>
+                                <li><span>⚙</span> Economic Buyer contact role &amp; ROI sign-off logged in CRM</li>
+                                <li><span>⚙</span> Partner co-sell attach &amp; deal registration tracked</li>
+                                <li><span>⚙</span> Forecast category promoted from "Best Case" to "Commit"</li>
                             </ul>
                         </div>
-                        <div class="stage-col">
-                            <span class="stage-col-label font-mono">3. Internal RevOps CRM Gate</span>
-                            <h4>System Enforcement</h4>
+                        <div class="stage-col agent-col">
+                            <span class="stage-col-label cyan font-mono">3. Sales Bench AI Agent Action</span>
+                            <h4>Partner Match &amp; Business Case Agent</h4>
                             <ul>
-                                <li><span>⚙</span> Economic Buyer contact role attached &amp; verified in CRM</li>
-                                <li><span>⚙</span> Forecast category upgrades from "Best Case" to "Commit"</li>
-                                <li><span>⚙</span> Partner co-sell attach rate tracked on opportunity record</li>
+                                <li><span>✦</span> Identifies overlapping SI or consultancy relationships in target account</li>
+                                <li><span>✦</span> Compiles custom CFO business case from discovery metrics</li>
+                                <li><span>✦</span> Validates technical sign-off completion against stage criteria</li>
                             </ul>
                         </div>
                     </div>
@@ -1543,30 +1652,30 @@
                     <!-- Stage 4 -->
                     <div class="stage-panel" id="stage-panel-4">
                         <div class="stage-col">
-                            <span class="stage-col-label font-mono">1. Playbook Execution</span>
-                            <h4>Mutual Action Plan &amp; Close</h4>
+                            <span class="stage-col-label font-mono">1. Playbook &amp; Deal Criteria</span>
+                            <h4>Mutual Action Plan &amp; Paper Process</h4>
                             <ul>
-                                <li><span>→</span> Co-author a Mutual Action Plan (MAP) working backward from go-live</li>
-                                <li><span>→</span> Navigate InfoSec, legal redlines, and enterprise procurement early</li>
-                                <li><span>→</span> Standardize commercial terms (USD/CAD) and multi-year ramps</li>
+                                <li><span>→</span> Co-author a Mutual Action Plan (MAP) working backward from launch</li>
+                                <li><span>→</span> Clear InfoSec, legal redlines, and procurement gates early</li>
+                                <li><span>→</span> Lock final signature sequence (&lt;5% forecast variance)</li>
                             </ul>
                         </div>
                         <div class="stage-col">
-                            <span class="stage-col-label font-mono">2. Required Deal Exit Criteria</span>
-                            <h4>Buyer-Verifiable Outcomes</h4>
+                            <span class="stage-col-label font-mono">2. Internal RevOps &amp; CRM Gate</span>
+                            <h4>System Stage Enforcement</h4>
                             <ul>
-                                <li><span>✓</span> Mutual Action Plan shared and approved by buyer procurement</li>
-                                <li><span>✓</span> Security &amp; legal review timelines locked with named owners</li>
-                                <li><span>✓</span> Final signature sequence confirmed (&lt;5% forecast variance)</li>
+                                <li><span>⚙</span> Paper Process tracker (InfoSec, Legal, Procurement) active</li>
+                                <li><span>⚙</span> Automated CS &amp; implementation partner handoff triggered</li>
+                                <li><span>⚙</span> Closed-Won / Loss telemetry fed back to refine playbook</li>
                             </ul>
                         </div>
-                        <div class="stage-col">
-                            <span class="stage-col-label font-mono">3. Internal RevOps CRM Gate</span>
-                            <h4>System Enforcement</h4>
+                        <div class="stage-col agent-col">
+                            <span class="stage-col-label cyan font-mono">3. Sales Bench AI Agent Action</span>
+                            <h4>Forecast Governor &amp; MAP Agent</h4>
                             <ul>
-                                <li><span>⚙</span> Paper Process tracker (InfoSec, Legal, Procurement) active in CRM</li>
-                                <li><span>⚙</span> Automated handoff package triggered for Customer Success / SI Partner</li>
-                                <li><span>⚙</span> Win/Loss &amp; cycle-time telemetry logged for board reporting</li>
+                                <li><span>✦</span> Monitors Mutual Action Plan milestones and flags slippage early</li>
+                                <li><span>✦</span> Compares rep forecast date against actual buyer procurement activity</li>
+                                <li><span>✦</span> Packages complete deal context for seamless post-sale handoff</li>
                             </ul>
                         </div>
                     </div>
@@ -1574,13 +1683,50 @@
             </div>
         </section>
 
-        <!-- 6. 3 CORE PRACTICE AREAS (BENTO CARDS) -->
-        <section id="services" class="section-pad section-canvas">
+        <!-- 6. CHARTER DESIGN PARTNER PROGRAM (CO-BUILD THE PRODUCT WITH US) -->
+        <section id="design-partner" class="section-pad section-canvas">
+            <div class="container">
+                <div class="charter-banner">
+                    <div class="charter-top">
+                        <span class="section-tag dark-tag font-mono">// The Charter Design Partner Advantage</span>
+                        <h2 class="section-title light" style="margin-top: 8px;">
+                            Scale Your GTM Today—And Directly Shape the Product We Build Tomorrow.
+                        </h2>
+                        <p class="section-desc light">
+                            As we expand <strong>The Sales Bench</strong> from an executive consulting practice into an AI-native Playbook &amp; Deal Execution platform, our consulting clients gain a rare strategic advantage: <strong>you have a direct seat at the table in how the product and AI agents are built.</strong>
+                        </p>
+                    </div>
+
+                    <div class="charter-grid">
+                        <div class="charter-card">
+                            <span class="charter-num font-mono">Advantage 01 // Custom-Fit Product</span>
+                            <h3>Direct Say in the Product Roadmap</h3>
+                            <p>Off-the-shelf software forces you to adapt to rigid templates. As an early consulting partner, your real-world deal criteria, CRM workflows, and forecasting challenges directly dictate the features and AI agents we engineer first.</p>
+                        </div>
+
+                        <div class="charter-card">
+                            <span class="charter-num font-mono">Advantage 02 // Operator + AI Hybrid</span>
+                            <h3>Executive Strategy + Agent Execution</h3>
+                            <p>You don't wait months for software ROI. You get immediate, hands-on commercial leadership from Scott Carpentier in a 4-Week Sprint while our proprietary AI agents handle deal scoring, call inspection, and partner mapping.</p>
+                        </div>
+
+                        <div class="charter-card">
+                            <span class="charter-num font-mono">Advantage 03 // Founding Economics</span>
+                            <h3>Charter Partner Platform Access</h3>
+                            <p>Clients who partner with us during our consulting-to-platform build lock in preferential Charter Partner licensing, custom-trained agents for their playbook, and priority engineering support as they scale.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. 3 CORE CONSULTING PRACTICE AREAS -->
+        <section id="services" class="section-pad section-white">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag font-mono">Core Consulting Practice Areas</span>
-                    <h2 class="section-title">How We Build Your Revenue Engine</h2>
-                    <p class="section-desc">Hands-on commercial architecture across process playbooks, multi-tier channel alliances, and North American market expansion.</p>
+                    <span class="section-tag font-mono">Core Practice Areas</span>
+                    <h2 class="section-title">Where We Drive Measurable Revenue Outcomes</h2>
+                    <p class="section-desc">Every engagement combines our Playbook &amp; Deal Criteria methodology, internal RevOps collaboration, and AI-native execution.</p>
                 </div>
 
                 <div class="pillars-grid">
@@ -1588,134 +1734,134 @@
                     <div class="pillar-card featured">
                         <div>
                             <span class="pillar-num font-mono">Pillar 01 // Playbooks &amp; Deal Process</span>
-                            <h3>GTM Playbook Design, Deal Criteria &amp; RevOps Alignment</h3>
-                            <p>We analyze your current GTM motion, build your custom sales playbook, define strict stage-by-stage deal criteria, and partner with your internal RevOps team to operationalize it.</p>
+                            <h3>GTM Playbook Architecture, Deal Criteria &amp; AI Stack</h3>
+                            <p>We diagnose pipeline leaks, build your custom sales playbook, define strict stage-by-stage deal criteria, and deploy AI tools and agents alongside your internal RevOps team.</p>
                             <div class="deliverables-box">
-                                <div class="deliverables-title font-mono">Key Outcomes &amp; Deliverables:</div>
+                                <div class="deliverables-title font-mono">What We Deliver:</div>
                                 <ul class="deliverables-list">
-                                    <li><span>✓</span> <div><strong>Custom Sales Playbook:</strong> ICP definitions, discovery frameworks, and objection handling</div></li>
-                                    <li><span>✓</span> <div><strong>Defined Deal Criteria:</strong> Verifiable stage gates and MEDDPICC scoring for predictable forecasts</div></li>
-                                    <li><span>✓</span> <div><strong>Internal RevOps Collaboration:</strong> We architect the CRM rules; your internal team configures them</div></li>
-                                    <li><span>✓</span> <div><strong>Tech Stack Integration:</strong> Evaluate and integrate high-ROI tools across your CRM stack</div></li>
+                                    <li><span>✓</span> <div><strong>Custom Sales Playbook:</strong> ICP tiers, discovery frameworks, and stage exit criteria</div></li>
+                                    <li><span>✓</span> <div><strong>Internal RevOps Alignment:</strong> We specify the CRM gates; your internal team configures them</div></li>
+                                    <li><span>✓</span> <div><strong>AI Tool &amp; Agent Deployment:</strong> Curate third-party AI tools or deploy our own agents</div></li>
+                                    <li><span>✓</span> <div><strong>Predictable Forecasting:</strong> Weekly deal inspection delivering &lt;5% forecast variance</div></li>
                                 </ul>
                             </div>
                         </div>
-                        <a href="#book" class="btn-pillar">Build Your Playbook &amp; Deal Process →</a>
+                        <a href="#book" class="btn-pillar">Engineer Your Playbook &amp; Process →</a>
                     </div>
 
                     <!-- Pillar 2 -->
                     <div class="pillar-card">
                         <div>
-                            <span class="pillar-num font-mono">Pillar 02 // Indirect Distribution</span>
-                            <h3>Channel Alliances &amp; Partner Ecosystems</h3>
-                            <p>Channel growth is not limited to Big Four consultancies. We design and launch revenue-generating partner programs across regional SIs, boutique advisory firms, and tech ISVs.</p>
+                            <span class="pillar-num font-mono">Pillar 02 // Partner Ecosystems</span>
+                            <h3>Channel Alliances &amp; Distribution Partnerships</h3>
+                            <p>Channel distribution is never limited to the Big Four. We architect high-attach co-selling ecosystems across regional SIs, boutique advisory consultancies, and tech ISVs.</p>
                             <div class="deliverables-box">
-                                <div class="deliverables-title font-mono">Key Outcomes &amp; Deliverables:</div>
+                                <div class="deliverables-title font-mono">What We Deliver:</div>
                                 <ul class="deliverables-list">
-                                    <li><span>✓</span> <div><strong>Multi-Tier Partner Strategy:</strong> Regional SIs, boutique vertical consultancies, and tech alliances</div></li>
-                                    <li><span>✓</span> <div><strong>Partner Co-Sell Playbooks:</strong> Joint value propositions, field enablement, and account mapping</div></li>
-                                    <li><span>✓</span> <div><strong>Channel Governance:</strong> Deal registration workflows, referral margins, and partner scorecards</div></li>
-                                    <li><span>✓</span> <div><strong>Accelerated Deal Velocity:</strong> Leverage trusted partner relationships to compress enterprise cycles</div></li>
+                                    <li><span>✓</span> <div><strong>Multi-Tier Partner Architecture:</strong> Regional SIs, boutique vertical firms, and tech ISVs</div></li>
+                                    <li><span>✓</span> <div><strong>Partner Co-Sell Playbooks:</strong> Joint value propositions, account mapping, and enablement</div></li>
+                                    <li><span>✓</span> <div><strong>Channel Governance:</strong> Deal registration workflows, referral margins, and CRM tracking</div></li>
+                                    <li><span>✓</span> <div><strong>2.4x Deal Velocity:</strong> Turn dormant partner agreements into active co-sold revenue</div></li>
                                 </ul>
                             </div>
                         </div>
-                        <a href="#book" class="btn-pillar">Architect Your Partner Channel →</a>
+                        <a href="#book" class="btn-pillar">Build Your Partner Channel →</a>
                     </div>
 
                     <!-- Pillar 3 -->
                     <div class="pillar-card">
                         <div>
-                            <span class="pillar-num font-mono">Pillar 03 // New Market Entry</span>
-                            <h3>North American &amp; Cross-Border Expansion</h3>
-                            <p>Entering the US or Canada? Validate buyer appetite, localize your playbook, and close early flagship logos before committing $250k+ to premature local executive hires.</p>
+                            <span class="pillar-num font-mono">Pillar 03 // Market Expansion</span>
+                            <h3>North American &amp; Cross-Border Market Entry</h3>
+                            <p>Entering the US or Canada? Validate buyer appetite, localize your playbook, and establish regional channel alliances before spending $250k+ on premature local hires.</p>
                             <div class="deliverables-box">
-                                <div class="deliverables-title font-mono">Key Outcomes &amp; Deliverables:</div>
+                                <div class="deliverables-title font-mono">What We Deliver:</div>
                                 <ul class="deliverables-list">
-                                    <li><span>✓</span> <div><strong>Live Buyer Validation:</strong> Direct discovery interviews with target North American enterprise buyers</div></li>
-                                    <li><span>✓</span> <div><strong>Cross-Border Localization:</strong> Navigate Canadian vs. US procurement, pricing (USD/CAD), and positioning</div></li>
-                                    <li><span>✓</span> <div><strong>First-Rep Playbook Transfer:</strong> Hand over a proven, repeatable playbook when you hire local reps</div></li>
-                                    <li><span>✓</span> <div><strong>Compliant EOR Scaling:</strong> Onboard local sellers rapidly via Employer of Record partners</div></li>
+                                    <li><span>✓</span> <div><strong>Live Buyer Validation:</strong> Direct discovery interviews with North American enterprise buyers</div></li>
+                                    <li><span>✓</span> <div><strong>US &amp; Canada Localization:</strong> Navigate regional procurement, USD/CAD pricing, and positioning</div></li>
+                                    <li><span>✓</span> <div><strong>Turnkey Rep Playbook:</strong> Hand over a validated playbook when onboarding local reps</div></li>
+                                    <li><span>✓</span> <div><strong>Compliant EOR Scaling:</strong> Rapidly hire local sellers via Employer of Record partners</div></li>
                                 </ul>
                             </div>
                         </div>
-                        <a href="#book" class="btn-pillar">De-Risk Your Market Entry →</a>
+                        <a href="#book" class="btn-pillar">De-Risk Your Market Expansion →</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 7. ENGAGEMENT MODEL: 4-WEEK SPRINT TO 90-120 DAY PLAN -->
-        <section id="framework" class="section-pad section-white">
+        <!-- 8. ENGAGEMENT MODEL: 4-WEEK SPRINT TO 90-120 DAY PLAN -->
+        <section id="framework" class="section-pad section-canvas">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag font-mono">Engagement Architecture</span>
-                    <h2 class="section-title">Start With a 4-Week Sprint. Scale Into a 90–120 Day Plan.</h2>
-                    <p class="section-desc">No open-ended retainers. We start with a focused 4-Week Commercial Sprint to diagnose your process and define your playbook before rolling into execution.</p>
+                    <span class="section-tag font-mono">Engagement Roadmap</span>
+                    <h2 class="section-title">Start With a 4-Week Sprint. Roll Into a 90–120 Day Plan.</h2>
+                    <p class="section-desc">Every engagement begins with a focused 4-Week Commercial Sprint to build your playbook, define deal criteria, and audit your AI stack before rolling into execution.</p>
                 </div>
 
                 <div class="sprint-grid">
                     <div class="sprint-card phase-one">
-                        <span class="pillar-num font-mono">Phase 01 // Days 1–30</span>
-                        <h3 style="font-size: 23px; font-weight: 900; color: var(--text-ink); margin-bottom: 10px;">The 4-Week Commercial &amp; Playbook Sprint</h3>
-                        <p style="font-size: 15px; color: var(--text-body); margin-bottom: 20px;">A rapid teardown of your current deal process, pipeline conversion leaks, tech stack, and channel readiness—delivering your custom playbook blueprint.</p>
+                        <span class="pillar-num font-mono">Phase 01 // Weeks 1–4</span>
+                        <h3 style="font-size: 22px; font-weight: 900; color: var(--text-ink); margin-bottom: 10px;">The 4-Week Playbook &amp; AI Architecture Sprint</h3>
+                        <p style="font-size: 15px; color: var(--text-body); margin-bottom: 20px;">A rapid diagnostic and design sprint that delivers your custom Playbook, Deal Criteria Matrix, and AI/RevOps Blueprint in 30 days.</p>
                         <div class="step-row">
                             <span class="step-badge font-mono">W1</span>
-                            <div><strong>GTM &amp; Pipeline Teardown:</strong> Audit historical win/loss data, stage slippage, ICP fit, and current qualification criteria.</div>
+                            <div><strong>Commercial Motion &amp; Pipeline Audit:</strong> Analyze deal slippage, stage conversion leaks, ICP fit, and current qualification habits.</div>
                         </div>
                         <div class="step-row">
                             <span class="step-badge font-mono">W2</span>
-                            <div><strong>Deal Criteria &amp; Playbook Design:</strong> Define objective stage-exit criteria, discovery questions, and buyer verifiable outcomes.</div>
+                            <div><strong>Playbook &amp; Deal Criteria Design:</strong> Define objective buyer-verifiable exit criteria, discovery frameworks, and MEDDPICC scorecards.</div>
                         </div>
                         <div class="step-row">
                             <span class="step-badge font-mono">W3</span>
-                            <div><strong>Tech Stack &amp; RevOps Specification:</strong> Audit tool integrations and write the exact CRM stage-gate specs for your internal RevOps team.</div>
+                            <div><strong>Internal RevOps &amp; AI Stack Blueprint:</strong> Specify CRM stage gates for your internal team, recommend AI tools, and configure initial Sales Bench Agents.</div>
                         </div>
                         <div class="step-row">
                             <span class="step-badge font-mono">W4</span>
-                            <div><strong>Channel &amp; 90–120 Day Roadmap:</strong> Deliver your complete Playbook, Partner Channel matrix, and 90–120 day implementation plan.</div>
+                            <div><strong>Channel Strategy &amp; 90–120 Day Plan:</strong> Deliver your complete Playbook, Partner Ecosystem map, and 90–120 day rollout plan.</div>
                         </div>
                     </div>
 
                     <div class="sprint-card">
                         <span class="pillar-num font-mono" style="background:#f1f5f9; color:#334155; border-color:#cbd5e1;">Phase 02 // Days 31–120</span>
-                        <h3 style="font-size: 23px; font-weight: 900; color: var(--text-ink); margin-bottom: 10px;">90–120 Day Rollout &amp; Channel Execution</h3>
-                        <p style="font-size: 15px; color: var(--text-body); margin-bottom: 20px;">Hands-on operational execution—embedding the playbook into weekly deal reviews, guiding your internal RevOps build, and launching partner co-selling.</p>
+                        <h3 style="font-size: 22px; font-weight: 900; color: var(--text-ink); margin-bottom: 10px;">90–120 Day Execution, Agent Rollout &amp; Channel Launch</h3>
+                        <p style="font-size: 15px; color: var(--text-body); margin-bottom: 20px;">Hands-on execution—operationalizing the playbook with your internal RevOps team, deploying AI agents, and launching partner co-selling.</p>
                         <div class="step-row">
                             <span class="step-badge font-mono">01</span>
-                            <div><strong>Internal RevOps Implementation:</strong> Partner directly with your CRM admins as they configure stage gates, scoring, and tool integrations.</div>
+                            <div><strong>CRM &amp; AI Agent Operationalization:</strong> Guide your internal RevOps team on CRM stage gates while activating our Deal Scoring &amp; Inspection Agents.</div>
                         </div>
                         <div class="step-row">
                             <span class="step-badge font-mono">02</span>
-                            <div><strong>Playbook Coaching &amp; Deal Inspection:</strong> Run weekly executive deal inspections and Mutual Action Plan reviews to lock in forecast accuracy.</div>
+                            <div><strong>Deal Rigor &amp; Forecast Governance:</strong> Run weekly deal inspections and Mutual Action Plan reviews to lock in predictable quarterly forecasts.</div>
                         </div>
                         <div class="step-row">
                             <span class="step-badge font-mono">03</span>
-                            <div><strong>Partner Ecosystem Launch:</strong> Recruit, onboard, and run initial account-mapping sessions with regional SIs, boutique firms, and ISVs.</div>
+                            <div><strong>Partner &amp; Channel Activation:</strong> Launch co-selling playbooks and account mapping with regional SIs, boutique consultancies, and tech ISVs.</div>
                         </div>
                         <div class="step-row">
                             <span class="step-badge font-mono">04</span>
-                            <div><strong>Executive Handover &amp; Telemetry:</strong> Transition a self-sustaining, predictable commercial engine to your leadership team.</div>
+                            <div><strong>Charter Partner Product Co-Design:</strong> Tailor ongoing Sales Bench agent workflows directly around your team's feedback and roadmap needs.</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 8. ABOUT THE SALES BENCH & SCOTT CARPENTIER BIO -->
-        <section id="about" class="section-pad section-canvas">
+        <!-- 9. ABOUT THE SALES BENCH & SCOTT CARPENTIER BIO -->
+        <section id="about" class="section-pad section-white">
             <div class="container">
                 <div class="about-card">
                     <div class="about-grid">
                         <div>
                             <span class="section-tag font-mono">About The Sales Bench</span>
-                            <h2 style="font-size: 30px; font-weight: 900; color: var(--text-ink); line-height: 1.18; margin-bottom: 16px;">
-                                Built by a Commercial Operator Who Has Scaled the Engine Firsthand.
+                            <h2 style="font-size: 29px; font-weight: 900; color: var(--text-ink); line-height: 1.18; margin-bottom: 16px;">
+                                Senior Commercial Leadership Meets AI-Native Execution.
                             </h2>
                             <p style="font-size: 15.5px; color: var(--text-body); margin-bottom: 16px;">
-                                <strong>The Sales Bench</strong> was founded to solve a recurring failure in B2B software: companies hire expensive reps or sign channel partners without a codified sales playbook or objective deal criteria—resulting in stalled pipelines and missed board forecasts.
+                                <strong>The Sales Bench</strong> was created to bridge the gap between high-level sales strategy and daily deal execution. Too many B2B software companies are handed static consulting decks that never make it into their CRM—or buy AI tools without a disciplined sales playbook underneath.
                             </p>
-                            <p style="font-size: 15.5px; color: var(--text-body); margin-bottom: 16px;">
-                                Instead of delivering theoretical slide decks or acting as outsourced CRM data-entry clerks, we install a proven <strong>Playbook &amp; Deal Qualification System</strong>. We work side-by-side with your leadership and your internal RevOps team to define how deals are qualified, how stages are governed in your CRM, and how channel partners co-sell your solution.
+                            <p style="font-size: 15.5px; color: var(--text-body);">
+                                We combine battle-tested enterprise playbook design with modern AI agents. By working directly with your leadership and internal RevOps team—and giving our consulting clients a direct voice in our product roadmap—we turn your sales process into a predictable, scalable asset.
                             </p>
                         </div>
 
@@ -1729,15 +1875,15 @@
                                 </div>
                             </div>
                             <p style="font-size: 14.5px; color: var(--text-body); margin-bottom: 12px; line-height: 1.6;">
-                                Scott Carpentier brings over two decades of enterprise software leadership across North America—spanning formative years inside <strong>SAP</strong>, scaling a private-equity-backed software provider past <strong>$60M in revenue</strong>, and serving as Country Manager &amp; Geo VP at <strong>BlackLine (NASDAQ: BL)</strong>, where he scaled regional ARR <strong>12X from $2.5M to $30M</strong>.
+                                Scott Carpentier brings more than two decades of enterprise software leadership across North America—including formative years inside <strong>SAP</strong>, scaling a private-equity-backed software company past <strong>$60M in revenue</strong>, and serving as Country Manager &amp; Geo VP at <strong>BlackLine (NASDAQ: BL)</strong>, where he scaled regional ARR <strong>12X from $2.5M to $30M</strong>.
                             </p>
                             <p style="font-size: 14.5px; color: var(--text-body); line-height: 1.6;">
-                                By combining disciplined deal qualification playbooks with a multi-tier partner ecosystem strategy (achieving an <strong>85% partner attach rate</strong> across SIs, advisory consultancies, and technology alliances), Scott helps B2B software leaders turn unpredictable sales efforts into a repeatable revenue machine.
+                                Renowned for combining rigorous deal qualification playbooks with high-velocity partner ecosystems (achieving an <strong>85% partner attach rate</strong> across SIs, advisory consultancies, and tech alliances), Scott founded The Sales Bench to equip B2B software leaders with both the proven playbook and the AI-native tools to scale predictably.
                             </p>
                             <div class="cred-pills font-mono">
                                 <span class="cred-pill">$2.5M ➔ $30M ARR Scale</span>
                                 <span class="cred-pill">85% Partner Attach</span>
-                                <span class="cred-pill">Deal Playbook Architect</span>
+                                <span class="cred-pill">AI-Native GTM Architect</span>
                                 <span class="cred-pill">US &amp; Canada Expansion</span>
                             </div>
                         </div>
@@ -1746,13 +1892,13 @@
             </div>
         </section>
 
-        <!-- 9. INTERACTIVE 4-QUESTION DIAGNOSTIC -->
-        <section id="diagnostic" class="section-pad section-white">
+        <!-- 10. INTERACTIVE 4-QUESTION DIAGNOSTIC -->
+        <section id="diagnostic" class="section-pad section-canvas">
             <div class="container-narrow">
                 <div class="section-header">
-                    <span class="section-tag font-mono">Interactive GTM Diagnostic</span>
-                    <h2 class="section-title">Diagnose Your Primary Revenue Bottleneck</h2>
-                    <p class="section-desc">Answer 4 quick questions to generate a tailored 4-Week Sprint &amp; Playbook recommendation.</p>
+                    <span class="section-tag font-mono">Interactive GTM &amp; AI Diagnostic</span>
+                    <h2 class="section-title">Assess Your Playbook &amp; AI Readiness in 60 Seconds</h2>
+                    <p class="section-desc">Answer 4 quick questions to generate a tailored 4-Week Sprint &amp; AI Agent recommendation.</p>
                 </div>
 
                 <div class="diagnostic-card">
@@ -1766,46 +1912,46 @@
 
                     <!-- Step 1 -->
                     <div id="diag-step-1" class="diag-step">
-                        <div class="diag-question">1. What is the #1 commercial challenge you want to solve in the next 90 days?</div>
+                        <div class="diag-question">1. What is the #1 outcome you want to achieve in the next 90 days?</div>
                         <div class="diag-options">
                             <button type="button" class="diag-btn" data-step="1" data-val="process">
-                                <div class="diag-btn-title">Build a Playbook &amp; Fix Deal Slippage</div>
-                                <div class="diag-btn-sub">Define clear deal criteria, improve forecast accuracy, and stop deals from stalling.</div>
+                                <div class="diag-btn-title">Build a Playbook &amp; Enforce Deal Criteria</div>
+                                <div class="diag-btn-sub">Eliminate deal slippage, standardize discovery, and make forecasts predictable.</div>
+                            </button>
+                            <button type="button" class="diag-btn" data-step="1" data-val="ai">
+                                <div class="diag-btn-title">Deploy AI Tools &amp; Autonomous Deal Agents</div>
+                                <div class="diag-btn-sub">Leverage our existing CRM, add high-ROI AI tools, or use Sales Bench Agents to do the work.</div>
                             </button>
                             <button type="button" class="diag-btn" data-step="1" data-val="channel">
-                                <div class="diag-btn-title">Build Channel &amp; Partner Distribution</div>
-                                <div class="diag-btn-sub">Create co-selling alliances with regional SIs, boutique consultancies, and tech ISVs.</div>
+                                <div class="diag-btn-title">Launch Channel &amp; Partner Co-Selling</div>
+                                <div class="diag-btn-sub">Build active distribution across regional SIs, boutique consultancies, and tech ISVs.</div>
                             </button>
                             <button type="button" class="diag-btn" data-step="1" data-val="expansion">
-                                <div class="diag-btn-title">Enter or Expand in North America</div>
-                                <div class="diag-btn-sub">Validate US or Canadian enterprise demand before hiring expensive local reps.</div>
-                            </button>
-                            <button type="button" class="diag-btn" data-step="1" data-val="revops">
-                                <div class="diag-btn-title">Align CRM Stage Gates &amp; Tech Stack</div>
-                                <div class="diag-btn-sub">Give our internal RevOps team a clear blueprint for CRM stages and tool integrations.</div>
+                                <div class="diag-btn-title">Expand Into North America (US / Canada)</div>
+                                <div class="diag-btn-sub">Validate buyer appetite and localize our playbook before hiring expensive local reps.</div>
                             </button>
                         </div>
                     </div>
 
                     <!-- Step 2 -->
                     <div id="diag-step-2" class="diag-step hidden">
-                        <div class="diag-question">2. How are deal qualification criteria currently enforced in your CRM?</div>
+                        <div class="diag-question">2. How are your CRM and AI tools currently supporting deal execution?</div>
                         <div class="diag-options">
                             <button type="button" class="diag-btn" data-step="2" data-val="gut">
-                                <div class="diag-btn-title">Mostly Rep Gut-Feel</div>
-                                <div class="diag-btn-sub">Reps move deal stages manually based on optimism rather than verifiable buyer actions.</div>
+                                <div class="diag-btn-title">Mostly Manual &amp; Rep Gut-Feel</div>
+                                <div class="diag-btn-sub">Deal stages move based on rep optimism without automated criteria scoring.</div>
                             </button>
                             <button type="button" class="diag-btn" data-step="2" data-val="static">
-                                <div class="diag-btn-title">Static Playbook Not Tied to CRM</div>
-                                <div class="diag-btn-sub">We have a sales deck or doc, but our internal RevOps hasn't operationalized it in CRM.</div>
+                                <div class="diag-btn-title">We Have Tools, But No Unified Playbook</div>
+                                <div class="diag-btn-sub">Our internal RevOps has a CRM setup, but our playbook isn't enforced in stage gates.</div>
                             </button>
-                            <button type="button" class="diag-btn" data-step="2" data-val="partial">
-                                <div class="diag-btn-title">Basic Stages, Needs Rigor</div>
-                                <div class="diag-btn-sub">We use HubSpot/Salesforce stages, but need strict exit criteria and tool alignment.</div>
+                            <button type="button" class="diag-btn" data-step="2" data-val="agent">
+                                <div class="diag-btn-title">Looking to Add AI Agents Without Headcount</div>
+                                <div class="diag-btn-sub">We want AI agents to inspect deals, score criteria, and reduce manual admin work.</div>
                             </button>
                             <button type="button" class="diag-btn" data-step="2" data-val="new">
-                                <div class="diag-btn-title">Building for a New Market / Channel</div>
-                                <div class="diag-btn-sub">We need a dedicated playbook for partner co-selling or North American enterprise deals.</div>
+                                <div class="diag-btn-title">Designing for a New Channel or Market</div>
+                                <div class="diag-btn-sub">We need a dedicated playbook and CRM workflow for partners or North America.</div>
                             </button>
                         </div>
                     </div>
@@ -1816,34 +1962,34 @@
                         <div class="diag-options">
                             <button type="button" class="diag-btn" data-step="3" data-val="1to5">
                                 <div class="diag-btn-title">$1M – $5M ARR</div>
-                                <div class="diag-btn-sub">Transitioning from founder-led sales to a repeatable playbook.</div>
+                                <div class="diag-btn-sub">Moving from founder-led sales to a repeatable playbook and AI-enabled workflow.</div>
                             </button>
                             <button type="button" class="diag-btn" data-step="3" data-val="5to15">
                                 <div class="diag-btn-title">$5M – $15M ARR</div>
-                                <div class="diag-btn-sub">Scaling the sales team, adding deal rigor, and launching partner channels.</div>
+                                <div class="diag-btn-sub">Scaling the sales team, enforcing deal criteria, and launching partner channels.</div>
                             </button>
                             <button type="button" class="diag-btn" data-step="3" data-val="15to30">
                                 <div class="diag-btn-title">$15M – $30M+ ARR</div>
-                                <div class="diag-btn-sub">Optimizing enterprise forecast predictability, ecosystems, and cross-border growth.</div>
+                                <div class="diag-btn-sub">Optimizing enterprise forecast predictability, ecosystems, and cross-border scale.</div>
                             </button>
                             <button type="button" class="diag-btn" data-step="3" data-val="pe">
-                                <div class="diag-btn-title">VC / PE Portfolio Operator</div>
-                                <div class="diag-btn-sub">Evaluating commercial playbook maturity across portfolio companies.</div>
+                                <div class="diag-btn-title">VC / PE Operating Partner</div>
+                                <div class="diag-btn-sub">Evaluating AI-native GTM playbooks across portfolio companies.</div>
                             </button>
                         </div>
                     </div>
 
                     <!-- Step 4 -->
                     <div id="diag-step-4" class="diag-step hidden">
-                        <div class="diag-question">4. What is your preferred starting timeline?</div>
+                        <div class="diag-question">4. Would you like Charter Design Partner input into our AI product roadmap?</div>
                         <div class="diag-options">
-                            <button type="button" class="diag-btn" data-step="4" data-val="immediate">
-                                <div class="diag-btn-title">Start With a 4-Week Sprint Immediately</div>
-                                <div class="diag-btn-sub">We want actionable clarity on our playbook and deal process this quarter.</div>
+                            <button type="button" class="diag-btn" data-step="4" data-val="charter">
+                                <div class="diag-btn-title">Yes—We Want Consulting + Direct Product Voice</div>
+                                <div class="diag-btn-sub">Solve our GTM bottlenecks now while shaping the AI agents built for our workflow.</div>
                             </button>
-                            <button type="button" class="diag-btn" data-step="4" data-val="nextq">
-                                <div class="diag-btn-title">Planning for Next Quarter</div>
-                                <div class="diag-btn-sub">Preparing for an upcoming board cycle, channel launch, or market entry.</div>
+                            <button type="button" class="diag-btn" data-step="4" data-val="sprint">
+                                <div class="diag-btn-title">Start With the 4-Week Consulting Sprint First</div>
+                                <div class="diag-btn-sub">Focus on our playbook, deal criteria, and RevOps alignment first, then evaluate agents.</div>
                             </button>
                         </div>
                     </div>
@@ -1853,7 +1999,7 @@
                         <span class="section-tag font-mono" id="res-badge">// Recommended Sprint</span>
                         <h3 id="res-title" style="font-size: 22px; font-weight: 900; margin-bottom: 10px;"></h3>
                         <p id="res-summary" style="font-size: 15px; color: var(--text-body); margin-bottom: 18px;"></p>
-                        <button type="button" id="diag-reset" class="btn-secondary" style="padding: 10px 18px; font-size: 13px;">↺ Retake Diagnostic</button>
+                        <button type="button" id="diag-reset" class="btn-pillar" style="display: inline-block; width: auto; padding: 10px 18px; font-size: 13px;">↺ Retake Diagnostic</button>
                     </div>
                 </div>
             </div>
@@ -1865,28 +2011,28 @@
                 <div class="modal-header">
                     <div style="display: flex; align-items: center; gap: 8px;">
                         <span class="pulsing-dot"></span>
-                        <span class="font-mono" style="font-size: 13px; font-weight: 800; text-transform: uppercase;">Custom Sprint Recommendation Ready</span>
+                        <span class="font-mono" style="font-size: 13px; font-weight: 800; text-transform: uppercase;">Tailored Sprint &amp; AI Agent Blueprint Ready</span>
                     </div>
                     <button type="button" id="diag-modal-close" style="background: none; border: none; color: #cbd5e1; font-size: 15px; font-weight: 700; cursor: pointer;">✕ Close</button>
                 </div>
                 <div class="modal-body">
                     <div style="background: #ffffff; border: 2px solid var(--emerald-500); border-radius: 14px; padding: 24px;">
-                        <span class="section-tag font-mono" id="modal-res-badge">// Sprint Blueprint</span>
+                        <span class="section-tag font-mono" id="modal-res-badge">// Recommended Architecture</span>
                         <h3 id="modal-res-title" style="font-size: 21px; font-weight: 900; color: var(--text-ink); margin: 8px 0;"></h3>
                         <p id="modal-res-summary" style="font-size: 14.5px; color: var(--text-body); margin-bottom: 16px;"></p>
                         <div class="deliverables-box" style="margin-bottom: 14px;">
                             <div class="deliverables-title font-mono">4-Week Sprint Deliverables:</div>
                             <ul id="modal-res-actions" class="deliverables-list"></ul>
                         </div>
-                        <div class="deliverables-box" style="background: var(--emerald-light); border-color: var(--emerald-border); margin-bottom: 0;">
-                            <div class="deliverables-title font-mono" style="color: var(--emerald-700);">90–120 Day Execution Outcomes:</div>
+                        <div class="deliverables-box" style="background: var(--emerald-tint); border-color: var(--emerald-border); margin-bottom: 0;">
+                            <div class="deliverables-title font-mono" style="color: var(--emerald-700);">90–120 Day + Charter Partner Outcomes:</div>
                             <ul id="modal-res-outcomes" class="deliverables-list"></ul>
                         </div>
                     </div>
                     <div style="background: #ffffff; border: 2px solid var(--border-strong); border-radius: 14px; padding: 24px;">
                         <div class="font-mono" style="font-size: 11.5px; font-weight: 800; color: var(--emerald-700); text-transform: uppercase;">// Schedule 15-Minute Walkthrough</div>
-                        <h4 style="font-size: 19px; font-weight: 900; color: var(--text-ink); margin: 6px 0 10px;">Review Your Playbook &amp; Sprint Plan</h4>
-                        <p style="font-size: 13.5px; color: var(--text-body); margin-bottom: 16px;">Submit the form below to schedule a 15-minute review of your diagnostic and discuss how a 4-week sprint applies to your team.</p>
+                        <h4 style="font-size: 19px; font-weight: 900; color: var(--text-ink); margin: 6px 0 10px;">Review Your Blueprint With Scott</h4>
+                        <p style="font-size: 13.5px; color: var(--text-body); margin-bottom: 16px;">Submit the form below to review your diagnostic, discuss a 4-week sprint, and explore Charter Design Partner benefits.</p>
                         <script src="https://js-na3.hsforms.net/forms/embed/342958738.js" defer></script>
                         <div class="hs-form-frame" data-region="na3" data-form-id="de5aa2ee-c4fc-4f04-8b6b-563c3bfb9fa3" data-portal-id="342958738"></div>
                     </div>
@@ -1894,15 +2040,15 @@
             </div>
         </div>
 
-        <!-- 10. SPLIT-PANE LEAD GENERATION (CONTACT FORM ONLY) -->
-        <section id="book" class="section-pad section-canvas">
+        <!-- 11. SPLIT-PANE LEAD GENERATION (CONTACT FORM ONLY) -->
+        <section id="book" class="section-pad section-white">
             <div class="container">
                 <div class="split-grid">
                     <div>
                         <span class="section-tag font-mono">Start the Conversation</span>
-                        <h2 class="section-title">Schedule a 15-Minute GTM &amp; Playbook Review</h2>
+                        <h2 class="section-title">Schedule a 15-Minute GTM &amp; AI Architecture Review</h2>
                         <p class="section-desc">
-                            Speak directly with Scott Carpentier. We will review your current deal process, discuss how to define objective stage criteria with your internal RevOps team, and determine if a <strong>4-Week Commercial Sprint</strong> fits your goals.
+                            Speak directly with Scott Carpentier. We will evaluate your current deal process, review how to align your internal RevOps and AI tool stack, and explore how our <strong>4-Week Sprint &amp; Charter Partner Program</strong> can accelerate your revenue goals.
                         </p>
 
                         <div class="takeaway-card">
@@ -1911,30 +2057,30 @@
                             </div>
                             <div class="takeaway-item">
                                 <span class="takeaway-check">✓</span>
-                                <div><strong>Playbook &amp; Deal Criteria Audit:</strong> Pinpoint where deals are stalling between discovery, evaluation, and close.</div>
+                                <div><strong>Playbook &amp; Deal Criteria Audit:</strong> Pinpoint where deals stall and how objective stage-exit criteria will stabilize your forecast.</div>
                             </div>
                             <div class="takeaway-item">
                                 <span class="takeaway-check">✓</span>
-                                <div><strong>Internal RevOps &amp; CRM Alignment:</strong> Identify the stage gates and tool integrations your internal team should prioritize next.</div>
+                                <div><strong>AI Stack &amp; Agent Assessment:</strong> Determine what your internal RevOps can configure, what AI tools to add, and where our AI Agents can do the work.</div>
                             </div>
                             <div class="takeaway-item">
                                 <span class="takeaway-check">✓</span>
-                                <div><strong>Channel &amp; Expansion Feasibility:</strong> Evaluate partner co-selling (SIs, boutique consultancies, ISVs) and North American expansion readiness.</div>
+                                <div><strong>Channel &amp; Charter Partner Fit:</strong> Assess multi-tier partner channels (SIs, boutique firms, ISVs) and how you can shape our product roadmap.</div>
                             </div>
                         </div>
 
                         <p style="font-size: 13.5px; color: var(--text-muted);">
-                            Use the inquiry form to connect directly and request a time.
+                            Complete the inquiry form to connect directly with our team.
                         </p>
                     </div>
 
                     <div class="booking-white-card">
-                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-light); padding-bottom: 14px; margin-bottom: 18px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 14px; margin-bottom: 18px;">
                             <div>
                                 <div class="font-mono" style="font-size: 11.5px; font-weight: 800; color: var(--emerald-600); text-transform: uppercase;">// Direct Inquiry Form</div>
                                 <h3 style="font-size: 20px; font-weight: 900; color: var(--text-ink); margin-top: 2px;">Request Your 15-Minute Review</h3>
                             </div>
-                            <span class="section-tag font-mono" style="margin: 0;">No Obligation</span>
+                            <span class="section-tag font-mono" style="margin: 0;">Charter Slots Open</span>
                         </div>
                         <div class="hs-form-frame" data-region="na3" data-form-id="de5aa2ee-c4fc-4f04-8b6b-563c3bfb9fa3" data-portal-id="342958738"></div>
                         <div class="font-mono" style="margin-top: 16px; font-size: 12px; color: var(--text-muted); display: flex; justify-content: space-between;">
@@ -1947,14 +2093,15 @@
         </section>
     </main>
 
-    <!-- 11. FOOTER -->
+    <!-- 12. FOOTER -->
     <footer>
         <div class="container footer-inner font-mono">
             <div>© 2026 The Sales Bench. All Rights Reserved. Toronto, Ontario, Canada.</div>
             <div class="footer-links">
-                <a href="#playbook-engine">Playbook System</a>
+                <a href="#ai-model">AI-Native Model</a>
+                <a href="#playbook-engine">Deal Agents</a>
+                <a href="#design-partner">Charter Program</a>
                 <a href="#services">Practice Areas</a>
-                <a href="#framework">4-Week Sprint</a>
                 <a href="#about">About</a>
                 <a href="#book">Contact</a>
             </div>
@@ -1964,7 +2111,7 @@
     <!-- INTERACTIVE SCRIPTS: STAGE ENGINE + DIAGNOSTIC MODAL -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // 1. Interactive Playbook & Deal Criteria Stage Switcher
+            // 1. Interactive Playbook, Deal Criteria & AI Agent Stage Switcher
             var stageBtns = document.querySelectorAll('.stage-tab-btn');
             var stagePanels = document.querySelectorAll('.stage-panel');
 
@@ -1983,13 +2130,13 @@
                 });
             }
 
-            // 2. Interactive 4-Question GTM Diagnostic
+            // 2. Interactive 4-Question GTM & AI Diagnostic
             var answers = { step1: null, step2: null, step3: null, step4: null };
             var stepLabels = {
                 1: { title: 'QUESTION 1 OF 4 // PRIMARY OBJECTIVE', pct: '25%' },
-                2: { title: 'QUESTION 2 OF 4 // DEAL CRITERIA & CRM', pct: '50%' },
+                2: { title: 'QUESTION 2 OF 4 // CRM & AI STACK', pct: '50%' },
                 3: { title: 'QUESTION 3 OF 4 // ARR SCALE', pct: '75%' },
-                4: { title: 'QUESTION 4 OF 4 // TIMELINE', pct: '95%' }
+                4: { title: 'QUESTION 4 OF 4 // CHARTER CO-BUILD FIT', pct: '95%' }
             };
 
             var indicatorEl = document.getElementById('diag-step-indicator');
@@ -2012,63 +2159,63 @@
 
             var recommendations = {
                 process: {
-                    badge: '// Playbook & Deal Criteria Sprint',
-                    title: '4-Week Playbook & Deal Process Architecture Sprint',
-                    summary: 'Designed for teams experiencing deal slippage or forecast variance. We codify your custom sales playbook, establish objective stage-exit criteria, and provide your internal RevOps team with exact CRM gate specifications.',
+                    badge: '// Playbook, Deal Criteria & AI Agent Sprint',
+                    title: '4-Week Playbook & Deal Criteria Architecture Sprint',
+                    summary: 'We codify your custom sales playbook, establish objective stage-exit criteria for your internal RevOps team, and deploy our Deal Scoring Agents to eliminate forecast slippage.',
                     actions: [
-                        '✓ Audit pipeline stage conversion and identify where deals stall',
-                        '✓ Build your custom Sales Playbook & MEDDPICC deal scoring criteria',
-                        '✓ Deliver CRM stage-gate blueprint for your internal RevOps team'
+                        '✓ Audit pipeline stage conversion and define buyer-verifiable deal criteria',
+                        '✓ Deliver CRM stage-gate specifications for your internal RevOps team',
+                        '✓ Configure Sales Bench Deal Scoring & Playbook Inspection Agents'
                     ],
                     outcomes: [
                         '✓ Predictable quarterly forecasting (<5% variance)',
-                        '✓ Standardized Mutual Action Plans across all enterprise deals',
-                        '✓ Higher win rates and compressed sales cycles'
+                        '✓ Direct Charter Partner voice in custom AI agent workflows',
+                        '✓ Higher win rates and compressed enterprise sales cycles'
+                    ]
+                },
+                ai: {
+                    badge: '// AI-Native GTM Stack & Autonomous Agent Sprint',
+                    title: '4-Week AI Stack Optimization & Agent Deployment Sprint',
+                    summary: 'We leverage your existing CRM, recommend high-ROI third-party AI tools where needed, and deploy our own autonomous agents to execute deal inspection and account intelligence.',
+                    actions: [
+                        '✓ Audit current CRM workflows and sales tech stack utilization',
+                        '✓ Recommend best-in-class AI tools and oversee internal RevOps integration',
+                        '✓ Deploy Sales Bench Autonomous Agents for deal scoring & call inspection'
+                    ],
+                    outcomes: [
+                        '✓ Automated deal qualification and MEDDPICC compliance without extra headcount',
+                        '✓ Direct influence over the next AI agents built on our product roadmap',
+                        '✓ More rep selling time and objective board-level pipeline telemetry'
                     ]
                 },
                 channel: {
-                    badge: '// Partner & Channel Alliances Sprint',
-                    title: '4-Week Channel Ecosystem & Co-Sell Architecture Sprint',
-                    summary: 'Designed to build scalable indirect distribution across regional Systems Integrators, boutique consultancies, and tech ISVs—not just the Big Four.',
+                    badge: '// Partner Ecosystem & Co-Sell Architecture Sprint',
+                    title: '4-Week Multi-Tier Channel & Partner Co-Sell Sprint',
+                    summary: 'Build scalable indirect distribution across regional SIs, boutique consultancies, and tech ISVs—backed by partner playbooks and AI account-mapping agents.',
                     actions: [
-                        '✓ Identify highest-leverage SI, boutique advisory, and ISV partners',
-                        '✓ Craft joint value propositions and partner co-selling playbooks',
-                        '✓ Define deal registration rules, referral margins, and CRM tracking'
+                        '✓ Identify high-attach regional SIs, boutique consultancies, and ISVs',
+                        '✓ Build partner co-selling playbooks, deal registration, and CRM workflows',
+                        '✓ Deploy Partner Match Agents to surface high-probability co-sell accounts'
                     ],
                     outcomes: [
                         '✓ Active partner-sourced and co-sold enterprise pipeline',
                         '✓ 2.4x faster deal velocity on partner-attached opportunities',
-                        '✓ Repeatable partner onboarding and account-mapping cadence'
+                        '✓ Charter Partner input on our ecosystem co-selling product modules'
                     ]
                 },
                 expansion: {
-                    badge: '// North American Expansion Sprint',
+                    badge: '// North American Market Entry Sprint',
                     title: '4-Week US & Canada Market Validation Sprint',
-                    summary: 'De-risk your North American expansion before committing $250k+ to full-time local hires. We validate buyer appetite, localize your playbook, and navigate US/Canadian procurement.',
+                    summary: 'De-risk your North American expansion before committing $250k+ to full-time local hires. We validate buyer appetite, localize your playbook, and activate regional partners.',
                     actions: [
                         '✓ Conduct live discovery interviews with North American enterprise buyers',
-                        '✓ Localize your sales playbook, USD/CAD pricing, and enterprise terms',
-                        '✓ Map regional channel partners and EOR hiring readiness'
+                        '✓ Localize your sales playbook, USD/CAD pricing, and procurement terms',
+                        '✓ Use AI ICP Agents to map target accounts and regional channel partners'
                     ],
                     outcomes: [
-                        '✓ Validated North American ICP and repeatable local sales playbook',
+                        '✓ Validated North American ICP and turnkey local sales playbook',
                         '✓ Avoided $250k+ in premature executive hiring mistakes',
-                        '✓ Turnkey onboarding package for your first local sellers'
-                    ]
-                },
-                revops: {
-                    badge: '// RevOps & Tech Stack Alignment Sprint',
-                    title: '4-Week RevOps & CRM Stage Governance Sprint',
-                    summary: 'We architect the commercial system and work side-by-side with your internal RevOps team to configure stage gates and high-ROI tool integrations inside your CRM.',
-                    actions: [
-                        '✓ Audit current CRM stages, fields, and sales tech stack utilization',
-                        '✓ Specify mandatory buyer-verifiable exit criteria for every stage',
-                        '✓ Recommend high-leverage tool integrations to eliminate rep friction'
-                    ],
-                    outcomes: [
-                        '✓ Clean, objective pipeline visibility for the CEO and Board',
-                        '✓ Seamless execution by your internal RevOps team without agency bloat',
-                        '✓ Higher rep selling time and automated deal health scoring'
+                        '✓ Charter Partner access to our cross-border GTM platform'
                     ]
                 }
             };
@@ -2086,7 +2233,7 @@
                         var recKey = answers.step1 || 'process';
                         var rec = recommendations[recKey] || recommendations.process;
 
-                        indicatorEl.textContent = 'DIAGNOSTIC COMPLETE // TAILORED SPRINT BLUEPRINT';
+                        indicatorEl.textContent = 'DIAGNOSTIC COMPLETE // TAILORED SPRINT & AGENT BLUEPRINT';
                         pctEl.textContent = '100% Complete';
                         barEl.style.width = '100%';
 
