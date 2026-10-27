@@ -1,6 +1,6 @@
 # The Sales Bench — Project Status & System Documentation
 
-**Document Version:** 1.0.0  
+**Document Version:** 2.0.0  
 **Last Updated:** October 27, 2026  
 **Founder & Managing Principal:** Scott Carpentier  
 **Public Repository:** [https://github.com/ScottRepository/thesalesbench-website](https://github.com/ScottRepository/thesalesbench-website)  
@@ -11,84 +11,74 @@
 ## 1. Project Overview & Tech Stack
 
 ### 1.1 Strategic Mission & Positioning
-**The Sales Bench** has evolved from traditional sales advisory and custom development into an authoritative **Enterprise Revenue Architecture & Deal Governance** practice. 
+**The Sales Bench** is an **Enterprise Revenue Architecture & Deal Governance** practice. 
 
-The firm serves high-growth B2B SaaS companies by installing standardized, autonomous MEDDPICC deal-governance workflows and post-call CRM intelligence directly inside the client's existing technology stack.
+The firm serves high-growth B2B SaaS companies by installing autonomous MEDDPICC deal-governance workflows, instant post-call CRM intelligence, and collaborative digital deal rooms directly inside the client's existing technology stack.
 
 * **Ideal Customer Profile (ICP):**
   * **Revenue Scale:** $5M to $30M Annual Recurring Revenue (ARR).
-  * **Average Contract Value (ACV):** $30,000 to $150,000+ (complex, multi-stakeholder enterprise deals).
+  * **Average Contract Value (ACV):** $30,000 to $150,000+ (complex enterprise deals).
   * **Sales Team Size:** 5 to 20 quota-carrying Account Executives (AEs).
   * **Target Executive Personas:** Chief Revenue Officer (CRO), VP of Sales, Founder/CEO, Head of RevOps.
 * **Core Economic Value Proposition:**
-  * **Stop Deal Slippage:** Eliminate late-stage pipeline slippage where 25%–35% of forecast commitments roll over; rescuing a single $50k ACV deal delivers a 3x+ ROI on annual governance fees.
+  * **Stop Deal Slippage:** Eliminate late-stage pipeline slippage where 25%–35% of forecast commitments roll over; rescuing a single $50k ACV deal delivers 3x+ ROI on annual governance fees.
   * **Recover Selling Capacity:** Automate 45–60 minutes of daily administrative CRM drag per rep. Across a 10-AE team, this recovers **40 hours/week**—the equivalent of **1 full-time quota-carrying AE ($120k–$160k annual value)** at zero added headcount.
   * **Zero InfoSec & Procurement Friction (BYOK Model):** "Bring Your Own Key" architecture deploys inside the client's existing CRM perimeter (HubSpot / Salesforce) and AI tenants (OpenAI / Azure / Anthropic). Zero customer PII or raw deal data is stored on third-party servers, bypassing 3–6 month SOC 2 vendor reviews.
   * **Operational Division of Labor:** *"We own the brain; you own the plumbing."* The Sales Bench delivers battle-tested governance logic, MEDDPICC audit engines, and executive inspection protocols, while the client's RevOps team maintains core CRM schema.
 
 ---
 
-### 1.2 Technology Stack & Architecture
+### 1.2 Technology Stack & UI Architecture
 
-| Layer | Technology / Implementation | Strategic Advantage |
+| Layer | Implementation | Strategic Advantage |
 | :--- | :--- | :--- |
-| **Hosting & Deployment** | GitHub Pages (`origin/main`) | 99.99% uptime, zero hosting overhead, SSL automated, edge CDN delivery. |
-| **Front-End Architecture** | Single-File Self-Contained (`index.html`) | Zero external CSS dependencies, immune to CDN downtime, instantaneous page loads, zero build-step fragility. |
-| **Design System** | Scalematters × Leanscale High-Contrast Enterprise Theme | Technical obsidian (`#070b14`), carbon slate (`#0f172a`), emerald accents (`#10b981`), electric cyan (`#06b6d4`), and clean canvas (`#f8fafc`). |
-| **Interactive Logic** | Native Vanilla JavaScript (ES6+) | Tabbed sprint engine, live benchmark diagnostic calculator, dynamic scorecard modal generator. |
+| **Hosting & Deployment** | GitHub Pages (`origin/main`) | 99.99% uptime, zero hosting cost, automated SSL, global edge delivery. |
+| **Front-End Architecture** | Single-File Self-Contained (`index.html`) | Zero external CSS dependencies, immune to CDN outage, instant page loads, strict CSP compliance. |
+| **Design System** | Executive Rich Charcoal & Gold Theme | Technical obsidian (`#0b0f19`), carbon slate (`#111827`), champagne gold (`#e5c07b`), cobalt blue (`#3b82f6`), and emerald accents (`#10b981`). Clean uppercase tracking replacing developer slashes. |
+| **Interactive Copilot Drawer** | Slide-Over Copilot Drawer (`#diagnostic-drawer`) | Offloads long inline diagnostic into a 480px slide-in panel with dynamic real-time leakage calculation ($X to $Y) and sticky bottom-right launcher pill. |
+| **Enterprise Pedigree Ticker** | Pure CSS Infinite Marquee (`@keyframes scroll`) | Dual-track infinite logo ticker (SAP, Microsoft, Oracle, Deloitte, PwC, EY, KPMG, ServiceNow) with edge gradient masks and hover pause. |
+| **Core Stack Integrations** | Monochromatic Vector Grid | High-res SVG vector representations of Salesforce, HubSpot, OpenAI, Anthropic, Google Cloud, and AWS. |
 | **Lead Capture & CRM** | HubSpot Forms API v2 (`portal: 342958738`, `form: de5aa2ee-c4fc-4f04-8b6b-563c3bfb9fa3`) | Enterprise lead routing, automated notification triggers, zero raw email exposure to scrapers. |
-| **Deployment Scripting** | Custom Bash CLI (`push.sh`) | Atomic sync from ChromeOS Linux workspace to local Downloads and remote GitHub repository. |
+| **Deployment Scripting** | Custom Bash CLI (`push.sh`) | Atomic sync from Linux workspace to Downloads mirror and GitHub remote. |
 
 ---
 
 ## 2. Completed Milestones & Configurations
 
-### 2.1 Strategic Architecture & Value Ladder
-We transformed the business model into a high-margin, scalable **3-Phase Commercial Value Ladder**:
+### 2.1 Refactored Topline Messaging & Outcome-First Hero
+* **Eyebrow:** `ENTERPRISE REVENUE ARCHITECTURE & DEAL GOVERNANCE · B2B SAAS ($5M–$30M ARR)`
+* **H1 Headline:** `Stop Late-Stage Deal Slippage. Turn 6-Figure Pipeline Into Predictable Closed-Won Revenue.`
+* **Sub-headline:** *"We install autonomous MEDDPICC deal gating, instant post-call follow-ups, and collaborative buyer rooms directly into your CRM. Compress sales cycles by 25% and de-risk new market expansion without adding headcount."*
+* **Primary Action:** `Run 2026 Pipeline Leakage Diagnostic →` (Opens Slide-Over Drawer).
+* **Secondary Action:** `Explore the 4-Week Installation Sprint` (Smooth scrolls to `#sprint`).
+* **Console UI:** High-contrast 4-layer technical stack architecture.
 
-```mermaid
-flowchart LR
-    A["Phase 01: Acquisition Hook<br/><b>2026 Deal Governance Index</b><br/>Closed-Door Benchmark & Scorecard"] --> B["Phase 02: Fixed-Scope Build<br/><b>4-Week Revenue Engine Sprint</b><br/>$20k–$25k Standardized Kit Install"]
-    B --> C["Phase 03: Deal Survival Retainer<br/><b>Executive Deal Governance</b><br/>$2,500/mo Radar, Forensic PDF & Reviews"]
-```
+### 2.2 The 4-Box Delivery Grid
+Positioned prominently under the Infinite Ticker, titled **HOW WE DELIVER PREDICTABLE REVENUE · INSTALLED IN YOUR STACK**:
+1. **Delivery Pillar 01 · Objective Deal Gating:** MEDDPICC transcript scanner that prevents "happy ears" stage advancement by verifying direct buyer quotes, metrics, and paper process evidence.
+2. **Delivery Pillar 02 · Capacity Recovery:** Post-Call CRM & Follow-Up Drafter that auto-populates CRM properties and drafts executive recaps, recovering 45–60 min/rep/day (1+ FTE per 10 AEs).
+3. **Delivery Pillar 03 · Procurement Defense:** Digital Deal Rooms & Mutual Action Plans (MAPs) giving internal champions the ROI models and security packs needed to close behind closed doors.
+4. **Delivery Pillar 04 · Expansion & Leadership De-risking:** Cross-border territory entry and VP of Sales onboarding accelerator. Cuts rep ramp time from 6 months to 60 days and provides an objective deal radar in the first 90 days.
 
-1. **Phase 01 // Acquisition Hook: The 2026 Enterprise Deal Governance & Pipeline Leakage Index**
-   * High-status peer benchmarking initiative for 15 qualifying B2B SaaS revenue leaders.
-   * Closed-door 20-minute diagnostic evaluating pipeline reality across 5 critical enterprise dimensions.
-   * Generates a confidential **1-Page Pipeline Leakage & Deal Governance Scorecard** identifying hidden revenue bleed.
-2. **Phase 02 // Fixed-Scope Build: The 4-Week "Enterprise Revenue Engine" Sprint ($20k–$25k Fixed Fee)**
-   * Rapid installation of the standardized **Revenue Infrastructure Kit** inside the client's CRM/AI perimeter:
-     * *Component 01:* MEDDPICC Rigor & Autonomous Audit Engine.
-     * *Component 02:* Post-Call CRM Synthesis & Action-Item Drafter.
-     * *Component 03:* Standardized Digital Deal Room & Mutual Action Plan (MAP) Template.
-     * *Component 04:* 3-Page RevOps Runbook + 14-Day Hypercare Window.
-3. **Phase 03 // Retained Deal Survival: The Executive Deal Governance Retainer ($2,500/Month Recurring)**
-   * **Weekly Autonomous Deal Health Radar:** Slack/Email slippage alerts flagging deals advancing without Economic Buyer access or verified Paper Process milestones.
-   * **Monthly 10-Page Revenue Leakage & Cohort Forensic Report (PDF):** In-depth audit of stage-duration creep, champion validation gaps, and forecasted vs. actual slippage.
-   * **Live 60-Minute Executive Strategic Deal Review (The Anti-Fluff Protocol):** Monthly closed-door inspection of the Top 5 enterprise opportunities with CRO and CEO, utilizing structured forensic challenge questions.
-   * **Weekly Automated API Heartbeat:** Automated monitoring ensuring webhook and AI prompt integrity.
+### 2.3 Slide-Over Copilot Drawer & Real-Time Leakage Calculator
+* **Floating Launcher Pill:** Sticky bottom-right floating badge: `⚡ Run 2026 Deal Slippage Diagnostic (2 Min)`.
+* **Slide-Over Panel (`#diagnostic-drawer`):** 480px width on desktop (100% on mobile), backdrop blur overlay, smooth cubic-bezier slide transition, ESC key & close button support.
+* **5-Step Interactive Sequence:**
+  1. Month-3 Forecast Slippage (<15%, 15%–25%, 25%–35%, >35%)
+  2. Average Contract Value (ACV) Tier ($30k–$50k, $50k–$100k, $100k–$150k+)
+  3. Quota-Carrying AE Team Size (5–9 AEs, 10–15 AEs, 16–25+ AEs)
+  4. Economic Buyer Direct Access (>75%, 50%–75%, <50%)
+  5. Stage-Gate Enforcement (Rep intuition, Static manual checkboxes, Automated AI stage-gate)
+* **Real-Time Dynamic Leakage Calculation:** Dynamically updates estimated annual revenue leakage (e.g. `$180,000 – $360,000`) and recoverable capacity (e.g. `1+ FTE (~$140k/yr)`) live as choices are made.
+* **Integrated Lead Capture:** Embeds the HubSpot Forms embed directly on step completion to claim the 1-Page Benchmark Scorecard.
 
----
+### 2.4 Enterprise Pedigree Ticker & Core Integrations
+* **Infinite Logo Ticker:** Continuous marquee featuring SAP, Microsoft, Oracle, Deloitte, PwC, EY, KPMG, and ServiceNow. Features edge gradient mask fade and pause-on-hover.
+* **Core Stack Integrations Grid:** Dedicated visual grid in BYOK section featuring clean vector logos for Salesforce, HubSpot, OpenAI, Anthropic, Google Cloud, and AWS.
 
-### 2.2 Website Sections Implemented
-
-The production website (`index.html`) contains **2,553 lines of clean, structured code** featuring:
-
-* **Enterprise Header & Sticky Navigation:** High-contrast logo lockup with navigation anchors to `#value-ladder`, `#sprint-engine`, `#governance-retainer`, `#byok-security`, `#services`, `#about`, and `#diagnostic`.
-* **Architectural Grid Hero Section:** High-authority headline, enterprise badge bar (`$5M–$30M ARR`, `$30k–$150k+ ACV`, `5–20 AEs`), CTA button to participate in the benchmark, and an interactive system console display.
-* **Economic Leverage Bar:** Highlights the 4 quantitative anchors: `25%–35% Slippage Eliminated`, `40 hrs/wk Recovered (1 FTE)`, `1 Saved Deal = 3x ROI`, and `0 Months InfoSec Delay`.
-* **3-Phase Value Ladder Section:** Visual roadmap breaking down the closed-door benchmark, the 4-week sprint, and the ongoing governance retainer.
-* **Interactive 4-Tab Revenue Infrastructure Engine:**
-  * *Tab 1: MEDDPICC Rigor Engine:* Inspects qualification criteria with automated red-flag alerts.
-  * *Tab 2: Post-Call CRM Drafter:* Translates raw customer conversations into CRM fields and mutual follow-up emails within 120 seconds.
-  * *Tab 3: Digital Deal Room & MAP:* External buyer-facing portal standardizing legal, security, and procurement steps.
-  * *Tab 4: 4-Week Sprint Schedule:* Weekly breakdown of Discovery, CRM Build, Logic Deployment, and Enablement/Hypercare.
-* **Executive Deal Governance & The Anti-Fluff Protocol Section:** Comprehensive breakdown of the Weekly Radar, Monthly 10-Page Forensic PDF, and the exact interrogation scripts used to inspect deals with executive teams.
-* **CISO-Ready BYOK Security Architecture Section:** Side-by-side technical boundary diagram comparing what stays 100% inside client boundary vs. anonymized execution telemetry.
-* **Interactive Diagnostic & Pipeline Leakage Scorecard:**
-  * Real-time 5-question enterprise assessment (Forecast Slippage, Economic Buyer Access, Paper Process Gaps, Rep Admin Drag, Stage-Gate Enforcement).
-  * Dynamic client-side scoring logic calculating annual revenue at risk and hours lost.
-  * Scorecard Preview Modal displaying calculated metrics alongside the embedded HubSpot consultation form.
+### 2.5 Visual De-AI & Refined Executive Styling
+* Replaced programmer slashes (`//`, `[01]`) with clean uppercase tracked typography (`STAGE 01`, `COMPONENT 01`, `DELIVERY PILLAR 01`).
+* Shifted color scheme from harsh neon to deep charcoal (`#0b0f19`), carbon (`#111827`), hairline borders (`rgba(255,255,255,0.08)`), warm champagne gold (`#e5c07b`), and cobalt accents (`#3b82f6`).
 
 ---
 
@@ -98,47 +88,20 @@ The production website (`index.html`) contains **2,553 lines of clean, structure
 ```
 /home/scottcarpentier/
 ├── thesalesbench-website/                 # Main Git repository (cloned from GitHub)
-│   ├── index.html                         # Production single-file marketing application (2,553 lines)
-│   ├── PROJECT_STATUS.md                  # Comprehensive project status & documentation (this file)
+│   ├── index.html                         # Production single-file marketing application
+│   ├── PROJECT_STATUS.md                  # Comprehensive project documentation (v2.0.0)
 │   ├── README.md                          # Repository summary & asset guide
 │   └── .git/                              # Git metadata pointing to origin/main
 ├── Downloads/
-│   └── The_Sales_Bench_Website.html       # Mirrored copy for local offline browser inspection
+│   ├── The_Sales_Bench_Website.html       # Mirrored copy for local offline browser inspection
+│   └── PROJECT_STATUS.md                  # Mirrored status documentation
 └── push.sh                                # Automated sync & deployment bash script
-```
-
-### 3.2 Git & Deployment Script (`push.sh`)
-```bash
-#!/bin/bash
-set -e
-cp /home/scottcarpentier/thesalesbench-website/index.html /home/scottcarpentier/Downloads/The_Sales_Bench_Website.html
-cd /home/scottcarpentier/thesalesbench-website
-git add index.html PROJECT_STATUS.md
-git commit -m "Update site architecture and project status documentation" || true
-git push origin main
-echo "Successfully pushed to GitHub Pages and synced Downloads copy!"
 ```
 
 ---
 
-## 4. Top Priorities & Roadmap
+## 4. Immediate Next Steps & Roadmap
 
-### Priority 1: Immediate Execution (Week 1)
-* [ ] **Publish Latest Commit:** Run `bash push.sh` in the terminal to deploy `index.html` and `PROJECT_STATUS.md` to GitHub Pages.
-* [ ] **Verify Live Production Site:** Confirm that all tabs, modals, and HubSpot form embeds function seamlessly at `https://scottrepository.github.io/thesalesbench-website/`.
-* [ ] **Configure Custom Domain (Optional):** Map `thesalesbench.com` (or preferred domain) via GitHub Pages DNS settings (CNAME + apex A-records).
-
-### Priority 2: Benchmark Cohort Outreach (Weeks 2–3)
-* [ ] **Target List Assembly:** Curate a focused list of 40–50 B2B SaaS CROs and Heads of RevOps within the $5M–$30M ARR tier.
-* [ ] **Execute Closed-Door Invitation Campaign:** Launch personalized, low-friction outreach inviting leaders to participate in the *2026 Enterprise Deal Governance & Pipeline Leakage Index*.
-* [ ] **Deliver Private Scorecards:** Conduct 20-minute diagnostic interviews and generate 1-page customized leak assessments to convert benchmark participants into 4-Week Sprint engagements ($20k–$25k).
-
-### Priority 3: Sprint Delivery Playbook & Kit Standardization (Weeks 4–6)
-* [ ] **MEDDPICC Property Packets:** Finalize standard import packages (JSON / CSV schema) for HubSpot and Salesforce custom deal properties.
-* [ ] **Prompt Engineering Vault:** Document tested prompt templates for meeting transcription synthesis, MEDDPICC gap detection, and executive follow-up drafting.
-* [ ] **Standardized SOW & Master Services Agreement (MSA):** Formalize the fixed-fee $20k–$25k sprint contract with standard 30-day delivery terms.
-
-### Priority 4: Autonomous Productization (Months 2–4)
-* [ ] **Autonomous Slack Governance Bot:** Productize the Weekly Deal Health Radar as an installable internal Slack bot connecting directly to client CRM webhooks.
-* [ ] **Automated Forensic Report Generator:** Build an automated pipeline script that ingests anonymized CRM stage histories and compiles the 10-page Monthly Forensic PDF.
-* [ ] **De-Identified Benchmark Platform:** Aggregated telemetry from retained clients will power the foundational dataset for The Sales Bench's proprietary SaaS platform.
+1. **Deploy to Production:** Run `bash ~/push.sh` in the terminal to push the latest refactor and status file to GitHub Pages.
+2. **Visual Verification:** Check [https://scottrepository.github.io/thesalesbench-website/](https://scottrepository.github.io/thesalesbench-website/) to test the infinite ticker, the 4-box grid, the compact 4-week sprint switcher, and the slide-over diagnostic drawer.
+3. **Outreach Execution:** Begin 15-leader closed-door outreach campaign using the 2026 Deal Governance Index angle.
