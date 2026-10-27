@@ -55,7 +55,7 @@
 
             --shadow-card: 0 10px 30px -6px rgba(15, 23, 42, 0.07);
             --shadow-elevated: 0 24px 48px -12px rgba(0, 0, 0, 0.5);
-            --shadow-drawer: -15px 0 50px rgba(0, 0, 0, 0.65);
+            --shadow-modal: 0 25px 60px -10px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.08);
         }
 
         html {
@@ -94,7 +94,7 @@
         }
 
         /* ==========================================================================
-           1. STICKY HEADER (EXECUTIVE NAVIGATION)
+           1. STICKY HEADER (EXECUTIVE NAVIGATION WITH DUAL CTAS)
            ========================================================================== */
         header {
             position: sticky;
@@ -116,6 +116,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 20px;
         }
 
         .brand-lockup {
@@ -161,7 +162,7 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 24px;
+            gap: 22px;
         }
 
         .nav-links a {
@@ -177,6 +178,31 @@
             color: #ffffff;
         }
 
+        .header-ctas {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-nav-secondary {
+            background-color: rgba(255, 255, 255, 0.07);
+            color: #ffffff !important;
+            font-weight: 700 !important;
+            padding: 9px 16px;
+            border-radius: 8px;
+            font-size: 13px !important;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            transition: all 0.15s ease;
+            white-space: nowrap;
+        }
+
+        .btn-nav-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.14);
+            border-color: var(--gold-champagne);
+            color: var(--gold-champagne) !important;
+        }
+
         .btn-nav {
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             color: #0b0f19 !important;
@@ -187,6 +213,7 @@
             cursor: pointer;
             border: none;
             transition: transform 0.15s ease, opacity 0.15s ease;
+            white-space: nowrap;
         }
 
         .btn-nav:hover {
@@ -194,14 +221,14 @@
             opacity: 0.95;
         }
 
-        @media (max-width: 1060px) {
-            .nav-links a:not(.btn-nav) {
+        @media (max-width: 1120px) {
+            .nav-links a:not(.btn-nav):not(.btn-nav-secondary) {
                 display: none;
             }
         }
 
         /* ==========================================================================
-           2. OUTCOME-FIRST HERO SECTION
+           2. OUTCOME-FIRST HERO SECTION & REFINED ARCHITECTURE
            ========================================================================== */
         .hero-section {
             background-color: var(--bg-obsidian);
@@ -261,16 +288,24 @@
             box-shadow: 0 0 8px var(--emerald-400);
         }
 
+        /* Headline Visual Split */
         .hero-title {
             font-size: clamp(2.4rem, 4.3vw, 4.2rem);
             font-weight: 800;
             color: #ffffff;
-            line-height: 1.08;
+            line-height: 1.1;
             letter-spacing: -0.025em;
-            margin-bottom: 22px;
+            margin-bottom: 24px;
         }
 
-        .hero-title .highlight-text {
+        .hero-title-main {
+            display: block;
+            color: #ffffff;
+        }
+
+        .hero-title-sub {
+            display: block;
+            margin-top: 0.35em;
             background: linear-gradient(90deg, #ffffff 0%, var(--gold-champagne) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -339,7 +374,7 @@
             border: 1px solid var(--border-hairline);
             border-radius: 12px;
             padding: 16px 20px;
-            margin-bottom: 24px;
+            margin-bottom: 12px;
             max-width: 860px;
         }
 
@@ -366,152 +401,108 @@
             font-weight: 700;
         }
 
-        .hero-trust-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 22px;
-            font-size: 12px;
-            font-weight: 700;
-            color: #94a3b8;
-            padding-top: 16px;
-            border-top: 1px solid var(--border-hairline);
-            letter-spacing: 0.04em;
-        }
-
-        .hero-trust-row span {
-            color: var(--gold-champagne);
-            font-weight: 800;
-        }
-
-        /* RIGHT CONSOLE: THE REVENUE ARCHITECTURE STACK */
-        .arch-console {
+        /* RIGHT CARD: WHAT WE INSTALL & GOVERN EXECUTIVE SUMMARY CARD */
+        .exec-install-card {
             background-color: var(--bg-carbon);
             border: 1px solid var(--border-hairline);
             border-radius: 18px;
-            padding: 24px;
+            padding: 26px;
             box-shadow: var(--shadow-elevated);
         }
 
-        .arch-header {
+        .exec-card-head {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding-bottom: 14px;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
             border-bottom: 1px solid var(--border-hairline);
         }
 
-        .arch-dots {
+        .exec-card-dots {
             display: flex;
             gap: 6px;
         }
 
-        .arch-dot {
+        .exec-card-dot {
             width: 10px;
             height: 10px;
             border-radius: 50%;
             background-color: #374151;
         }
 
-        .arch-dot.g { background-color: #10b981; }
-        .arch-dot.c { background-color: var(--gold-champagne); }
+        .exec-card-dot.g { background-color: #10b981; }
+        .exec-card-dot.c { background-color: var(--gold-champagne); }
 
-        .arch-node {
+        .exec-pillar-item {
             background-color: var(--bg-obsidian);
             border: 1px solid var(--border-hairline);
             border-radius: 12px;
-            padding: 15px 16px;
-            margin-bottom: 12px;
+            padding: 16px;
+            margin-bottom: 14px;
+            transition: all 0.2s ease;
         }
 
-        .arch-node.active-agent {
-            border: 1.5px solid rgba(16, 185, 129, 0.6);
-            background: linear-gradient(180deg, rgba(16, 185, 129, 0.08) 0%, rgba(11, 15, 25, 0.96) 100%);
-        }
-
-        .arch-node.charter {
-            border: 1.5px solid var(--gold-border);
-            background: linear-gradient(180deg, rgba(229, 192, 123, 0.08) 0%, rgba(11, 15, 25, 0.96) 100%);
-            margin-bottom: 0;
-        }
-
-        .arch-node-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 5px;
-        }
-
-        .arch-layer-lbl {
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: var(--emerald-400);
-            letter-spacing: 0.06em;
-        }
-
-        .arch-layer-lbl.gold {
-            color: var(--gold-champagne);
-        }
-
-        .arch-pill {
-            font-size: 10px;
-            font-weight: 700;
-            padding: 2px 8px;
-            border-radius: 5px;
-            background-color: rgba(16, 185, 129, 0.16);
-            color: #6ee7b7;
-            border: 1px solid rgba(52, 211, 153, 0.3);
-            letter-spacing: 0.04em;
-        }
-
-        .arch-pill.gold {
-            background-color: rgba(229, 192, 123, 0.16);
-            color: #fef08a;
+        .exec-pillar-item:hover {
             border-color: rgba(229, 192, 123, 0.35);
+            background-color: #0f1626;
         }
 
-        .arch-node-title {
-            font-size: 14.5px;
+        .exec-pillar-badge {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--gold-champagne);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .exec-pillar-badge.emerald {
+            color: var(--emerald-400);
+        }
+
+        .exec-pillar-title {
+            font-size: 15px;
             font-weight: 800;
             color: #ffffff;
-            margin-bottom: 3px;
+            margin-bottom: 4px;
         }
 
-        .arch-node-desc {
-            font-size: 12.5px;
+        .exec-pillar-desc {
+            font-size: 13px;
             color: #94a3b8;
             line-height: 1.45;
         }
 
-        .arch-kpi-strip {
+        .exec-card-metrics {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 10px;
-            margin-top: 16px;
+            margin-top: 18px;
             padding-top: 16px;
             border-top: 1px solid var(--border-hairline);
         }
 
-        .arch-kpi {
+        .exec-metric-box {
             background-color: var(--bg-obsidian);
             border: 1px solid var(--border-hairline);
-            border-radius: 9px;
+            border-radius: 10px;
             padding: 10px;
             text-align: center;
         }
 
-        .arch-kpi-val {
+        .exec-metric-val {
             font-size: 17px;
             font-weight: 900;
             color: var(--emerald-400);
         }
 
-        .arch-kpi-val.gold {
+        .exec-metric-val.gold {
             color: var(--gold-champagne);
         }
 
-        .arch-kpi-lbl {
+        .exec-metric-lbl {
             font-size: 9.5px;
             color: #94a3b8;
             font-weight: 700;
@@ -521,14 +512,22 @@
         }
 
         /* ==========================================================================
-           3. INFINITE LOGO TICKER (ENTERPRISE PEDIGREE)
+           3. DUAL SCROLLING LOGO TICKERS (PARTNERS + CUSTOMERS SOLD TO)
            ========================================================================== */
         .marquee-section {
             background-color: #0b0f19;
-            padding: 26px 0;
+            padding: 36px 0 32px;
             border-bottom: 1px solid var(--border-hairline);
             overflow: hidden;
             position: relative;
+        }
+
+        .marquee-row-block {
+            margin-bottom: 24px;
+        }
+
+        .marquee-row-block:last-child {
+            margin-bottom: 0;
         }
 
         .marquee-eyebrow {
@@ -536,9 +535,9 @@
             font-size: 11px;
             font-weight: 700;
             color: #94a3b8;
-            letter-spacing: 0.14em;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
 
         .marquee-container {
@@ -557,9 +556,13 @@
         .marquee-track {
             display: flex;
             align-items: center;
-            gap: 60px;
-            padding-right: 60px;
-            animation: scroll 35s linear infinite;
+            gap: 40px;
+            padding-right: 40px;
+            animation: scroll 30s linear infinite;
+        }
+
+        .marquee-track.reverse {
+            animation: scroll-rev 34s linear infinite;
         }
 
         .marquee-container:hover .marquee-track {
@@ -571,41 +574,87 @@
             100% { transform: translateX(-100%); }
         }
 
-        .ticker-brand {
+        @keyframes scroll-rev {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Ecosystem Partner Brand Item */
+        .partner-brand {
             display: flex;
             align-items: center;
             gap: 12px;
-            opacity: 0.65;
-            transition: opacity 0.2s ease, transform 0.2s ease;
+            opacity: 0.75;
+            transition: all 0.2s ease;
             text-decoration: none;
+            padding: 6px 14px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
         }
 
-        .ticker-brand:hover {
+        .partner-brand:hover {
             opacity: 1;
-            transform: scale(1.04);
+            transform: translateY(-2px);
+            border-color: var(--gold-border);
+            background: rgba(255, 255, 255, 0.07);
         }
 
-        .ticker-brand img {
-            height: 24px;
+        .partner-brand img {
+            height: 22px;
             width: auto;
             max-width: 90px;
             filter: brightness(0) invert(0.85);
             transition: filter 0.2s ease;
         }
 
-        .ticker-brand:hover img {
+        .partner-brand:hover img {
             filter: brightness(0) invert(1);
         }
 
-        .ticker-brand-name {
-            font-size: 13px;
+        .partner-brand-name {
+            font-size: 13.5px;
             font-weight: 700;
             color: #cbd5e1;
             letter-spacing: 0.05em;
         }
 
+        /* Customer Account Pill */
+        .account-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 999px;
+            padding: 8px 18px;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .account-pill:hover {
+            background: rgba(255, 255, 255, 0.09);
+            border-color: var(--gold-border);
+            transform: translateY(-2px);
+        }
+
+        .account-pill img {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            object-fit: contain;
+        }
+
+        .account-pill-name {
+            letter-spacing: 0.06em;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #cbd5e1;
+            text-transform: uppercase;
+        }
+
         /* ==========================================================================
-           4. THE 4-BOX DELIVERY GRID (HOW WE DELIVER PREDICTABLE REVENUE)
+           4. THE 4-BOX DELIVERY GRID (WITH INTERACTIVE SPRINT LINKING)
            ========================================================================== */
         .delivery-grid-section {
             background-color: var(--bg-carbon);
@@ -681,7 +730,7 @@
             }
         }
 
-        .delivery-card {
+        .delivery-card-interactive {
             background-color: var(--bg-card);
             border: 1px solid var(--border-hairline);
             border-radius: 16px;
@@ -691,13 +740,16 @@
             justify-content: space-between;
             transition: all 0.2s ease;
             position: relative;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
         }
 
-        .delivery-card:hover {
-            transform: translateY(-3px);
-            border-color: rgba(229, 192, 123, 0.4);
+        .delivery-card-interactive:hover {
+            transform: translateY(-4px);
+            border-color: var(--gold-champagne);
             background-color: var(--bg-card-hover);
-            box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 18px 40px -8px rgba(0, 0, 0, 0.6);
         }
 
         .delivery-card-top {
@@ -713,7 +765,7 @@
             margin-bottom: 8px;
         }
 
-        .delivery-card h3 {
+        .delivery-card-interactive h3 {
             font-size: clamp(18px, 1.3vw, 21px);
             font-weight: 800;
             color: #ffffff;
@@ -721,7 +773,7 @@
             margin-bottom: 12px;
         }
 
-        .delivery-card p {
+        .delivery-card-interactive p {
             font-size: clamp(13.5px, 0.95vw, 15px);
             color: #cbd5e1;
             line-height: 1.55;
@@ -737,11 +789,177 @@
             color: var(--emerald-400);
             display: flex;
             align-items: center;
-            gap: 6px;
+            justify-content: space-between;
+        }
+
+        .inspect-module-hint {
+            font-size: 11px;
+            color: var(--gold-champagne);
+            opacity: 0;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            transform: translateX(-4px);
+        }
+
+        .delivery-card-interactive:hover .inspect-module-hint {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         /* ==========================================================================
-           5. ECONOMIC LEVERAGE BENCHMARK BAR
+           5. 4-WEEK SPRINT ENGINE (MOVED DIRECTLY BELOW DELIVERY GRID)
+           ========================================================================== */
+        .engine-shell {
+            background-color: var(--bg-obsidian);
+            border-radius: 20px;
+            border: 1px solid var(--border-hairline);
+            padding: clamp(26px, 2.8vw, 42px);
+            color: #ffffff;
+            box-shadow: var(--shadow-elevated);
+        }
+
+        .stage-tabs {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: clamp(10px, 1.2vw, 16px);
+            margin-bottom: 26px;
+        }
+
+        @media (max-width: 860px) {
+            .stage-tabs {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 520px) {
+            .stage-tabs {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .stage-tab-btn {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-hairline);
+            color: #cbd5e1;
+            border-radius: 12px;
+            padding: 16px 18px;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .stage-tab-btn:hover {
+            border-color: var(--gold-champagne);
+            color: #ffffff;
+        }
+
+        .stage-tab-btn.active {
+            background-color: rgba(229, 192, 123, 0.12);
+            border: 2px solid var(--gold-champagne);
+            color: #ffffff;
+        }
+
+        .stage-tab-num {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--gold-champagne);
+            display: block;
+            margin-bottom: 4px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .stage-tab-name {
+            font-size: 14.5px;
+            font-weight: 800;
+            display: block;
+        }
+
+        .stage-panel {
+            display: none;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            background-color: var(--bg-carbon);
+            border: 1px solid var(--border-hairline);
+            border-radius: 14px;
+            padding: 26px;
+        }
+
+        .stage-panel.active {
+            display: grid;
+            animation: fadeIn 0.2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 900px) {
+            .stage-panel {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .stage-col {
+            background-color: var(--bg-obsidian);
+            border: 1px solid var(--border-hairline);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .stage-col.highlight-col {
+            border-color: rgba(16, 185, 129, 0.4);
+            background: linear-gradient(180deg, rgba(16, 185, 129, 0.08) 0%, var(--bg-obsidian) 100%);
+        }
+
+        .stage-col-label {
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--gold-champagne);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .stage-col-label.emerald {
+            color: var(--emerald-400);
+        }
+
+        .stage-col h4 {
+            font-size: 16px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .stage-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .stage-col li {
+            font-size: 13px;
+            color: #cbd5e1;
+            line-height: 1.45;
+            display: flex;
+            gap: 8px;
+        }
+
+        .stage-col li span {
+            color: var(--gold-champagne);
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .stage-col.highlight-col li span {
+            color: var(--emerald-400);
+        }
+
+        /* ==========================================================================
+           6. ECONOMIC LEVERAGE BENCHMARK BAR
            ========================================================================== */
         .benchmark-bar {
             background-color: #0b0f19;
@@ -806,7 +1024,7 @@
         }
 
         /* ==========================================================================
-           6. THE 3-PHASE VALUE LADDER
+           7. THE 3-PHASE VALUE LADDER
            ========================================================================== */
         .section-canvas {
             background-color: var(--bg-canvas);
@@ -930,160 +1148,7 @@
         }
 
         /* ==========================================================================
-           7. 4-WEEK SPRINT ENGINE (COMPACT 4-TAB SWITCHER)
-           ========================================================================== */
-        .engine-shell {
-            background-color: var(--bg-obsidian);
-            border-radius: 20px;
-            border: 1px solid var(--border-hairline);
-            padding: clamp(26px, 2.8vw, 42px);
-            color: #ffffff;
-            box-shadow: var(--shadow-elevated);
-        }
-
-        .stage-tabs {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: clamp(10px, 1.2vw, 16px);
-            margin-bottom: 26px;
-        }
-
-        @media (max-width: 860px) {
-            .stage-tabs {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 520px) {
-            .stage-tabs {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .stage-tab-btn {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-hairline);
-            color: #cbd5e1;
-            border-radius: 12px;
-            padding: 16px 18px;
-            text-align: left;
-            cursor: pointer;
-            transition: all 0.15s ease;
-        }
-
-        .stage-tab-btn:hover {
-            border-color: var(--gold-champagne);
-            color: #ffffff;
-        }
-
-        .stage-tab-btn.active {
-            background-color: rgba(229, 192, 123, 0.12);
-            border: 2px solid var(--gold-champagne);
-            color: #ffffff;
-        }
-
-        .stage-tab-num {
-            font-size: 11px;
-            font-weight: 700;
-            color: var(--gold-champagne);
-            display: block;
-            margin-bottom: 4px;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        .stage-tab-name {
-            font-size: 14.5px;
-            font-weight: 800;
-            display: block;
-        }
-
-        .stage-panel {
-            display: none;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            background-color: var(--bg-carbon);
-            border: 1px solid var(--border-hairline);
-            border-radius: 12px;
-            padding: 26px;
-        }
-
-        .stage-panel.active {
-            display: grid;
-            animation: fadeIn 0.2s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(4px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 900px) {
-            .stage-panel {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .stage-col {
-            background-color: var(--bg-obsidian);
-            border: 1px solid var(--border-hairline);
-            border-radius: 10px;
-            padding: 20px;
-        }
-
-        .stage-col.highlight-col {
-            border-color: rgba(16, 185, 129, 0.4);
-            background: linear-gradient(180deg, rgba(16, 185, 129, 0.08) 0%, var(--bg-obsidian) 100%);
-        }
-
-        .stage-col-label {
-            font-size: 11px;
-            font-weight: 800;
-            color: var(--gold-champagne);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .stage-col-label.emerald {
-            color: var(--emerald-400);
-        }
-
-        .stage-col h4 {
-            font-size: 16px;
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 12px;
-        }
-
-        .stage-col ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .stage-col li {
-            font-size: 13px;
-            color: #cbd5e1;
-            line-height: 1.45;
-            display: flex;
-            gap: 8px;
-        }
-
-        .stage-col li span {
-            color: var(--gold-champagne);
-            font-weight: 800;
-            flex-shrink: 0;
-        }
-
-        .stage-col.highlight-col li span {
-            color: var(--emerald-400);
-        }
-
-        /* ==========================================================================
-           8. EXECUTIVE DEAL GOVERNANCE & ANTI-FLUFF PROTOCOL
+           8. EXECUTIVE DEAL GOVERNANCE & COMMERCIAL ARCHITECTURE
            ========================================================================== */
         .retainer-section {
             background-color: var(--bg-carbon);
@@ -1179,8 +1244,16 @@
             font-style: italic;
         }
 
+        .pricing-structure-card {
+            background-color: var(--bg-obsidian);
+            border: 1px solid var(--border-hairline);
+            border-radius: 14px;
+            padding: 22px;
+            margin-top: 22px;
+        }
+
         /* ==========================================================================
-           9. CISO-READY BYOK SECURITY & CORE INTEGRATION STACK
+           9. CISO-READY BYOK SECURITY & ONGOING AGENT EVOLUTION
            ========================================================================== */
         .byok-section {
             background-color: var(--bg-obsidian);
@@ -1239,6 +1312,58 @@
         .boundary-badge.gold {
             background-color: rgba(229, 192, 123, 0.2);
             color: #fef08a;
+        }
+
+        /* Deployment Flexibility Callout Box */
+        .lifecycle-callout {
+            margin-top: 36px;
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(21, 29, 46, 0.95) 100%);
+            border: 1px solid var(--gold-border);
+            border-radius: 18px;
+            padding: clamp(28px, 3vw, 42px);
+        }
+
+        .lifecycle-title {
+            font-size: clamp(20px, 1.5vw, 24px);
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .lifecycle-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            margin-top: 22px;
+        }
+
+        @media (max-width: 820px) {
+            .lifecycle-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .lifecycle-col {
+            background-color: var(--bg-obsidian);
+            border: 1px solid var(--border-hairline);
+            border-radius: 12px;
+            padding: 22px;
+        }
+
+        .lifecycle-col-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--gold-champagne);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lifecycle-col-desc {
+            font-size: 13.5px;
+            color: #cbd5e1;
+            line-height: 1.55;
         }
 
         /* Core Stack Integrations Grid */
@@ -1314,7 +1439,7 @@
         }
 
         /* ==========================================================================
-           10. PRACTICE AREAS & FOUNDER BIO
+           10. PRACTICE AREAS & FOUNDER BIO (SCOTT CARPENTIER)
            ========================================================================== */
         .pillars-grid {
             display: grid;
@@ -1473,7 +1598,7 @@
         .cred-pill {
             font-size: 11px;
             font-weight: 700;
-            padding: 4px 10px;
+            padding: 5px 11px;
             border-radius: 6px;
             background-color: rgba(229, 192, 123, 0.14);
             color: var(--gold-champagne);
@@ -1573,7 +1698,7 @@
         }
 
         /* ==========================================================================
-           13. STICKY FLOATING BADGE & SLIDE-OVER COPILOT DRAWER
+           13. STICKY FLOATING BADGE & CENTERED MODALS (DIAGNOSTIC & SCHEDULE)
            ========================================================================== */
         /* Floating Sticky Pill Badge */
         .floating-diagnostic-pill {
@@ -1603,61 +1728,64 @@
             box-shadow: 0 14px 34px -4px rgba(16, 185, 129, 0.65);
         }
 
-        /* Drawer Backdrop Overlay */
-        .drawer-backdrop {
+        /* Centered Modal Overlay Backdrop */
+        .modal-overlay {
             position: fixed;
             inset: 0;
-            background-color: rgba(7, 11, 20, 0.75);
-            backdrop-filter: blur(6px);
+            background-color: rgba(7, 11, 20, 0.82);
+            backdrop-filter: blur(8px);
             z-index: 1000;
             opacity: 0;
             pointer-events: none;
-            transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
 
-        .drawer-backdrop.active {
+        .modal-overlay.active {
             opacity: 1;
             pointer-events: auto;
         }
 
-        /* Slide-Over Drawer Container */
-        .diagnostic-drawer {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 480px;
-            max-width: 100vw;
-            height: 100vh;
+        /* Centered Diagnostic Modal Window (Larger Executive Fonts) */
+        .diagnostic-modal-window {
             background-color: var(--bg-obsidian);
-            border-left: 1px solid rgba(255, 255, 255, 0.12);
-            box-shadow: var(--shadow-drawer);
-            z-index: 1001;
-            transform: translateX(100%);
-            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-            display: flex;
-            flex-direction: column;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            box-shadow: var(--shadow-modal);
+            border-radius: 20px;
+            width: 92%;
+            max-width: 680px;
+            max-height: 90vh;
             overflow-y: auto;
             color: #ffffff;
+            transform: scale(0.96) translateY(12px);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 1001;
         }
 
-        .diagnostic-drawer.active {
-            transform: translateX(0);
+        .modal-overlay.active .diagnostic-modal-window {
+            transform: scale(1) translateY(0);
         }
 
-        .drawer-header {
-            padding: 22px 24px;
+        .modal-header {
+            padding: 24px 28px;
             border-bottom: 1px solid var(--border-hairline);
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             position: sticky;
             top: 0;
-            background-color: rgba(11, 15, 25, 0.96);
+            background-color: rgba(11, 15, 25, 0.98);
             backdrop-filter: blur(10px);
             z-index: 10;
         }
 
-        .drawer-eyebrow {
+        .modal-eyebrow {
             font-size: 11px;
             font-weight: 700;
             letter-spacing: 0.12em;
@@ -1667,22 +1795,22 @@
             margin-bottom: 4px;
         }
 
-        .drawer-title {
-            font-size: 19px;
+        .modal-title {
+            font-size: 1.75rem; /* 28px */
             font-weight: 800;
             color: #ffffff;
             line-height: 1.2;
         }
 
-        .drawer-close-btn {
+        .modal-close-btn {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid var(--border-hairline);
             color: #cbd5e1;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 700;
-            width: 34px;
-            height: 34px;
-            border-radius: 8px;
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1691,27 +1819,27 @@
             flex-shrink: 0;
         }
 
-        .drawer-close-btn:hover {
-            background-color: rgba(255, 255, 255, 0.16);
+        .modal-close-btn:hover {
+            background-color: rgba(255, 255, 255, 0.18);
             color: #ffffff;
         }
 
-        .drawer-body {
-            padding: 24px;
+        .modal-body {
+            padding: 28px;
             flex: 1;
         }
 
         /* Dynamic Real-Time Leakage Calculation Banner */
-        .drawer-calc-banner {
+        .modal-calc-banner {
             background: linear-gradient(135deg, rgba(229, 192, 123, 0.14) 0%, rgba(37, 99, 235, 0.1) 100%);
             border: 1px solid var(--gold-border);
-            border-radius: 12px;
-            padding: 16px 18px;
+            border-radius: 14px;
+            padding: 18px 22px;
             margin-bottom: 24px;
         }
 
-        .drawer-calc-title {
-            font-size: 11px;
+        .modal-calc-title {
+            font-size: 11.5px;
             font-weight: 800;
             letter-spacing: 0.1em;
             text-transform: uppercase;
@@ -1719,105 +1847,108 @@
             margin-bottom: 6px;
         }
 
-        .drawer-calc-figure {
-            font-size: 22px;
+        .modal-calc-figure {
+            font-size: 26px;
             font-weight: 900;
             color: #ffffff;
             margin-bottom: 4px;
         }
 
-        .drawer-calc-sub {
-            font-size: 12px;
+        .modal-calc-sub {
+            font-size: 13px;
             color: #cbd5e1;
-            line-height: 1.4;
+            line-height: 1.45;
         }
 
-        /* Step Progress Inside Drawer */
-        .drawer-progress-track {
-            height: 4px;
+        /* Step Progress Inside Modal */
+        .modal-progress-track {
+            height: 5px;
             background-color: #1f293d;
             border-radius: 999px;
             overflow: hidden;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
-        .drawer-progress-fill {
+        .modal-progress-fill {
             height: 100%;
             background: linear-gradient(90deg, #10b981 0%, var(--gold-champagne) 100%);
             width: 20%;
             transition: width 0.3s ease;
         }
 
-        .drawer-step-info {
+        .modal-step-info {
             display: flex;
             justify-content: space-between;
-            font-size: 11px;
+            font-size: 11.5px;
             font-weight: 700;
             color: #94a3b8;
-            letter-spacing: 0.06em;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-
-        .drawer-step-q {
-            font-size: 15px;
-            font-weight: 800;
-            color: #ffffff;
-            line-height: 1.4;
             margin-bottom: 14px;
         }
 
-        .drawer-options {
+        /* Question Typography: 1.25rem (20px, font-weight 600) */
+        .modal-step-q {
+            font-size: 1.25rem; /* 20px */
+            font-weight: 600;
+            color: #ffffff;
+            line-height: 1.4;
+            margin-bottom: 18px;
+        }
+
+        .modal-options {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
             margin-bottom: 20px;
         }
 
-        .drawer-opt-btn {
+        /* Option Buttons: 1.05rem (17px) with generous padding (16px 20px) */
+        .modal-opt-btn {
             background-color: var(--bg-card);
             border: 1px solid var(--border-hairline);
-            border-radius: 10px;
-            padding: 13px 15px;
+            border-radius: 12px;
+            padding: 16px 20px;
             text-align: left;
             cursor: pointer;
             transition: all 0.15s ease;
             color: #ffffff;
         }
 
-        .drawer-opt-btn:hover {
+        .modal-opt-btn:hover {
             border-color: var(--gold-champagne);
             background-color: var(--bg-card-hover);
+            transform: translateX(3px);
         }
 
-        .drawer-opt-btn.active {
+        .modal-opt-btn.active {
             border-color: var(--emerald-400);
             background-color: rgba(16, 185, 129, 0.15);
         }
 
-        .drawer-opt-title {
-            font-size: 13.5px;
+        .modal-opt-title {
+            font-size: 1.05rem; /* 17px */
             font-weight: 700;
             color: #ffffff;
-            margin-bottom: 2px;
+            margin-bottom: 3px;
         }
 
-        .drawer-opt-sub {
-            font-size: 11.5px;
+        .modal-opt-sub {
+            font-size: 0.9rem; /* 14.5px */
             color: #94a3b8;
             line-height: 1.35;
         }
 
-        /* Drawer Completion Form Section */
-        .drawer-form-box {
+        /* Modal Completion State & Form */
+        .modal-form-box {
             background-color: #ffffff;
-            border-radius: 14px;
-            padding: 22px;
+            border-radius: 16px;
+            padding: 26px;
             color: var(--text-ink);
             margin-top: 14px;
         }
 
-        .drawer-form-eyebrow {
+        .modal-form-eyebrow {
             font-size: 11px;
             font-weight: 800;
             color: var(--gold-500);
@@ -1826,18 +1957,39 @@
             margin-bottom: 4px;
         }
 
-        .drawer-form-title {
-            font-size: 18px;
+        .modal-form-title {
+            font-size: 20px;
             font-weight: 800;
             color: var(--text-ink);
             margin-bottom: 6px;
         }
 
-        .drawer-form-desc {
-            font-size: 13px;
+        .modal-form-desc {
+            font-size: 14px;
             color: var(--text-body);
-            line-height: 1.45;
-            margin-bottom: 16px;
+            line-height: 1.5;
+            margin-bottom: 18px;
+        }
+
+        /* Schedule Modal Specific Styling */
+        .schedule-modal-window {
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: var(--shadow-modal);
+            width: 92%;
+            max-width: 620px;
+            max-height: 90vh;
+            overflow-y: auto;
+            color: var(--text-ink);
+            transform: scale(0.96) translateY(12px);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            z-index: 1001;
+            padding: 32px;
+        }
+
+        .modal-overlay.active .schedule-modal-window {
+            transform: scale(1) translateY(0);
         }
 
         .hidden {
@@ -1859,14 +2011,17 @@
             </a>
             <nav class="nav-links">
                 <a href="#delivery-grid">How We Deliver</a>
+                <a href="#sprint-engine">4-Week Sprint</a>
                 <a href="#value-ladder">The Value Ladder</a>
-                <a href="#sprint">4-Week Sprint</a>
                 <a href="#governance-retainer">Deal Governance</a>
                 <a href="#byok-security">BYOK Security</a>
                 <a href="#services">Practice Areas</a>
                 <a href="#about">About</a>
-                <button type="button" class="btn-nav" onclick="openDiagnosticDrawer()">Run 2026 Diagnostic →</button>
             </nav>
+            <div class="header-ctas">
+                <button type="button" class="btn-nav-secondary" onclick="openScheduleModal()">Schedule a 20-Min Debrief</button>
+                <button type="button" class="btn-nav" onclick="openDiagnosticModal()">Run 2026 Diagnostic →</button>
+            </div>
         </div>
     </header>
 
@@ -1877,330 +2032,315 @@
                 <div>
                     <div class="hero-badge">
                         <span class="pulsing-dot"></span>
-                        Enterprise Revenue Architecture &amp; Deal Governance · B2B SaaS ($5M–$30M ARR)
+                        Enterprise Revenue Architecture &amp; Deal Governance · B2B SaaS ($5M–$50M+ ARR)
                     </div>
+
+                    <!-- Headline Visual Split into Two Distinct Lines -->
                     <h1 class="hero-title">
-                        Stop Late-Stage Deal Slippage. <span class="highlight-text">Turn 6-Figure Pipeline Into Predictable Closed-Won Revenue.</span>
+                        <span class="hero-title-main">Stop Late-Stage Deal Slippage.</span>
+                        <span class="hero-title-sub">Turn 6-Figure Pipeline Into Predictable Closed-Won Revenue.</span>
                     </h1>
+
                     <p class="hero-lead">
                         We install autonomous MEDDPICC deal gating, instant post-call follow-ups, and collaborative buyer rooms directly into your CRM. Compress sales cycles by 25% and de-risk new market expansion without adding headcount.
                     </p>
 
+                    <!-- Inclusive ICP Messaging -->
                     <div class="hero-icp-bar">
-                        <div class="hero-icp-title">Built Strictly For High-ACV B2B Software Teams:</div>
+                        <div class="hero-icp-title">CORE SWEET SPOT (WITH CUSTOM ENTERPRISE &amp; GROWTH ADAPTATIONS):</div>
                         <div class="hero-icp-tags">
-                            <div><span>Stage:</span> $5M–$30M ARR</div>
-                            <div><span>Deal Size:</span> $30k–$150k+ ACV</div>
-                            <div><span>Sales Floor:</span> 5–20 Quota-Carrying AEs</div>
+                            <div><span>Primary Stage:</span> $5M–$50M+ ARR</div>
+                            <div><span>Deal Size:</span> $30k–$250k+ ACV</div>
+                            <div><span>Sales Floor:</span> Growing to Enterprise AE Teams</div>
                         </div>
                     </div>
 
                     <div class="hero-cta-group">
-                        <button type="button" class="btn-primary" onclick="openDiagnosticDrawer()">Run 2026 Pipeline Leakage Diagnostic →</button>
-                        <a href="#sprint" class="btn-secondary-dark">Explore the 4-Week Installation Sprint</a>
-                    </div>
-                    <div class="hero-trust-row">
-                        <div><span>STAGE 01</span> Deployed In Your Tenant (BYOK)</div>
-                        <div><span>STAGE 02</span> Zero SOC 2 Delay or Seat Markup</div>
-                        <div><span>STAGE 03</span> Benchmark Index + CRO Deal Reviews</div>
+                        <button type="button" class="btn-primary" onclick="openDiagnosticModal()">Run 2026 Pipeline Leakage Diagnostic →</button>
+                        <a href="#sprint-engine" class="btn-secondary-dark">Explore the 4-Week Installation Sprint</a>
                     </div>
                 </div>
 
-                <!-- Right Console: The Revenue Architecture Stack -->
-                <div class="arch-console">
-                    <div class="arch-header">
-                        <div class="arch-dots">
-                            <span class="arch-dot g"></span>
-                            <span class="arch-dot c"></span>
-                            <span class="arch-dot"></span>
+                <!-- Right Card: Simplified "What We Install & Govern" Executive Summary Card -->
+                <div class="exec-install-card">
+                    <div class="exec-card-head">
+                        <div class="exec-card-dots">
+                            <span class="exec-card-dot g"></span>
+                            <span class="exec-card-dot c"></span>
+                            <span class="exec-card-dot"></span>
                         </div>
-                        <span class="tracked-eyebrow" style="color: #94a3b8;">THE SALES BENCH · REVENUE INFRASTRUCTURE</span>
+                        <span class="tracked-eyebrow" style="color: #94a3b8;">WHAT WE INSTALL &amp; GOVERN · EXECUTIVE SUMMARY</span>
                     </div>
 
-                    <div class="arch-node">
-                        <div class="arch-node-top">
-                            <span class="arch-layer-lbl">Layer 01 · Turnkey Revenue Appliance</span>
-                            <span class="arch-pill">4-Week Sprint</span>
-                        </div>
-                        <div class="arch-node-title">MEDDPICC Auditor + Post-Call Drafter + Deal Room</div>
-                        <div class="arch-node-desc">Scans call transcripts to enforce CRM stage gates, auto-drafts CRM properties &amp; follow-ups (saving 45–60 min/rep/day), and governs buyer procurement.</div>
+                    <!-- Pillar 1 -->
+                    <div class="exec-pillar-item">
+                        <span class="exec-pillar-badge emerald">01 // Turnkey CRM Agents (4-Week Fixed-Cost Sprint)</span>
+                        <div class="exec-pillar-title">Autonomous Revenue Machinery in Your Tenant</div>
+                        <div class="exec-pillar-desc">MEDDPICC Stage-Gate Auditor, Post-Call CRM Drafter, and Digital Deal Room installed in your tenant.</div>
                     </div>
 
-                    <div class="arch-node">
-                        <div class="arch-node-top">
-                            <span class="arch-layer-lbl">Layer 02 · Client-Owned Perimeter (BYOK)</span>
-                            <span class="arch-pill">Zero Latency</span>
-                        </div>
-                        <div class="arch-node-title">Your CRM + Your Cloud + Your Enterprise LLM Keys</div>
-                        <div class="arch-node-desc">Runs inside your HubSpot/Salesforce and AWS/Azure/OpenAI tenant. Zero third-party data retention, zero SOC 2 red tape, zero per-seat markup.</div>
+                    <!-- Pillar 2 -->
+                    <div class="exec-pillar-item">
+                        <span class="exec-pillar-badge">02 // Peer Cohort Benchmarking</span>
+                        <div class="exec-pillar-title">Comparative Truth Across Peer Leaders</div>
+                        <div class="exec-pillar-desc">Compare procurement velocity, slippage, and Economic Buyer lag against peer B2B SaaS leaders.</div>
                     </div>
 
-                    <div class="arch-node active-agent">
-                        <div class="arch-node-top">
-                            <span class="arch-layer-lbl gold">Layer 03 · Benchmarked Revenue Intelligence</span>
-                            <span class="arch-pill gold">2026 Cohort Index</span>
-                        </div>
-                        <div class="arch-node-title">Comparative Truth Across Peer B2B SaaS Leaders</div>
-                        <div class="arch-node-desc">Benchmarks your True Days in Procurement, Economic Buyer Latency, and Stage-Gate Integrity against peer B2B SaaS companies ($5M–$30M ARR).</div>
+                    <!-- Pillar 3 -->
+                    <div class="exec-pillar-item" style="margin-bottom: 0;">
+                        <span class="exec-pillar-badge">03 // Retained Deal Inspection &amp; Tuning</span>
+                        <div class="exec-pillar-title">Forensic Deal Protection &amp; Tuning</div>
+                        <div class="exec-pillar-desc">Automated weekly slippage radar, 30-day post-launch tuning, and live CRO deal reviews.</div>
                     </div>
 
-                    <div class="arch-node charter">
-                        <div class="arch-node-top">
-                            <span class="arch-layer-lbl gold">Layer 04 · Executive Deal Governance</span>
-                            <span class="arch-pill gold">Anti-Fluff Protocol</span>
+                    <div class="exec-card-metrics">
+                        <div class="exec-metric-box">
+                            <div class="exec-metric-val">+15–20%</div>
+                            <div class="exec-metric-lbl">Win Rate Lift</div>
                         </div>
-                        <div class="arch-node-title">Weekly Slippage Radar + Live CRO Deal Inspection</div>
-                        <div class="arch-node-desc">Autonomous weekly Slack/email risk alerts, monthly 10-page forensic leakage audits, and live 60-minute Strategic Deal Reviews ahead of board forecasts.</div>
-                    </div>
-
-                    <div class="arch-kpi-strip">
-                        <div class="arch-kpi">
-                            <div class="arch-kpi-val">+15–20%</div>
-                            <div class="arch-kpi-lbl">Enterprise Win Rate</div>
+                        <div class="exec-metric-box">
+                            <div class="exec-metric-val">1+ FTE</div>
+                            <div class="exec-metric-lbl">AE Capacity Recovered</div>
                         </div>
-                        <div class="arch-kpi">
-                            <div class="arch-kpi-val">1+ FTE</div>
-                            <div class="arch-kpi-lbl">AE Capacity Recovered</div>
-                        </div>
-                        <div class="arch-kpi">
-                            <div class="arch-kpi-val gold">&lt;5%</div>
-                            <div class="arch-kpi-lbl">Forecast Variance</div>
+                        <div class="exec-metric-box">
+                            <div class="exec-metric-val gold">&lt;5%</div>
+                            <div class="exec-metric-lbl">Forecast Variance</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 3. INFINITE LOGO TICKER (ENTERPRISE GTM PEDIGREE) -->
+        <!-- 3. DUAL SCROLLING LOGO TICKERS -->
         <section class="marquee-section">
             <div class="container">
-                <div class="marquee-eyebrow">ENTERPRISE GTM PEDIGREE · PAST CUSTOMERS, PARTNERS &amp; DEPLOYMENTS</div>
-            </div>
-            <div class="marquee-container">
-                <div class="marquee-wrapper">
-                    <div class="marquee-track">
-                        <div class="ticker-brand">
-                            <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/sap.svg" alt="SAP">
-                            <span class="ticker-brand-name">SAP</span>
-                        </div>
-                        <div class="ticker-brand">
-                            <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/microsoft.svg" alt="Microsoft">
-                            <span class="ticker-brand-name">Microsoft</span>
-                        </div>
-                        <div class="ticker-brand">
-                            <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/oracle.svg" alt="Oracle">
-                            <span class="ticker-brand-name">Oracle</span>
-                        </div>
-                        <div class="ticker-brand">
-                            <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/deloitte.svg" alt="Deloitte">
-                            <span class="ticker-brand-name">Deloitte</span>
-                        </div>
-                        <div class="ticker-brand">
-                            <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/pwc.svg" alt="PwC">
-                            <span class="ticker-brand-name">PwC</span>
-                        </div>
-                        <div class="ticker-brand">
-                            <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/ey.svg" alt="EY">
-                            <span class="ticker-brand-name">EY</span>
-                        </div>
-                        <div class="ticker-brand">
-                            <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/kpmg.svg" alt="KPMG">
-                            <span class="ticker-brand-name">KPMG</span>
-                        </div>
-                        <div class="ticker-brand">
-                            <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/servicenow.svg" alt="ServiceNow">
-                            <span class="ticker-brand-name">ServiceNow</span>
+                <!-- Ticker Row 1: Ecosystem Partners -->
+                <div class="marquee-row-block">
+                    <div class="marquee-eyebrow">ENTERPRISE ECOSYSTEM &amp; PARTNER PEDIGREE // SI &amp; ADVISORY ALLIANCES</div>
+                    <div class="marquee-container">
+                        <div class="marquee-wrapper">
+                            <div class="marquee-track">
+                                <div class="partner-brand">
+                                    <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/sap.svg" alt="SAP">
+                                    <span class="partner-brand-name">SAP</span>
+                                </div>
+                                <div class="partner-brand">
+                                    <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/deloitte.svg" alt="Deloitte">
+                                    <span class="partner-brand-name">Deloitte</span>
+                                </div>
+                                <div class="partner-brand">
+                                    <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/pwc.svg" alt="PwC">
+                                    <span class="partner-brand-name">PwC</span>
+                                </div>
+                                <div class="partner-brand">
+                                    <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/ey.svg" alt="EY">
+                                    <span class="partner-brand-name">EY</span>
+                                </div>
+                                <div class="partner-brand">
+                                    <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/kpmg.svg" alt="KPMG">
+                                    <span class="partner-brand-name">KPMG</span>
+                                </div>
+                            </div>
+
+                            <!-- Duplicated Track 1 for Infinite Loop -->
+                            <div class="marquee-track" aria-hidden="true">
+                                <div class="partner-brand">
+                                    <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/sap.svg" alt="SAP">
+                                    <span class="partner-brand-name">SAP</span>
+                                </div>
+                                <div class="partner-brand">
+                                    <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/deloitte.svg" alt="Deloitte">
+                                    <span class="partner-brand-name">Deloitte</span>
+                                </div>
+                                <div class="partner-brand">
+                                    <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/pwc.svg" alt="PwC">
+                                    <span class="partner-brand-name">PwC</span>
+                                </div>
+                                <div class="partner-brand">
+                                    <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/ey.svg" alt="EY">
+                                    <span class="partner-brand-name">EY</span>
+                                </div>
+                                <div class="partner-brand">
+                                    <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/kpmg.svg" alt="KPMG">
+                                    <span class="partner-brand-name">KPMG</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Duplicated Track for Seamless Infinite Loop -->
-                    <div class="marquee-track" aria-hidden="true">
-                        <div class="ticker-brand">
-                            <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/sap.svg" alt="SAP">
-                            <span class="ticker-brand-name">SAP</span>
-                        </div>
-                        <div class="ticker-brand">
-                            <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/microsoft.svg" alt="Microsoft">
-                            <span class="ticker-brand-name">Microsoft</span>
-                        </div>
-                        <div class="ticker-brand">
-                            <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/oracle.svg" alt="Oracle">
-                            <span class="ticker-brand-name">Oracle</span>
-                        </div>
-                        <div class="ticker-brand">
-                            <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/deloitte.svg" alt="Deloitte">
-                            <span class="ticker-brand-name">Deloitte</span>
-                        </div>
-                        <div class="ticker-brand">
-                            <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/pwc.svg" alt="PwC">
-                            <span class="ticker-brand-name">PwC</span>
-                        </div>
-                        <div class="ticker-brand">
-                            <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/ey.svg" alt="EY">
-                            <span class="ticker-brand-name">EY</span>
-                        </div>
-                        <div class="ticker-brand">
-                            <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/kpmg.svg" alt="KPMG">
-                            <span class="ticker-brand-name">KPMG</span>
-                        </div>
-                        <div class="ticker-brand">
-                            <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/servicenow.svg" alt="ServiceNow">
-                            <span class="ticker-brand-name">ServiceNow</span>
+                <!-- Ticker Row 2: Past Accounts Sold To & Onboarded -->
+                <div class="marquee-row-block">
+                    <div class="marquee-eyebrow">PROVEN ENTERPRISE DEAL PEDIGREE // SAMPLE ACCOUNTS SOLD TO &amp; ONBOARDED BY OUR LEADERSHIP</div>
+                    <div class="marquee-container">
+                        <div class="marquee-wrapper">
+                            <div class="marquee-track reverse">
+                                <div class="account-pill">
+                                    <img src="https://logo.clearbit.com/sobeys.com" alt="Sobeys" onerror="this.style.display='none'">
+                                    <span class="account-pill-name">Sobeys</span>
+                                </div>
+                                <div class="account-pill">
+                                    <img src="https://logo.clearbit.com/circlek.com" alt="Circle K" onerror="this.style.display='none'">
+                                    <span class="account-pill-name">Circle K</span>
+                                </div>
+                                <div class="account-pill">
+                                    <img src="https://logo.clearbit.com/couchetard.com" alt="Alimentation Couche-Tard" onerror="this.style.display='none'">
+                                    <span class="account-pill-name">Couche-Tard</span>
+                                </div>
+                                <div class="account-pill">
+                                    <img src="https://logo.clearbit.com/bell.ca" alt="Bell Canada" onerror="this.style.display='none'">
+                                    <span class="account-pill-name">Bell Canada</span>
+                                </div>
+                                <div class="account-pill">
+                                    <img src="https://logo.clearbit.com/marathonoil.com" alt="Marathon Oil" onerror="this.style.display='none'">
+                                    <span class="account-pill-name">Marathon Oil</span>
+                                </div>
+                                <div class="account-pill">
+                                    <img src="https://logo.clearbit.com/coopertire.com" alt="Cooper Tire" onerror="this.style.display='none'">
+                                    <span class="account-pill-name">Cooper Tire</span>
+                                </div>
+                                <div class="account-pill">
+                                    <img src="https://logo.clearbit.com/finning.com" alt="Finning" onerror="this.style.display='none'">
+                                    <span class="account-pill-name">Finning</span>
+                                </div>
+                                <div class="account-pill">
+                                    <img src="https://logo.clearbit.com/suncor.com" alt="Suncor" onerror="this.style.display='none'">
+                                    <span class="account-pill-name">Suncor</span>
+                                </div>
+                                <div class="account-pill">
+                                    <img src="https://logo.clearbit.com/questrade.com" alt="Questrade" onerror="this.style.display='none'">
+                                    <span class="account-pill-name">Questrade</span>
+                                </div>
+                                <div class="account-pill">
+                                    <img src="https://logo.clearbit.com/goeasy.com" alt="easyfinancial (goeasy)" onerror="this.style.display='none'">
+                                    <span class="account-pill-name">easyfinancial (goeasy)</span>
+                                </div>
+                                <div class="account-pill">
+                                    <img src="https://logo.clearbit.com/pharmascience.com" alt="Pharmascience" onerror="this.style.display='none'">
+                                    <span class="account-pill-name">Pharmascience</span>
+                                </div>
+                            </div>
+
+                            <!-- Duplicated Track 2 for Infinite Loop -->
+                            <div class="marquee-track reverse" aria-hidden="true">
+                                <div class="account-pill">
+                                    <img src="https://logo.clearbit.com/sobeys.com" alt="Sobeys" onerror="this.style.display='none'">
+                                    <span class="account-pill-name">Sobeys</span>
+                                </div>
+                                <div class="account-pill">
+                                    <img src="https://logo.clearbit.com/circlek.com" alt="Circle K" onerror="this.style.display='none'">
+                                    <span class="account-pill-name">Circle K</span>
+                                </div>
+                                <div class="account-pill">
+                                    <img src="https://logo.clearbit.com/couchetard.com" alt="Alimentation Couche-Tard" onerror="this.style.display='none'">
+                                    <span class="account-pill-name">Couche-Tard</span>
+                                </div>
+                                <div class="account-pill">
+                                    <img src="https://logo.clearbit.com/bell.ca" alt="Bell Canada" onerror="this.style.display='none'">
+                                    <span class="account-pill-name">Bell Canada</span>
+                                </div>
+                                <div class="account-pill">
+                                    <img src="https://logo.clearbit.com/marathonoil.com" alt="Marathon Oil" onerror="this.style.display='none'">
+                                    <span class="account-pill-name">Marathon Oil</span>
+                                </div>
+                                <div class="account-pill">
+                                    <img src="https://logo.clearbit.com/coopertire.com" alt="Cooper Tire" onerror="this.style.display='none'">
+                                    <span class="account-pill-name">Cooper Tire</span>
+                                </div>
+                                <div class="account-pill">
+                                    <img src="https://logo.clearbit.com/finning.com" alt="Finning" onerror="this.style.display='none'">
+                                    <span class="account-pill-name">Finning</span>
+                                </div>
+                                <div class="account-pill">
+                                    <img src="https://logo.clearbit.com/suncor.com" alt="Suncor" onerror="this.style.display='none'">
+                                    <span class="account-pill-name">Suncor</span>
+                                </div>
+                                <div class="account-pill">
+                                    <img src="https://logo.clearbit.com/questrade.com" alt="Questrade" onerror="this.style.display='none'">
+                                    <span class="account-pill-name">Questrade</span>
+                                </div>
+                                <div class="account-pill">
+                                    <img src="https://logo.clearbit.com/goeasy.com" alt="easyfinancial (goeasy)" onerror="this.style.display='none'">
+                                    <span class="account-pill-name">easyfinancial (goeasy)</span>
+                                </div>
+                                <div class="account-pill">
+                                    <img src="https://logo.clearbit.com/pharmascience.com" alt="Pharmascience" onerror="this.style.display='none'">
+                                    <span class="account-pill-name">Pharmascience</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. THE 4-BOX DELIVERY GRID -->
+        <!-- 4. THE 4-BOX DELIVERY GRID (WITH INTERACTIVE SPRINT LINKING) -->
         <section id="delivery-grid" class="delivery-grid-section">
             <div class="container">
                 <div class="section-header">
                     <span class="section-tag">INSTALLED IN YOUR STACK</span>
                     <h2 class="section-title">HOW WE DELIVER PREDICTABLE REVENUE · INSTALLED IN YOUR STACK</h2>
-                    <p class="section-desc">We eliminate enterprise deal slippage and sales floor friction by deploying 4 synchronized operational engines directly into your existing CRM perimeter.</p>
+                    <p class="section-desc">Click any pillar below to inspect the exact CRM enforcement workflows, prompts, and economic leverage installed in your stack during our 4-Week Sprint.</p>
                 </div>
 
                 <div class="boxes-4-grid">
                     <!-- Box 01 -->
-                    <div class="delivery-card">
+                    <div class="delivery-card-interactive" onclick="switchToSprintTab(1)">
                         <div class="delivery-card-top">
                             <div class="delivery-card-num">DELIVERY PILLAR 01</div>
                             <h3>Objective Deal Gating</h3>
                             <p>MEDDPICC transcript scanner that prevents "happy ears" stage advancement by verifying direct buyer quotes, metrics, and paper process evidence.</p>
                         </div>
                         <div class="delivery-metric-badge">
-                            <span>✦</span> Stops Month-3 Forecast Roll-Overs
+                            <span>✦ Stops Forecast Roll-Overs</span>
+                            <span class="inspect-module-hint">→ Inspect Module</span>
                         </div>
                     </div>
 
                     <!-- Box 02 -->
-                    <div class="delivery-card">
+                    <div class="delivery-card-interactive" onclick="switchToSprintTab(2)">
                         <div class="delivery-card-top">
                             <div class="delivery-card-num">DELIVERY PILLAR 02</div>
                             <h3>Capacity Recovery</h3>
                             <p>Post-Call CRM &amp; Follow-Up Drafter that auto-populates CRM properties and drafts executive recaps, recovering 45–60 min/rep/day (1+ FTE per 10 AEs).</p>
                         </div>
                         <div class="delivery-metric-badge">
-                            <span>✦</span> 40 Hours / Week Reclaimed
+                            <span>✦ 40 Hours / Week Reclaimed</span>
+                            <span class="inspect-module-hint">→ Inspect Module</span>
                         </div>
                     </div>
 
                     <!-- Box 03 -->
-                    <div class="delivery-card">
+                    <div class="delivery-card-interactive" onclick="switchToSprintTab(3)">
                         <div class="delivery-card-top">
                             <div class="delivery-card-num">DELIVERY PILLAR 03</div>
                             <h3>Procurement Defense</h3>
                             <p>Digital Deal Rooms &amp; Mutual Action Plans (MAPs) giving internal champions the ROI models and security packs needed to close behind closed doors.</p>
                         </div>
                         <div class="delivery-metric-badge">
-                            <span>✦</span> Compresses Legal &amp; Security Delays
+                            <span>✦ Compresses Legal Delays</span>
+                            <span class="inspect-module-hint">→ Inspect Module</span>
                         </div>
                     </div>
 
                     <!-- Box 04 -->
-                    <div class="delivery-card">
+                    <div class="delivery-card-interactive" onclick="switchToSprintTab(4)">
                         <div class="delivery-card-top">
                             <div class="delivery-card-num">DELIVERY PILLAR 04</div>
                             <h3>Expansion &amp; Leadership De-risking</h3>
                             <p>Cross-border territory entry and VP of Sales onboarding accelerator. Cuts rep ramp time from 6 months to 60 days and provides an objective deal radar in the first 90 days.</p>
                         </div>
                         <div class="delivery-metric-badge">
-                            <span>✦</span> 60-Day Enterprise AE Ramp
+                            <span>✦ 60-Day Enterprise AE Ramp</span>
+                            <span class="inspect-module-hint">→ Inspect Module</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 5. ECONOMIC LEVERAGE BENCHMARK BAR -->
-        <section class="benchmark-bar">
-            <div class="container">
-                <div class="benchmark-grid">
-                    <div class="bench-box">
-                        <div class="bench-num"><span>25%–35%</span> Slippage</div>
-                        <div class="bench-copy">Of Month-3 forecasted enterprise deals slip into the next quarter due to unmapped Paper Processes and "happy ears" stage movement.</div>
-                        <div class="bench-source">2026 Deal Governance Benchmark</div>
-                    </div>
-                    <div class="bench-box">
-                        <div class="bench-num"><span>40 hrs/wk</span> Recovered</div>
-                        <div class="bench-copy">A 10-person AE team wastes 40 hrs/week logging CRM notes and writing follow-ups—equal to 1 full-time AE ($120k–$160k) in lost selling capacity.</div>
-                        <div class="bench-source">Post-Call Engine ROI</div>
-                    </div>
-                    <div class="bench-box">
-                        <div class="bench-num"><span class="gold">1 Saved Deal</span> = 3x ROI</div>
-                        <div class="bench-copy">At a $50k–$150k+ ACV, catching a single missing Economic Buyer or security review bottleneck 30 days before quarter-close pays for the system 3x over.</div>
-                        <div class="bench-source">Forensic Deal Protection</div>
-                    </div>
-                    <div class="bench-box">
-                        <div class="bench-num"><span class="gold">0 Months</span> InfoSec Delay</div>
-                        <div class="bench-copy">Deploying inside your existing CRM perimeter using your own LLM API keys (BYOK) bypasses 3–6 month enterprise vendor security audits.</div>
-                        <div class="bench-source">Client-Tenant Architecture</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. THE 3-PHASE VALUE LADDER -->
-        <section id="value-ladder" class="section-pad section-canvas">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag" style="background: rgba(15,23,42,0.06); border-color: #cbd5e1; color: var(--text-ink);">COMMERCIAL VALUE LADDER</span>
-                    <h2 class="section-title dark-text">Productized Revenue Architecture + Retained Deal Governance</h2>
-                    <p class="section-desc dark-text">We don't sell open-ended hourly coding or theoretical slide decks. We operate a structured 3-phase progression that benchmarks your pipeline, installs permanent revenue machinery inside your CRM, and governs your quarterly forecast.</p>
-                </div>
-
-                <div class="ai-modes-grid">
-                    <!-- Phase 1 -->
-                    <div class="ai-mode-card">
-                        <div>
-                            <span class="mode-step-pill">Phase 01 · Peer Cohort Diagnostic</span>
-                            <h3>The 2026 Enterprise Deal Governance &amp; Pipeline Leakage Index</h3>
-                            <p>Start by benchmarking your sales floor against our closed-door cohort of B2B SaaS leaders ($5M–$30M ARR). In a 20-minute diagnostic, we measure your pipeline across 5 friction points and deliver your private <strong>1-Page Pipeline Leakage Scorecard</strong>.</p>
-                            <ul class="mode-checklist">
-                                <li><span>✓</span> Compare your Month-3 forecast slippage against peer CROs</li>
-                                <li><span>✓</span> Measure "Economic Buyer Lag" and "True Days in Procurement"</li>
-                                <li><span>✓</span> Receive the embargoed 2026 Benchmark Index + 1-on-1 debrief</li>
-                            </ul>
-                        </div>
-                        <button type="button" class="btn-pillar" onclick="openDiagnosticDrawer()">Take the 5-Question Benchmark →</button>
-                    </div>
-
-                    <!-- Phase 2 -->
-                    <div class="ai-mode-card sprint-highlight">
-                        <div>
-                            <span class="mode-step-pill" style="background: var(--emerald-600); color: #ffffff;">Phase 02 · Fixed-Scope Turnkey Build</span>
-                            <h3>The 4-Week "Enterprise Revenue Engine" Installation Sprint</h3>
-                            <p>Instead of leaving behind a static PDF, we install our unified, battle-tested <strong>Revenue Infrastructure Kit</strong> directly into your CRM and cloud tenant—shifting your investment from discretionary training to a permanent technology asset your team keeps forever.</p>
-                            <ul class="mode-checklist">
-                                <li><span>✓</span> <strong>1 MEDDPICC Deal Health &amp; Stage-Gate Auditor</strong> inside your CRM</li>
-                                <li><span>✓</span> <strong>1 Post-Call CRM &amp; Follow-Up Drafter</strong> (saves 45–60 min/rep/day)</li>
-                                <li><span>✓</span> <strong>1 Standardized Digital Deal Room / MAP</strong> + 3-Page Ops Runbook</li>
-                            </ul>
-                        </div>
-                        <a href="#sprint" class="btn-pillar" style="background: var(--emerald-600); color: #ffffff;">Inspect the 4-Week Sprint Kit →</a>
-                    </div>
-
-                    <!-- Phase 3 -->
-                    <div class="ai-mode-card">
-                        <div>
-                            <span class="mode-step-pill">Phase 03 · Retained Deal Survival</span>
-                            <h3>Executive Deal Governance &amp; Benchmarking Retainer</h3>
-                            <p>Anyone can wire a webhook; nobody can buy comparative truth and seasoned deal survival off the shelf. Our agents perform 90% of the weekly and monthly forensic extraction while Scott Carpentier chairs your high-stakes <strong>Strategic Deal Reviews</strong>.</p>
-                            <ul class="mode-checklist">
-                                <li><span>✓</span> <strong>Weekly (Autonomous):</strong> Deal Health &amp; Slippage Radar to CRO/Managers</li>
-                                <li><span>✓</span> <strong>Monthly (Benchmarked):</strong> 10-Page Revenue Leakage &amp; Cohort Forensic PDF</li>
-                                <li><span>✓</span> <strong>Monthly/Quarterly (Live):</strong> 60-Min Strategic Deal Review (Top 5 Deals)</li>
-                            </ul>
-                        </div>
-                        <a href="#governance-retainer" class="btn-pillar">Explore Executive Governance →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 7. 4-WEEK SPRINT ENGINE (COMPACT 4-TAB SWITCHER) -->
-        <section id="sprint" class="section-pad section-white">
+        <!-- 5. 4-WEEK SPRINT ENGINE (PLACED IMMEDIATELY BELOW DELIVERY GRID) -->
+        <section id="sprint-engine" class="section-pad section-white">
             <div class="container">
                 <div class="section-header">
                     <span class="section-tag" style="background: rgba(16,185,129,0.1); border-color: rgba(16,185,129,0.3); color: var(--emerald-600);">Inside Phase 02 · The 4-Week Installation Sprint</span>
@@ -2210,19 +2350,19 @@
 
                 <div class="engine-shell">
                     <div class="stage-tabs">
-                        <button type="button" class="stage-tab-btn active" data-stage="1">
+                        <button type="button" class="stage-tab-btn active" data-stage="1" onclick="switchToSprintTab(1)">
                             <span class="stage-tab-num">Component 01 · Deal Rigor</span>
                             <span class="stage-tab-name">MEDDPICC Audit Engine</span>
                         </button>
-                        <button type="button" class="stage-tab-btn" data-stage="2">
+                        <button type="button" class="stage-tab-btn" data-stage="2" onclick="switchToSprintTab(2)">
                             <span class="stage-tab-num">Component 02 · Capacity</span>
                             <span class="stage-tab-name">Post-Call CRM Drafter</span>
                         </button>
-                        <button type="button" class="stage-tab-btn" data-stage="3">
+                        <button type="button" class="stage-tab-btn" data-stage="3" onclick="switchToSprintTab(3)">
                             <span class="stage-tab-num">Component 03 · Velocity</span>
                             <span class="stage-tab-name">Digital Deal Room &amp; MAP</span>
                         </button>
-                        <button type="button" class="stage-tab-btn" data-stage="4">
+                        <button type="button" class="stage-tab-btn" data-stage="4" onclick="switchToSprintTab(4)">
                             <span class="stage-tab-num">Component 04 · Handover</span>
                             <span class="stage-tab-name">4-Week Rollout &amp; Runbook</span>
                         </button>
@@ -2253,7 +2393,7 @@
                             <h4>Eliminate Late-Stage Slippage</h4>
                             <ul>
                                 <li><span>✦ Revenue Protected:</span> Catches unmapped Paper Processes 30+ days before quarter-close</li>
-                                <li><span>✦ Win-Rate Lift:</span> Lifts enterprise win rates 15%–20% on $50k–$150k+ ACV pursuits</li>
+                                <li><span>✦ Win-Rate Lift:</span> Lifts enterprise win rates 15%–20% on $50k–$250k+ ACV pursuits</li>
                                 <li><span>✦ Immediate ROI:</span> Saving a single slipped enterprise deal pays for the sprint 3x over</li>
                             </ul>
                         </div>
@@ -2344,11 +2484,11 @@
                         </div>
                         <div class="stage-col highlight-col">
                             <span class="stage-col-label emerald">3. Permanent Technology Asset</span>
-                            <h4>Fixed Investment · Kept Forever</h4>
+                            <h4>Predictable Fixed-Scope Investment</h4>
                             <ul>
-                                <li><span>✦ Fixed Investment:</span> $20k–$25k fixed fee (no surprise billing or open-ended hourly creep)</li>
+                                <li><span>✦ Fixed Investment:</span> Transparent fixed-fee scope (no surprise billing or open-ended hourly creep)</li>
                                 <li><span>✦ Permanent Asset:</span> Code, automations, and rubrics run in your stack and belong to you</li>
-                                <li><span>✦ 14-Day Hypercare:</span> Direct engineering and prompt optimization post-launch included</li>
+                                <li><span>✦ 30-Day Hypercare:</span> Direct prompt optimization and post-launch tuning included</li>
                             </ul>
                         </div>
                     </div>
@@ -2356,7 +2496,93 @@
             </div>
         </section>
 
-        <!-- 8. EXECUTIVE DEAL GOVERNANCE & ANTI-FLUFF PROTOCOL -->
+        <!-- 6. ECONOMIC LEVERAGE BENCHMARK BAR -->
+        <section class="benchmark-bar">
+            <div class="container">
+                <div class="benchmark-grid">
+                    <div class="bench-box">
+                        <div class="bench-num"><span>25%–35%</span> Slippage</div>
+                        <div class="bench-copy">Of Month-3 forecasted enterprise deals slip into the next quarter due to unmapped Paper Processes and "happy ears" stage movement.</div>
+                        <div class="bench-source">2026 Deal Governance Benchmark</div>
+                    </div>
+                    <div class="bench-box">
+                        <div class="bench-num"><span>40 hrs/wk</span> Recovered</div>
+                        <div class="bench-copy">A 10-person AE team wastes 40 hrs/week logging CRM notes and writing follow-ups—equal to 1 full-time AE ($120k–$160k) in lost selling capacity.</div>
+                        <div class="bench-source">Post-Call Engine ROI</div>
+                    </div>
+                    <div class="bench-box">
+                        <div class="bench-num"><span class="gold">1 Saved Deal</span> = 3x ROI</div>
+                        <div class="bench-copy">At a $50k–$250k+ ACV, catching a single missing Economic Buyer or security review bottleneck 30 days before quarter-close pays for the system 3x over.</div>
+                        <div class="bench-source">Forensic Deal Protection</div>
+                    </div>
+                    <div class="bench-box">
+                        <div class="bench-num"><span class="gold">0 Months</span> InfoSec Delay</div>
+                        <div class="bench-copy">Deploying inside your existing CRM perimeter using your own LLM API keys (BYOK) bypasses 3–6 month enterprise vendor security audits.</div>
+                        <div class="bench-source">Client-Tenant Architecture</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. THE 3-PHASE VALUE LADDER -->
+        <section id="value-ladder" class="section-pad section-canvas">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag" style="background: rgba(15,23,42,0.06); border-color: #cbd5e1; color: var(--text-ink);">COMMERCIAL VALUE LADDER</span>
+                    <h2 class="section-title dark-text">Productized Revenue Architecture + Retained Deal Governance</h2>
+                    <p class="section-desc dark-text">We don't sell open-ended hourly coding or theoretical slide decks. We operate a structured 3-phase progression that benchmarks your pipeline, installs permanent revenue machinery inside your CRM, and governs your quarterly forecast.</p>
+                </div>
+
+                <div class="ai-modes-grid">
+                    <!-- Phase 1 -->
+                    <div class="ai-mode-card">
+                        <div>
+                            <span class="mode-step-pill">Phase 01 · Peer Cohort Diagnostic</span>
+                            <h3>The 2026 Enterprise Deal Governance &amp; Pipeline Leakage Index</h3>
+                            <p>Start by benchmarking your sales floor against our closed-door cohort of B2B SaaS leaders ($5M–$50M+ ARR). In a 20-minute diagnostic, we measure your pipeline across 5 friction points and deliver your private <strong>1-Page Pipeline Leakage Scorecard</strong>.</p>
+                            <ul class="mode-checklist">
+                                <li><span>✓</span> Compare your Month-3 forecast slippage against peer CROs</li>
+                                <li><span>✓</span> Measure "Economic Buyer Lag" and "True Days in Procurement"</li>
+                                <li><span>✓</span> Receive the embargoed 2026 Benchmark Index + 1-on-1 debrief</li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn-pillar" onclick="openDiagnosticModal()">Take the 5-Question Benchmark →</button>
+                    </div>
+
+                    <!-- Phase 2 -->
+                    <div class="ai-mode-card sprint-highlight">
+                        <div>
+                            <span class="mode-step-pill" style="background: var(--emerald-600); color: #ffffff;">Phase 02 · Fixed-Scope Turnkey Build</span>
+                            <h3>The 4-Week "Enterprise Revenue Engine" Installation Sprint</h3>
+                            <p>Instead of leaving behind a static PDF, we install our unified, battle-tested <strong>Revenue Infrastructure Kit</strong> directly into your CRM and cloud tenant—shifting your investment from discretionary training to a permanent technology asset your team keeps forever.</p>
+                            <ul class="mode-checklist">
+                                <li><span>✓</span> <strong>1 MEDDPICC Deal Health &amp; Stage-Gate Auditor</strong> inside your CRM</li>
+                                <li><span>✓</span> <strong>1 Post-Call CRM &amp; Follow-Up Drafter</strong> (saves 45–60 min/rep/day)</li>
+                                <li><span>✓</span> <strong>1 Standardized Digital Deal Room / MAP</strong> + 3-Page Ops Runbook</li>
+                            </ul>
+                        </div>
+                        <a href="#sprint-engine" class="btn-pillar" style="background: var(--emerald-600); color: #ffffff;">Inspect the 4-Week Sprint Kit →</a>
+                    </div>
+
+                    <!-- Phase 3 -->
+                    <div class="ai-mode-card">
+                        <div>
+                            <span class="mode-step-pill">Phase 03 · Retained Deal Survival</span>
+                            <h3>Executive Deal Governance &amp; Benchmarking Retainer</h3>
+                            <p>Anyone can wire a webhook; nobody can buy comparative truth and seasoned deal survival off the shelf. Our agents perform 90% of the weekly and monthly forensic extraction while Scott Carpentier chairs your high-stakes <strong>Strategic Deal Reviews</strong>.</p>
+                            <ul class="mode-checklist">
+                                <li><span>✓</span> <strong>Weekly (Autonomous):</strong> Deal Health &amp; Slippage Radar to CRO/Managers</li>
+                                <li><span>✓</span> <strong>Monthly (Benchmarked):</strong> 10-Page Revenue Leakage &amp; Cohort Forensic PDF</li>
+                                <li><span>✓</span> <strong>Monthly/Quarterly (Live):</strong> 60-Min Strategic Deal Review (Top 5 Deals)</li>
+                            </ul>
+                        </div>
+                        <a href="#governance-retainer" class="btn-pillar">Explore Executive Governance →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. EXECUTIVE DEAL GOVERNANCE & COMMERCIAL ARCHITECTURE -->
         <section id="governance-retainer" class="section-pad retainer-section">
             <div class="container">
                 <div class="section-header">
@@ -2389,7 +2615,7 @@
                                 <span class="tier-tag">10-Page Forensic PDF</span>
                             </div>
                             <div class="retainer-tier-title">Revenue Leakage &amp; Cohort Forensic Report</div>
-                            <div class="retainer-tier-desc">A deep-dive analytical teardown comparing your pipeline health and conversion dynamics against peer B2B SaaS companies ($5M–$30M ARR).</div>
+                            <div class="retainer-tier-desc">A deep-dive analytical teardown comparing your pipeline health and conversion dynamics against peer B2B SaaS companies ($5M–$50M+ ARR).</div>
                             <ul class="mode-checklist" style="border: none; padding: 0; margin: 0;">
                                 <li style="color: #cbd5e1;"><span style="color: var(--emerald-400);">•</span> Stage-by-stage conversion velocity and dwell-time anomaly detection</li>
                                 <li style="color: #cbd5e1;"><span style="color: var(--emerald-400);">•</span> Rep-level qualification fidelity and discount correlation analysis</li>
@@ -2398,7 +2624,7 @@
                         </div>
 
                         <!-- Tier 3 -->
-                        <div class="retainer-tier-card" style="border-color: var(--gold-border);">
+                        <div class="retainer-tier-card" style="border-color: var(--gold-border); margin-bottom: 0;">
                             <div class="retainer-tier-header">
                                 <span class="tier-cadence" style="color: var(--gold-champagne);">MONTHLY / QUARTERLY · LIVE EXECUTIVE INSPECTION</span>
                                 <span class="tier-tag" style="background: rgba(229,192,123,0.18); color: var(--gold-champagne);">60-Min Closed Door</span>
@@ -2413,7 +2639,7 @@
                         </div>
                     </div>
 
-                    <!-- Right Anti-Fluff Panel -->
+                    <!-- Right Anti-Fluff Panel & Transparent Commercial Architecture Card -->
                     <div class="anti-fluff-panel">
                         <div class="tracked-eyebrow" style="color: var(--gold-champagne); margin-bottom: 8px;">EXECUTIVE FORENSIC PROTOCOL</div>
                         <div class="anti-fluff-title">The Anti-Fluff Protocol in Practice</div>
@@ -2429,17 +2655,31 @@
                             If those answers are not in the call transcripts or the Deal Room, the deal is not in commit. That is how we save <strong>25%–35% in late-stage slippage</strong> and protect your quarterly forecast integrity.
                         </p>
 
-                        <div style="margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--border-hairline);">
-                            <div style="font-size: 12px; font-weight: 700; color: var(--gold-champagne); margin-bottom: 6px;">RETAINER PRICING &amp; TERMS</div>
-                            <div style="font-size: 24px; font-weight: 900; color: #ffffff;">$2,500 <span style="font-size: 14px; font-weight: 600; color: #94a3b8;">/ month</span></div>
-                            <div style="font-size: 12px; color: #94a3b8; margin-top: 4px;">Month-to-month flexibility. Rescuing 1 slipped deal pays for 3+ years of governance.</div>
+                        <!-- Commercial & Engagement Architecture (Replacing hardcoded price) -->
+                        <div class="pricing-structure-card">
+                            <div class="tracked-eyebrow" style="color: var(--gold-champagne); margin-bottom: 8px;">ENGAGEMENT &amp; COMMERCIAL STRUCTURE</div>
+                            <div style="font-size: 17px; font-weight: 800; color: #ffffff; margin-bottom: 12px;">Predictable Sprints + Tailored Governance</div>
+                            
+                            <div style="margin-bottom: 14px;">
+                                <div style="font-size: 13px; font-weight: 800; color: var(--emerald-400); margin-bottom: 3px;">1. 4-Week Installation Sprint (Predictable Fixed Fee)</div>
+                                <p style="font-size: 12.5px; color: #cbd5e1; line-height: 1.5;">
+                                    The 4-week deployment is billed as a <strong>transparent, fixed-scope investment</strong>—never an open-ended hourly billing arrangement with surprise budget overruns. You own the code and workflows forever.
+                                </p>
+                            </div>
+
+                            <div>
+                                <div style="font-size: 13px; font-weight: 800; color: var(--gold-champagne); margin-bottom: 3px;">2. Retained Governance &amp; Benchmarking (Tailored Scope)</div>
+                                <p style="font-size: 12.5px; color: #cbd5e1; line-height: 1.5;">
+                                    Ongoing monthly or quarterly governance is structured flexibly based on your sales floor size (AE count), pipeline volume, and review cadence (monthly vs. quarterly executive deal inspections).
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 9. CISO-READY BYOK SECURITY & CORE INTEGRATIONS -->
+        <!-- 9. CISO-READY BYOK SECURITY & ONGOING EVOLUTION -->
         <section id="byok-security" class="section-pad byok-section">
             <div class="container">
                 <div class="section-header">
@@ -2482,6 +2722,30 @@
                     </div>
                 </div>
 
+                <!-- Prominent Callout: Deployment Flexibility & Ongoing Agent Evolution -->
+                <div class="lifecycle-callout">
+                    <div class="tracked-eyebrow" style="color: var(--gold-champagne); margin-bottom: 6px;">COLLABORATIVE IMPLEMENTATION &amp; LIFECYCLE</div>
+                    <h3 class="lifecycle-title">Deployment Flexibility &amp; Ongoing Agent Evolution</h3>
+                    <div class="lifecycle-grid">
+                        <div class="lifecycle-col">
+                            <div class="lifecycle-col-title">
+                                <span>✦</span> Your Dev Team or Ours (Turnkey Implementation)
+                            </div>
+                            <p class="lifecycle-col-desc">
+                                We deploy directly into your infrastructure alongside your internal RevOps/engineering team—or we bring our own dedicated AI architects to handle the entire build turnkey. Either way, you retain 100% control over your data, cloud perimeter, and API keys.
+                            </p>
+                        </div>
+                        <div class="lifecycle-col">
+                            <div class="lifecycle-col-title">
+                                <span>✦</span> Production-Ready Day 1 + 30-Day &amp; Quarterly Tuning
+                            </div>
+                            <p class="lifecycle-col-desc">
+                                Agents go live ready for immediate production use at handover. Because sales motions evolve, we conduct structured <strong>30-day post-launch reviews</strong> during the initial ramp to gather rep feedback and refine prompts, transitioning smoothly to <strong>quarterly optimization reviews</strong> over Year 1.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Core Stack Integrations Grid -->
                 <div class="integrations-box">
                     <div class="integrations-eyebrow">CORE STACK INTEGRATIONS · BYOK DEPLOYMENT SURFACES</div>
@@ -2520,8 +2784,8 @@
             <div class="container">
                 <div class="section-header">
                     <span class="section-tag" style="background: rgba(15,23,42,0.06); border-color: #cbd5e1; color: var(--text-ink);">PRACTICE AREAS</span>
-                    <h2 class="section-title dark-text">Enterprise Revenue Architecture Across Direct, Channel &amp; Cross-Border GTM</h2>
-                    <p class="section-desc dark-text">Whether we are installing your autonomous MEDDPICC engine, building a high-attach partner ecosystem, or validating North American market entry, every engagement is engineered for measurable economic leverage.</p>
+                    <h2 class="section-title dark-text">Enterprise Revenue Architecture Across Direct, Channel &amp; Global GTM</h2>
+                    <p class="section-desc dark-text">Whether we are installing your autonomous MEDDPICC engine, building a high-attach partner ecosystem, or validating transatlantic expansion, every engagement is engineered for measurable economic leverage.</p>
                 </div>
 
                 <div class="pillars-grid">
@@ -2541,7 +2805,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <button type="button" class="btn-pillar" onclick="openDiagnosticDrawer()">Benchmark Your Deal Governance →</button>
+                        <button type="button" class="btn-pillar" onclick="openDiagnosticModal()">Benchmark Your Deal Governance →</button>
                     </div>
 
                     <!-- Pillar 2 -->
@@ -2560,26 +2824,26 @@
                                 </ul>
                             </div>
                         </div>
-                        <a href="#book" class="btn-pillar">Architect Your Partner Channel →</a>
+                        <button type="button" class="btn-pillar" onclick="openScheduleModal()">Architect Your Partner Channel →</button>
                     </div>
 
-                    <!-- Pillar 3 -->
+                    <!-- Pillar 3: North American, European & Global Market Entry -->
                     <div class="pillar-card">
                         <div>
-                            <span class="pillar-num">Pillar 03 · Market Expansion</span>
-                            <h3>North American &amp; Cross-Border Market Entry</h3>
-                            <p>Entering the US or Canada? Validate enterprise buyer appetite, localize your MEDDPICC playbook, and establish regional channel alliances before spending $250k+ on premature local hires.</p>
+                            <span class="pillar-num">Pillar 03 · Global Expansion</span>
+                            <h3>North American, European &amp; Global Market Entry</h3>
+                            <p>Entering the US, Canada, UK/EMEA, or new global territories? Whether you are an international software company entering North America or a North American leader expanding into Europe, we validate enterprise buyer appetite, localize your MEDDPICC playbooks, and establish regional channel alliances before you burn $500k+ on premature headcount.</p>
                             <div class="deliverables-box">
                                 <div class="deliverables-title">Core Deliverables:</div>
                                 <ul class="deliverables-list">
-                                    <li><span>✓</span> <div><strong>Live Buyer Validation:</strong> Direct discovery interviews with North American enterprise buyers</div></li>
-                                    <li><span>✓</span> <div><strong>US &amp; Canada Localization:</strong> Regional procurement, USD/CAD pricing &amp; positioning</div></li>
+                                    <li><span>✓</span> <div><strong>Live Buyer Validation:</strong> Direct discovery interviews with enterprise check-signers</div></li>
+                                    <li><span>✓</span> <div><strong>US, Canada &amp; EMEA Localization:</strong> Regional procurement, multi-currency &amp; positioning</div></li>
                                     <li><span>✓</span> <div><strong>Turnkey Rep Playbook:</strong> Validated revenue architecture ready for local AE onboarding</div></li>
-                                    <li><span>✓</span> <div><strong>Compliant EOR Scaling:</strong> Rapidly hire local sellers via Employer of Record partners</div></li>
+                                    <li><span>✓</span> <div><strong>De-risked Channel Attach:</strong> Early alliances with regional advisory and implementation partners</div></li>
                                 </ul>
                             </div>
                         </div>
-                        <a href="#book" class="btn-pillar">De-Risk Your Market Expansion →</a>
+                        <button type="button" class="btn-pillar" onclick="openScheduleModal()">De-Risk Your Market Expansion →</button>
                     </div>
                 </div>
             </div>
@@ -2603,26 +2867,28 @@
                             </p>
                         </div>
 
+                        <!-- Refined Founder Bio Card -->
                         <div class="founder-box">
                             <div class="founder-header">
                                 <div class="founder-avatar">SC</div>
                                 <div>
-                                    <div class="tracked-eyebrow" style="color: var(--gold-champagne);">FOUNDER &amp; MANAGING PRINCIPAL</div>
-                                    <h3 style="font-size: 22px; font-weight: 800; color: #ffffff;">Scott Carpentier</h3>
-                                    <div style="font-size: 13px; color: #94a3b8;">Enterprise Revenue Architect &amp; Deal Governance Principal</div>
+                                    <div class="tracked-eyebrow" style="color: var(--gold-champagne);">FOUNDER &amp; MANAGING PRINCIPAL // ENTERPRISE REVENUE ARCHITECT &amp; GTM EXECUTIVE</div>
+                                    <h3 style="font-size: 23px; font-weight: 800; color: #ffffff;">Scott Carpentier</h3>
+                                    <div style="font-size: 13px; color: #94a3b8;">Oxford Saïd Certified AI Executive · Enterprise Software Leader</div>
                                 </div>
                             </div>
-                            <p style="font-size: 14px; color: #cbd5e1; margin-bottom: 12px; line-height: 1.6;">
-                                Scott Carpentier brings more than two decades of enterprise software leadership across North America—including formative years inside <strong>SAP</strong>, scaling a private-equity-backed software company past <strong>$60M in revenue</strong>, and serving as Country Manager &amp; Geo VP at <strong>BlackLine (NASDAQ: BL)</strong>, where he scaled regional ARR <strong>12X from $2.5M to $30M</strong>.
+                            <p style="font-size: 13.5px; color: #cbd5e1; margin-bottom: 12px; line-height: 1.6;">
+                                Scott Carpentier brings more than two decades of enterprise software revenue leadership across North America and global markets—including formative years at <strong>SAP</strong>, scaling a private-equity-backed enterprise software company (<strong>Winshuttle / Precisely</strong>) from <strong>$9M to $60M in revenue</strong>, and serving for nearly nine years as Regional VP and Country Manager at <strong>BlackLine (Nasdaq: BL)</strong>, helping scale global revenue from <strong>$150M to $750M</strong> while growing regional ARR <strong>12-fold from $2.5M to $30M</strong>.
                             </p>
-                            <p style="font-size: 14px; color: #cbd5e1; line-height: 1.6;">
-                                Renowned for combining rigorous MEDDPICC deal governance with high-velocity partner ecosystems (achieving an <strong>85% partner attach rate</strong> across SIs, advisory consultancies, and tech alliances), Scott founded The Sales Bench to give B2B software leaders ($5M–$30M ARR) the installed infrastructure and comparative benchmarks to scale predictably.
+                            <p style="font-size: 13.5px; color: #cbd5e1; line-height: 1.6;">
+                                An expert in combining rigorous MEDDPICC deal governance, matrix leadership, and high-velocity partner ecosystems (achieving an <strong>85% partner attach rate</strong> across Big 4 firms, SIs, and advisory consultancies) with practical AI automation—holding executive certification in AI from <strong>Saïd Business School at the University of Oxford</strong>. Scott founded The Sales Bench to equip B2B software leaders with the installed revenue infrastructure, de-risked market expansion playbooks, and comparative benchmarks required to scale predictably.
                             </p>
                             <div class="cred-pills">
-                                <span class="cred-pill">$2.5M ➔ $30M ARR Scale</span>
-                                <span class="cred-pill">85% Partner Attach</span>
-                                <span class="cred-pill">Enterprise Revenue Architect</span>
-                                <span class="cred-pill">US &amp; Canada Expansion</span>
+                                <span class="cred-pill">[$150M → $750M Public SaaS Scale]</span>
+                                <span class="cred-pill">[$9M → $60M PE Growth]</span>
+                                <span class="cred-pill">[12x Regional ARR ($2.5M → $30M)]</span>
+                                <span class="cred-pill">[85% Partner Attach Rate]</span>
+                                <span class="cred-pill">[Oxford Saïd AI Certified]</span>
                             </div>
                         </div>
                     </div>
@@ -2645,7 +2911,7 @@
                             <div class="tracked-eyebrow" style="color: var(--text-ink); margin-bottom: 12px;">What We Cover In 20 Minutes:</div>
                             <div class="takeaway-item">
                                 <span class="takeaway-check">✓</span>
-                                <div><strong>Peer Cohort Benchmark Mirror:</strong> See where your Month-3 forecast slippage, Economic Buyer latency, and procurement cycle stand against peer B2B SaaS leaders ($5M–$30M ARR).</div>
+                                <div><strong>Peer Cohort Benchmark Mirror:</strong> See where your Month-3 forecast slippage, Economic Buyer latency, and procurement cycle stand against peer B2B SaaS leaders ($5M–$50M+ ARR).</div>
                             </div>
                             <div class="takeaway-item">
                                 <span class="takeaway-check">✓</span>
@@ -2689,199 +2955,267 @@
             <div>© 2026 The Sales Bench. All Rights Reserved. Toronto, Ontario, Canada.</div>
             <div class="footer-links">
                 <a href="#delivery-grid">Delivery Grid</a>
+                <a href="#sprint-engine">4-Week Sprint</a>
                 <a href="#value-ladder">Value Ladder</a>
-                <a href="#sprint">4-Week Sprint</a>
                 <a href="#governance-retainer">Deal Governance</a>
                 <a href="#byok-security">BYOK Security</a>
                 <a href="#services">Practice Areas</a>
-                <a href="javascript:void(0)" onclick="openDiagnosticDrawer()">2026 Benchmark</a>
-                <a href="#book">Contact</a>
+                <a href="javascript:void(0)" onclick="openDiagnosticModal()">2026 Benchmark</a>
+                <a href="javascript:void(0)" onclick="openScheduleModal()">Schedule Debrief</a>
             </div>
         </div>
     </footer>
 
     <!-- 14. STICKY FLOATING BADGE / PILL -->
-    <button type="button" class="floating-diagnostic-pill" onclick="openDiagnosticDrawer()">
+    <button type="button" class="floating-diagnostic-pill" onclick="openDiagnosticModal()">
         <span>⚡</span> Run 2026 Deal Slippage Diagnostic (2 Min)
     </button>
 
-    <!-- 15. SLIDE-OVER COPILOT DRAWER & BACKDROP -->
-    <div id="drawer-backdrop" class="drawer-backdrop" onclick="closeDiagnosticDrawer()"></div>
-
-    <div id="diagnostic-drawer" class="diagnostic-drawer">
-        <div class="drawer-header">
-            <div>
-                <span class="drawer-eyebrow">2026 PIPELINE LEAKAGE INDEX</span>
-                <h3 class="drawer-title">Deal Slippage Diagnostic</h3>
-            </div>
-            <button type="button" class="drawer-close-btn" onclick="closeDiagnosticDrawer()" aria-label="Close Drawer">✕</button>
-        </div>
-
-        <div class="drawer-body">
-            <!-- Dynamic Calculation Banner -->
-            <div class="drawer-calc-banner">
-                <div class="drawer-calc-title">Estimated Annual Revenue Leakage:</div>
-                <div class="drawer-calc-figure" id="drawer-leak-figure">$180,000 – $360,000</div>
-                <div class="drawer-calc-sub" id="drawer-capacity-figure">Recoverable AE Admin Drag: <strong>1+ FTE (~$140k/yr)</strong></div>
-            </div>
-
-            <!-- Progress Tracker -->
-            <div class="drawer-step-info">
-                <span id="drawer-step-lbl">BENCHMARK METRIC 1 OF 5</span>
-                <span id="drawer-pct-lbl" style="color: var(--emerald-400);">20% Complete</span>
-            </div>
-            <div class="drawer-progress-track">
-                <div id="drawer-progress-bar" class="drawer-progress-fill"></div>
-            </div>
-
-            <!-- Question 1: Month-3 Forecast Slippage -->
-            <div id="d-step-1" class="drawer-step">
-                <div class="drawer-step-q">1. What percentage of deals forecasted to close in Month 3 of a quarter actually slip into the next quarter?</div>
-                <div class="drawer-options">
-                    <button type="button" class="drawer-opt-btn" onclick="selectDrawerAnswer(1, 'low', 0.10)">
-                        <div class="drawer-opt-title">Under 15% Slippage</div>
-                        <div class="drawer-opt-sub">Strict stage-gating keeps late-stage slippage minimal.</div>
-                    </button>
-                    <button type="button" class="drawer-opt-btn" onclick="selectDrawerAnswer(1, 'mid', 0.20)">
-                        <div class="drawer-opt-title">15% – 25% Slippage</div>
-                        <div class="drawer-opt-sub">1 to 2 enterprise deals slip quarterly due to procurement delays.</div>
-                    </button>
-                    <button type="button" class="drawer-opt-btn" onclick="selectDrawerAnswer(1, 'avg', 0.30)">
-                        <div class="drawer-opt-title">25% – 35% Slippage (Industry Average)</div>
-                        <div class="drawer-opt-sub">3–4 slipped deals delay $200k+ in quarterly cash flow.</div>
-                    </button>
-                    <button type="button" class="drawer-opt-btn" onclick="selectDrawerAnswer(1, 'high', 0.40)">
-                        <div class="drawer-opt-title">Over 35% Slippage (Severe Exposure)</div>
-                        <div class="drawer-opt-sub">Month-3 board forecasts routinely miss due to unverified close dates.</div>
-                    </button>
+    <!-- 15. CENTERED DIAGNOSTIC MODAL & OVERLAY -->
+    <div id="diagnostic-modal-overlay" class="modal-overlay" onclick="closeDiagnosticModal(event)">
+        <div class="diagnostic-modal-window" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <div>
+                    <span class="modal-eyebrow">2026 PIPELINE LEAKAGE INDEX</span>
+                    <h3 class="modal-title">Deal Slippage Diagnostic</h3>
                 </div>
+                <button type="button" class="modal-close-btn" onclick="closeDiagnosticModal()" aria-label="Close Diagnostic Modal">✕</button>
             </div>
 
-            <!-- Question 2: ACV Tier -->
-            <div id="d-step-2" class="drawer-step hidden">
-                <div class="drawer-step-q">2. What is your team's Average Contract Value (ACV) for enterprise deals?</div>
-                <div class="drawer-options">
-                    <button type="button" class="drawer-opt-btn" onclick="selectDrawerAnswer(2, '35k', 35000)">
-                        <div class="drawer-opt-title">$30,000 – $50,000 ACV</div>
-                        <div class="drawer-opt-sub">Mid-market to lower enterprise software deals.</div>
-                    </button>
-                    <button type="button" class="drawer-opt-btn" onclick="selectDrawerAnswer(2, '75k', 75000)">
-                        <div class="drawer-opt-title">$50,000 – $100,000 ACV</div>
-                        <div class="drawer-opt-sub">Multi-stakeholder, 6-figure enterprise pursuits.</div>
-                    </button>
-                    <button type="button" class="drawer-opt-btn" onclick="selectDrawerAnswer(2, '125k', 125000)">
-                        <div class="drawer-opt-title">$100,000 – $150,000+ ACV</div>
-                        <div class="drawer-opt-sub">Complex, multi-quarter procurement cycles.</div>
-                    </button>
+            <div class="modal-body">
+                <!-- Dynamic Calculation Banner -->
+                <div class="modal-calc-banner">
+                    <div class="modal-calc-title">Estimated Annual Revenue Leakage:</div>
+                    <div class="modal-calc-figure" id="modal-leak-figure">$180,000 – $360,000</div>
+                    <div class="modal-calc-sub" id="modal-capacity-figure">Recoverable AE Admin Drag: <strong>1+ FTE (~$140k/yr)</strong></div>
                 </div>
-            </div>
 
-            <!-- Question 3: Sales Floor Size (Quota-Carrying AEs) -->
-            <div id="d-step-3" class="drawer-step hidden">
-                <div class="drawer-step-q">3. How many quota-carrying Account Executives (AEs) are currently on your floor?</div>
-                <div class="drawer-options">
-                    <button type="button" class="drawer-opt-btn" onclick="selectDrawerAnswer(3, '5ae', 7)">
-                        <div class="drawer-opt-title">5 – 9 Quota-Carrying AEs</div>
-                        <div class="drawer-opt-sub">Core sales team; high individual rep leverage.</div>
-                    </button>
-                    <button type="button" class="drawer-opt-btn" onclick="selectDrawerAnswer(3, '12ae', 12)">
-                        <div class="drawer-opt-title">10 – 15 Quota-Carrying AEs</div>
-                        <div class="drawer-opt-sub">Mid-sized team; 40+ hrs/wk lost to manual CRM logging.</div>
-                    </button>
-                    <button type="button" class="drawer-opt-btn" onclick="selectDrawerAnswer(3, '20ae', 20)">
-                        <div class="drawer-opt-title">16 – 25+ Quota-Carrying AEs</div>
-                        <div class="drawer-opt-sub">Scaling floor; major capacity recovery potential (2+ FTEs).</div>
-                    </button>
+                <!-- Progress Tracker -->
+                <div class="modal-step-info">
+                    <span id="modal-step-lbl">BENCHMARK METRIC 1 OF 5</span>
+                    <span id="modal-pct-lbl" style="color: var(--emerald-400);">20% Complete</span>
                 </div>
-            </div>
-
-            <!-- Question 4: Economic Buyer Access -->
-            <div id="d-step-4" class="drawer-step hidden">
-                <div class="drawer-step-q">4. In what percentage of late-stage pipeline has your team spoken directly with the economic check-signer?</div>
-                <div class="drawer-options">
-                    <button type="button" class="drawer-opt-btn" onclick="selectDrawerAnswer(4, 'eb_high', 0.85)">
-                        <div class="drawer-opt-title">Over 75% Direct Check-Signer Access</div>
-                        <div class="drawer-opt-sub">Economic Buyer verified before deals enter commit.</div>
-                    </button>
-                    <button type="button" class="drawer-opt-btn" onclick="selectDrawerAnswer(4, 'eb_mid', 0.60)">
-                        <div class="drawer-opt-title">50% – 75% Direct Access</div>
-                        <div class="drawer-opt-sub">Some multi-threading, but reps often rely on champion alone.</div>
-                    </button>
-                    <button type="button" class="drawer-opt-btn" onclick="selectDrawerAnswer(4, 'eb_low', 0.35)">
-                        <div class="drawer-opt-title">Under 50% Direct Access (Single-Threaded Risk)</div>
-                        <div class="drawer-opt-sub">High vulnerability to unexpected champion turnover or CFO veto.</div>
-                    </button>
+                <div class="modal-progress-track">
+                    <div id="modal-progress-bar" class="modal-progress-fill"></div>
                 </div>
-            </div>
 
-            <!-- Question 5: Stage-Gate Enforcement -->
-            <div id="d-step-5" class="drawer-step hidden">
-                <div class="drawer-step-q">5. How does your organization enforce movement between pipeline stages?</div>
-                <div class="drawer-options">
-                    <button type="button" class="drawer-opt-btn" onclick="selectDrawerAnswer(5, 'gate_rep', 1.0)">
-                        <div class="drawer-opt-title">Rep Discretion &amp; "Happy Ears"</div>
-                        <div class="drawer-opt-sub">Reps advance deals based on positive feeling without verified proof.</div>
-                    </button>
-                    <button type="button" class="drawer-opt-btn" onclick="selectDrawerAnswer(5, 'gate_static', 0.8)">
-                        <div class="drawer-opt-title">Static Manual CRM Checkboxes</div>
-                        <div class="drawer-opt-sub">Required fields exist, but no one audits call transcripts for proof.</div>
-                    </button>
-                    <button type="button" class="drawer-opt-btn" onclick="selectDrawerAnswer(5, 'gate_auto', 0.4)">
-                        <div class="drawer-opt-title">Seeking Automated AI Stage-Gate Auditing</div>
-                        <div class="drawer-opt-sub">Ready to install transcript-verified MEDDPICC gating inside CRM.</div>
-                    </button>
+                <!-- Question 1: Month-3 Forecast Slippage -->
+                <div id="m-step-1" class="modal-step">
+                    <div class="modal-step-q">1. What percentage of deals forecasted to close in Month 3 of a quarter actually slip into the following quarter?</div>
+                    <div class="modal-options">
+                        <button type="button" class="modal-opt-btn" onclick="selectModalAnswer(1, 'low', 0.10)">
+                            <div class="modal-opt-title">Under 15% Slippage (Top-Quartile Control)</div>
+                            <div class="modal-opt-sub">Strict stage-gating keeps late-stage slippage minimal.</div>
+                        </button>
+                        <button type="button" class="modal-opt-btn" onclick="selectModalAnswer(1, 'mid', 0.20)">
+                            <div class="modal-opt-title">15% – 25% Slippage (Moderate Drag)</div>
+                            <div class="modal-opt-sub">1 to 2 enterprise deals slip quarterly due to procurement delays.</div>
+                        </button>
+                        <button type="button" class="modal-opt-btn" onclick="selectModalAnswer(1, 'avg', 0.30)">
+                            <div class="modal-opt-title">25% – 35% Slippage (Industry Cohort Average)</div>
+                            <div class="modal-opt-sub">3–4 slipped deals delay $200k+ in quarterly cash flow.</div>
+                        </button>
+                        <button type="button" class="modal-opt-btn" onclick="selectModalAnswer(1, 'high', 0.40)">
+                            <div class="modal-opt-title">Over 35% Slippage (Severe Exposure)</div>
+                            <div class="modal-opt-sub">Month-3 board forecasts routinely miss due to unverified close dates.</div>
+                        </button>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Drawer Completion State & Embedded HubSpot Form -->
-            <div id="drawer-completed" class="hidden">
-                <div class="drawer-form-box">
-                    <div class="drawer-form-eyebrow">DIAGNOSTIC COMPLETE</div>
-                    <div class="drawer-form-title">Receive Your Custom 1-Page Benchmark Scorecard</div>
-                    <p class="drawer-form-desc">
-                        Submit below to claim your personalized <strong>Pipeline Leakage Scorecard</strong>, embargoed copy of the <strong>2026 Deal Governance Index</strong>, and 20-minute debrief on how peer CROs automate stage gating.
-                    </p>
+                <!-- Question 2: ACV Tier -->
+                <div id="m-step-2" class="modal-step hidden">
+                    <div class="modal-step-q">2. What is your team's Average Contract Value (ACV) for enterprise deals?</div>
+                    <div class="modal-options">
+                        <button type="button" class="modal-opt-btn" onclick="selectModalAnswer(2, '35k', 35000)">
+                            <div class="modal-opt-title">$30,000 – $50,000 ACV</div>
+                            <div class="modal-opt-sub">Mid-market to lower enterprise software deals.</div>
+                        </button>
+                        <button type="button" class="modal-opt-btn" onclick="selectModalAnswer(2, '75k', 75000)">
+                            <div class="modal-opt-title">$50,000 – $100,000 ACV</div>
+                            <div class="modal-opt-sub">Multi-stakeholder, 6-figure enterprise pursuits.</div>
+                        </button>
+                        <button type="button" class="modal-opt-btn" onclick="selectModalAnswer(2, '150k', 150000)">
+                            <div class="modal-opt-title">$100,000 – $250,000+ ACV</div>
+                            <div class="modal-opt-sub">Complex, multi-quarter procurement cycles.</div>
+                        </button>
+                    </div>
+                </div>
 
-                    <div class="hs-form-frame" data-region="na3" data-form-id="de5aa2ee-c4fc-4f04-8b6b-563c3bfb9fa3" data-portal-id="342958738"></div>
+                <!-- Question 3: Sales Floor Size (Quota-Carrying AEs) -->
+                <div id="m-step-3" class="modal-step hidden">
+                    <div class="modal-step-q">3. How many quota-carrying Account Executives (AEs) are currently on your floor?</div>
+                    <div class="modal-options">
+                        <button type="button" class="modal-opt-btn" onclick="selectModalAnswer(3, '5ae', 7)">
+                            <div class="modal-opt-title">5 – 9 Quota-Carrying AEs</div>
+                            <div class="modal-opt-sub">Core sales team; high individual rep leverage.</div>
+                        </button>
+                        <button type="button" class="modal-opt-btn" onclick="selectModalAnswer(3, '12ae', 12)">
+                            <div class="modal-opt-title">10 – 15 Quota-Carrying AEs</div>
+                            <div class="modal-opt-sub">Mid-sized team; 40+ hrs/wk lost to manual CRM logging.</div>
+                        </button>
+                        <button type="button" class="modal-opt-btn" onclick="selectModalAnswer(3, '20ae', 20)">
+                            <div class="modal-opt-title">16 – 30+ Quota-Carrying AEs</div>
+                            <div class="modal-opt-sub">Scaling floor; major capacity recovery potential (2+ FTEs).</div>
+                        </button>
+                    </div>
+                </div>
 
-                    <button type="button" onclick="resetDrawerDiagnostic()" style="background: none; border: none; color: #64748b; font-size: 12px; font-weight: 700; cursor: pointer; margin-top: 14px; text-decoration: underline;">
-                        ↺ Retake Diagnostic
-                    </button>
+                <!-- Question 4: Economic Buyer Access -->
+                <div id="m-step-4" class="modal-step hidden">
+                    <div class="modal-step-q">4. In what percentage of late-stage pipeline has your team spoken directly with the economic check-signer?</div>
+                    <div class="modal-options">
+                        <button type="button" class="modal-opt-btn" onclick="selectModalAnswer(4, 'eb_high', 0.85)">
+                            <div class="modal-opt-title">Over 75% Direct Check-Signer Access</div>
+                            <div class="modal-opt-sub">Economic Buyer verified before deals enter commit.</div>
+                        </button>
+                        <button type="button" class="modal-opt-btn" onclick="selectModalAnswer(4, 'eb_mid', 0.60)">
+                            <div class="modal-opt-title">50% – 75% Direct Access</div>
+                            <div class="modal-opt-sub">Some multi-threading, but reps often rely on champion alone.</div>
+                        </button>
+                        <button type="button" class="modal-opt-btn" onclick="selectModalAnswer(4, 'eb_low', 0.35)">
+                            <div class="modal-opt-title">Under 50% Direct Access (Single-Threaded Risk)</div>
+                            <div class="modal-opt-sub">High vulnerability to unexpected champion turnover or CFO veto.</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 5: Stage-Gate Enforcement -->
+                <div id="m-step-5" class="modal-step hidden">
+                    <div class="modal-step-q">5. How does your organization enforce movement between pipeline stages?</div>
+                    <div class="modal-options">
+                        <button type="button" class="modal-opt-btn" onclick="selectModalAnswer(5, 'gate_rep', 1.0)">
+                            <div class="modal-opt-title">Rep Discretion &amp; "Happy Ears"</div>
+                            <div class="modal-opt-sub">Reps advance deals based on positive feeling without verified proof.</div>
+                        </button>
+                        <button type="button" class="modal-opt-btn" onclick="selectModalAnswer(5, 'gate_static', 0.8)">
+                            <div class="modal-opt-title">Static Manual CRM Checkboxes</div>
+                            <div class="modal-opt-sub">Required fields exist, but no one audits call transcripts for proof.</div>
+                        </button>
+                        <button type="button" class="modal-opt-btn" onclick="selectModalAnswer(5, 'gate_auto', 0.4)">
+                            <div class="modal-opt-title">Seeking Automated AI Stage-Gate Auditing</div>
+                            <div class="modal-opt-sub">Ready to install transcript-verified MEDDPICC gating inside CRM.</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Modal Completion State & Embedded HubSpot Form -->
+                <div id="modal-completed" class="hidden">
+                    <div class="modal-form-box">
+                        <div class="modal-form-eyebrow">DIAGNOSTIC COMPLETE</div>
+                        <div class="modal-form-title">Receive Your Custom 1-Page Benchmark Scorecard</div>
+                        <p class="modal-form-desc">
+                            Submit below to claim your personalized <strong>Pipeline Leakage Scorecard</strong>, embargoed copy of the <strong>2026 Deal Governance Index</strong>, and 20-minute debrief on how peer CROs automate stage gating.
+                        </p>
+
+                        <div class="hs-form-frame" data-region="na3" data-form-id="de5aa2ee-c4fc-4f04-8b6b-563c3bfb9fa3" data-portal-id="342958738"></div>
+
+                        <button type="button" onclick="resetModalDiagnostic()" style="background: none; border: none; color: #64748b; font-size: 13px; font-weight: 700; cursor: pointer; margin-top: 14px; text-decoration: underline;">
+                            ↺ Retake Diagnostic
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- SCRIPTS: DRAWER CONTROLLER + REAL-TIME LEAKAGE CALCULATOR + SPRINT TABS -->
+    <!-- 16. POPUP SCHEDULING MODAL (`#schedule-modal`) -->
+    <div id="schedule-modal-overlay" class="modal-overlay" onclick="closeScheduleModal(event)">
+        <div class="schedule-modal-window" onclick="event.stopPropagation()">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 18px;">
+                <div>
+                    <div class="tracked-eyebrow" style="color: var(--emerald-600); margin-bottom: 4px;">SCHEDULE A 20-MINUTE DEBRIEF</div>
+                    <h3 style="font-size: 24px; font-weight: 800; color: var(--text-ink);">Request Your Executive Session</h3>
+                </div>
+                <button type="button" class="modal-close-btn" style="color: var(--text-ink); background: #f1f5f9; border-color: #cbd5e1;" onclick="closeScheduleModal()" aria-label="Close Scheduling Modal">✕</button>
+            </div>
+            <p style="font-size: 14px; color: var(--text-body); line-height: 1.5; margin-bottom: 20px;">
+                Connect directly with Scott Carpentier. We'll benchmark your Month-3 forecast slippage against peer B2B SaaS leaders ($5M–$50M+ ARR) and walk through how our 4-Week Installation Sprint deploys inside your stack.
+            </p>
+            <div class="hs-form-frame" data-region="na3" data-form-id="de5aa2ee-c4fc-4f04-8b6b-563c3bfb9fa3" data-portal-id="342958738"></div>
+            <div style="margin-top: 16px; font-size: 12px; color: var(--text-muted); display: flex; justify-content: space-between;">
+                <span>🔒 Strictly Confidential</span>
+                <span>Direct Principal Response</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS: MODAL CONTROLLERS + SPRINT SWITCHER + LEAKAGE CALCULATOR -->
     <script>
-        // 1. Drawer Open / Close Controls
-        function openDiagnosticDrawer() {
-            var drawer = document.getElementById('diagnostic-drawer');
-            var backdrop = document.getElementById('drawer-backdrop');
-            if (drawer && backdrop) {
-                drawer.classList.add('active');
-                backdrop.classList.add('active');
+        // 1. Diagnostic Modal Open / Close Controls
+        function openDiagnosticModal() {
+            var overlay = document.getElementById('diagnostic-modal-overlay');
+            if (overlay) {
+                overlay.classList.add('active');
                 document.body.style.overflow = 'hidden';
             }
         }
 
+        function closeDiagnosticModal(e) {
+            var overlay = document.getElementById('diagnostic-modal-overlay');
+            if (overlay) {
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Backward compatibility for existing triggers
+        function openDiagnosticDrawer() {
+            openDiagnosticModal();
+        }
         function closeDiagnosticDrawer() {
-            var drawer = document.getElementById('diagnostic-drawer');
-            var backdrop = document.getElementById('drawer-backdrop');
-            if (drawer && backdrop) {
-                drawer.classList.remove('active');
-                backdrop.classList.remove('active');
+            closeDiagnosticModal();
+        }
+
+        // 2. Schedule Modal Open / Close Controls
+        function openScheduleModal() {
+            var overlay = document.getElementById('schedule-modal-overlay');
+            if (overlay) {
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeScheduleModal(e) {
+            var overlay = document.getElementById('schedule-modal-overlay');
+            if (overlay) {
+                overlay.classList.remove('active');
                 document.body.style.overflow = '';
             }
         }
 
         // Close on ESC key
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closeDiagnosticDrawer();
+            if (e.key === 'Escape') {
+                closeDiagnosticModal();
+                closeScheduleModal();
+            }
         });
 
-        // 2. Interactive Diagnostic & Dynamic Leakage Calculator
-        var drawerData = {
+        // 3. Interactive Sprint Tab Switcher (Also called by 4 Delivery Pillars)
+        function switchToSprintTab(stageNumber) {
+            var target = document.getElementById('sprint-engine');
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            var stageBtns = document.querySelectorAll('.stage-tab-btn');
+            var stagePanels = document.querySelectorAll('.stage-panel');
+
+            for (var j = 0; j < stageBtns.length; j++) {
+                stageBtns[j].classList.remove('active');
+            }
+            for (var k = 0; k < stagePanels.length; k++) {
+                stagePanels[k].classList.remove('active');
+            }
+
+            var activeBtn = document.querySelector('.stage-tab-btn[data-stage="' + stageNumber + '"]');
+            if (activeBtn) activeBtn.classList.add('active');
+
+            var activePanel = document.getElementById('stage-panel-' + stageNumber);
+            if (activePanel) activePanel.classList.add('active');
+        }
+
+        // 4. Interactive Diagnostic & Dynamic Leakage Calculator
+        var modalData = {
             slippageRate: 0.30,
             acv: 75000,
             repCount: 10,
@@ -2889,36 +3223,34 @@
             gateType: 1.0
         };
 
-        function updateLeakageCalculations() {
-            // Est. deals per rep per year = 4; total enterprise deals = reps * 4
-            var totalDeals = drawerData.repCount * 4;
+        function updateModalLeakageCalculations() {
+            var totalDeals = modalData.repCount * 4;
             var lateStageDeals = totalDeals * 0.55;
-            var slippedDeals = lateStageDeals * drawerData.slippageRate;
-            var annualSlippedDollars = slippedDeals * drawerData.acv;
+            var slippedDeals = lateStageDeals * modalData.slippageRate;
+            var annualSlippedDollars = slippedDeals * modalData.acv;
             
             var minLeak = Math.round((annualSlippedDollars * 0.7) / 10000) * 10000;
             var maxLeak = Math.round((annualSlippedDollars * 1.2) / 10000) * 10000;
             
-            // Format numbers nicely
             var minFormatted = '$' + minLeak.toLocaleString('en-US');
             var maxFormatted = '$' + maxLeak.toLocaleString('en-US');
             
-            var figureEl = document.getElementById('drawer-leak-figure');
+            var figureEl = document.getElementById('modal-leak-figure');
             if (figureEl) {
                 figureEl.textContent = minFormatted + ' – ' + maxFormatted;
             }
 
-            var capacityHours = Math.round(drawerData.repCount * 4); // 4 hrs/week/rep
+            var capacityHours = Math.round(modalData.repCount * 4);
             var capacityFte = (capacityHours / 40).toFixed(1);
             var capacityVal = Math.round(capacityFte * 140);
             
-            var capEl = document.getElementById('drawer-capacity-figure');
+            var capEl = document.getElementById('modal-capacity-figure');
             if (capEl) {
-                capEl.innerHTML = 'Recoverable Capacity: <strong>' + capacityFte + ' FTE (~$' + capacityVal + 'k/yr across ' + drawerData.repCount + ' AEs)</strong>';
+                capEl.innerHTML = 'Recoverable Capacity: <strong>' + capacityFte + ' FTE (~$' + capacityVal + 'k/yr across ' + modalData.repCount + ' AEs)</strong>';
             }
         }
 
-        var drawerStepLabels = {
+        var modalStepLabels = {
             1: { lbl: 'BENCHMARK METRIC 1 OF 5', pct: '20%' },
             2: { lbl: 'BENCHMARK METRIC 2 OF 5', pct: '40%' },
             3: { lbl: 'BENCHMARK METRIC 3 OF 5', pct: '60%' },
@@ -2926,84 +3258,63 @@
             5: { lbl: 'BENCHMARK METRIC 5 OF 5', pct: '95%' }
         };
 
-        function selectDrawerAnswer(step, key, val) {
-            if (step === 1) drawerData.slippageRate = val;
-            if (step === 2) drawerData.acv = val;
-            if (step === 3) drawerData.repCount = val;
-            if (step === 4) drawerData.ebAccess = val;
-            if (step === 5) drawerData.gateType = val;
+        function selectModalAnswer(step, key, val) {
+            if (step === 1) modalData.slippageRate = val;
+            if (step === 2) modalData.acv = val;
+            if (step === 3) modalData.repCount = val;
+            if (step === 4) modalData.ebAccess = val;
+            if (step === 5) modalData.gateType = val;
 
-            updateLeakageCalculations();
+            updateModalLeakageCalculations();
 
-            // Transition to next step
-            var currentStepEl = document.getElementById('d-step-' + step);
+            var currentStepEl = document.getElementById('m-step-' + step);
             if (currentStepEl) currentStepEl.classList.add('hidden');
 
             if (step < 5) {
                 var nextStep = step + 1;
-                var nextStepEl = document.getElementById('d-step-' + nextStep);
+                var nextStepEl = document.getElementById('m-step-' + nextStep);
                 if (nextStepEl) nextStepEl.classList.remove('hidden');
 
-                var lblEl = document.getElementById('drawer-step-lbl');
-                var pctEl = document.getElementById('drawer-pct-lbl');
-                var barEl = document.getElementById('drawer-progress-bar');
-                if (lblEl) lblEl.textContent = drawerStepLabels[nextStep].lbl;
-                if (pctEl) pctEl.textContent = drawerStepLabels[nextStep].pct + ' Complete';
-                if (barEl) barEl.style.width = drawerStepLabels[nextStep].pct;
+                var lblEl = document.getElementById('modal-step-lbl');
+                var pctEl = document.getElementById('modal-pct-lbl');
+                var barEl = document.getElementById('modal-progress-bar');
+                if (lblEl) lblEl.textContent = modalStepLabels[nextStep].lbl;
+                if (pctEl) pctEl.textContent = modalStepLabels[nextStep].pct + ' Complete';
+                if (barEl) barEl.style.width = modalStepLabels[nextStep].pct;
             } else {
-                // Completed
-                var lblEl = document.getElementById('drawer-step-lbl');
-                var pctEl = document.getElementById('drawer-pct-lbl');
-                var barEl = document.getElementById('drawer-progress-bar');
+                var lblEl = document.getElementById('modal-step-lbl');
+                var pctEl = document.getElementById('modal-pct-lbl');
+                var barEl = document.getElementById('modal-progress-bar');
                 if (lblEl) lblEl.textContent = 'BENCHMARK COMPLETE';
                 if (pctEl) pctEl.textContent = '100% Complete';
                 if (barEl) barEl.style.width = '100%';
 
-                var compEl = document.getElementById('drawer-completed');
+                var compEl = document.getElementById('modal-completed');
                 if (compEl) compEl.classList.remove('hidden');
             }
         }
 
-        function resetDrawerDiagnostic() {
-            drawerData = { slippageRate: 0.30, acv: 75000, repCount: 10, ebAccess: 0.60, gateType: 1.0 };
-            updateLeakageCalculations();
+        function resetModalDiagnostic() {
+            modalData = { slippageRate: 0.30, acv: 75000, repCount: 10, ebAccess: 0.60, gateType: 1.0 };
+            updateModalLeakageCalculations();
 
             for (var s = 1; s <= 5; s++) {
-                var el = document.getElementById('d-step-' + s);
+                var el = document.getElementById('m-step-' + s);
                 if (el) el.classList.add('hidden');
             }
-            var compEl = document.getElementById('drawer-completed');
+            var compEl = document.getElementById('modal-completed');
             if (compEl) compEl.classList.add('hidden');
 
-            var firstStep = document.getElementById('d-step-1');
+            var firstStep = document.getElementById('m-step-1');
             if (firstStep) firstStep.classList.remove('hidden');
 
-            document.getElementById('drawer-step-lbl').textContent = drawerStepLabels[1].lbl;
-            document.getElementById('drawer-pct-lbl').textContent = drawerStepLabels[1].pct + ' Complete';
-            document.getElementById('drawer-progress-bar').style.width = drawerStepLabels[1].pct;
+            document.getElementById('modal-step-lbl').textContent = modalStepLabels[1].lbl;
+            document.getElementById('modal-pct-lbl').textContent = modalStepLabels[1].pct + ' Complete';
+            document.getElementById('modal-progress-bar').style.width = modalStepLabels[1].pct;
         }
 
-        // 3. Compact 4-Tab Switcher for Phase 02 Sprint
         document.addEventListener('DOMContentLoaded', function() {
-            var stageBtns = document.querySelectorAll('.stage-tab-btn');
-            var stagePanels = document.querySelectorAll('.stage-panel');
-
-            for (var i = 0; i < stageBtns.length; i++) {
-                stageBtns[i].addEventListener('click', function() {
-                    var targetStage = this.getAttribute('data-stage');
-                    for (var j = 0; j < stageBtns.length; j++) {
-                        stageBtns[j].classList.remove('active');
-                    }
-                    for (var k = 0; k < stagePanels.length; k++) {
-                        stagePanels[k].classList.remove('active');
-                    }
-                    this.classList.add('active');
-                    var activePanel = document.getElementById('stage-panel-' + targetStage);
-                    if (activePanel) activePanel.classList.add('active');
-                });
-            }
-
-            updateLeakageCalculations();
+            updateModalLeakageCalculations();
         });
     </script>
 </body>
