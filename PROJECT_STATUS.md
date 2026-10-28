@@ -1,6 +1,6 @@
 # The Sales Bench — Project Status & System Documentation
 
-**Document Version:** 5.4.0  
+**Document Version:** 5.5.0  
 **Last Updated:** October 27, 2026  
 **Founder & Managing Principal:** Scott Carpentier  
 **Public Repository:** [https://github.com/ScottRepository/thesalesbench-website](https://github.com/ScottRepository/thesalesbench-website)  
@@ -35,7 +35,7 @@ The firm serves high-growth B2B SaaS companies by installing autonomous MEDDPICC
 | :--- | :--- | :--- |
 | **Hosting & Deployment** | GitHub Pages (`origin/main`) | 99.99% uptime, zero hosting cost, automated SSL, global edge delivery. |
 | **Front-End Architecture** | Single-File Self-Contained (`index.html`) | Zero external CSS dependencies, immune to CDN outage, instant page loads, strict CSP compliance. |
-| **Brand Identity & Scale** | Seamless Tequity Vector Lockup (v5.4) | Replaced the heavy dark squircle with a transparent architectural frame `[ SB ]` in deep navy (`#0A192F`) and warm gold (`#B08D57`) Playfair Display monogram over a stylized bench foundation. Paired with refined vector typography (20px navy title + 9.5px gold tracked small-caps). |
+| **Brand Identity & Scale** | Metallic Gold Ribbon Vector Logo (v5.5) | Integrated official SVG logo code featuring metallic gold gradient ribbons (`#E5C07B` to `#AA7A1E`) for the 3D-beveled "SB" monogram, paired with 'Cinzel' serif wordmark typography and tracked 'Inter' tagline across both header and dark footer. Standalone file saved to `assets/logo.svg`. |
 | **Design System** | Corporate Advisory Luxury Palette | Technical Navy (`#0A192F`), Slate (`#475569`), Off-White (`#F8FAFC`), Crisp White (`#FFFFFF`), with Muted Gold (`#B08D57`) and Cobalt (`#1E40AF`) accents. Headings in Playfair Display serif, body in Inter sans-serif. |
 | **Container Viewport Framing** | Global Bounded Container (`.site-container`) | `max-width: 1240px; margin: 0 auto; padding: 0 2rem;` (Lunas Consulting benchmark). Prevents edge-to-edge stretching and awkward dead space across ultra-wide monitors. |
 | **Header Navigation** | Bounded Header Layout (84px Height) | Spacious executive navigation bar with clear typography, responsive scaling across desktop, tablet, and mobile. |
