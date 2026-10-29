@@ -1,7 +1,7 @@
 # The Sales Bench — Project Status & System Documentation
 
-**Document Version:** 5.5.0  
-**Last Updated:** October 27, 2026  
+**Document Version:** 6.0.0  
+**Last Updated:** October 28, 2026  
 **Founder & Managing Principal:** Scott Carpentier  
 **Public Repository:** [https://github.com/ScottRepository/thesalesbench-website](https://github.com/ScottRepository/thesalesbench-website)  
 **Live Production URL:** [https://scottrepository.github.io/thesalesbench-website/](https://scottrepository.github.io/thesalesbench-website/)  
@@ -11,9 +11,11 @@
 ## 1. Project Overview & Tech Stack
 
 ### 1.1 Strategic Mission & Positioning
-**The Sales Bench** is an **Enterprise Revenue Architecture & Deal Governance** practice founded by **Scott Carpentier**. 
+**The Sales Bench** is an **Enterprise Revenue Architecture & Fractional Leadership** firm founded by **Scott Carpentier**. 
 
-The firm serves high-growth B2B SaaS companies by installing autonomous MEDDPICC deal-governance workflows, instant post-call CRM intelligence, and collaborative digital deal rooms directly inside the client's existing technology stack.
+The practice operates on a proven two-tier commercial model:
+1. **Stage A (Wedge): 4-Week Installation Sprint** — turnkey deployment of autonomous MEDDPICC deal-governance workflows, instant post-call CRM intelligence, and digital deal rooms inside the client's existing perimeter.
+2. **Stage B (Retained Acceleration): Fractional Revenue Architect** — 3 to 4 month retained leadership (~10 hours/week dedicated principal advisory) providing hands-on deal forensics, executive stage-gate auditing, and board forecasting predictability.
 
 * **Ideal Customer Profile (ICP):**
   * **Core Sweet Spot:** Enterprise & B2B SaaS ($5M to $50M+ ARR).
@@ -29,118 +31,78 @@ The firm serves high-growth B2B SaaS companies by installing autonomous MEDDPICC
 
 ---
 
-### 1.2 Technology Stack & UI Architecture
+### 1.2 Technology Stack & UI Architecture (Version 6.0.0)
 
 | Layer | Implementation | Strategic Advantage |
 | :--- | :--- | :--- |
 | **Hosting & Deployment** | GitHub Pages (`origin/main`) | 99.99% uptime, zero hosting cost, automated SSL, global edge delivery. |
 | **Front-End Architecture** | Single-File Self-Contained (`index.html`) | Zero external CSS dependencies, immune to CDN outage, instant page loads, strict CSP compliance. |
-| **Brand Identity & Scale** | Metallic Gold Ribbon Vector Logo (v5.5) | Integrated official SVG logo code featuring metallic gold gradient ribbons (`#E5C07B` to `#AA7A1E`) for the 3D-beveled "SB" monogram, paired with 'Cinzel' serif wordmark typography and tracked 'Inter' tagline across both header and dark footer. Standalone file saved to `assets/logo.svg`. |
-| **Design System** | Corporate Advisory Luxury Palette | Technical Navy (`#0A192F`), Slate (`#475569`), Off-White (`#F8FAFC`), Crisp White (`#FFFFFF`), with Muted Gold (`#B08D57`) and Cobalt (`#1E40AF`) accents. Headings in Playfair Display serif, body in Inter sans-serif. |
-| **Container Viewport Framing** | Global Bounded Container (`.site-container`) | `max-width: 1240px; margin: 0 auto; padding: 0 2rem;` (Lunas Consulting benchmark). Prevents edge-to-edge stretching and awkward dead space across ultra-wide monitors. |
-| **Header Navigation** | Bounded Header Layout (84px Height) | Spacious executive navigation bar with clear typography, responsive scaling across desktop, tablet, and mobile. |
-| **Hero Section** | Streamlined & Elevated Centered Layout | Stock photography removed; clean centered typography, distinct visual H1 break, ICP badge, primary diagnostic CTA and secondary call scheduling CTA. |
-| **Outcomes Bar & Attribution** | 4-Column Elevation + Benchmark Source | `25%-35% Slippage Prevented`, `40 hrs/wk Recovered (1+ FTE)`, `1 Deal Saved = 3x ROI`, `0 Months InfoSec Delay`, with attribution line beneath. |
-| **Service Pillars** | Compact 4-Column Horizontal Grid | 4 concise practices (Deal Forensics, Market Expansion, Agent Infrastructure, Channel Architecture) positioned immediately below the metrics bar. |
-| **4-Week Sprint** | Horizontal Tabbed Interface | Single compact card with 4 week-level tabs (Week 1 to Week 4) showing milestone focus, installed logic, and division of labor on click. |
-| **Logo Tickers** | High-Res Logo Marks + Full Brand Names (65s Glide) | Positioned right after 4-Week Sprint as social proof transition. Features official logo marks + full uppercase company name labels (`DELOITTE`, `PWC`, `KPMG`, `EY`, `SAP`, `SOBEYS`, `CIRCLE K`, `COUCHE-TARD`, etc.). |
-| **Security Section** | Clean 3-Column Architecture | 3 clean visual cards: 1. Your Cloud / Your Tenant, 2. Bring Your Own Key (BYOK), and 3. Zero External Data Training, with 10-logo tech stack grid. |
-| **Retained Governance** | Weekly Radar + Monthly Forensics + CRO Reviews | Evidence-based anti-fluff protocol stress-testing commit deals before board updates. |
-| **About Section** | Balanced 2-Column Equal Height Grid | Left: Company Mission & CRM telemetry philosophy with stacked gold brand emblem. Right: Scott Carpentier founder card highlighting Oxford Saïd AI Certification, PE growth ($9M → $60M), and Nasdaq SaaS scale ($150M → $750M). |
-| **Booking & Modal CTA** | Unified 15-Minute Introductory Call CTA | Standardized call scheduling label across header, hero, footer, and modals. |
-| **Diagnostic Modal** | Centered Modal with Retake Button | Viewport centered modal with `↻ Retake Diagnostic` button in header and clean state resetting. |
-| **HubSpot Integration** | Native Fetch API (Zero iframes) | Custom HTML forms posting directly to HubSpot Forms API v3 endpoint (`portalId: 342958738`, `formId: de5aa2ee-c4fc-4f04-8b6b-563c3bfb9fa3`). |
-| **Deployment Scripting** | Custom Bash CLI (`push.sh`) | Atomic sync of code and brand image assets from Linux repository to Downloads mirror and GitHub Pages remote. |
+| **Brand Identity & Typography** | Dual-Weight Typographical Lockup | Deprecated [SB] monogram icon block. Clean wordmark: `The Sales Bench` (Cinzel/Playfair 700 bold, `#0A192F`) + `REVENUE ARCHITECTED` (Inter uppercase tracking-wide, `#334155`). Minimum 4.5:1+ WCAG AAA contrast ratio on white header and `#071223` footer. |
+| **Design System** | Corporate Advisory Luxury Palette | Technical Navy (`#0A192F`), Slate (`#475569`), Off-White (`#F8FAFC`), Crisp White (`#FFFFFF`), with Muted Gold (`#B08D57`) and Cobalt (`#1E40AF`) accents. |
+| **Container Viewport Framing** | Global Bounded Container (`.site-container`) | `max-width: 1240px; margin: 0 auto; padding: 0 2rem;` (Lunas Consulting benchmark). |
+| **Header Navigation & IA** | Consolidated Practices Dropdown + Methodology + About | Dropdown grouping the 4 core practices (`#practice-inspection`, `#practice-expansion`, `#practice-ai-infra`, `#practice-channel`), direct anchor to Methodology (`#methodology`), About (`#about`), secondary "Run Diagnostic", and primary "Schedule 15-Minute Call" CTA. |
+| **Hero & Social Proof Trust Bar** | Integrated Logo Marquee Beneath Hero CTA Group | Relocated SI & Advisory Alliances (Deloitte, EY, KPMG, PwC, SAP) and past enterprise accounts sold to (Sobeys, Circle K, Bell Canada, etc.) directly beneath Hero CTA group as the social proof transition before the metrics bar. |
+| **Metrics Bar** | 4-Column Elevation + Benchmark Source | `25%-35% Slippage Prevented`, `40 hrs/wk Recovered (1+ FTE)`, `1 Deal Saved = 3x ROI`, `0 Months InfoSec Delay`, with 2026 Deal Governance Benchmark Index attribution. |
+| **Core Practice Matrix & Embedded Submodules** | 4 Core Practices with Embedded Architectures | 1. **Deal Inspection & Validation** (includes embedded Deal Governance & Anti-Fluff Protocol), 2. **De-Risked Market Expansion** (includes Playbook Localization for US/EMEA/LATAM), 3. **Turnkey AI Sales Infrastructure** (includes embedded Zero Data Retention & BYOK Security + 10-logo Stack), 4. **Channel & Ecosystem Architecture** (includes Co-Sell Playbooks & Attribution Modeling). |
+| **Commercial Engagement Model** | Two-Tier Funnel: Sprint to Fractional CRO | Stage A: 4-Week Installation Sprint (Discovery, Webhooks & Integrations, Deal Room Pilot, Enablement) &rarr; Stage B: Fractional Revenue Architect (3–4 Month Retained Lifecycle, ~10 hrs/week dedicated principal leadership). |
+| **Dynamic Multi-Track Diagnostic Engine** | 4-Track Questionnaire & Dynamic Scoring | Track 1: Deal Inspection & Slippage, Track 2: Market Expansion Feasibility, Track 3: AI Infrastructure & Security, Track 4: Partner & Alliance Velocity. Features real-time calculation banners and custom scorecard generation. |
+| **HubSpot API Integration** | Native Fetch API (Zero iframes) | Posts lead contact info + diagnostic track and calculated scorecard metrics directly into HubSpot Forms API v3 endpoint (`portalId: 342958738`, `formId: de5aa2ee-c4fc-4f04-8b6b-563c3bfb9fa3`). |
 
 ---
 
-## 2. Completed Milestones & Configurations (Version 5.2.0)
+## 2. Completed Milestones & Configurations (Version 6.0.0)
 
-### 2.1 Brand Logo Integration
-* **Header Navigation:** Replaced generic placeholder initials with the official horizontal gold-embossed logo lockup (`assets/logo-horizontal.jpg`) with subtle gold border and hover elevation.
-* **About Section:** Integrated the stacked gold emblem (`assets/logo-stacked.jpg`) into the header of "The Sales Bench Model" card, creating visual symmetry with Scott Carpentier's principal avatar in the right card.
-* **Footer:** Added the horizontal gold-embossed brand lockup (`assets/logo-horizontal.jpg`) against the deep `#071223` background.
-* **Favicon & Apple Touch Icon:** Linked `assets/logo-stacked.jpg` in `<head>` for branded browser tab display and mobile bookmarks.
-* **OpenGraph & Twitter Card Meta:** Added `assets/logo-horizontal.jpg` to social sharing meta tags for previews on LinkedIn, Slack, Twitter/X, and messaging apps.
+### 2.1 Refactored Brand Header & IA
+- **Logo Mark Refactoring:** Removed old `[SB]` monogram block and embedded SVG icon. Replaced with clean dual-weight typographical wordmark:
+  - Primary: `The Sales Bench` (Font-weight: 700 / Bold, Cinzel serif, `#0A192F` navy).
+  - Tagline: `REVENUE ARCHITECTED` (Font-weight: 500, Inter uppercase tracking-wide, `#334155`).
+  - Achieves 15.6:1 contrast ratio against the white header (well exceeding the 4.5:1 WCAG requirement).
+- **Navigation IA Consolidation:**
+  - Consolidated `/services`, `/alliances`, `/byok-security`, and `/governance-retainer` into an elegant `Practices` dropdown menu linking to `#practice-inspection`, `#practice-expansion`, `#practice-ai-infra`, and `#practice-channel`.
+  - Added dedicated navigation links for `Methodology` (`#methodology`) and `About` (`#about`).
+  - Streamlined header CTAs: Secondary "Run Diagnostic" (opens diagnostic modal) and Primary "Schedule 15-Minute Call" (smooth-scrolls to scheduler).
 
-### 2.2 Container Width & Viewport Framing
-* Applied global `.site-container` wrapper with `max-width: 1240px; margin: 0 auto; padding: 0 2rem;` to the header, hero, metrics bar, and all content sections (Lunas Consulting benchmark).
-* Bound header navigation inside 1240px so the brand logo stays anchored to the left container margin and nav links / CTA stay anchored to the right margin on wide displays.
+### 2.2 Relocated Social Proof & Embedded Modules
+- **Hero Trust Bar:** Removed standalone `/alliances` and `/pedigree` sections and integrated the 65s infinite glide logo marquees (SI & Advisory Alliances + Enterprise Client Pedigree) directly into the Hero section beneath the CTA group.
+- **Embedded Deal Governance:** Subsumed the Deal Governance & Anti-Fluff Protocol directly beneath Practice 01 (Deal Inspection & Validation) inside `#practices`.
+- **Embedded BYOK Security:** Subsumed the 3-column CISO-Ready Architecture (Your Cloud/Your Tenant, BYOK, Zero External Data Training) and 10-logo Core Stack Integrations directly beneath Practice 03 (Turnkey AI Sales Infrastructure).
 
-### 2.3 Hero Section Streamlining
-* Centered and elevated hero messaging:
-  * H1: "Stop Late-Stage Deal Slippage."
-  * Subhead: "Turn 6-Figure Opportunities In Your Pipeline Into Predictable Closed-Won Revenue."
-  * ICP Badge: "Who We Serve: Enterprise & B2B SaaS ($5M–$50M+ ARR) · Deal Size: $30k–$250k+ ACV · Floor: Scaling AE Teams"
-  * Primary CTA: "Run 2026 Pipeline Leakage Diagnostic →"
-  * Secondary CTA: "Schedule a 15-Minute Introductory Call"
+### 2.3 Refactored Practice Cards
+- Renamed Practice 01 to **Deal Inspection & Validation** with contextual CTA: `Run Deal Audit Diagnostic →`.
+- Renamed Practice 02 to **De-Risked Market Expansion** with contextual CTA: `Assess Market Readiness →`.
+- Renamed Practice 03 to **Turnkey AI Sales Infrastructure** with contextual CTA: `Audit AI Pipeline Readiness →`.
+- Renamed Practice 04 to **Channel & Ecosystem Architecture** with contextual CTA: `Evaluate Partner Multiplier →`.
+- Added subsumed feature tags to all 4 cards.
 
-### 2.4 Reordered Page Architecture
-Structured DOM order according to the strategic buyer journey:
-1. **Hero Section** (Outcome-focused)
-2. **Metrics Bar** (Proof of economic leverage)
-3. **Four Core Practices Grid** (The 4 problems we solve)
-4. **The Standardized 4-Week Installation Sprint** (The turnkey deliverable)
-5. **Enterprise Customer & Partner Logo Tickers** (Social proof transition)
-6. **Zero Data Retention & Cloud Security** (BYOK & SOC 2 de-risking)
-7. **Retained Deal Governance & Deal Forensics** (Ongoing cadence)
-8. **About The Sales Bench & Founder Profile** (Scott Carpentier)
-9. **Final CTA & Booking Section** ("Schedule a 15-Minute Introductory Call")
+### 2.4 Refactored Commercial Engagement Model
+- Updated section header to: **4-Week Installation Sprint &rarr; 3-4 Month Fractional Revenue Architecture (~10 hrs/wk)**.
+- Detailed Stage A (Wedge): The 4-Week Installation Sprint with updated week tabs (Discovery & MEDDPICC Alignment, Webhooks, Schema & Data Integrations, Deal Room Pilot & Verification Gates, Rollout, Playbooks & Enablement).
+- Detailed Stage B (Retained Acceleration): Fractional Revenue Architect (3 to 4 month retained lifecycle, ~10 hours/week dedicated principal leadership, live deal triage, executive stage-gate auditing, board forecasting predictability).
 
-### 2.5 Logo Tickers with Full Brand Names & 65s Smooth Glide
-* Rendered all ticker items with clean logo marks paired with crisp uppercase text labels: `[Official Logo] [Company Name Label]`.
-  * **SI & Advisory Alliances:** SAP, Deloitte, PwC, EY, KPMG.
-  * **Enterprise Deal Pedigree:** Sobeys, Circle K, Alimentation Couche-Tard, Bell Canada, Marathon Oil, Cooper Tire, Finning, Suncor, Questrade, goeasy (easyfinancial), Pharmascience.
-* Set marquee animation duration to `65s` for a smooth, readable glide with hover-pause functionality.
-
-### 2.6 Retake Diagnostic Button & Unified CTA
-* Added prominent `↻ Retake Diagnostic` button in the diagnostic modal header next to the close button, enabling instant recalculation without reloading.
-* Standardized all booking CTAs to: **"Schedule a 15-Minute Introductory Call"**.
-* Maintained direct HubSpot Forms API v3 post integration with zero iframes or third-party badges.
+### 2.5 Dynamic 4-Track Diagnostic Engine
+- Implemented state machine supporting 4 dynamic tracks:
+  - **Track 1: Deal Inspection & Slippage** (Projected annual revenue slippage, Recoverable rep FTE).
+  - **Track 2: Market Expansion Feasibility** (GTM Expansion Risk Rating, Recommended Runway).
+  - **Track 3: Turnkey AI Sales Infrastructure & Security** (Automated Hours Saved / AE / Week, BYOK Compliance Check).
+  - **Track 4: Partner & Alliance Velocity** (Co-Sell Multiplier Potential %, Ecosystem Leverage Score).
+- Added modal track selector tabs allowing users to toggle between diagnostic tracks.
+- Configured track-specific questionnaires and dynamic calculation banners.
+- Enhanced HubSpot Form submission to transmit track ID and calculated outputs alongside lead contact information.
 
 ---
 
-## 3. Current State of the Codebase
-
-### 3.1 Local Directory Structure
+## 3. Directory Structure & Verification
 ```
 /home/scottcarpentier/
 ├── thesalesbench-website/                 # Main Git repository (cloned from GitHub)
-│   ├── index.html                         # Production single-file marketing application (v5.2.0)
+│   ├── index.html                         # Production single-file marketing application (v6.0.0)
 │   ├── hubspot-submit.js                  # Standalone HubSpot Forms API integration script
-│   ├── PROJECT_STATUS.md                  # Comprehensive project documentation (v5.2.0)
+│   ├── PROJECT_STATUS.md                  # Comprehensive project documentation (v6.0.0)
 │   ├── README.md                          # Repository summary & asset guide
 │   ├── assets/
 │   │   ├── logo-horizontal.jpg            # Gold-embossed horizontal brand lockup
-│   │   └── logo-stacked.jpg               # Gold-embossed stacked brand emblem
+│   │   ├── logo-stacked.jpg               # Gold-embossed stacked brand emblem
+│   │   └── logo.svg                       # Vector brand logo asset
 │   └── .git/                              # Git metadata pointing to origin/main
-├── Downloads/
-│   ├── The_Sales_Bench_Website.html       # Mirrored copy for local offline browser inspection
-│   ├── hubspot-submit.js                  # Mirrored HubSpot submission helper
-│   ├── PROJECT_STATUS.md                  # Mirrored status documentation
-│   └── assets/                            # Mirrored logo image assets
 └── push.sh                                # Automated sync & deployment bash script
 ```
-
----
-
-## 4. Immediate Next Steps & Deployment
-
-1. **Deploy to GitHub Pages:**
-   Run the deployment script in your ChromeOS Linux terminal:
-   ```bash
-   bash ~/push.sh
-   ```
-2. **Verify Live Deployment:**
-   Open [https://scottrepository.github.io/thesalesbench-website/](https://scottrepository.github.io/thesalesbench-website/) to review:
-   - Gold-embossed horizontal brand logo in top navigation header
-   - Gold-embossed stacked emblem in "The Sales Bench Model" mission card
-   - Gold-embossed brand lockup in the deep navy footer
-   - Favicon in browser tab
-   - 1240px unified container framing across header and sections
-   - Centered and elevated hero section
-   - Reordered flow: Hero → Metrics → Services → Sprint → Tickers → Security → Governance → About → Book
-   - 65s tickers with official logo marks and company name labels
-   - `↻ Retake Diagnostic` button in modal header
-   - Unified "Schedule a 15-Minute Introductory Call" CTA buttons
-   - Direct HubSpot API submissions without iframes
