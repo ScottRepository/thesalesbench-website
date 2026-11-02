@@ -3006,8 +3006,8 @@
 
                 if (response.ok) {
                     var successMsg = formId === 'modal-diagnostic-form'
-                        ? '✓ Thank you, ' + firstName + '. Your diagnostic assessment and scorecard parameters have been successfully logged to HubSpot CRM. A principal will review your specific parameters and follow up within one business day.'
-                        : '✓ Thank you, ' + firstName + '. Your consultation request' + (primaryInterest ? ' (' + primaryInterest + ')' : '') + ' has been logged to HubSpot CRM. A principal will follow up within one business day.';
+                        ? '✓ Thank you, ' + firstName + '. Your request has been received. A principal will review your diagnostic parameters and follow up within one business day.'
+                        : '✓ Thank you, ' + firstName + '. Your request has been received' + (primaryInterest ? ' (' + primaryInterest + ')' : '') + '. A principal will follow up within one business day.';
                     statusEl.textContent = successMsg;
                     statusEl.className = 'form-status success';
                     statusEl.style.display = 'block';
