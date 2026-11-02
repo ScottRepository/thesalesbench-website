@@ -1,7 +1,7 @@
 # The Sales Bench — Project Status & System Documentation
 
-**Document Version:** 6.0.0  
-**Last Updated:** October 28, 2026  
+**Document Version:** 6.1.0  
+**Last Updated:** November 2, 2026  
 **Founder & Managing Principal:** Scott Carpentier  
 **Public Repository:** [https://github.com/ScottRepository/thesalesbench-website](https://github.com/ScottRepository/thesalesbench-website)  
 **Live Production URL:** [https://scottrepository.github.io/thesalesbench-website/](https://scottrepository.github.io/thesalesbench-website/)  
@@ -31,22 +31,22 @@ The practice operates on a proven two-tier commercial model:
 
 ---
 
-### 1.2 Technology Stack & UI Architecture (Version 6.0.0)
+### 1.2 Technology Stack & UI Architecture (Version 6.1.0)
 
 | Layer | Implementation | Strategic Advantage |
 | :--- | :--- | :--- |
 | **Hosting & Deployment** | GitHub Pages (`origin/main`) | 99.99% uptime, zero hosting cost, automated SSL, global edge delivery. |
 | **Front-End Architecture** | Single-File Self-Contained (`index.html`) | Zero external CSS dependencies, immune to CDN outage, instant page loads, strict CSP compliance. |
-| **Brand Identity & Typography** | Dual-Weight Typographical Lockup | Deprecated [SB] monogram icon block. Clean wordmark: `The Sales Bench` (Cinzel/Playfair 700 bold, `#0A192F`) + `REVENUE ARCHITECTED` (Inter uppercase tracking-wide, `#334155`). Minimum 4.5:1+ WCAG AAA contrast ratio on white header and `#071223` footer. |
+| **Brand Identity & Typography** | Center-Aligned Dual-Weight Typographical Lockup | Clean wordmark across Header, Footer, and Institutional Leadership: `THE SALES BENCH` (Cinzel/Playfair 700 bold, `#0A192F`) with `REVENUE ARCHITECTED` center-aligned directly beneath (`align-items: center; text-align: center; padding-left: 0.22em`). |
 | **Design System** | Corporate Advisory Luxury Palette | Technical Navy (`#0A192F`), Slate (`#475569`), Off-White (`#F8FAFC`), Crisp White (`#FFFFFF`), with Muted Gold (`#B08D57`) and Cobalt (`#1E40AF`) accents. |
 | **Container Viewport Framing** | Global Bounded Container (`.site-container`) | `max-width: 1240px; margin: 0 auto; padding: 0 2rem;` (Lunas Consulting benchmark). |
-| **Header Navigation & IA** | Consolidated Practices Dropdown + Methodology + About | Dropdown grouping the 4 core practices (`#practice-inspection`, `#practice-expansion`, `#practice-ai-infra`, `#practice-channel`), direct anchor to Methodology (`#methodology`), About (`#about`), secondary "Run Diagnostic", and primary "Schedule 15-Minute Call" CTA. |
-| **Hero & Social Proof Trust Bar** | Integrated Logo Marquee Beneath Hero CTA Group | Relocated SI & Advisory Alliances (Deloitte, EY, KPMG, PwC, SAP) and past enterprise accounts sold to (Sobeys, Circle K, Bell Canada, etc.) directly beneath Hero CTA group as the social proof transition before the metrics bar. |
-| **Metrics Bar** | 4-Column Elevation + Benchmark Source | `25%-35% Slippage Prevented`, `40 hrs/wk Recovered (1+ FTE)`, `1 Deal Saved = 3x ROI`, `0 Months InfoSec Delay`, with 2026 Deal Governance Benchmark Index attribution. |
-| **Core Practice Matrix & Embedded Submodules** | 4 Core Practices with Embedded Architectures | 1. **Deal Inspection & Validation** (includes embedded Deal Governance & Anti-Fluff Protocol), 2. **De-Risked Market Expansion** (includes Playbook Localization for US/EMEA/LATAM), 3. **Turnkey AI Sales Infrastructure** (includes embedded Zero Data Retention & BYOK Security + 10-logo Stack), 4. **Channel & Ecosystem Architecture** (includes Co-Sell Playbooks & Attribution Modeling). |
-| **Commercial Engagement Model** | Two-Tier Funnel: Sprint to Fractional CRO | Stage A: 4-Week Installation Sprint (Discovery, Webhooks & Integrations, Deal Room Pilot, Enablement) &rarr; Stage B: Fractional Revenue Architect (3–4 Month Retained Lifecycle, ~10 hrs/week dedicated principal leadership). |
-| **Dynamic Multi-Track Diagnostic Engine** | 4-Track Questionnaire & Dynamic Scoring | Track 1: Deal Inspection & Slippage, Track 2: Market Expansion Feasibility, Track 3: AI Infrastructure & Security, Track 4: Partner & Alliance Velocity. Features real-time calculation banners and custom scorecard generation. |
-| **HubSpot API Integration** | Native Fetch API (Zero iframes) | Posts lead contact info + diagnostic track and calculated scorecard metrics directly into HubSpot Forms API v3 endpoint (`portalId: 342958738`, `formId: de5aa2ee-c4fc-4f04-8b6b-563c3bfb9fa3`). |
+| **Header Navigation & IA** | Flattened Top-Level Practice Links + Methodology + About | Top-level navigation items for all 4 practices (`Deal Inspection`, `Market Expansion`, `AI Sales Infrastructure`, `Channel & Alliances`), plus `Methodology`, `About`, `Run Diagnostic`, and `Schedule 15-Minute Call`. Removed floating bottom-right diagnostic pill. |
+| **Hero & Above-the-Fold Flow** | Outcome & Partner-Focused Hero + Immediate Metrics Bar | Option 1 Hero Headline (`Your Revenue Architecture Partner for Predictable Closed-Won Growth.`) followed immediately by the 4-column Outcomes Metrics Bar (`25–35% Slippage Prevented`, `40 hrs/wk Recovered`, `1 Deal = 3x Saved Deal ROI`, `0 Months InfoSec Delay`) right above `OUR PRACTICES`. |
+| **Interactive Master-Detail Practices Drawer** | 4 Selectable Practice Cards + Dynamic Navy Deep-Dive Drawer | Clicking any of the 4 practice cards (`01`–`04`) or top-level nav links dynamically updates the unified dark navy deep-dive container (`#practice-detail-drawer`) with complete architecture breakdowns for Deal Inspection (`01`), De-Risked Market Expansion (`02`), Turnkey AI Sales Infrastructure & InfoSec (`03`), and Channel & Ecosystem Architecture (`04`). |
+| **Commercial Engagement Model** | Connected Two-Stage Visual Progression | Clear visual progression (`Stage A: The 4-Week Installation Sprint` &rarr; connected transition badge &rarr; `Stage B: Fractional Revenue Architect`) with pill-style segmented week selector controls (`WEEK 01`–`WEEK 04`) and high-contrast deliverable box. |
+| **Social Proof Logo Tickers** | Relocated Above Institutional Leadership (120s Slow Glide) | Placed directly above `#about` with updated titles (`Enterprise Ecosystem & Partner Experience — SI & Advisory Alliances` and `Proven Enterprise Deal Experience — Sample Accounts Sold To & Onboarded By Our Leadership`) and slowed 120s marquee speed. |
+| **Institutional Leadership ("About")** | Full Brand Lockup & Structured 4-Bullet Founder Profile | Left card renders the full `THE SALES BENCH / REVENUE ARCHITECTED` wordmark and 4 value bullets; Right card features a clean 1-sentence intro for Scott Carpentier followed by 4 structured bullet points (`Enterprise SaaS Leadership`, `Proven Regional Scale`, `Ecosystem & Alliance Execution`, `AI & Revenue Architecture`). |
+| **HubSpot API Integration** | Native Fetch API (Zero iframes) + Validated Confirmation | Posts lead contact info + diagnostic track and calculated scorecard metrics directly into HubSpot Forms API v3 endpoint (`portalId: 342958738`, `formId: de5aa2ee-c4fc-4f04-8b6b-563c3bfb9fa3`) with client-side validation and visible confirmation banner. |
 
 ---
 
