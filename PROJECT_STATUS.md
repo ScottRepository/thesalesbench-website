@@ -1,6 +1,6 @@
 # The Sales Bench — Project Status & System Documentation
 
-**Document Version:** 6.2.0  
+**Document Version:** 6.3.0  
 **Last Updated:** November 2, 2026  
 **Founder & Managing Principal:** Scott Carpentier  
 **Public Repository:** [https://github.com/ScottRepository/thesalesbench-website](https://github.com/ScottRepository/thesalesbench-website)  
@@ -14,8 +14,8 @@
 **The Sales Bench** is an **Enterprise Revenue Architect & Fractional Leadership** firm founded by **Scott Carpentier**. 
 
 The practice operates on a proven two-tier commercial model:
-1. **Stage A (Wedge): 4-Week Installation Sprint** — turnkey deployment of autonomous MEDDPICC deal-governance workflows, instant post-call CRM intelligence, and digital deal rooms inside the client's existing perimeter.
-2. **Stage B (Retained Acceleration): Fractional Revenue Architect Retainer (~10 hrs/wk)** — 3 to 4 month retained leadership providing hands-on deal forensics, executive stage-gate auditing, and board forecasting predictability.
+1. **Stage A (Wedge): 4-Week Installation Sprint** — fixed-fee permanent asset installation configuring automated MEDDPICC stage gates and CRM agents across a 4-week timeline.
+2. **Stage B (Retained Acceleration): Fractional Revenue Architect Retainer** — dedicated fractional executive advisory and live deal triage, working collaboratively with internal revenue architecture and sales leadership teams (with optional scale-up support).
 
 * **Ideal Customer Profile (ICP):**
   * **Core Sweet Spot:** Enterprise & B2B SaaS ($5M to $50M+ ARR).
@@ -31,22 +31,22 @@ The practice operates on a proven two-tier commercial model:
 
 ---
 
-### 1.2 Technology Stack & UI Architecture (Version 6.2.0)
+### 1.2 Technology Stack & UI Architecture (Version 6.3.0)
 
 | Layer | Implementation | Strategic Advantage |
 | :--- | :--- | :--- |
 | **Hosting & Deployment** | GitHub Pages (`origin/main`) | 99.99% uptime, zero hosting cost, automated SSL, global edge delivery. |
 | **Front-End Architecture** | Single-File Self-Contained (`index.html`) | Zero external CSS dependencies, immune to CDN outage, instant page loads, strict CSP compliance. |
-| **Brand Identity & Typography** | Center-Aligned Dual-Weight Typographical Lockup | Clean wordmark across Header, Footer, and Institutional Leadership: `THE SALES BENCH` (Cinzel/Playfair 700 bold, `#0A192F`) with `REVENUE ARCHITECTED` center-aligned directly beneath (`align-items: center; text-align: center; padding-left: 0.22em`). |
+| **Brand Identity & Header Lockup** | High-Contrast Dark Brand Container | Sleek `#071223` header container with subtle gold accent border (`.brand-wordmark-container`) displaying `THE SALES BENCH` and center-aligned `REVENUE ARCHITECTED`. Custom vector favicon data URI in `<head>`. |
 | **Design System** | Corporate Advisory Luxury Palette | Technical Navy (`#0A192F`), Slate (`#475569`), Off-White (`#F8FAFC`), Crisp White (`#FFFFFF`), with Muted Gold (`#B08D57`) and Cobalt (`#1E40AF`) accents. |
-| **Container Viewport Framing** | Global Bounded Container (`.site-container`) | `max-width: 1240px; margin: 0 auto; padding: 0 2rem;` (Lunas Consulting benchmark). |
-| **Header Navigation & IA** | Flattened Top-Level Practice Links + Methodology + About | Top-level navigation items for all 4 practices (`Deal Inspection`, `Market Expansion`, `AI Sales Infrastructure`, `Channel & Alliances`), plus `Methodology`, `About`, `Run Diagnostic`, and `Schedule 15-Minute Call`. Removed floating bottom-right diagnostic pill. |
-| **Hero & Above-the-Fold Flow** | Revenue Architect Hero + Immediate Metrics Bar | Eyebrow (`ENTERPRISE REVENUE ARCHITECT & FRACTIONAL LEADERSHIP`), H1 (`Your Fractional Revenue Architect for Predictable Closed-Won Growth.`), and updated 4-pillar subheadline followed immediately by the 4-column Outcomes Metrics Bar right above `OUR PRACTICES`. |
-| **2-Column Split-View Practices** | Left (~35% Selector Stack) + Right (~65% Sticky Navy Panel) | Vertically stacked selector list of 4 compact practice cards on the left with right-pointing active chevron; sticky dark-navy detail panel on the right (`#practice-detail-drawer`) with condensed, scannable Practice 04 pillars. |
-| **Commercial Engagement Model** | Connected Two-Stage Visual Progression | Clear visual progression (`Stage A: The 4-Week Installation Sprint` &rarr; `Seamless Transition into Stage B Retained Governance` &rarr; `Stage B: Fractional Revenue Architect Retainer (~10 hrs/wk)`) with high-contrast week selector controls (`WEEK 01`–`WEEK 04`). |
+| **Container Viewport Framing** | Global Bounded Container (`.site-container`) | Expanded `--container-max: 1360px` for optimal widescreen framing and horizontal balance. |
+| **Header Navigation & IA** | Top-Level Practice Links + Methodology + About | Top-level navigation items for all 4 practices (`Deal Inspection`, `Market Expansion`, `AI Sales Infrastructure`, `Channel & Alliances`), plus `Methodology`, `About`, `Run Diagnostic`, and `Schedule 15-Minute Call`. |
+| **Hero Section** | Unified 2-Line Headline (`clamp(2.65rem, 4.6vw, 4.2rem)`) | Eyebrow (`ENTERPRISE REVENUE ARCHITECT & FRACTIONAL LEADERSHIP`), unified serif headline (`Your Fractional Revenue Architect for Predictable Closed-Won Growth.`) across two balanced lines, followed immediately by the 4-column Outcomes Metrics Bar right above `OUR PRACTICES`. |
+| **Horizontal Practices Architecture** | 4 Horizontal Tab Cards + Navy Deep-Dive Drawer | 4-column horizontal tab cards across the top with downward active chevron indicator (`::after`) directly connected to the active deep-dive container (`#practice-detail-drawer`). Copy density reduced by ~30–40% into punchy high-impact bullet points. Removed all LATAM references (focused on Canada, US, UK, EMEA). |
+| **Commercial Engagement Model** | Connected Two-Stage Visual Progression | Milestone headers: `Stage A: The 4-Week Installation Sprint` (fixed-fee permanent asset installation with interactive Week 01–04 milestone tabs) &rarr; `↓ Seamless Transition into Stage B Retained Governance ↓` &rarr; `Stage B: Fractional Revenue Architect Retainer` (dedicated executive advisory and live deal triage without rigid 10 hrs/wk caps). |
 | **Social Proof Logo Tickers** | Relocated Above Institutional Leadership (120s Slow Glide) | Placed directly above `#about` with updated titles (`Enterprise Ecosystem & Partner Experience — SI & Advisory Alliances` and `Proven Enterprise Deal Experience — Sample Accounts Sold To & Onboarded By Our Leadership`) and slowed 120s marquee speed. |
 | **Institutional Leadership ("About")** | Full Brand Lockup & Structured 4-Bullet Founder Profile | Header updated to `Enterprise Revenue Architect Meets Operational Risk Management.`; Left card renders full `THE SALES BENCH / REVENUE ARCHITECTED` wordmark; Right card features 1-sentence intro + 4 structured bullets for Scott Carpentier. |
-| **Contact Form & Diagnostic HubSpot Wiring** | Phone Input + Single-Select Practice Dropdown + Full Quiz Payload | Added `Phone Number` field and converted `Primary Area of Interest` to a 4-option single-select mapped to the 4 practices. Diagnostic modal completion updated to `Receive Your Custom Pipeline Leakage & Triage Summary` / `Request Executive Diagnostic Debrief →`, passing all quiz variables (`Selected Diagnostic Practice`, `Deal Slippage Rate (%)`, `ACV Range`, `Quota-Carrying AE Headcount`, `Economic Buyer Verification Level`, `Computed Annual Exposure Range`) directly into HubSpot (`portalId: 342958738`, `formId: de5aa2ee-c4fc-4f04-8b6b-563c3bfb9fa3`). |
+| **Contact Form & Diagnostic HubSpot Wiring** | Phone + MobilePhone + 4 Dropdown Options + Structured Quiz Payload | Forms map phone input to both `phone` and `mobilephone` properties. Standardized 4 clean dropdown options for `primary_area_of_interest`. Multi-track diagnostic transmits clean multi-line formatted summary with question responses, calculated risk ratings, and exposure figures directly into HubSpot (`portalId: 342958738`, `formId: de5aa2ee-c4fc-4f04-8b6b-563c3bfb9fa3`). |
 
 ---
 
