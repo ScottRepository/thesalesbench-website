@@ -1,6 +1,6 @@
 # The Sales Bench — Project Status & System Documentation
 
-**Document Version:** 6.3.0  
+**Document Version:** 6.4.0  
 **Last Updated:** November 2, 2026  
 **Founder & Managing Principal:** Scott Carpentier  
 **Public Repository:** [https://github.com/ScottRepository/thesalesbench-website](https://github.com/ScottRepository/thesalesbench-website)  
@@ -31,22 +31,20 @@ The practice operates on a proven two-tier commercial model:
 
 ---
 
-### 1.2 Technology Stack & UI Architecture (Version 6.3.0)
+### 1.2 Technology Stack & UI Architecture (Version 6.4.0)
 
 | Layer | Implementation | Strategic Advantage |
 | :--- | :--- | :--- |
 | **Hosting & Deployment** | GitHub Pages (`origin/main`) | 99.99% uptime, zero hosting cost, automated SSL, global edge delivery. |
 | **Front-End Architecture** | Single-File Self-Contained (`index.html`) | Zero external CSS dependencies, immune to CDN outage, instant page loads, strict CSP compliance. |
-| **Brand Identity & Header Lockup** | High-Contrast Dark Brand Container | Sleek `#071223` header container with subtle gold accent border (`.brand-wordmark-container`) displaying `THE SALES BENCH` and center-aligned `REVENUE ARCHITECTED`. Custom vector favicon data URI in `<head>`. |
+| **Brand Identity & Header Lockup** | Clean Gold Border Brand Container | Refined gold border (`border: 1.5px solid var(--gold)`) with transparent background, Cinzel bold navy primary wordmark (`THE SALES BENCH`), and gold tracking-wide tagline (`REVENUE ARCHITECTED`). Replicated consistently in header, About section, and footer. |
 | **Design System** | Corporate Advisory Luxury Palette | Technical Navy (`#0A192F`), Slate (`#475569`), Off-White (`#F8FAFC`), Crisp White (`#FFFFFF`), with Muted Gold (`#B08D57`) and Cobalt (`#1E40AF`) accents. |
-| **Container Viewport Framing** | Global Bounded Container (`.site-container`) | Expanded `--container-max: 1360px` for optimal widescreen framing and horizontal balance. |
-| **Header Navigation & IA** | Top-Level Practice Links + Methodology + About | Top-level navigation items for all 4 practices (`Deal Inspection`, `Market Expansion`, `AI Sales Infrastructure`, `Channel & Alliances`), plus `Methodology`, `About`, `Run Diagnostic`, and `Schedule 15-Minute Call`. |
-| **Hero Section** | Unified 2-Line Headline (`clamp(2.65rem, 4.6vw, 4.2rem)`) | Eyebrow (`ENTERPRISE REVENUE ARCHITECT & FRACTIONAL LEADERSHIP`), unified serif headline (`Your Fractional Revenue Architect for Predictable Closed-Won Growth.`) across two balanced lines, followed immediately by the 4-column Outcomes Metrics Bar right above `OUR PRACTICES`. |
-| **Horizontal Practices Architecture** | 4 Horizontal Tab Cards + Navy Deep-Dive Drawer | 4-column horizontal tab cards across the top with downward active chevron indicator (`::after`) directly connected to the active deep-dive container (`#practice-detail-drawer`). Copy density reduced by ~30–40% into punchy high-impact bullet points. Removed all LATAM references (focused on Canada, US, UK, EMEA). |
-| **Commercial Engagement Model** | Connected Two-Stage Visual Progression | Milestone headers: `Stage A: The 4-Week Installation Sprint` (fixed-fee permanent asset installation with interactive Week 01–04 milestone tabs) &rarr; `↓ Seamless Transition into Stage B Retained Governance ↓` &rarr; `Stage B: Fractional Revenue Architect Retainer` (dedicated executive advisory and live deal triage without rigid 10 hrs/wk caps). |
-| **Social Proof Logo Tickers** | Relocated Above Institutional Leadership (120s Slow Glide) | Placed directly above `#about` with updated titles (`Enterprise Ecosystem & Partner Experience — SI & Advisory Alliances` and `Proven Enterprise Deal Experience — Sample Accounts Sold To & Onboarded By Our Leadership`) and slowed 120s marquee speed. |
-| **Institutional Leadership ("About")** | Full Brand Lockup & Structured 4-Bullet Founder Profile | Header updated to `Enterprise Revenue Architect Meets Operational Risk Management.`; Left card renders full `THE SALES BENCH / REVENUE ARCHITECTED` wordmark; Right card features 1-sentence intro + 4 structured bullets for Scott Carpentier. |
-| **Contact Form & Diagnostic HubSpot Wiring** | Phone + MobilePhone + 4 Dropdown Options + Structured Quiz Payload | Forms map phone input to both `phone` and `mobilephone` properties. Standardized 4 clean dropdown options for `primary_area_of_interest`. Multi-track diagnostic transmits clean multi-line formatted summary with question responses, calculated risk ratings, and exposure figures directly into HubSpot (`portalId: 342958738`, `formId: de5aa2ee-c4fc-4f04-8b6b-563c3bfb9fa3`). |
+| **Hero Section** | Unified Continuous Headline Flow | Single continuous sentence headline (`Your Fractional Revenue Architect for Predictable Closed-Won Growth.`) without awkward forced line splits, followed by ICP badge and primary CTAs. |
+| **Outcomes Metrics Bar** | Empirically Attributed Benchmarks | Sourced from Gartner, Gong Reality Labs, and Salesforce "State of Sales" research: 25–35% slippage prevented, 40 hrs/wk recovered, 1 Deal = 3x saved deal ROI, and 0 Months InfoSec delay with Bring Your Own Key (BYOK) for AI deployment. |
+| **Horizontal Practices Architecture** | Streamlined & Compact (Zero Redundancy) | Clean horizontal cards without distracting "Active View ↓" / "Inspect ↓" badges. Removed duplicate drawer pill switcher to fit seamlessly within viewport without excessive scrolling. |
+| **Commercial Engagement Model** | Clearly Separated Two-Stage Architecture | Decoupled into two distinct sections: **Stage A: The 4-Week Installation Sprint** (interactive 4-week roadmap with fixed fee and client-owned IP) followed by a dedicated section for **Stage B: Fractional Revenue Architect Retainer** (executive advisory, live deal triage, and continuous telemetry). |
+| **Social Proof Logo Tickers** | Expanded Enterprise Client Pedigree | Added **Constellation Software**, **Aritzia**, and **Scotiabank** to the marquee alongside Bell Canada, Sobeys, Couche-Tard, and Suncor. |
+| **Contact Form & Diagnostic HubSpot Wiring** | Full Diagnostic Payload & Property Mapping | Forms transmit `primary_area_of_interest` both as a dedicated field and in `message`. Multi-track diagnostic captures all answers, calculated exposure, and FTE numbers into a visible confirmation card and transmits them directly to HubSpot (`portalId: 342958738`, `formId: de5aa2ee-c4fc-4f04-8b6b-563c3bfb9fa3`). |
 
 ---
 

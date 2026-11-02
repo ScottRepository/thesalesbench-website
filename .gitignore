@@ -11,5 +11,8 @@ $RECYCLE.BIN/
 *.swp
 *~
 
-# Temporary scratch logs
+# Temporary scratch logs & media
 *.log
+*.webm
+*.mp4
+*.mp3
