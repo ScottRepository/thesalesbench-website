@@ -2895,6 +2895,15 @@
                 var cfg = TRACK_CONFIG[currentTrack];
                 var res = cfg.calc();
                 var d = trackData[currentTrack] || {};
+                var interestTrackMap = {
+                    inspection: 'Deal Inspection & Slippage Mitigation',
+                    expansion: 'De-Risked Market Expansion (Canada, US, UK, EMEA)',
+                    ai_infra: 'Turnkey AI Sales Infrastructure',
+                    channel: 'Channel & Ecosystem / SI Co-Sell Architecture'
+                };
+                if (interestTrackMap[currentTrack]) {
+                    fields.push({ name: 'primary_area_of_interest', value: interestTrackMap[currentTrack] });
+                }
                 fields.push({ name: 'diagnostic_track', value: cfg.title });
                 fields.push({ name: 'diagnostic_summary', value: res.summaryText });
                 var lines = [
