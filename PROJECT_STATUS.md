@@ -1,6 +1,6 @@
 # The Sales Bench — Project Status & System Documentation
 
-**Document Version:** 6.4.0  
+**Document Version:** 6.5.0  
 **Last Updated:** November 2, 2026  
 **Founder & Managing Principal:** Scott Carpentier  
 **Public Repository:** [https://github.com/ScottRepository/thesalesbench-website](https://github.com/ScottRepository/thesalesbench-website)  
@@ -31,7 +31,7 @@ The practice operates on a proven two-tier commercial model:
 
 ---
 
-### 1.2 Technology Stack & UI Architecture (Version 6.4.0)
+### 1.2 Technology Stack & UI Architecture (Version 6.5.0)
 
 | Layer | Implementation | Strategic Advantage |
 | :--- | :--- | :--- |
@@ -39,12 +39,12 @@ The practice operates on a proven two-tier commercial model:
 | **Front-End Architecture** | Single-File Self-Contained (`index.html`) | Zero external CSS dependencies, immune to CDN outage, instant page loads, strict CSP compliance. |
 | **Brand Identity & Header Lockup** | Clean Gold Border Brand Container | Refined gold border (`border: 1.5px solid var(--gold)`) with transparent background, Cinzel bold navy primary wordmark (`THE SALES BENCH`), and gold tracking-wide tagline (`REVENUE ARCHITECTED`). Replicated consistently in header, About section, and footer. |
 | **Design System** | Corporate Advisory Luxury Palette | Technical Navy (`#0A192F`), Slate (`#475569`), Off-White (`#F8FAFC`), Crisp White (`#FFFFFF`), with Muted Gold (`#B08D57`) and Cobalt (`#1E40AF`) accents. |
-| **Hero Section** | Unified Continuous Headline Flow | Single continuous sentence headline (`Your Fractional Revenue Architect for Predictable Closed-Won Growth.`) without awkward forced line splits, followed by ICP badge and primary CTAs. |
-| **Outcomes Metrics Bar** | Empirically Attributed Benchmarks | Sourced from Gartner, Gong Reality Labs, and Salesforce "State of Sales" research: 25–35% slippage prevented, 40 hrs/wk recovered, 1 Deal = 3x saved deal ROI, and 0 Months InfoSec delay with Bring Your Own Key (BYOK) for AI deployment. |
-| **Horizontal Practices Architecture** | Streamlined & Compact (Zero Redundancy) | Clean horizontal cards without distracting "Active View ↓" / "Inspect ↓" badges. Removed duplicate drawer pill switcher to fit seamlessly within viewport without excessive scrolling. |
-| **Commercial Engagement Model** | Clearly Separated Two-Stage Architecture | Decoupled into two distinct sections: **Stage A: The 4-Week Installation Sprint** (interactive 4-week roadmap with fixed fee and client-owned IP) followed by a dedicated section for **Stage B: Fractional Revenue Architect Retainer** (executive advisory, live deal triage, and continuous telemetry). |
+| **Hero Section** | Unified Continuous Headline Flow | Single continuous sentence headline (`Your Fractional Revenue Architect for Predictable Growth.`) paired with subheadline incorporating `objective deal inspection to improve closed-won ratios`. |
+| **Outcomes Metrics Bar** | Direct Report Links & Attributed Benchmarks | Direct hyperlinks to [Gartner Sales Practice](https://www.gartner.com/en/sales), [Gong Reality Labs](https://www.gong.io/resources/labs/), [Salesforce State of Sales](https://www.salesforce.com/resources/research-reports/state-of-sales/), and [Clari](https://www.clari.com/resources/reports/) / [Forrester](https://www.forrester.com/bold/) B2B benchmarks (for 1 Deal = 3x ROI), plus 0 Months InfoSec delay with Bring Your Own Key (BYOK). |
+| **Horizontal Practices Architecture** | Exclusive Tab Switching (Zero Stacking) | Clicking any of the 4 practice tabs (`01 Deal Inspection`, `02 De-Risked Market Expansion`, `03 Turnkey AI Sales Infrastructure`, `04 Channel & Ecosystem Architecture`) exclusively displays that practice's deep-dive drawer. |
+| **Commercial Engagement Model** | Non-Repetitive 3-Bucket Architecture | Both **Stage A: The 4-Week Installation Sprint** (interactive Week 01–04 tabs) and **Stage B: Fractional Revenue Architect Retainer** use a clean 3-bucket card layout with zero redundant inner headers, showing only the active week's 3 deliverables at a time. |
 | **Social Proof Logo Tickers** | Expanded Enterprise Client Pedigree | Added **Constellation Software**, **Aritzia**, and **Scotiabank** to the marquee alongside Bell Canada, Sobeys, Couche-Tard, and Suncor. |
-| **Contact Form & Diagnostic HubSpot Wiring** | Full Diagnostic Payload & Property Mapping | Forms transmit `primary_area_of_interest` both as a dedicated field and in `message`. Multi-track diagnostic captures all answers, calculated exposure, and FTE numbers into a visible confirmation card and transmits them directly to HubSpot (`portalId: 342958738`, `formId: de5aa2ee-c4fc-4f04-8b6b-563c3bfb9fa3`). |
+| **Contact Form & Diagnostic HubSpot Wiring** | Step-by-Step Flow & Full HubSpot CRM Mapping | Restored smooth step-by-step question progression across all 4 diagnostic tracks, auto-mapping the completed track to HubSpot's `primary_area_of_interest` dropdown and sending the full Q&A scorecard in `message` (`portalId: 342958738`, `formId: de5aa2ee-c4fc-4f04-8b6b-563c3bfb9fa3`). |
 
 ---
 

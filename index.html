@@ -1427,13 +1427,39 @@
             border-radius: 4px;
             border: 1px solid #A7F3D0;
         }
+        .completed-summary-val {
             font-size: 1.25rem;
             color: var(--navy);
             font-family: var(--font-serif);
             margin-bottom: 4px;
         }
+        .metric-ref-link {
+            color: var(--navy);
+            font-weight: 600;
+            text-decoration: underline;
+            text-decoration-color: var(--gold);
+            text-underline-offset: 2px;
+            transition: color 0.15s ease;
+        }
+        .metric-ref-link:hover {
+            color: var(--gold);
+        }
+        .metrics-attribution a {
+            color: var(--slate);
+            text-decoration: underline;
+            text-decoration-color: var(--gold-border);
+            text-underline-offset: 2px;
+        }
+        .metrics-attribution a:hover {
+            color: var(--navy);
+        }
 
-        .hidden { display: none !important; }
+        .practice-detail-view.hidden,
+        .sprint-week-panel.hidden,
+        .completed-box.hidden,
+        .hidden {
+            display: none !important;
+        }
     </style>
 </head>
 <body>
@@ -1473,9 +1499,9 @@
             <div class="site-container">
                 <div class="hero-content-wrap">
                     <span class="eyebrow">ENTERPRISE REVENUE ARCHITECT &amp; FRACTIONAL LEADERSHIP</span>
-                    <h1>Your Fractional Revenue Architect for Predictable Closed-Won Growth.</h1>
+                    <h1>Your Fractional Revenue Architect for Predictable Growth.</h1>
                     <p class="hero-lead">
-                        We install objective deal inspection, turnkey AI sales infrastructure, de-risked market expansion, and partner co-sell engines directly into your CRM&mdash;accelerating pipeline and expanding market reach without adding headcount.
+                        We install objective deal inspection to improve closed-won ratios, turnkey AI sales infrastructure, de-risked market expansion, and partner co-sell engines directly into your CRM&mdash;accelerating pipeline and expanding market reach without adding headcount.
                     </p>
 
                     <!-- ICP Badge -->
@@ -1506,17 +1532,17 @@
                     <div class="metric">
                         <div class="metric-num">25&ndash;35<span>%</span></div>
                         <div class="metric-label">Slippage Prevented</div>
-                        <div class="metric-desc">Gartner &amp; Gong research show up to 33% of committed pipeline slips without verified Economic Buyer sign-off.</div>
+                        <div class="metric-desc"><a href="https://www.gartner.com/en/sales" target="_blank" rel="noopener noreferrer" class="metric-ref-link">Gartner</a> &amp; <a href="https://www.gong.io/resources/labs/" target="_blank" rel="noopener noreferrer" class="metric-ref-link">Gong Reality Labs</a> research show up to 33% of committed pipeline slips without verified Economic Buyer sign-off.</div>
                     </div>
                     <div class="metric">
                         <div class="metric-num">40 <span>hrs/wk</span></div>
                         <div class="metric-label">Recovered (1+ FTE)</div>
-                        <div class="metric-desc">Salesforce State of Sales finds reps lose 67% of time to admin. Automated CRM capture reclaims 4 hrs/AE/wk.</div>
+                        <div class="metric-desc"><a href="https://www.salesforce.com/resources/research-reports/state-of-sales/" target="_blank" rel="noopener noreferrer" class="metric-ref-link">Salesforce State of Sales</a> finds reps lose 67% of time to admin. Automated CRM capture reclaims 4 hrs/AE/wk.</div>
                     </div>
                     <div class="metric">
                         <div class="metric-num">1 Deal <span>=</span> 3x</div>
                         <div class="metric-label">Saved Deal ROI</div>
-                        <div class="metric-desc">At $75k&ndash;$150k ACV, rescuing a single enterprise deal recoups the engagement investment 3x over.</div>
+                        <div class="metric-desc">Per <a href="https://www.clari.com/resources/reports/" target="_blank" rel="noopener noreferrer" class="metric-ref-link">Clari Labs</a> &amp; <a href="https://www.forrester.com/bold/" target="_blank" rel="noopener noreferrer" class="metric-ref-link">Forrester</a> B2B benchmarks ($75k&ndash;$150k ACV), rescuing a single slipped enterprise deal recoups the engagement 3x over.</div>
                     </div>
                     <div class="metric">
                         <div class="metric-num">0 <span>Months</span></div>
@@ -1525,7 +1551,7 @@
                     </div>
                 </div>
                 <div class="metrics-attribution">
-                    <em>Empirical benchmarks sourced from Gartner Sales Practice research, Gong Reality Labs deal forensics, and Salesforce "State of Sales" data.</em>
+                    <em>Empirical benchmarks sourced from <a href="https://www.gartner.com/en/sales" target="_blank" rel="noopener noreferrer">Gartner Sales Practice</a>, <a href="https://www.gong.io/resources/labs/" target="_blank" rel="noopener noreferrer">Gong Reality Labs</a>, <a href="https://www.salesforce.com/resources/research-reports/state-of-sales/" target="_blank" rel="noopener noreferrer">Salesforce "State of Sales"</a>, and <a href="https://www.clari.com/resources/reports/" target="_blank" rel="noopener noreferrer">Clari Revenue Leak</a> reports.</em>
                 </div>
             </div>
         </div>
@@ -1594,18 +1620,13 @@
 
                 <!-- Practice Deep-Dive Drawer Directly Below -->
                 <div id="practice-detail-drawer" class="practice-submodule navy-theme">
-                    <!-- Clean Drawer Header Without Duplicate Switcher -->
-                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 14px;">
-                        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-light);">Interactive Practice Deep-Dive</span>
-                    </div>
-
                     <!-- ==============================================================
                          PRACTICE 01 DEEP-DIVE: DEAL INSPECTION & VALIDATION
                          ============================================================== -->
                     <div id="practice-detail-1" class="practice-detail-view">
                         <div class="practice-submodule-head">
                             <div>
-                                <span class="eyebrow" style="color: var(--gold-light);">Practice 01 Embedded Architecture &middot; Deal Inspection</span>
+                                <span class="eyebrow" style="color: var(--gold-light);">Practice 01 &middot; Deal Inspection &amp; Validation</span>
                                 <h2 style="color: var(--white);">Executive Deal Inspection &amp; The Anti-Fluff Protocol</h2>
                                 <p style="color: #CBD5E1; max-width: 820px; margin-top: 6px;">Software alone does not fix forecast slippage. We combine autonomous CRM telemetry with seasoned enterprise deal inspection on the 6-figure commitments that make or break your quarter.</p>
                             </div>
@@ -1636,7 +1657,7 @@
                                 <div class="gov-tier">
                                     <div class="gov-cadence">Monthly / Quarterly &middot; Live</div>
                                     <h3>Executive Strategic Deal Review</h3>
-                                    <p>Live forensic inspection of your five largest late-stage pursuits with Scott Carpentier.</p>
+                                    <p>Live forensic inspection of your five largest late-stage pursuits with principal leadership.</p>
                                     <ul>
                                         <li>Objective stress-testing of commit-level enterprise pursuits</li>
                                         <li>Coaching on multi-threading, executive alignment, and negotiation</li>
@@ -1666,10 +1687,10 @@
                     <!-- ==============================================================
                          PRACTICE 02 DEEP-DIVE: DE-RISKED MARKET EXPANSION
                          ============================================================== -->
-                    <div id="practice-detail-2" class="practice-detail-view hidden">
+                    <div id="practice-detail-2" class="practice-detail-view hidden" style="display: none;">
                         <div class="practice-submodule-head">
                             <div>
-                                <span class="eyebrow" style="color: var(--gold-light);">Practice 02 Embedded Architecture &middot; De-Risked Market Expansion</span>
+                                <span class="eyebrow" style="color: var(--gold-light);">Practice 02 &middot; De-Risked Market Expansion</span>
                                 <h2 style="color: var(--white);">Validate Buyer Economics Before Committing Full-Time Headcount.</h2>
                                 <p style="color: #CBD5E1; max-width: 820px; margin-top: 6px;">Premature international or enterprise territory expansion burns $300k+ per mis-hired rep. We validate local ICP demand, localize procurement mechanics, and install a repeatable 90-day territory playbook before you commit FTE quota.</p>
                             </div>
@@ -1730,10 +1751,10 @@
                     <!-- ==============================================================
                          PRACTICE 03 DEEP-DIVE: TURNKEY AI SALES INFRASTRUCTURE & INFOSEC
                          ============================================================== -->
-                    <div id="practice-detail-3" class="practice-detail-view hidden">
+                    <div id="practice-detail-3" class="practice-detail-view hidden" style="display: none;">
                         <div class="practice-submodule-head">
                             <div>
-                                <span class="eyebrow" style="color: var(--gold-light);">Practice 03 Embedded Architecture &middot; InfoSec Compliance</span>
+                                <span class="eyebrow" style="color: var(--gold-light);">Practice 03 &middot; Turnkey AI Sales Infrastructure</span>
                                 <h2 style="color: var(--white);">Zero Data Retention. Zero SOC-2 Bottlenecks.</h2>
                                 <p style="color: #CBD5E1; max-width: 820px; margin-top: 6px;">Enterprise software leaders cannot wait 3 to 6 months for vendor security questionnaires. Our Bring Your Own Key (BYOK) architecture runs entirely within your existing cloud and CRM perimeter—reclaiming 40 hrs/week per 10 AEs.</p>
                             </div>
@@ -1798,10 +1819,10 @@
                     <!-- ==============================================================
                          PRACTICE 04 DEEP-DIVE: CHANNEL & ECOSYSTEM ARCHITECTURE
                          ============================================================== -->
-                    <div id="practice-detail-4" class="practice-detail-view hidden">
+                    <div id="practice-detail-4" class="practice-detail-view hidden" style="display: none;">
                         <div class="practice-submodule-head">
                             <div>
-                                <span class="eyebrow" style="color: var(--gold-light);">Practice 04 Embedded Architecture &middot; Channel &amp; Ecosystem Architecture</span>
+                                <span class="eyebrow" style="color: var(--gold-light);">Practice 04 &middot; Channel &amp; Ecosystem Architecture</span>
                                 <h2 style="color: var(--white);">Turn Dormant Partner Logos Into an 85%-Attach Co-Sell Engine.</h2>
                                 <p style="color: #CBD5E1; max-width: 820px; margin-top: 6px;">Most B2B software companies sign alliance agreements that generate zero pipeline. We architect operational co-sell playbooks with Big-4 advisory firms, regional SIs, and cloud hyperscalers that multiply enterprise deal velocity.</p>
                             </div>
@@ -1870,192 +1891,181 @@
                 <div class="section-head center">
                     <span class="eyebrow">Stage A &middot; Fixed-Fee Turnkey Wedge</span>
                     <h2>The 4-Week Installation Sprint</h2>
-                    <p>Fixed-fee permanent asset installation. Configures automated MEDDPICC stage gates and CRM agents across a 4-week timeline&mdash;delivering immediate 1+ FTE recovered selling capacity and 100% client-owned IP.</p>
+                    <p>Fixed-fee permanent asset installation. Select any week below to inspect the milestone deliverables, installed CRM architecture, and client time commitment.</p>
                 </div>
 
                 <div class="stage-card-a" id="sprint-engine">
-                    <div class="stage-header-bar">
-                        <div>
-                            <span class="stage-badge-pill stage-a">Permanent Technology Asset</span>
-                            <h3 style="font-size: 1.4rem; color: var(--navy); margin-top: 4px;">4-Week Implementation Roadmap</h3>
-                            <p style="font-size: 14px; color: var(--slate); margin-top: 4px;">Explore each weekly deliverable below to inspect the division of labor and installed CRM architecture.</p>
-                        </div>
-                        <span class="cred-tag" style="font-size: 12px; padding: 6px 12px;">Predictable Fixed Fee &middot; 100% Client-Owned IP</span>
+                    <!-- Interactive Pill-Style Segmented Week Selector Tabs -->
+                    <div class="sprint-nav-tabs" role="tablist" aria-label="4-Week Sprint Milestones">
+                        <button type="button" class="sprint-tab-btn active" data-week="1" onclick="selectSprintWeek(1)">
+                            <div class="sprint-tab-top">
+                                <span class="tab-week">Week 01</span>
+                                <span class="sprint-tab-arrow">Step 1/4 &rarr;</span>
+                            </div>
+                            <span class="tab-focus">Discovery &amp; MEDDPICC Alignment</span>
+                        </button>
+                        <button type="button" class="sprint-tab-btn" data-week="2" onclick="selectSprintWeek(2)">
+                            <div class="sprint-tab-top">
+                                <span class="tab-week">Week 02</span>
+                                <span class="sprint-tab-arrow">Step 2/4 &rarr;</span>
+                            </div>
+                            <span class="tab-focus">Webhooks, Schema &amp; Integrations</span>
+                        </button>
+                        <button type="button" class="sprint-tab-btn" data-week="3" onclick="selectSprintWeek(3)">
+                            <div class="sprint-tab-top">
+                                <span class="tab-week">Week 03</span>
+                                <span class="sprint-tab-arrow">Step 3/4 &rarr;</span>
+                            </div>
+                            <span class="tab-focus">Deal Room Pilot &amp; Verification</span>
+                        </button>
+                        <button type="button" class="sprint-tab-btn" data-week="4" onclick="selectSprintWeek(4)">
+                            <div class="sprint-tab-top">
+                                <span class="tab-week">Week 04</span>
+                                <span class="sprint-tab-arrow">Step 4/4 &check;</span>
+                            </div>
+                            <span class="tab-focus">Rollout, Playbooks &amp; Enablement</span>
+                        </button>
                     </div>
 
-                        <!-- Interactive Pill-Style Segmented Week Selector Tabs -->
-                        <div class="sprint-nav-tabs" role="tablist" aria-label="4-Week Sprint Milestones">
-                            <button type="button" class="sprint-tab-btn active" data-week="1" onclick="selectSprintWeek(1)">
-                                <div class="sprint-tab-top">
-                                    <span class="tab-week">Week 01</span>
-                                    <span class="sprint-tab-arrow">Step 1/4 &rarr;</span>
-                                </div>
-                                <span class="tab-focus">Discovery &amp; MEDDPICC Alignment</span>
-                            </button>
-                            <button type="button" class="sprint-tab-btn" data-week="2" onclick="selectSprintWeek(2)">
-                                <div class="sprint-tab-top">
-                                    <span class="tab-week">Week 02</span>
-                                    <span class="sprint-tab-arrow">Step 2/4 &rarr;</span>
-                                </div>
-                                <span class="tab-focus">Webhooks, Schema &amp; Integrations</span>
-                            </button>
-                            <button type="button" class="sprint-tab-btn" data-week="3" onclick="selectSprintWeek(3)">
-                                <div class="sprint-tab-top">
-                                    <span class="tab-week">Week 03</span>
-                                    <span class="sprint-tab-arrow">Step 3/4 &rarr;</span>
-                                </div>
-                                <span class="tab-focus">Deal Room Pilot &amp; Verification</span>
-                            </button>
-                            <button type="button" class="sprint-tab-btn" data-week="4" onclick="selectSprintWeek(4)">
-                                <div class="sprint-tab-top">
-                                    <span class="tab-week">Week 04</span>
-                                    <span class="sprint-tab-arrow">Step 4/4 &check;</span>
-                                </div>
-                                <span class="tab-focus">Rollout, Playbooks &amp; Enablement</span>
-                            </button>
+                    <!-- Clean 3-Bucket Deliverable View (Only Selected Week Displays) -->
+                    <!-- Week 1 Panel -->
+                    <div class="fractional-grid sprint-week-panel active" id="sprint-week-1">
+                        <div class="fractional-col">
+                            <h5>Week 01 &middot; Milestone Focus</h5>
+                            <h4>Discovery &amp; MEDDPICC Alignment</h4>
+                            <p>We audit your active sales cycles, map historical deal drop-off points, and tailor objective MEDDPICC exit rubrics to your ICP.</p>
+                            <ul>
+                                <li>CRM pipeline schema &amp; stage audit</li>
+                                <li>Quantified economic pain definitions</li>
+                                <li>Paper-process checklist validation</li>
+                            </ul>
                         </div>
+                        <div class="fractional-col">
+                            <h5>Installed Architecture</h5>
+                            <h4>Stage-Gate Logic</h4>
+                            <p>Establishes evidence-based criteria so opportunities cannot roll into commit without verified quotes from the Economic Buyer.</p>
+                            <ul>
+                                <li>Replaces subjective rep "happy ears"</li>
+                                <li>Aligns prompt rubrics to your ACV tiers</li>
+                                <li>Identifies missing multi-threading early</li>
+                            </ul>
+                        </div>
+                        <div class="fractional-col">
+                            <h5>Division of Labor</h5>
+                            <h4>Client Time: ~90 Minutes</h4>
+                            <p>The Sales Bench architects all rubrics. Your RevOps team joins a single 60-min discovery session and grants CRM admin permissions.</p>
+                            <ul>
+                                <li>Zero custom coding required from your team</li>
+                                <li>Runs 100% inside your existing perimeter</li>
+                                <li>Permanent intellectual property asset</li>
+                            </ul>
+                        </div>
+                    </div>
 
-                        <!-- High-Contrast Active Week Deliverable Box -->
-                        <div class="sprint-content-card">
-                            <!-- Week 1 Panel -->
-                            <div class="sprint-grid-3col sprint-week-panel active" id="sprint-week-1">
-                                <div class="sprint-detail-col">
-                                    <span class="sprint-col-label">Week 01 &middot; Milestone Focus</span>
-                                    <h4>Discovery &amp; MEDDPICC Alignment</h4>
-                                    <p>We audit your active sales cycles, map historical deal drop-off points, and tailor objective MEDDPICC exit rubrics to your ICP.</p>
-                                    <ul>
-                                        <li>CRM pipeline schema &amp; stage audit</li>
-                                        <li>Quantified economic pain definitions</li>
-                                        <li>Paper-process checklist validation</li>
-                                    </ul>
-                                </div>
-                                <div class="sprint-detail-col">
-                                    <span class="sprint-col-label">Installed Architecture</span>
-                                    <h4>Stage-Gate Logic</h4>
-                                    <p>Establishes evidence-based criteria so opportunities cannot roll into commit without verified quotes from the Economic Buyer.</p>
-                                    <ul>
-                                        <li>Replaces subjective rep "happy ears"</li>
-                                        <li>Aligns prompt rubrics to your ACV tiers</li>
-                                        <li>Identifies missing multi-threading early</li>
-                                    </ul>
-                                </div>
-                                <div class="sprint-detail-col">
-                                    <span class="sprint-col-label">Division of Labor</span>
-                                    <h4>Client Time: ~90 Minutes</h4>
-                                    <p>The Sales Bench architects all rubrics. Your RevOps team joins a single 60-min discovery session and grants CRM admin permissions.</p>
-                                    <ul>
-                                        <li>Zero custom coding required from your team</li>
-                                        <li>Runs 100% inside your existing perimeter</li>
-                                        <li>Permanent intellectual property asset</li>
-                                    </ul>
-                                </div>
-                            </div>
+                    <!-- Week 2 Panel -->
+                    <div class="fractional-grid sprint-week-panel hidden" id="sprint-week-2" style="display: none;">
+                        <div class="fractional-col">
+                            <h5>Week 02 &middot; Milestone Focus</h5>
+                            <h4>Webhooks, Schema &amp; Data Integrations</h4>
+                            <p>We wire automated webhooks from your call recording tools (Zoom, Gong, Fireflies) directly into custom fields in HubSpot or Salesforce.</p>
+                            <ul>
+                                <li>Secure tenant-to-tenant webhook routing</li>
+                                <li>Custom field provisioning on Opportunity</li>
+                                <li>BYOK enterprise LLM API connectivity</li>
+                            </ul>
+                        </div>
+                        <div class="fractional-col">
+                            <h5>Installed Architecture</h5>
+                            <h4>Post-Call CRM Drafter</h4>
+                            <p>Audio is transcribed and parsed into structured JSON properties in your CRM, generating automated follow-up drafts for reps.</p>
+                            <ul>
+                                <li>Reclaims 45&ndash;60 minutes of admin per AE/day</li>
+                                <li>40 hrs/week recovered across a 10-AE floor</li>
+                                <li>Eliminates manual CRM hygiene friction</li>
+                            </ul>
+                        </div>
+                        <div class="fractional-col">
+                            <h5>Division of Labor</h5>
+                            <h4>Client Time: ~60 Minutes</h4>
+                            <p>Client RevOps approves API connection endpoints and confirms custom field names. All webhook pipelines are built by our team.</p>
+                            <ul>
+                                <li>Zero third-party data retention</li>
+                                <li>No external server hosting required</li>
+                                <li>Fully revocable API credentials</li>
+                            </ul>
+                        </div>
+                    </div>
 
-                            <!-- Week 2 Panel -->
-                            <div class="sprint-grid-3col sprint-week-panel hidden" id="sprint-week-2">
-                                <div class="sprint-detail-col">
-                                    <span class="sprint-col-label">Week 02 &middot; Milestone Focus</span>
-                                    <h4>Webhooks, Schema &amp; Data Integrations</h4>
-                                    <p>We wire automated webhooks from your call recording tools (Zoom, Gong, Fireflies) directly into custom fields in HubSpot or Salesforce.</p>
-                                    <ul>
-                                        <li>Secure tenant-to-tenant webhook routing</li>
-                                        <li>Custom field provisioning on Opportunity</li>
-                                        <li>BYOK enterprise LLM API connectivity</li>
-                                    </ul>
-                                </div>
-                                <div class="sprint-detail-col">
-                                    <span class="sprint-col-label">Installed Architecture</span>
-                                    <h4>Post-Call CRM Drafter</h4>
-                                    <p>Audio is transcribed and parsed into structured JSON properties in your CRM, generating automated follow-up drafts for reps.</p>
-                                    <ul>
-                                        <li>Reclaims 45&ndash;60 minutes of admin per AE/day</li>
-                                        <li>40 hrs/week recovered across a 10-AE floor</li>
-                                        <li>Eliminates manual CRM hygiene friction</li>
-                                    </ul>
-                                </div>
-                                <div class="sprint-detail-col">
-                                    <span class="sprint-col-label">Division of Labor</span>
-                                    <h4>Client Time: ~60 Minutes</h4>
-                                    <p>Client RevOps approves API connection endpoints and confirms custom field names. All webhook pipelines are built by our team.</p>
-                                    <ul>
-                                        <li>Zero third-party data retention</li>
-                                        <li>No external server hosting required</li>
-                                        <li>Fully revocable API credentials</li>
-                                    </ul>
-                                </div>
-                            </div>
+                    <!-- Week 3 Panel -->
+                    <div class="fractional-grid sprint-week-panel hidden" id="sprint-week-3" style="display: none;">
+                        <div class="fractional-col">
+                            <h5>Week 03 &middot; Milestone Focus</h5>
+                            <h4>Deal Room Pilot &amp; Verification Gates</h4>
+                            <p>We configure branded Mutual Action Plan (MAP) buyer portals and initiate live testing with 2 senior Account Executives.</p>
+                            <ul>
+                                <li>Collaborative executive buyer portal templates</li>
+                                <li>Security pack &amp; ROI model embedding</li>
+                                <li>Real-world test on live 6-figure deals</li>
+                            </ul>
+                        </div>
+                        <div class="fractional-col">
+                            <h5>Installed Architecture</h5>
+                            <h4>Procurement Defense</h4>
+                            <p>Arms your internal champion with executive ROI collateral and surfaces InfoSec/Legal redlines 3&ndash;4 weeks earlier in the cycle.</p>
+                            <ul>
+                                <li>Compresses enterprise sales cycles by 25%</li>
+                                <li>Real-time telemetry on buyer engagement</li>
+                                <li>Protects pricing behind closed doors</li>
+                            </ul>
+                        </div>
+                        <div class="fractional-col">
+                            <h5>Division of Labor</h5>
+                            <h4>Client Time: ~45 Minutes</h4>
+                            <p>Two pilot AEs test call drafting and deal room provisioning. Prompts are refined against actual customer call transcripts.</p>
+                            <ul>
+                                <li>Direct feedback tuning with reps</li>
+                                <li>Frictionless workflow optimization</li>
+                                <li>Proven before full-floor enablement</li>
+                            </ul>
+                        </div>
+                    </div>
 
-                            <!-- Week 3 Panel -->
-                            <div class="sprint-grid-3col sprint-week-panel hidden" id="sprint-week-3">
-                                <div class="sprint-detail-col">
-                                    <span class="sprint-col-label">Week 03 &middot; Milestone Focus</span>
-                                    <h4>Deal Room Pilot &amp; Verification Gates</h4>
-                                    <p>We configure branded Mutual Action Plan (MAP) buyer portals and initiate live testing with 2 senior Account Executives.</p>
-                                    <ul>
-                                        <li>Collaborative executive buyer portal templates</li>
-                                        <li>Security pack &amp; ROI model embedding</li>
-                                        <li>Real-world test on live 6-figure deals</li>
-                                    </ul>
-                                </div>
-                                <div class="sprint-detail-col">
-                                    <span class="sprint-col-label">Installed Architecture</span>
-                                    <h4>Procurement Defense</h4>
-                                    <p>Arms your internal champion with executive ROI collateral and surfaces InfoSec/Legal redlines 3&ndash;4 weeks earlier in the cycle.</p>
-                                    <ul>
-                                        <li>Compresses enterprise sales cycles by 25%</li>
-                                        <li>Real-time telemetry on buyer engagement</li>
-                                        <li>Protects pricing behind closed doors</li>
-                                    </ul>
-                                </div>
-                                <div class="sprint-detail-col">
-                                    <span class="sprint-col-label">Division of Labor</span>
-                                    <h4>Client Time: ~45 Minutes</h4>
-                                    <p>Two pilot AEs test call drafting and deal room provisioning. Prompts are refined against actual customer call transcripts.</p>
-                                    <ul>
-                                        <li>Direct feedback tuning with reps</li>
-                                        <li>Frictionless workflow optimization</li>
-                                        <li>Proven before full-floor enablement</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- Week 4 Panel -->
-                            <div class="sprint-grid-3col sprint-week-panel hidden" id="sprint-week-4">
-                                <div class="sprint-detail-col">
-                                    <span class="sprint-col-label">Week 04 &middot; Milestone Focus</span>
-                                    <h4>Rollout, Playbooks &amp; Enablement</h4>
-                                    <p>Full sales floor rollout accompanied by our concise 3-page operations runbook and 30-day post-launch hypercare handover.</p>
-                                    <ul>
-                                        <li>60-minute interactive floor workshop</li>
-                                        <li>3-page reference runbook for AEs and managers</li>
-                                        <li>Automated weekly slippage radar activation</li>
-                                    </ul>
-                                </div>
-                                <div class="sprint-detail-col">
-                                    <span class="sprint-col-label">Installed Architecture</span>
-                                    <h4>Permanent Technology Asset</h4>
-                                    <p>Transparent fixed fee with zero surprise overruns. All workflows and prompts belong to you with 30-day post-launch tuning.</p>
-                                    <ul>
-                                        <li>No recurring vendor software tax</li>
-                                        <li>Post-launch prompt refinement included</li>
-                                        <li>Option to layer ongoing executive governance</li>
-                                    </ul>
-                                </div>
-                                <div class="sprint-detail-col">
-                                    <span class="sprint-col-label">Division of Labor</span>
-                                    <h4>Client Time: 60-Min Workshop</h4>
-                                    <p>Your floor is enabled and producing from Day 1. The Sales Bench remains on call for 30 days to ensure 100% adoption.</p>
-                                    <ul>
-                                        <li>1+ FTE capacity recovered immediately</li>
-                                        <li>Forecast accuracy improved for Month 3</li>
-                                        <li>Immediate 3x+ ROI on first rescued deal</li>
-                                    </ul>
-                                </div>
-                            </div>
+                    <!-- Week 4 Panel -->
+                    <div class="fractional-grid sprint-week-panel hidden" id="sprint-week-4" style="display: none;">
+                        <div class="fractional-col">
+                            <h5>Week 04 &middot; Milestone Focus</h5>
+                            <h4>Rollout, Playbooks &amp; Enablement</h4>
+                            <p>Full sales floor rollout accompanied by our concise 3-page operations runbook and 30-day post-launch hypercare handover.</p>
+                            <ul>
+                                <li>60-minute interactive floor workshop</li>
+                                <li>3-page reference runbook for AEs and managers</li>
+                                <li>Automated weekly slippage radar activation</li>
+                            </ul>
+                        </div>
+                        <div class="fractional-col">
+                            <h5>Installed Architecture</h5>
+                            <h4>Permanent Technology Asset</h4>
+                            <p>Transparent fixed fee with zero surprise overruns. All workflows and prompts belong to you with 30-day post-launch tuning.</p>
+                            <ul>
+                                <li>No recurring vendor software tax</li>
+                                <li>Post-launch prompt refinement included</li>
+                                <li>Option to layer ongoing executive governance</li>
+                            </ul>
+                        </div>
+                        <div class="fractional-col">
+                            <h5>Division of Labor</h5>
+                            <h4>Client Time: 60-Min Workshop</h4>
+                            <p>Your floor is enabled and producing from Day 1. The Sales Bench remains on call for 30 days to ensure 100% adoption.</p>
+                            <ul>
+                                <li>1+ FTE capacity recovered immediately</li>
+                                <li>Forecast accuracy improved for Month 3</li>
+                                <li>Immediate 3x+ ROI on first rescued deal</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
         <!-- ==========================================================================
              6. COMMERCIAL ENGAGEMENT MODEL — STAGE B: FRACTIONAL REVENUE ARCHITECT RETAINER
@@ -2069,15 +2079,6 @@
                 </div>
 
                 <div class="fractional-card">
-                    <div class="fractional-head">
-                        <div>
-                            <span class="stage-badge-pill stage-b">Executive Partnership</span>
-                            <h3 style="font-size: 1.4rem; color: var(--navy); margin-top: 4px;">Ongoing Principal Advisory &amp; Deal Forensics</h3>
-                            <p style="font-size: 14px; color: var(--slate); margin-top: 4px;">Hands-on strategic execution that keeps deals advancing through verified paper processes and Economic Buyer commitment.</p>
-                        </div>
-                        <span class="cred-tag" style="font-size: 12px; padding: 6px 12px;">Retained Executive Advisory &middot; Zero Long-Term Lock-In</span>
-                    </div>
-
                     <div class="fractional-grid">
                         <div class="fractional-col">
                             <h5>Engagement Cadence</h5>
@@ -2085,7 +2086,7 @@
                             <p>Structured as a dedicated executive advisory partnership tailored to your sales floor volume and live transaction pace.</p>
                             <ul>
                                 <li>Dedicated principal leadership</li>
-                                <li>Direct access to Scott Carpentier</li>
+                                <li>Direct principal-level access</li>
                                 <li>Zero long-term agency lock-in</li>
                             </ul>
                         </div>
@@ -2234,7 +2235,7 @@
                     <div>
                         <span class="eyebrow">Start the Conversation</span>
                         <h2>Schedule a 15-Minute Introductory Call</h2>
-                        <p>Speak directly with Scott Carpentier. Whether you want to review your custom Pipeline Leakage Scorecard or discuss deploying the 4-Week Installation Sprint in your stack, the discussion remains centered strictly on measurable economic leverage.</p>
+                        <p>Whether you want to review your custom Pipeline Leakage Scorecard or discuss deploying the 4-Week Installation Sprint in your stack, the discussion remains centered strictly on measurable economic leverage.</p>
                         <ul class="cover-list">
                             <li><strong>Peer cohort benchmark:</strong> Discover how your Month-3 deal slippage, Economic Buyer latency, and procurement dwell-time compare to peer B2B SaaS cohorts.</li>
                             <li><strong>Architecture fit:</strong> How the MEDDPICC auditor, post-call CRM drafter, and collaborative deal room deploy natively inside your CRM perimeter.</li>
@@ -2374,7 +2375,7 @@
                     </div>
 
                     <!-- Step 2 -->
-                    <div id="m-step-inspection-2" class="hidden">
+                    <div id="m-step-inspection-2" class="hidden" style="display: none;">
                         <div class="step-q">2. What is your Average Contract Value (ACV) for enterprise deals?</div>
                         <div class="options">
                             <button type="button" class="opt-btn" onclick="selectTrackAnswer('inspection', 2, 'acv', 35000)"><div class="opt-title">$30,000 &ndash; $50,000 ACV</div><div class="opt-sub">Mid-market to lower enterprise pursuits.</div></button>
@@ -2384,7 +2385,7 @@
                     </div>
 
                     <!-- Step 3 -->
-                    <div id="m-step-inspection-3" class="hidden">
+                    <div id="m-step-inspection-3" class="hidden" style="display: none;">
                         <div class="step-q">3. How many quota-carrying Account Executives are on your team?</div>
                         <div class="options">
                             <button type="button" class="opt-btn" onclick="selectTrackAnswer('inspection', 3, 'repCount', 7)"><div class="opt-title">5 &ndash; 9 AEs</div><div class="opt-sub">Core sales floor; high individual rep leverage.</div></button>
@@ -2394,7 +2395,7 @@
                     </div>
 
                     <!-- Step 4 -->
-                    <div id="m-step-inspection-4" class="hidden">
+                    <div id="m-step-inspection-4" class="hidden" style="display: none;">
                         <div class="step-q">4. In what share of late-stage deals has your team validated direct Economic Buyer sign-off?</div>
                         <div class="options">
                             <button type="button" class="opt-btn" onclick="selectTrackAnswer('inspection', 4, 'ebAccess', 0.85)"><div class="opt-title">Over 75% Verified</div><div class="opt-sub">Economic Buyer access verified before deals enter commit.</div></button>
@@ -2404,7 +2405,7 @@
                     </div>
 
                     <!-- Step 5 -->
-                    <div id="m-step-inspection-5" class="hidden">
+                    <div id="m-step-inspection-5" class="hidden" style="display: none;">
                         <div class="step-q">5. How does your organization enforce movement between pipeline stages?</div>
                         <div class="options">
                             <button type="button" class="opt-btn" onclick="selectTrackAnswer('inspection', 5, 'gateType', 1.0)"><div class="opt-title">Rep Discretion</div><div class="opt-sub">Deals advance on rep confidence without verified proof gates.</div></button>
@@ -2415,7 +2416,7 @@
                 </div>
 
                 <!-- TRACK 2: MARKET EXPANSION FEASIBILITY -->
-                <div id="track-container-expansion" class="hidden">
+                <div id="track-container-expansion" class="hidden" style="display: none;">
                     <!-- Step 1 -->
                     <div id="m-step-expansion-1">
                         <div class="step-q">1. What is your primary target territory for geographic or market expansion?</div>
@@ -2428,7 +2429,7 @@
                     </div>
 
                     <!-- Step 2 -->
-                    <div id="m-step-expansion-2" class="hidden">
+                    <div id="m-step-expansion-2" class="hidden" style="display: none;">
                         <div class="step-q">2. How does expected contract value (ACV) in the target territory compare to your domestic baseline?</div>
                         <div class="options">
                             <button type="button" class="opt-btn" onclick="selectTrackAnswer('expansion', 2, 'acvParity', 'higher')"><div class="opt-title">Higher ACV (>1.5x domestic pricing)</div><div class="opt-sub">Enterprise tiering supports premium deal values.</div></button>
@@ -2438,7 +2439,7 @@
                     </div>
 
                     <!-- Step 3 -->
-                    <div id="m-step-expansion-3" class="hidden">
+                    <div id="m-step-expansion-3" class="hidden" style="display: none;">
                         <div class="step-q">3. What is your current customer validation status in the new territory?</div>
                         <div class="options">
                             <button type="button" class="opt-btn" onclick="selectTrackAnswer('expansion', 3, 'validationStatus', 'validated')"><div class="opt-title">Validated (3+ Referenceable Enterprise Accounts)</div><div class="opt-sub">Local reference customers willing to speak with prospects.</div></button>
@@ -2448,7 +2449,7 @@
                     </div>
 
                     <!-- Step 4 -->
-                    <div id="m-step-expansion-4" class="hidden">
+                    <div id="m-step-expansion-4" class="hidden" style="display: none;">
                         <div class="step-q">4. How many quota-carrying Account Executives are planned for initial expansion?</div>
                         <div class="options">
                             <button type="button" class="opt-btn" onclick="selectTrackAnswer('expansion', 4, 'repCount', 2)"><div class="opt-title">1 &ndash; 2 Senior AEs / Player-Coaches</div><div class="opt-sub">Lean wedge entry; testing buyer economics before scale.</div></button>
@@ -2459,7 +2460,7 @@
                 </div>
 
                 <!-- TRACK 3: AI SALES INFRASTRUCTURE & SECURITY -->
-                <div id="track-container-ai_infra" class="hidden">
+                <div id="track-container-ai_infra" class="hidden" style="display: none;">
                     <!-- Step 1 -->
                     <div id="m-step-ai_infra-1">
                         <div class="step-q">1. What meeting recording and conversation intelligence platform does your floor currently use?</div>
@@ -2471,7 +2472,7 @@
                     </div>
 
                     <!-- Step 2 -->
-                    <div id="m-step-ai_infra-2" class="hidden">
+                    <div id="m-step-ai_infra-2" class="hidden" style="display: none;">
                         <div class="step-q">2. What is your primary enterprise CRM system of record?</div>
                         <div class="options">
                             <button type="button" class="opt-btn" onclick="selectTrackAnswer('ai_infra', 2, 'crm', 'Salesforce')"><div class="opt-title">Salesforce Enterprise</div><div class="opt-sub">Custom objects, Apex/Flow automation, enterprise permissioning.</div></button>
@@ -2481,7 +2482,7 @@
                     </div>
 
                     <!-- Step 3 -->
-                    <div id="m-step-ai_infra-3" class="hidden">
+                    <div id="m-step-ai_infra-3" class="hidden" style="display: none;">
                         <div class="step-q">3. What are your InfoSec, procurement, and data retention requirements?</div>
                         <div class="options">
                             <button type="button" class="opt-btn" onclick="selectTrackAnswer('ai_infra', 3, 'securityReq', 'byok')"><div class="opt-title">Strict CISO / Zero Data Retention (BYOK Required)</div><div class="opt-sub">No third-party storage; inferences must run in our enterprise cloud tenant.</div></button>
@@ -2491,7 +2492,7 @@
                     </div>
 
                     <!-- Step 4 -->
-                    <div id="m-step-ai_infra-4" class="hidden">
+                    <div id="m-step-ai_infra-4" class="hidden" style="display: none;">
                         <div class="step-q">4. How many quota-carrying Account Executives will use the autonomous agents?</div>
                         <div class="options">
                             <button type="button" class="opt-btn" onclick="selectTrackAnswer('ai_infra', 4, 'floorSize', 7)"><div class="opt-title">5 &ndash; 9 AEs</div><div class="opt-sub">Reclaims 20&ndash;35 administrative hours weekly across the floor.</div></button>
@@ -2502,7 +2503,7 @@
                 </div>
 
                 <!-- TRACK 4: PARTNER & ALLIANCE MATURITY -->
-                <div id="track-container-channel" class="hidden">
+                <div id="track-container-channel" class="hidden" style="display: none;">
                     <!-- Step 1 -->
                     <div id="m-step-channel-1">
                         <div class="step-q">1. What share of your total pipeline or annual revenue is partner-influenced or co-sold?</div>
@@ -2515,7 +2516,7 @@
                     </div>
 
                     <!-- Step 2 -->
-                    <div id="m-step-channel-2" class="hidden">
+                    <div id="m-step-channel-2" class="hidden" style="display: none;">
                         <div class="step-q">2. What is your current alliance tiering maturity with cloud hyperscalers (AWS, Azure, GCP) or Big 4 SIs?</div>
                         <div class="options">
                             <button type="button" class="opt-btn" onclick="selectTrackAnswer('channel', 2, 'tieringMaturity', 'entry')"><div class="opt-title">Registered / Entry Marketplace Listing</div><div class="opt-sub">Listed on marketplace, but zero dedicated partner co-sell pipeline.</div></button>
@@ -2525,7 +2526,7 @@
                     </div>
 
                     <!-- Step 3 -->
-                    <div id="m-step-channel-3" class="hidden">
+                    <div id="m-step-channel-3" class="hidden" style="display: none;">
                         <div class="step-q">3. How are partner deal registration and co-sell attribution governed in your CRM?</div>
                         <div class="options">
                             <button type="button" class="opt-btn" onclick="selectTrackAnswer('channel', 3, 'attributionGov', 'adhoc')"><div class="opt-title">Spreadsheet / Ad-Hoc Tracking</div><div class="opt-sub">Prone to channel conflict, delayed attribution, and missed co-sell credit.</div></button>
@@ -2536,7 +2537,7 @@
                 </div>
 
                 <!-- COMPLETION STEP: CUSTOM SCORECARD & HUBSPOT FORM -->
-                <div id="modal-completed" class="hidden completed-box">
+                <div id="modal-completed" class="hidden completed-box" style="display: none;">
                     <span class="eyebrow" id="completed-eyebrow" style="margin-bottom: 4px;">Diagnostic Complete</span>
                     <h4 id="completed-title">Receive Your Custom Pipeline Leakage &amp; Triage Summary</h4>
 
@@ -2548,7 +2549,7 @@
                     <!-- Verified Captured Parameters Preview -->
                     <div id="completed-inputs-preview" class="completed-inputs-preview"></div>
 
-                    <p id="completed-desc">Submit to lock in your benchmark calculation and review your deal-gating risk exposure directly with Scott Carpentier.</p>
+                    <p id="completed-desc">Submit to lock in your benchmark calculation and receive a comprehensive executive debrief on your pipeline risk exposure and recoverable capacity.</p>
 
                     <form id="modal-diagnostic-form" class="custom-form" onsubmit="handleCustomFormSubmit(event, 'modal-diagnostic-form', 'Diagnostic Scorecard')">
                         <div class="form-row-2">
@@ -2595,7 +2596,7 @@
                 <button type="button" class="modal-close" onclick="closeScheduleModal()" aria-label="Close">&#10005;</button>
             </div>
             <div class="modal-body">
-                <p style="font-size: 14.5px; margin-bottom: 18px; color: var(--slate);">Connect directly with Scott Carpentier. We'll benchmark your forecast slippage against peer B2B software leaders and walk through how the 4-Week Installation Sprint would deploy in your stack.</p>
+                <p style="font-size: 14.5px; margin-bottom: 18px; color: var(--slate);">Whether you want to review your custom Pipeline Leakage Scorecard or discuss deploying the 4-Week Installation Sprint in your stack, the discussion remains centered strictly on measurable economic leverage.</p>
 
                 <!-- Custom HTML Form (Posts Directly to HubSpot API, Zero iFrames) -->
                 <form id="modal-schedule-form" class="custom-form" onsubmit="handleCustomFormSubmit(event, 'modal-schedule-form', 'Schedule Introductory Call Modal')">
@@ -2795,8 +2796,10 @@
                 if (panel) {
                     if (isActive) {
                         panel.classList.remove('hidden');
+                        panel.style.display = 'block';
                     } else {
                         panel.classList.add('hidden');
+                        panel.style.display = 'none';
                     }
                 }
             }
@@ -2821,9 +2824,11 @@
                 if (p.id === 'sprint-week-' + weekNumber) {
                     p.classList.remove('hidden');
                     p.classList.add('active');
+                    p.style.display = '';
                 } else {
                     p.classList.add('hidden');
                     p.classList.remove('active');
+                    p.style.display = 'none';
                 }
             });
         }
@@ -3001,8 +3006,8 @@
 
                 if (response.ok) {
                     var successMsg = formId === 'modal-diagnostic-form'
-                        ? '✓ Thank you, ' + firstName + '. Your diagnostic assessment and scorecard parameters have been successfully logged to HubSpot CRM. Scott Carpentier will review your specific parameters and follow up within one business day.'
-                        : '✓ Thank you, ' + firstName + '. Your consultation request' + (primaryInterest ? ' (' + primaryInterest + ')' : '') + ' has been logged to HubSpot CRM. Scott Carpentier will follow up within one business day.';
+                        ? '✓ Thank you, ' + firstName + '. Your diagnostic assessment and scorecard parameters have been successfully logged to HubSpot CRM. A principal will review your specific parameters and follow up within one business day.'
+                        : '✓ Thank you, ' + firstName + '. Your consultation request' + (primaryInterest ? ' (' + primaryInterest + ')' : '') + ' has been logged to HubSpot CRM. A principal will follow up within one business day.';
                     statusEl.textContent = successMsg;
                     statusEl.className = 'form-status success';
                     statusEl.style.display = 'block';
@@ -3199,26 +3204,40 @@
             // Hide all track question containers
             ['inspection', 'expansion', 'ai_infra', 'channel'].forEach(function(t) {
                 var el = document.getElementById('track-container-' + t);
-                if (el) el.classList.add('hidden');
+                if (el) {
+                    el.classList.add('hidden');
+                    el.style.display = 'none';
+                }
             });
 
             // Show current track container
             var activeContainer = document.getElementById('track-container-' + trackId);
-            if (activeContainer) activeContainer.classList.remove('hidden');
+            if (activeContainer) {
+                activeContainer.classList.remove('hidden');
+                activeContainer.style.display = 'block';
+            }
 
             // Reset steps in current track
             var total = TRACK_CONFIG[trackId].totalSteps;
             for (var s = 1; s <= total; s++) {
                 var stepEl = document.getElementById('m-step-' + trackId + '-' + s);
                 if (stepEl) {
-                    if (s === 1) stepEl.classList.remove('hidden');
-                    else stepEl.classList.add('hidden');
+                    if (s === 1) {
+                        stepEl.classList.remove('hidden');
+                        stepEl.style.display = 'block';
+                    } else {
+                        stepEl.classList.add('hidden');
+                        stepEl.style.display = 'none';
+                    }
                 }
             }
 
             // Hide completed container
             var comp = document.getElementById('modal-completed');
-            if (comp) comp.classList.add('hidden');
+            if (comp) {
+                comp.classList.add('hidden');
+                comp.style.display = 'none';
+            }
 
             // Update progress
             setProgress('Question 1 of ' + total, Math.round(100 / total));
@@ -3235,24 +3254,36 @@
 
             var cfg = TRACK_CONFIG[track];
             var currentStepEl = document.getElementById('m-step-' + track + '-' + step);
-            if (currentStepEl) currentStepEl.classList.add('hidden');
+            if (currentStepEl) {
+                currentStepEl.classList.add('hidden');
+                currentStepEl.style.display = 'none';
+            }
 
             if (step < cfg.totalSteps) {
                 var nextStepEl = document.getElementById('m-step-' + track + '-' + (step + 1));
-                if (nextStepEl) nextStepEl.classList.remove('hidden');
+                if (nextStepEl) {
+                    nextStepEl.classList.remove('hidden');
+                    nextStepEl.style.display = 'block';
+                }
                 var pct = Math.round(((step + 1) / cfg.totalSteps) * 100);
                 setProgress('Question ' + (step + 1) + ' of ' + cfg.totalSteps, pct);
             } else {
-                // Completed
+                // Completed — hide track container and show completion scorecard + HubSpot form
+                var activeContainer = document.getElementById('track-container-' + track);
+                if (activeContainer) {
+                    activeContainer.classList.add('hidden');
+                    activeContainer.style.display = 'none';
+                }
                 setProgress('Benchmark Complete', 100);
                 var comp = document.getElementById('modal-completed');
                 if (comp) {
                     comp.classList.remove('hidden');
+                    comp.style.display = 'block';
                     var res = cfg.calc();
                     var compTitle = document.getElementById('completed-title');
                     var compVal = document.getElementById('completed-summary-val');
                     var previewEl = document.getElementById('completed-inputs-preview');
-                    if (compTitle) compTitle.textContent = 'Receive Your Custom Pipeline Leakage & Triage Summary';
+                    if (compTitle) compTitle.textContent = 'Receive Your Custom ' + cfg.scorecardName;
                     if (compVal) compVal.innerHTML = '<strong>' + res.figure + '</strong><br><span style="font-size:13px;color:var(--slate);font-weight:400;">' + res.sub + '</span>';
 
                     if (previewEl) {
@@ -3321,7 +3352,9 @@
             renderTicker('client-track-dup', clientLoop);
 
             renderStackGrid();
-            updateDiagnosticCalculation();
+            selectPracticeDetail(1, false);
+            selectSprintWeek(1);
+            switchDiagnosticTrack('inspection');
         });
     </script>
 </body>
