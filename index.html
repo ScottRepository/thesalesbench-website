@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Sales Bench | Enterprise Revenue Architecture &amp; Deal Governance</title>
+    <title>The Sales Bench | Enterprise Revenue Architect &amp; Deal Governance</title>
     <meta name="description" content="Stop late-stage deal slippage. The Sales Bench helps B2B SaaS leaders turn 6-figure pipeline into predictable closed-won revenue through deal forensics, AI agent infrastructure, market expansion and channel architecture.">
     <link rel="icon" type="image/jpeg" href="assets/logo-stacked.jpg">
     <link rel="apple-touch-icon" href="assets/logo-stacked.jpg">
-    <meta property="og:title" content="The Sales Bench | Enterprise Revenue Architecture &amp; Deal Governance">
+    <meta property="og:title" content="The Sales Bench | Enterprise Revenue Architect &amp; Deal Governance">
     <meta property="og:description" content="Stop late-stage deal slippage. Turn 6-figure pipeline into predictable closed-won revenue with autonomous MEDDPICC deal gating and CRM agents.">
     <meta property="og:image" content="assets/logo-horizontal.jpg">
     <meta property="og:type" content="website">
@@ -447,21 +447,43 @@
         }
 
         /* ==========================================================================
-           4. FOUR CORE PRACTICES (The 4 Problems We Solve)
+           4. FOUR CORE PRACTICES (2-Column Side-by-Side Split View — ~35% / ~65%)
            ========================================================================== */
-        .services-compact-grid {
+        .practices-split-layout {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            grid-template-columns: 35fr 65fr;
+            gap: 28px;
+            align-items: start;
         }
-        @media (max-width: 1040px) { .services-compact-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 560px) { .services-compact-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 1040px) {
+            .practices-split-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .services-compact-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        @media (max-width: 1040px) {
+            .services-compact-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+        }
+        @media (max-width: 600px) {
+            .services-compact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
 
         .service-box {
             background: var(--white);
             border: 1.5px solid var(--slate-200);
             border-radius: var(--radius-lg);
-            padding: 24px 22px;
+            padding: 18px 20px;
             display: flex;
             flex-direction: column;
             transition: all 0.22s ease;
@@ -470,29 +492,31 @@
             position: relative;
         }
         .service-box:hover {
-            transform: translateY(-3px);
+            transform: translateX(3px);
             box-shadow: var(--shadow-card);
             border-color: var(--gold);
         }
         .service-box.active {
             border-color: var(--navy);
-            box-shadow: 0 14px 32px -10px rgba(10, 25, 47, 0.18), 0 0 0 2px var(--gold);
+            box-shadow: 0 12px 28px -8px rgba(10, 25, 47, 0.20), 0 0 0 2px var(--gold);
             background: linear-gradient(180deg, #FFFFFF 0%, #FBF9F5 100%);
-            transform: translateY(-2px);
+            transform: translateX(4px);
         }
         .service-box.active::after {
             content: '';
             position: absolute;
-            bottom: -14px;
-            left: 50%;
-            transform: translateX(-50%);
+            top: 50%;
+            right: -11px;
+            transform: translateY(-50%);
             width: 0;
             height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-top: 10px solid var(--navy);
+            border-top: 9px solid transparent;
+            border-bottom: 9px solid transparent;
+            border-left: 9px solid var(--navy);
         }
         @media (max-width: 1040px) {
+            .service-box:hover,
+            .service-box.active { transform: translateY(-2px); }
             .service-box.active::after { display: none; }
         }
 
@@ -500,12 +524,12 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .service-box-num {
             font-family: var(--font-serif);
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: var(--gold);
             line-height: 1;
@@ -516,7 +540,7 @@
             font-weight: 700;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            padding: 3px 8px;
+            padding: 3px 9px;
             border-radius: 999px;
             background: var(--off-white);
             color: var(--slate-light);
@@ -529,24 +553,20 @@
             border-color: var(--navy);
         }
 
-        .service-box h3 { font-size: 1.15rem; margin-bottom: 8px; color: var(--navy); }
-        .service-box p { font-size: 13.5px; color: var(--slate); line-height: 1.5; margin-bottom: 14px; }
-
-        .service-mini-list { list-style: none; margin-bottom: 16px; border-top: 1px solid var(--slate-200); padding-top: 12px; }
-        .service-mini-list li { font-size: 12.5px; padding-left: 14px; position: relative; margin-bottom: 6px; color: var(--slate); line-height: 1.4; }
-        .service-mini-list li::before { content: '•'; position: absolute; left: 0; color: var(--gold); font-size: 14px; }
+        .service-box h3 { font-size: 1.12rem; margin-bottom: 6px; color: var(--navy); }
+        .service-box p { font-size: 13px; color: var(--slate); line-height: 1.48; margin-bottom: 10px; }
 
         .service-box-footer {
             margin-top: auto;
             display: flex;
-            flex-direction: column;
-            gap: 8px;
-            padding-top: 10px;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 8px;
             border-top: 1px dashed var(--slate-200);
         }
 
         .service-box-cta {
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 600;
             color: var(--cobalt);
             background: none;
@@ -561,29 +581,22 @@
         }
         .service-box-cta:hover { text-decoration: underline; color: var(--navy); }
 
-        .practice-feature-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 11px;
-            font-weight: 600;
-            color: #7A5F33;
-            background: var(--gold-tint);
-            border: 1px solid var(--gold-border);
-            padding: 4px 8px;
-            border-radius: 4px;
-            margin-bottom: 12px;
-            line-height: 1.35;
-        }
-
         .practice-submodule {
-            margin-top: 28px;
+            margin-top: 0;
+            position: sticky;
+            top: 104px;
             background: var(--white);
             border: 1px solid var(--slate-200);
             border-radius: var(--radius-lg);
-            padding: clamp(26px, 3.5vw, 42px);
+            padding: clamp(24px, 3vw, 36px);
             box-shadow: var(--shadow-card);
             transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+        @media (max-width: 1040px) {
+            .practice-submodule {
+                position: static;
+                margin-top: 20px;
+            }
         }
         .practice-submodule.navy-theme {
             background: var(--navy);
@@ -1379,18 +1392,18 @@
 
     <main>
         <!-- ==========================================================================
-             2. STREAMLINED & ELEVATED CENTERED HERO SECTION (Option 1 Copy)
+             2. STREAMLINED & ELEVATED CENTERED HERO SECTION
              ========================================================================== -->
         <section class="hero">
             <div class="site-container">
                 <div class="hero-content-wrap">
-                    <span class="eyebrow">ENTERPRISE REVENUE ARCHITECTURE &amp; FRACTIONAL LEADERSHIP</span>
+                    <span class="eyebrow">ENTERPRISE REVENUE ARCHITECT &amp; FRACTIONAL LEADERSHIP</span>
                     <h1>
-                        <span class="line-1">Your Revenue Architecture Partner for</span>
-                        <span class="line-2">Predictable Closed-Won Growth.</span>
+                        <span class="line-1">Your Fractional Revenue Architect</span>
+                        <span class="line-2">for Predictable Closed-Won Growth.</span>
                     </h1>
                     <p class="hero-lead">
-                        We install objective MEDDPICC deal inspection, turnkey AI sales infrastructure, de-risked market expansion, and partner co-sell engines directly into your CRM&mdash;compressing sales cycles by 25% without adding headcount.
+                        We install objective deal inspection, turnkey AI sales infrastructure, de-risked market expansion, and partner co-sell engines directly into your CRM&mdash;accelerating pipeline and expanding market reach without adding headcount.
                     </p>
 
                     <!-- ICP Badge -->
@@ -1446,118 +1459,84 @@
         </div>
 
         <!-- ==========================================================================
-             4. FOUR CORE PRACTICES & INTERACTIVE MASTER-DETAIL DEEP-DIVE DRAWER
+             4. FOUR CORE PRACTICES (2-Column Side-by-Side Split View — ~35% / ~65%)
              ========================================================================== -->
         <section id="practices" class="section section-off">
             <div class="site-container">
                 <div class="section-head center">
                     <span class="eyebrow">Our Practices</span>
                     <h2>Four Core Practices. One Objective: Predictable Enterprise Revenue.</h2>
-                    <p>Every practice is engineered for measurable economic leverage&mdash;protected pipeline, recovered selling capacity, and de-risked expansion. Click any practice card below to inspect its embedded architecture.</p>
+                    <p>Every practice is engineered for measurable economic leverage&mdash;protected pipeline, recovered selling capacity, and de-risked expansion. Select any practice on the left to inspect its embedded architecture on the right.</p>
                 </div>
 
-                <div class="services-compact-grid" role="tablist" aria-label="Core Revenue Practices">
-                    <!-- Pillar 01 -->
-                    <div class="service-box active" id="practice-inspection" data-practice="1" role="tab" aria-selected="true" tabindex="0" onclick="selectPracticeDetail(1)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectPracticeDetail(1);}">
-                        <div class="service-box-top">
-                            <div class="service-box-num">01</div>
-                            <span class="service-box-badge" id="practice-badge-1">Active View &darr;</span>
+                <div class="practices-split-layout">
+                    <!-- Left Column (~35% width): Vertically Stacked Selector List -->
+                    <div class="services-compact-grid" role="tablist" aria-label="Core Revenue Practices">
+                        <!-- Pillar 01 -->
+                        <div class="service-box active" id="practice-inspection" data-practice="1" role="tab" aria-selected="true" tabindex="0" onclick="selectPracticeDetail(1)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectPracticeDetail(1);}">
+                            <div class="service-box-top">
+                                <div class="service-box-num">01</div>
+                                <span class="service-box-badge" id="practice-badge-1">Active View &rarr;</span>
+                            </div>
+                            <h3>Deal Inspection &amp; Validation</h3>
+                            <p>Eliminate late-stage slippage via verifiable evidence gates, objective MEDDPICC exit criteria, and executive inspection.</p>
+                            <div class="service-box-footer">
+                                <button type="button" class="service-box-cta" onclick="event.stopPropagation(); openDiagnosticModal('inspection')">Run Deal Audit Diagnostic &rarr;</button>
+                            </div>
                         </div>
-                        <h3>Deal Inspection &amp; Validation</h3>
-                        <span class="practice-feature-tag">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            Includes Deal Governance &amp; Anti-Fluff Protocol
-                        </span>
-                        <p>Eliminate late-stage slippage via verifiable evidence gates, objective MEDDPICC exit criteria, and executive inspection.</p>
-                        <ul class="service-mini-list">
-                            <li>MEDDPICC gap analysis on commit deals</li>
-                            <li>Economic Buyer &amp; paper process audit</li>
-                            <li>Private 1-page pipeline leakage scorecard</li>
-                        </ul>
-                        <div class="service-box-footer">
-                            <button type="button" class="service-box-cta" onclick="event.stopPropagation(); openDiagnosticModal('inspection')">Run Deal Audit Diagnostic &rarr;</button>
+
+                        <!-- Pillar 02 -->
+                        <div class="service-box" id="practice-expansion" data-practice="2" role="tab" aria-selected="false" tabindex="0" onclick="selectPracticeDetail(2)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectPracticeDetail(2);}">
+                            <div class="service-box-top">
+                                <div class="service-box-num">02</div>
+                                <span class="service-box-badge" id="practice-badge-2">Inspect &rarr;</span>
+                            </div>
+                            <h3>De-Risked Market Expansion</h3>
+                            <p>Validate buyer appetite and unit economics before headcount commit across US, Canada, EMEA, and LATAM territories.</p>
+                            <div class="service-box-footer">
+                                <button type="button" class="service-box-cta" onclick="event.stopPropagation(); openDiagnosticModal('expansion')">Assess Market Readiness &rarr;</button>
+                            </div>
+                        </div>
+
+                        <!-- Pillar 03 -->
+                        <div class="service-box" id="practice-ai-infra" data-practice="3" role="tab" aria-selected="false" tabindex="0" onclick="selectPracticeDetail(3)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectPracticeDetail(3);}">
+                            <div class="service-box-top">
+                                <div class="service-box-num">03</div>
+                                <span class="service-box-badge" id="practice-badge-3">Inspect &rarr;</span>
+                            </div>
+                            <h3>Turnkey AI Sales Infrastructure</h3>
+                            <p>Deploy compliant BYOK agentic CRM workflows and call audits inside your existing security perimeter in 4 weeks.</p>
+                            <div class="service-box-footer">
+                                <button type="button" class="service-box-cta" onclick="event.stopPropagation(); openDiagnosticModal('ai_infra')">Audit AI Pipeline Readiness &rarr;</button>
+                            </div>
+                        </div>
+
+                        <!-- Pillar 04 -->
+                        <div class="service-box" id="practice-channel" data-practice="4" role="tab" aria-selected="false" tabindex="0" onclick="selectPracticeDetail(4)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectPracticeDetail(4);}">
+                            <div class="service-box-top">
+                                <div class="service-box-num">04</div>
+                                <span class="service-box-badge" id="practice-badge-4">Inspect &rarr;</span>
+                            </div>
+                            <h3>Channel &amp; Ecosystem Architecture</h3>
+                            <p>Multiply sales velocity by architecting co-sell ecosystems across Big-4 consultancies, regional SIs, and hyperscalers.</p>
+                            <div class="service-box-footer">
+                                <button type="button" class="service-box-cta" onclick="event.stopPropagation(); openDiagnosticModal('channel')">Evaluate Partner Multiplier &rarr;</button>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Pillar 02 -->
-                    <div class="service-box" id="practice-expansion" data-practice="2" role="tab" aria-selected="false" tabindex="0" onclick="selectPracticeDetail(2)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectPracticeDetail(2);}">
-                        <div class="service-box-top">
-                            <div class="service-box-num">02</div>
-                            <span class="service-box-badge" id="practice-badge-2">Explore Deep-Dive</span>
+                    <!-- Right Column (~65% width): Sticky/Anchored Dark Navy Detail Panel -->
+                    <div id="practice-detail-drawer" class="practice-submodule navy-theme">
+                        <!-- Quick Switcher Bar inside Drawer Header -->
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 18px;">
+                            <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-light);">Interactive Practice Deep-Dive</span>
+                            <div class="practice-drawer-tabs" role="tablist" aria-label="Practice Deep-Dive Switcher">
+                                <button type="button" class="practice-drawer-pill active" id="drawer-pill-1" onclick="selectPracticeDetail(1)">01 Deal Inspection</button>
+                                <button type="button" class="practice-drawer-pill" id="drawer-pill-2" onclick="selectPracticeDetail(2)">02 Market Expansion</button>
+                                <button type="button" class="practice-drawer-pill" id="drawer-pill-3" onclick="selectPracticeDetail(3)">03 AI Sales Infra</button>
+                                <button type="button" class="practice-drawer-pill" id="drawer-pill-4" onclick="selectPracticeDetail(4)">04 Channel &amp; Alliances</button>
+                            </div>
                         </div>
-                        <h3>De-Risked Market Expansion</h3>
-                        <span class="practice-feature-tag">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/></svg>
-                            Includes Playbook Localization (US, EMEA, LATAM)
-                        </span>
-                        <p>Validate buyer appetite and unit economics before headcount commit, localizing GTM motions across target territories.</p>
-                        <ul class="service-mini-list">
-                            <li>Direct interviews with enterprise check-signers</li>
-                            <li>US, Canada, EMEA &amp; LATAM procurement localization</li>
-                            <li>Turnkey AE ramp playbooks (90-day territory ramp)</li>
-                        </ul>
-                        <div class="service-box-footer">
-                            <button type="button" class="service-box-cta" onclick="event.stopPropagation(); openDiagnosticModal('expansion')">Assess Market Readiness &rarr;</button>
-                        </div>
-                    </div>
-
-                    <!-- Pillar 03 -->
-                    <div class="service-box" id="practice-ai-infra" data-practice="3" role="tab" aria-selected="false" tabindex="0" onclick="selectPracticeDetail(3)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectPracticeDetail(3);}">
-                        <div class="service-box-top">
-                            <div class="service-box-num">03</div>
-                            <span class="service-box-badge" id="practice-badge-3">Explore Deep-Dive</span>
-                        </div>
-                        <h3>Turnkey AI Sales Infrastructure</h3>
-                        <span class="practice-feature-tag">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                            Includes Zero Data Retention &amp; BYOK Security
-                        </span>
-                        <p>Deploy compliant agentic CRM workflows and call audits inside your existing stack and security perimeter in 4 weeks.</p>
-                        <ul class="service-mini-list">
-                            <li>MEDDPICC transcript stage-gate auditor</li>
-                            <li>Post-call CRM &amp; executive recap drafter</li>
-                            <li>Digital deal room &amp; mutual action plans</li>
-                        </ul>
-                        <div class="service-box-footer">
-                            <button type="button" class="service-box-cta" onclick="event.stopPropagation(); openDiagnosticModal('ai_infra')">Audit AI Pipeline Readiness &rarr;</button>
-                        </div>
-                    </div>
-
-                    <!-- Pillar 04 -->
-                    <div class="service-box" id="practice-channel" data-practice="4" role="tab" aria-selected="false" tabindex="0" onclick="selectPracticeDetail(4)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectPracticeDetail(4);}">
-                        <div class="service-box-top">
-                            <div class="service-box-num">04</div>
-                            <span class="service-box-badge" id="practice-badge-4">Explore Deep-Dive</span>
-                        </div>
-                        <h3>Channel &amp; Ecosystem Architecture</h3>
-                        <span class="practice-feature-tag">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                            Includes Co-Sell Playbooks &amp; Attribution Modeling
-                        </span>
-                        <p>Multiply sales velocity by architecting co-sell ecosystems across regional SIs, hyperscalers, and technology ISVs.</p>
-                        <ul class="service-mini-list">
-                            <li>Multi-tier partner ecosystem design</li>
-                            <li>Joint co-sell playbooks &amp; account mapping</li>
-                            <li>Deal registration &amp; attribution governance</li>
-                        </ul>
-                        <div class="service-box-footer">
-                            <button type="button" class="service-box-cta" onclick="event.stopPropagation(); openDiagnosticModal('channel')">Evaluate Partner Multiplier &rarr;</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dynamic Master-Detail Practice Deep-Dive Panel (Dark Navy Container) -->
-                <div id="practice-detail-drawer" class="practice-submodule navy-theme">
-                    <!-- Quick Switcher Bar inside Drawer Header -->
-                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 18px;">
-                        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-light);">Interactive Practice Deep-Dive</span>
-                        <div class="practice-drawer-tabs" role="tablist" aria-label="Practice Deep-Dive Switcher">
-                            <button type="button" class="practice-drawer-pill active" id="drawer-pill-1" onclick="selectPracticeDetail(1)">01 Deal Inspection</button>
-                            <button type="button" class="practice-drawer-pill" id="drawer-pill-2" onclick="selectPracticeDetail(2)">02 Market Expansion</button>
-                            <button type="button" class="practice-drawer-pill" id="drawer-pill-3" onclick="selectPracticeDetail(3)">03 AI Sales Infra</button>
-                            <button type="button" class="practice-drawer-pill" id="drawer-pill-4" onclick="selectPracticeDetail(4)">04 Channel &amp; Alliances</button>
-                        </div>
-                    </div>
 
                     <!-- ==============================================================
                          PRACTICE 01 DEEP-DIVE: DEAL INSPECTION & VALIDATION
@@ -1755,65 +1734,51 @@
                         </div>
                     </div>
 
-                    <!-- ==============================================================
-                         PRACTICE 04 DEEP-DIVE: CHANNEL & ECOSYSTEM ARCHITECTURE
-                         ============================================================== -->
-                    <div id="practice-detail-4" class="practice-detail-view hidden">
-                        <div class="practice-submodule-head">
-                            <div>
-                                <span class="eyebrow" style="color: var(--gold-light);">Practice 04 Embedded Architecture &middot; Channel &amp; Ecosystem Architecture</span>
-                                <h2 style="color: var(--white);">Turn Dormant Partner Logos Into an 85%-Attach Co-Sell Engine.</h2>
-                                <p style="color: #CBD5E1; max-width: 820px; margin-top: 6px;">Most B2B software companies sign alliance agreements that generate zero pipeline. We architect operational co-sell playbooks with Big-4 advisory firms, regional SIs, and cloud hyperscalers that multiply enterprise deal velocity.</p>
-                            </div>
-                        </div>
-
-                        <div class="gov-grid">
-                            <div>
-                                <div class="gov-tier">
-                                    <div class="gov-cadence">Pillar 01 &middot; SI &amp; Advisory Activation</div>
-                                    <h3>SI &amp; Advisory Alliance Co-Sell Playbooks</h3>
-                                    <p>Align your commercial motion with how Big-4 consultancies (Deloitte, PwC, EY, KPMG) and regional SIs monetize transformation practices.</p>
-                                    <ul>
-                                        <li>Service-to-license multiplier packaging ($3&ndash;$5 in partner services per $1 of your ARR)</li>
-                                        <li>Joint executive account mapping and warm C-suite introductions into Fortune 1000 accounts</li>
-                                        <li>Partner practice enablement kits that make your platform the default advisory recommendation</li>
-                                    </ul>
-                                </div>
-                                <div class="gov-tier">
-                                    <div class="gov-cadence">Pillar 02 &middot; Cloud &amp; ISV Ecosystems</div>
-                                    <h3>Hyperscaler &amp; ISV Ecosystem Mapping</h3>
-                                    <p>Unlock committed cloud spend and technical co-sell momentum across AWS, Microsoft Azure, Google Cloud, and ERP ecosystems (SAP, Oracle, NetSuite).</p>
-                                    <ul>
-                                        <li>Marketplace private-offer structuring to draw down pre-committed enterprise cloud budgets</li>
-                                        <li>Reciprocal quota retirement incentives for hyperscaler and ISV field reps</li>
-                                        <li>Automated overlap telemetry across target enterprise install bases</li>
-                                    </ul>
-                                </div>
-                                <div class="gov-tier">
-                                    <div class="gov-cadence">Pillar 03 &middot; Channel Governance</div>
-                                    <h3>Deal Registration &amp; Attribution Governance</h3>
-                                    <p>Eliminate channel conflict between direct AEs and alliance partners through transparent CRM rules of engagement.</p>
-                                    <ul>
-                                        <li>Automated CRM deal registration gates, partner influence tracking, and split-attribution models</li>
-                                        <li>AE comp-neutral co-sell structures that turn direct reps into eager partner collaborators</li>
-                                        <li>Monthly partner pipeline velocity and attach-rate scorecards for board reporting</li>
-                                    </ul>
+                        <!-- ==============================================================
+                             PRACTICE 04 DEEP-DIVE: CHANNEL & ECOSYSTEM ARCHITECTURE
+                             ============================================================== -->
+                        <div id="practice-detail-4" class="practice-detail-view hidden">
+                            <div class="practice-submodule-head">
+                                <div>
+                                    <span class="eyebrow" style="color: var(--gold-light);">Practice 04 Embedded Architecture &middot; Channel &amp; Ecosystem Architecture</span>
+                                    <h2 style="color: var(--white);">Turn Dormant Partner Logos Into an 85%-Attach Co-Sell Engine.</h2>
+                                    <p style="color: #CBD5E1; max-width: 820px; margin-top: 6px;">Most B2B software companies sign alliance agreements that generate zero pipeline. We architect operational co-sell playbooks with Big-4 advisory firms, regional SIs, and cloud hyperscalers that multiply enterprise deal velocity.</p>
                                 </div>
                             </div>
 
-                            <div class="gov-panel">
-                                <span class="eyebrow" style="color: var(--gold-light);">Co-Sell Architecture In Practice</span>
-                                <h3>Partners don't sell your product—they sell their own practice.</h3>
-                                <p>The secret to driving an 85% partner attach rate across enterprise deals is straightforward:</p>
-                                <div class="quote-block">
-                                    "When an SI partner sees how your software triggers a $250k advisory and implementation engagement for their practice—and your AEs are comped to bring them in early—procurement cycles compress by 30%."
+                            <div class="gov-grid">
+                                <div>
+                                    <div class="gov-tier">
+                                        <div class="gov-cadence">Pillar 01 &middot; SI &amp; Advisory Activation</div>
+                                        <h3>SI &amp; Advisory Co-Sell Playbooks</h3>
+                                        <p>Align commercial motion with Big-4 &amp; regional consultancies; structured multi-party packaging and joint account mapping.</p>
+                                    </div>
+                                    <div class="gov-tier">
+                                        <div class="gov-cadence">Pillar 02 &middot; Cloud &amp; ISV Ecosystems</div>
+                                        <h3>Cloud &amp; Hyperscaler Ecosystems</h3>
+                                        <p>Unlock co-sell velocity and committed cloud spend across AWS, Azure, Google Cloud, and enterprise ISVs.</p>
+                                    </div>
+                                    <div class="gov-tier">
+                                        <div class="gov-cadence">Pillar 03 &middot; Channel Governance</div>
+                                        <h3>Deal Registration &amp; Multi-Threading Governance</h3>
+                                        <p>Transparent CRM rules of engagement and all-comp neutral co-sell structures to maximize field momentum.</p>
+                                    </div>
                                 </div>
-                                <p>We wire partner registration, account overlap mapping, and co-sell milestones directly into your MEDDPICC stage gates so alliance leverage becomes automatic.</p>
 
-                                <div class="commercial-box">
-                                    <span class="eyebrow" style="color: var(--gold-light); margin-bottom: 4px;">Practice 04 Contextual Action</span>
-                                    <p style="font-size: 13.5px; margin-top: 8px; color: #CBD5E1;">Assess your current partner attach rate and untapped co-sell revenue multiplier:</p>
-                                    <button type="button" class="btn btn-gold" style="margin-top: 12px; width: 100%; text-align: center;" onclick="openDiagnosticModal('channel')">Evaluate Partner Multiplier &rarr;</button>
+                                <div class="gov-panel">
+                                    <span class="eyebrow" style="color: var(--gold-light);">Co-Sell Architecture In Practice</span>
+                                    <h3>Partners don't sell your product—they sell their own practice.</h3>
+                                    <p>The secret to driving an 85% partner attach rate across enterprise deals is straightforward:</p>
+                                    <div class="quote-block">
+                                        "When an SI partner sees how your software triggers a $250k advisory and implementation engagement for their practice—and your AEs are comped to bring them in early—procurement cycles compress by 30%."
+                                    </div>
+                                    <p>We wire partner registration, account overlap mapping, and co-sell milestones directly into your MEDDPICC stage gates so alliance leverage becomes automatic.</p>
+
+                                    <div class="commercial-box">
+                                        <span class="eyebrow" style="color: var(--gold-light); margin-bottom: 4px;">Practice 04 Contextual Action</span>
+                                        <p style="font-size: 13.5px; margin-top: 8px; color: #CBD5E1;">Assess your current partner attach rate and untapped co-sell revenue multiplier:</p>
+                                        <button type="button" class="btn btn-gold" style="margin-top: 12px; width: 100%; text-align: center;" onclick="openDiagnosticModal('channel')">Evaluate Partner Multiplier &rarr;</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1829,8 +1794,8 @@
             <div class="site-container">
                 <div class="section-head center">
                     <span class="eyebrow">Commercial Engagement Model &middot; Two-Stage Lifecycle</span>
-                    <h2>4-Week Installation Sprint &rarr; 3&ndash;4 Month Fractional Revenue Architecture</h2>
-                    <p>A structured two-stage partnership: <strong>Stage A</strong> installs autonomous MEDDPICC deal gating and CRM agents in a fixed-fee 4-week sprint, seamlessly transitioning into <strong>Stage B</strong> retained Fractional Revenue Architecture (~10 hrs/wk) to enforce forecast discipline across your sales floor.</p>
+                    <h2>4-Week Installation Sprint &rarr; 3&ndash;4 Month Fractional Revenue Architect Retainer</h2>
+                    <p>A structured two-stage partnership: <strong>Stage A</strong> builds and installs the architecture (autonomous MEDDPICC deal gating and CRM agents) in a fixed-fee 4-week sprint, seamlessly transitioning into <strong>Stage B</strong> retained Fractional Revenue Architect execution (~10 hrs/wk) for live deal triage and board governance.</p>
                 </div>
 
                 <div class="commercial-two-tier">
@@ -2021,18 +1986,18 @@
                     <div class="stage-connector" aria-hidden="true">
                         <div class="stage-connector-line"></div>
                         <div class="stage-connector-badge">
-                            <span>&darr; Seamless Transition Into Stage B Retained Governance &darr;</span>
+                            <span>&darr; Seamless Transition into Stage B Retained Governance &darr;</span>
                         </div>
                         <div class="stage-connector-line"></div>
                     </div>
 
-                    <!-- Stage B: Fractional Revenue Architect (3–4 Month Retained Lifecycle) -->
+                    <!-- Stage B: Fractional Revenue Architect Retainer (~10 hrs/wk) -->
                     <div class="fractional-card">
                         <div class="fractional-head">
                             <div>
                                 <span class="stage-badge-pill stage-b">Stage B &middot; 3&ndash;4 Month Retained Lifecycle (~10 hrs/week)</span>
-                                <h3>Fractional Revenue Architect</h3>
-                                <p style="font-size: 14px; color: var(--slate); margin-top: 4px;">Ongoing executive deal inspection, stage-gate auditing, market expansion governance, and board forecasting led directly by Scott Carpentier.</p>
+                                <h3>Stage B: Fractional Revenue Architect Retainer (~10 hrs/wk)</h3>
+                                <p style="font-size: 14px; color: var(--slate); margin-top: 4px;">Stage A builds and installs the architecture; Stage B is the ongoing retained executive execution, live deal triage, and board governance led directly by Scott Carpentier.</p>
                             </div>
                             <span class="cred-tag" style="font-size: 12px; padding: 6px 12px;">Retained Executive Advisory &middot; Zero Long-Term Lock-In</span>
                         </div>
@@ -2116,7 +2081,7 @@
             <div class="site-container">
                 <div class="section-head center">
                     <span class="eyebrow">Institutional Leadership</span>
-                    <h2>Enterprise Revenue Architecture Meets Operational Risk Management.</h2>
+                    <h2>Enterprise Revenue Architect Meets Operational Risk Management.</h2>
                     <p>Bridging the gap between automated CRM intelligence and battle-tested executive deal inspection.</p>
                 </div>
 
@@ -2211,25 +2176,35 @@
                         <form id="footer-contact-form" class="custom-form" onsubmit="handleCustomFormSubmit(event, 'footer-contact-form', 'Executive Inquiry (Footer)')">
                             <div class="form-row-2">
                                 <div class="form-field">
-                                    <label for="f-fname">First Name *</label>
-                                    <input type="text" id="f-fname" name="firstname" class="form-input" required placeholder="Jane">
+                                     <label for="f-fname">First Name *</label>
+                                     <input type="text" id="f-fname" name="firstname" class="form-input" required>
                                 </div>
                                 <div class="form-field">
-                                    <label for="f-lname">Last Name *</label>
-                                    <input type="text" id="f-lname" name="lastname" class="form-input" required placeholder="Doe">
+                                     <label for="f-lname">Last Name *</label>
+                                     <input type="text" id="f-lname" name="lastname" class="form-input" required>
                                 </div>
                             </div>
                             <div class="form-field">
                                 <label for="f-email">Work Email *</label>
-                                <input type="email" id="f-email" name="email" class="form-input" required placeholder="jane@company.com">
+                                <input type="email" id="f-email" name="email" class="form-input" required>
                             </div>
                             <div class="form-field">
                                 <label for="f-company">Company Name *</label>
-                                <input type="text" id="f-company" name="company" class="form-input" required placeholder="Acme Software">
+                                <input type="text" id="f-company" name="company" class="form-input" required>
                             </div>
                             <div class="form-field">
-                                <label for="f-message">Primary Area of Interest (Optional)</label>
-                                <textarea id="f-message" name="message" class="form-input" placeholder="e.g. Month-3 deal slippage, 4-Week CRM installation sprint, or EMEA market expansion"></textarea>
+                                <label for="f-phone">Phone Number</label>
+                                <input type="tel" id="f-phone" name="phone" class="form-input">
+                            </div>
+                            <div class="form-field">
+                                <label for="f-interest">Primary Area of Interest *</label>
+                                <select id="f-interest" name="primary_area_of_interest" class="form-input" required>
+                                    <option value="" disabled selected>Select Primary Area of Interest</option>
+                                    <option value="Deal Inspection & Slippage Mitigation">Deal Inspection &amp; Slippage Mitigation</option>
+                                    <option value="De-Risked Market Expansion (US / EMEA / LATAM)">De-Risked Market Expansion (US / EMEA / LATAM)</option>
+                                    <option value="Turnkey AI Sales Infrastructure (BYOK)">Turnkey AI Sales Infrastructure (BYOK)</option>
+                                    <option value="Channel & Ecosystem / SI Co-Sell Architecture">Channel &amp; Ecosystem / SI Co-Sell Architecture</option>
+                                </select>
                             </div>
 
                             <button type="submit" class="form-submit-btn">Schedule a 15-Minute Introductory Call &rarr;</button>
@@ -2487,36 +2462,40 @@
                 <!-- COMPLETION STEP: CUSTOM SCORECARD & HUBSPOT FORM -->
                 <div id="modal-completed" class="hidden completed-box">
                     <span class="eyebrow" id="completed-eyebrow" style="margin-bottom: 4px;">Diagnostic Complete</span>
-                    <h4 id="completed-title">Receive Your 1-Page Benchmark Scorecard</h4>
+                    <h4 id="completed-title">Receive Your Custom Pipeline Leakage &amp; Triage Summary</h4>
 
                     <!-- Dynamic Score Summary Card -->
                     <div class="completed-summary-card">
                         <div class="completed-summary-val" id="completed-summary-val"></div>
                     </div>
 
-                    <p id="completed-desc">Submit below to receive your personalized scorecard, peer cohort analysis from the 2026 Deal Governance Index, and a 15-minute debrief with Scott Carpentier.</p>
+                    <p id="completed-desc">Submit to lock in your benchmark calculation and review your deal-gating risk exposure directly with Scott Carpentier.</p>
 
                     <form id="modal-diagnostic-form" class="custom-form" onsubmit="handleCustomFormSubmit(event, 'modal-diagnostic-form', 'Diagnostic Scorecard')">
                         <div class="form-row-2">
                             <div class="form-field">
                                 <label for="d-fname">First Name *</label>
-                                <input type="text" id="d-fname" name="firstname" class="form-input" required placeholder="Jane">
+                                <input type="text" id="d-fname" name="firstname" class="form-input" required>
                             </div>
                             <div class="form-field">
                                 <label for="d-lname">Last Name *</label>
-                                <input type="text" id="d-lname" name="lastname" class="form-input" required placeholder="Doe">
+                                <input type="text" id="d-lname" name="lastname" class="form-input" required>
                             </div>
                         </div>
                         <div class="form-field">
                             <label for="d-email">Work Email *</label>
-                            <input type="email" id="d-email" name="email" class="form-input" required placeholder="jane@company.com">
+                            <input type="email" id="d-email" name="email" class="form-input" required>
                         </div>
                         <div class="form-field">
                             <label for="d-company">Company Name *</label>
-                            <input type="text" id="d-company" name="company" class="form-input" required placeholder="Acme Software">
+                            <input type="text" id="d-company" name="company" class="form-input" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="d-phone">Phone Number</label>
+                            <input type="tel" id="d-phone" name="phone" class="form-input">
                         </div>
 
-                        <button type="submit" class="form-submit-btn">Claim Your 1-Page Benchmark Scorecard &rarr;</button>
+                        <button type="submit" class="form-submit-btn">Request Executive Diagnostic Debrief &rarr;</button>
                         <div class="form-status" id="modal-diagnostic-form-status"></div>
                     </form>
                 </div>
@@ -2544,24 +2523,34 @@
                     <div class="form-row-2">
                         <div class="form-field">
                             <label for="s-fname">First Name *</label>
-                            <input type="text" id="s-fname" name="firstname" class="form-input" required placeholder="Jane">
+                            <input type="text" id="s-fname" name="firstname" class="form-input" required>
                         </div>
                         <div class="form-field">
                             <label for="s-lname">Last Name *</label>
-                            <input type="text" id="s-lname" name="lastname" class="form-input" required placeholder="Doe">
+                            <input type="text" id="s-lname" name="lastname" class="form-input" required>
                         </div>
                     </div>
                     <div class="form-field">
                         <label for="s-email">Work Email *</label>
-                        <input type="email" id="s-email" name="email" class="form-input" required placeholder="jane@company.com">
+                        <input type="email" id="s-email" name="email" class="form-input" required>
                     </div>
                     <div class="form-field">
                         <label for="s-company">Company Name *</label>
-                        <input type="text" id="s-company" name="company" class="form-input" required placeholder="Acme Software">
+                        <input type="text" id="s-company" name="company" class="form-input" required>
                     </div>
                     <div class="form-field">
-                        <label for="s-message">Current AE Count / Note (Optional)</label>
-                        <input type="text" id="s-message" name="message" class="form-input" placeholder="e.g. 10 Quota-Carrying AEs, exploring Q4 MEDDPICC gating">
+                        <label for="s-phone">Phone Number</label>
+                        <input type="tel" id="s-phone" name="phone" class="form-input">
+                    </div>
+                    <div class="form-field">
+                        <label for="s-interest">Primary Area of Interest *</label>
+                        <select id="s-interest" name="primary_area_of_interest" class="form-input" required>
+                            <option value="" disabled selected>Select Primary Area of Interest</option>
+                            <option value="Deal Inspection & Slippage Mitigation">Deal Inspection &amp; Slippage Mitigation</option>
+                            <option value="De-Risked Market Expansion (US / EMEA / LATAM)">De-Risked Market Expansion (US / EMEA / LATAM)</option>
+                            <option value="Turnkey AI Sales Infrastructure (BYOK)">Turnkey AI Sales Infrastructure (BYOK)</option>
+                            <option value="Channel & Ecosystem / SI Co-Sell Architecture">Channel &amp; Ecosystem / SI Co-Sell Architecture</option>
+                        </select>
                     </div>
 
                     <button type="submit" class="form-submit-btn">Schedule a 15-Minute Introductory Call &rarr;</button>
@@ -2721,7 +2710,7 @@
                     card.setAttribute('aria-selected', isActive ? 'true' : 'false');
                 }
                 if (badge) {
-                    badge.innerHTML = isActive ? 'Active View &darr;' : 'Explore Deep-Dive';
+                    badge.innerHTML = isActive ? 'Active View &rarr;' : 'Inspect &rarr;';
                 }
                 if (pill) {
                     pill.classList.toggle('active', isActive);
@@ -2787,12 +2776,20 @@
             var lastName = (formData.get('lastname') || '').trim();
             var email = (formData.get('email') || '').trim();
             var company = (formData.get('company') || '').trim();
+            var phone = (formData.get('phone') || '').trim();
+            var primaryInterest = (formData.get('primary_area_of_interest') || '').trim();
             var messageVal = (formData.get('message') || '').trim();
 
             // Client-side field validation
             var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!firstName || !lastName || !email || !company) {
                 statusEl.textContent = 'Please complete all required fields (First Name, Last Name, Work Email, and Company Name).';
+                statusEl.className = 'form-status error';
+                statusEl.style.display = 'block';
+                return;
+            }
+            if ((formId === 'footer-contact-form' || formId === 'modal-schedule-form') && !primaryInterest) {
+                statusEl.textContent = 'Please select a Primary Area of Interest.';
                 statusEl.className = 'form-status error';
                 statusEl.style.display = 'block';
                 return;
@@ -2810,18 +2807,62 @@
                 { name: 'email', value: email },
                 { name: 'company', value: company }
             ];
+            if (phone) {
+                fields.push({ name: 'phone', value: phone });
+            }
 
-            // Build contextual message payload
+            // Build contextual message payload (capturing Primary Area of Interest & full Diagnostic Quiz answers)
             var combinedMessage = '';
             if (formId === 'modal-diagnostic-form') {
                 var cfg = TRACK_CONFIG[currentTrack];
                 var res = cfg.calc();
-                var diagMeta = 'Diagnostic Track: ' + cfg.title + ' | Result: ' + res.summaryText;
-                combinedMessage = messageVal ? (messageVal + ' | ' + diagMeta + ' [Source: ' + formType + ']') : (diagMeta + ' [Source: ' + formType + ']');
-            } else if (messageVal) {
-                combinedMessage = messageVal + ' [Source: ' + formType + ']';
-            } else if (formType) {
-                combinedMessage = 'Inquiry Source: ' + formType;
+                var d = trackData[currentTrack] || {};
+                var quizBreakdown = '';
+                if (currentTrack === 'inspection') {
+                    var gateLabel = d.gateType === 1.0 ? 'Rep Discretion' : (d.gateType === 0.8 ? 'Static CRM Required Fields' : 'Exploring Automated Stage-Gate Auditing');
+                    quizBreakdown = [
+                        'Selected Diagnostic Practice: ' + cfg.title,
+                        'Deal Slippage Rate (%): ' + Math.round((d.slippageRate || 0) * 100) + '%',
+                        'Average Contract Value (ACV Range): $' + Number(d.acv || 0).toLocaleString('en-US'),
+                        'Quota-Carrying AE Headcount: ' + (d.repCount || 0) + ' AEs',
+                        'Economic Buyer Verification Level: ' + Math.round((d.ebAccess || 0) * 100) + '% Verified',
+                        'Stage-Gate Enforcement: ' + gateLabel,
+                        'Computed Annual Exposure Range: ' + res.figure + ' (' + res.summaryText + ')'
+                    ].join(' | ');
+                } else if (currentTrack === 'expansion') {
+                    quizBreakdown = [
+                        'Selected Diagnostic Practice: ' + cfg.title,
+                        'Target Territory: ' + d.territory,
+                        'Expected ACV Parity: ' + d.acvParity,
+                        'Customer Validation Status: ' + d.validationStatus,
+                        'Planned AE Headcount: ' + d.repCount + ' AEs',
+                        'Computed Exposure / Readiness: ' + res.summaryText
+                    ].join(' | ');
+                } else if (currentTrack === 'ai_infra') {
+                    quizBreakdown = [
+                        'Selected Diagnostic Practice: ' + cfg.title,
+                        'Meeting Recording Platform: ' + d.recordingTool,
+                        'Primary CRM: ' + d.crm,
+                        'InfoSec / Retention Posture: ' + d.securityReq.toUpperCase(),
+                        'Quota-Carrying AE Headcount: ' + d.floorSize + ' AEs',
+                        'Computed Recoverable Capacity: ' + res.summaryText
+                    ].join(' | ');
+                } else if (currentTrack === 'channel') {
+                    quizBreakdown = [
+                        'Selected Diagnostic Practice: ' + cfg.title,
+                        'Partner-Influenced Pipeline Share: ' + Math.round((d.partnerShare || 0) * 100) + '%',
+                        'Alliance Tiering Maturity: ' + d.tieringMaturity,
+                        'Deal Registration Governance: ' + d.attributionGov,
+                        'Computed Co-Sell Multiplier: ' + res.summaryText
+                    ].join(' | ');
+                }
+                combinedMessage = quizBreakdown + (messageVal ? ' | Note: ' + messageVal : '') + ' [Source: ' + formType + ']';
+            } else {
+                var parts = [];
+                if (primaryInterest) parts.push('Primary Area of Interest: ' + primaryInterest);
+                if (messageVal) parts.push('Note: ' + messageVal);
+                if (formType) parts.push('[Source: ' + formType + ']');
+                combinedMessage = parts.join(' | ');
             }
 
             if (combinedMessage) {
@@ -2838,7 +2879,7 @@
 
             var contextPayload = {
                 pageUri: validPageUri,
-                pageName: document.title || 'The Sales Bench | Enterprise Revenue Architecture'
+                pageName: document.title || 'The Sales Bench | Enterprise Revenue Architect'
             };
             if (hutk) {
                 contextPayload.hutk = hutk;
@@ -3121,7 +3162,7 @@
                     var res = cfg.calc();
                     var compTitle = document.getElementById('completed-title');
                     var compVal = document.getElementById('completed-summary-val');
-                    if (compTitle) compTitle.textContent = 'Receive Your ' + cfg.scorecardName;
+                    if (compTitle) compTitle.textContent = 'Receive Your Custom Pipeline Leakage & Triage Summary';
                     if (compVal) compVal.innerHTML = '<strong>' + res.figure + '</strong><br><span style="font-size:13px;color:var(--slate);font-weight:400;">' + res.sub + '</span>';
                 }
             }

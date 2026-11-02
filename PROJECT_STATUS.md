@@ -1,6 +1,6 @@
 # The Sales Bench — Project Status & System Documentation
 
-**Document Version:** 6.1.0  
+**Document Version:** 6.2.0  
 **Last Updated:** November 2, 2026  
 **Founder & Managing Principal:** Scott Carpentier  
 **Public Repository:** [https://github.com/ScottRepository/thesalesbench-website](https://github.com/ScottRepository/thesalesbench-website)  
@@ -11,11 +11,11 @@
 ## 1. Project Overview & Tech Stack
 
 ### 1.1 Strategic Mission & Positioning
-**The Sales Bench** is an **Enterprise Revenue Architecture & Fractional Leadership** firm founded by **Scott Carpentier**. 
+**The Sales Bench** is an **Enterprise Revenue Architect & Fractional Leadership** firm founded by **Scott Carpentier**. 
 
 The practice operates on a proven two-tier commercial model:
 1. **Stage A (Wedge): 4-Week Installation Sprint** — turnkey deployment of autonomous MEDDPICC deal-governance workflows, instant post-call CRM intelligence, and digital deal rooms inside the client's existing perimeter.
-2. **Stage B (Retained Acceleration): Fractional Revenue Architect** — 3 to 4 month retained leadership (~10 hours/week dedicated principal advisory) providing hands-on deal forensics, executive stage-gate auditing, and board forecasting predictability.
+2. **Stage B (Retained Acceleration): Fractional Revenue Architect Retainer (~10 hrs/wk)** — 3 to 4 month retained leadership providing hands-on deal forensics, executive stage-gate auditing, and board forecasting predictability.
 
 * **Ideal Customer Profile (ICP):**
   * **Core Sweet Spot:** Enterprise & B2B SaaS ($5M to $50M+ ARR).
@@ -31,7 +31,7 @@ The practice operates on a proven two-tier commercial model:
 
 ---
 
-### 1.2 Technology Stack & UI Architecture (Version 6.1.0)
+### 1.2 Technology Stack & UI Architecture (Version 6.2.0)
 
 | Layer | Implementation | Strategic Advantage |
 | :--- | :--- | :--- |
@@ -41,12 +41,12 @@ The practice operates on a proven two-tier commercial model:
 | **Design System** | Corporate Advisory Luxury Palette | Technical Navy (`#0A192F`), Slate (`#475569`), Off-White (`#F8FAFC`), Crisp White (`#FFFFFF`), with Muted Gold (`#B08D57`) and Cobalt (`#1E40AF`) accents. |
 | **Container Viewport Framing** | Global Bounded Container (`.site-container`) | `max-width: 1240px; margin: 0 auto; padding: 0 2rem;` (Lunas Consulting benchmark). |
 | **Header Navigation & IA** | Flattened Top-Level Practice Links + Methodology + About | Top-level navigation items for all 4 practices (`Deal Inspection`, `Market Expansion`, `AI Sales Infrastructure`, `Channel & Alliances`), plus `Methodology`, `About`, `Run Diagnostic`, and `Schedule 15-Minute Call`. Removed floating bottom-right diagnostic pill. |
-| **Hero & Above-the-Fold Flow** | Outcome & Partner-Focused Hero + Immediate Metrics Bar | Option 1 Hero Headline (`Your Revenue Architecture Partner for Predictable Closed-Won Growth.`) followed immediately by the 4-column Outcomes Metrics Bar (`25–35% Slippage Prevented`, `40 hrs/wk Recovered`, `1 Deal = 3x Saved Deal ROI`, `0 Months InfoSec Delay`) right above `OUR PRACTICES`. |
-| **Interactive Master-Detail Practices Drawer** | 4 Selectable Practice Cards + Dynamic Navy Deep-Dive Drawer | Clicking any of the 4 practice cards (`01`–`04`) or top-level nav links dynamically updates the unified dark navy deep-dive container (`#practice-detail-drawer`) with complete architecture breakdowns for Deal Inspection (`01`), De-Risked Market Expansion (`02`), Turnkey AI Sales Infrastructure & InfoSec (`03`), and Channel & Ecosystem Architecture (`04`). |
-| **Commercial Engagement Model** | Connected Two-Stage Visual Progression | Clear visual progression (`Stage A: The 4-Week Installation Sprint` &rarr; connected transition badge &rarr; `Stage B: Fractional Revenue Architect`) with pill-style segmented week selector controls (`WEEK 01`–`WEEK 04`) and high-contrast deliverable box. |
+| **Hero & Above-the-Fold Flow** | Revenue Architect Hero + Immediate Metrics Bar | Eyebrow (`ENTERPRISE REVENUE ARCHITECT & FRACTIONAL LEADERSHIP`), H1 (`Your Fractional Revenue Architect for Predictable Closed-Won Growth.`), and updated 4-pillar subheadline followed immediately by the 4-column Outcomes Metrics Bar right above `OUR PRACTICES`. |
+| **2-Column Split-View Practices** | Left (~35% Selector Stack) + Right (~65% Sticky Navy Panel) | Vertically stacked selector list of 4 compact practice cards on the left with right-pointing active chevron; sticky dark-navy detail panel on the right (`#practice-detail-drawer`) with condensed, scannable Practice 04 pillars. |
+| **Commercial Engagement Model** | Connected Two-Stage Visual Progression | Clear visual progression (`Stage A: The 4-Week Installation Sprint` &rarr; `Seamless Transition into Stage B Retained Governance` &rarr; `Stage B: Fractional Revenue Architect Retainer (~10 hrs/wk)`) with high-contrast week selector controls (`WEEK 01`–`WEEK 04`). |
 | **Social Proof Logo Tickers** | Relocated Above Institutional Leadership (120s Slow Glide) | Placed directly above `#about` with updated titles (`Enterprise Ecosystem & Partner Experience — SI & Advisory Alliances` and `Proven Enterprise Deal Experience — Sample Accounts Sold To & Onboarded By Our Leadership`) and slowed 120s marquee speed. |
-| **Institutional Leadership ("About")** | Full Brand Lockup & Structured 4-Bullet Founder Profile | Left card renders the full `THE SALES BENCH / REVENUE ARCHITECTED` wordmark and 4 value bullets; Right card features a clean 1-sentence intro for Scott Carpentier followed by 4 structured bullet points (`Enterprise SaaS Leadership`, `Proven Regional Scale`, `Ecosystem & Alliance Execution`, `AI & Revenue Architecture`). |
-| **HubSpot API Integration** | Native Fetch API (Zero iframes) + Validated Confirmation | Posts lead contact info + diagnostic track and calculated scorecard metrics directly into HubSpot Forms API v3 endpoint (`portalId: 342958738`, `formId: de5aa2ee-c4fc-4f04-8b6b-563c3bfb9fa3`) with client-side validation and visible confirmation banner. |
+| **Institutional Leadership ("About")** | Full Brand Lockup & Structured 4-Bullet Founder Profile | Header updated to `Enterprise Revenue Architect Meets Operational Risk Management.`; Left card renders full `THE SALES BENCH / REVENUE ARCHITECTED` wordmark; Right card features 1-sentence intro + 4 structured bullets for Scott Carpentier. |
+| **Contact Form & Diagnostic HubSpot Wiring** | Phone Input + Single-Select Practice Dropdown + Full Quiz Payload | Added `Phone Number` field and converted `Primary Area of Interest` to a 4-option single-select mapped to the 4 practices. Diagnostic modal completion updated to `Receive Your Custom Pipeline Leakage & Triage Summary` / `Request Executive Diagnostic Debrief →`, passing all quiz variables (`Selected Diagnostic Practice`, `Deal Slippage Rate (%)`, `ACV Range`, `Quota-Carrying AE Headcount`, `Economic Buyer Verification Level`, `Computed Annual Exposure Range`) directly into HubSpot (`portalId: 342958738`, `formId: de5aa2ee-c4fc-4f04-8b6b-563c3bfb9fa3`). |
 
 ---
 
