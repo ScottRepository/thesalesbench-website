@@ -32,5 +32,5 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-# LLM Structured Context: https://thesalesbench.com/llms.txt
-Sitemap: https://thesalesbench.com/sitemap.xml
+# LLM Structured Context: https://www.thesalesbench.com/llms.txt
+Sitemap: https://www.thesalesbench.com/sitemap.xml
