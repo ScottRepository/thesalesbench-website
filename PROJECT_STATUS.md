@@ -1,10 +1,10 @@
 # The Sales Bench — Project Status & System Documentation
 
-**Document Version:** 6.5.0  
+**Document Version:** 6.6.0  
 **Last Updated:** November 2, 2026  
 **Founder & Managing Principal:** Scott Carpentier  
 **Public Repository:** [https://github.com/ScottRepository/thesalesbench-website](https://github.com/ScottRepository/thesalesbench-website)  
-**Live Production URL:** [https://scottrepository.github.io/thesalesbench-website/](https://scottrepository.github.io/thesalesbench-website/)  
+**Live Production URL:** [https://thesalesbench.com/](https://thesalesbench.com/)  
 
 ---
 
@@ -31,11 +31,12 @@ The practice operates on a proven two-tier commercial model:
 
 ---
 
-### 1.2 Technology Stack & UI Architecture (Version 6.5.0)
+### 1.2 Technology Stack & UI Architecture (Version 6.6.0)
 
 | Layer | Implementation | Strategic Advantage |
 | :--- | :--- | :--- |
-| **Hosting & Deployment** | GitHub Pages (`origin/main`) | 99.99% uptime, zero hosting cost, automated SSL, global edge delivery. |
+| **Hosting & Deployment** | GitHub Pages / Custom Domain (`thesalesbench.com`) | 99.99% uptime, automated SSL, global edge delivery. |
+| **SEO & AI Discovery (GEO / AEO)** | JSON-LD Entity Graph + `/llms.txt` + Executive FAQ | Full Schema.org graph (`ProfessionalService`, `Person`, `OfferCatalog`, `FAQPage`), root `/llms.txt` markdown specification, and explicit AI crawler allowlist (`GPTBot`, `OAI-SearchBot`, `ChatGPT-User`, `ClaudeBot`, `Claude-Web`, `PerplexityBot`, `Google-Extended`). |
 | **Front-End Architecture** | Single-File Self-Contained (`index.html`) | Zero external CSS dependencies, immune to CDN outage, instant page loads, strict CSP compliance. |
 | **Brand Identity & Header Lockup** | Clean Gold Border Brand Container | Refined gold border (`border: 1.5px solid var(--gold)`) with transparent background, Cinzel bold navy primary wordmark (`THE SALES BENCH`), and gold tracking-wide tagline (`REVENUE ARCHITECTED`). Replicated consistently in header, About section, and footer. |
 | **Design System** | Corporate Advisory Luxury Palette | Technical Navy (`#0A192F`), Slate (`#475569`), Off-White (`#F8FAFC`), Crisp White (`#FFFFFF`), with Muted Gold (`#B08D57`) and Cobalt (`#1E40AF`) accents. |
